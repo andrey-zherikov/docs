@@ -375,10 +375,10 @@ pkg/0.1:da39a3ee5e6b4b0d3255bfef95601890afd80709:<span class="w"> </span>Package
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> argument allows to specify the metadata files that we are uploading. If we structure them in folders,
-we could specify <code class="docutils literal notranslate"><span class="pre">--metadata=logs*</span></code> to upload only the logs metadata, but not other possible ones like <code class="docutils literal notranslate"><span class="pre">test</span></code> metadata.</p>
+we could specify <code class="docutils literal notranslate"><span class="pre">--metadata=&quot;logs*&quot;</span></code> to upload only the logs metadata, but not other possible ones like <code class="docutils literal notranslate"><span class="pre">test</span></code> metadata.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upload only the logs metadata of the zlib/1.2.13 binaries</span>
 <span class="c1"># This will upload the logs even if zlib/1.2.13 is already in the server</span>
-$<span class="w"> </span>conan<span class="w"> </span>upload<span class="w"> </span>zlib/1.2.13:*<span class="w"> </span>-r<span class="o">=</span>remote<span class="w"> </span>-c<span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;logs/*&quot;</span>
+$<span class="w"> </span>conan<span class="w"> </span>upload<span class="w"> </span><span class="s2">&quot;zlib/1.2.13:*&quot;</span><span class="w"> </span>-r<span class="o">=</span>remote<span class="w"> </span>-c<span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;logs/*&quot;</span>
 <span class="c1"># Multiple patterns are allowed:</span>
 $<span class="w"> </span>conan<span class="w"> </span>upload<span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"> </span>-r<span class="o">=</span>remote<span class="w"> </span>-c<span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;logs/*&quot;</span><span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;tests/*&quot;</span>
 </pre></div>
@@ -398,8 +398,7 @@ $<span class="w"> </span>conan<span class="w"> </span>cache<span class="w"> </sp
 <span class="c1"># Inspect the package metadata for binary &quot;package_id&quot;</span>
 </pre></div>
 </div>
-<p>The retrieval of the metadata is done with <code class="docutils literal notranslate"><span class="pre">download</span></code> per-package, or for a list of packages (<code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">download</span> <span class="pre">--list</span></code>).</p>
-<p>If we want to download the metadata for a whole dependency graph, it is necessary to use “package-lists”:</p>
+<p>The retrieval of the metadata is done with <code class="docutils literal notranslate"><span class="pre">download</span></code> per-package. If we want to download the metadata for a whole dependency graph, it is necessary to use “package-lists”:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>-r<span class="o">=</span>remote<span class="w"> </span>&gt;<span class="w"> </span>graph.json
 $<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>--graph<span class="o">=</span>graph.json<span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
 <span class="c1"># the list will contain the &quot;remote&quot; origin of downloaded packages</span>
