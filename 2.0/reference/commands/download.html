@@ -311,6 +311,23 @@ $<span class="w"> </span>conan<span class="w"> </span>download<span class="w"> <
 </pre></div>
 </div>
 <p>If the <code class="docutils literal notranslate"><span class="pre">--format=json</span></code> formatter is specified, the result will be a “PackageList”, compatible with other Conan commands, for example the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">upload</span></code> command, so it is possible to concatenate a <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">+</span> <span class="pre">upload</span></code>, using the generated json file. See the <a class="reference internal" href="../../examples/commands/pkglists.html#examples-commands-pkglists"><span class="std std-ref">Packages Lists examples</span></a>.</p>
+<div class="section" id="downloading-metadata">
+<h2>Downloading metadata<a class="headerlink" href="#downloading-metadata" title="Permalink to this headline">¶</a></h2>
+<p>The metadata files of the recipes and packages are not downloaded by default. It is possible to explicitly retrieve them with the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">download</span> <span class="pre">--metadata=xxx</span></code> argument.
+The main arguments are the same as above, and Conan will download the specified packages, or skip them if they are already in the cache:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>download<span class="w"> </span>pkg/0.1<span class="w"> </span>-r<span class="o">=</span>default<span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;*&quot;</span>
+<span class="c1"># will download pgkg/0.1 recipe with all the recipe metadata</span>
+<span class="c1"># And also all package binaries (latest package revision)</span>
+<span class="c1"># with all the binaries metadata</span>
+</pre></div>
+</div>
+<p>If only one or several metadata folders or sets of files are desired, it can also be specified:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>download<span class="w"> </span>pkg/0.1<span class="w"> </span>-r<span class="o">=</span>default<span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;logs/*&quot;</span><span class="w"> </span>--metadata<span class="o">=</span><span class="s2">&quot;tests/*&quot;</span>
+<span class="c1"># Will download only the logs and tests metadata, but not other potential metadata files</span>
+</pre></div>
+</div>
+<p>For more information see the <a class="reference internal" href="../../devops/metadata.html#devops-metadata"><span class="std std-ref">metadata section</span></a>.</p>
+</div>
 </div>
 
 
@@ -336,7 +353,7 @@ $<span class="w"> </span>conan<span class="w"> </span>download<span class="w"> <
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 17, 2023.
+      Last updated on Oct 18, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

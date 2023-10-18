@@ -275,33 +275,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a class="reference internal" href="#build-folder" id="id42">build_folder</a></li>
 <li><a class="reference internal" href="#package-folder" id="id43">package_folder</a></li>
 <li><a class="reference internal" href="#recipe-folder" id="id44">recipe_folder</a></li>
-<li><a class="reference internal" href="#no-copy-source" id="id45">no_copy_source</a></li>
+<li><a class="reference internal" href="#recipe-metadata-folder" id="id45">recipe_metadata_folder</a></li>
+<li><a class="reference internal" href="#package-metadata-folder" id="id46">package_metadata_folder</a></li>
+<li><a class="reference internal" href="#no-copy-source" id="id47">no_copy_source</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#layout" id="id46">Layout</a><ul>
-<li><a class="reference internal" href="#folders" id="id47">folders</a></li>
-<li><a class="reference internal" href="#cpp" id="id48">cpp</a></li>
-<li><a class="reference internal" href="#layouts" id="id49">layouts</a></li>
+<li><a class="reference internal" href="#layout" id="id48">Layout</a><ul>
+<li><a class="reference internal" href="#folders" id="id49">folders</a></li>
+<li><a class="reference internal" href="#cpp" id="id50">cpp</a></li>
+<li><a class="reference internal" href="#layouts" id="id51">layouts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#package-information-for-consumers" id="id50">Package information for consumers</a><ul>
-<li><a class="reference internal" href="#cpp-info" id="id51">cpp_info</a></li>
-<li><a class="reference internal" href="#buildenv-info" id="id52">buildenv_info</a></li>
-<li><a class="reference internal" href="#runenv-info" id="id53">runenv_info</a></li>
-<li><a class="reference internal" href="#conf-info" id="id54">conf_info</a></li>
-<li><a class="reference internal" href="#deprecated" id="id55">deprecated</a></li>
-<li><a class="reference internal" href="#provides" id="id56">provides</a></li>
+<li><a class="reference internal" href="#package-information-for-consumers" id="id52">Package information for consumers</a><ul>
+<li><a class="reference internal" href="#cpp-info" id="id53">cpp_info</a></li>
+<li><a class="reference internal" href="#buildenv-info" id="id54">buildenv_info</a></li>
+<li><a class="reference internal" href="#runenv-info" id="id55">runenv_info</a></li>
+<li><a class="reference internal" href="#conf-info" id="id56">conf_info</a></li>
+<li><a class="reference internal" href="#deprecated" id="id57">deprecated</a></li>
+<li><a class="reference internal" href="#provides" id="id58">provides</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#other" id="id57">Other</a><ul>
-<li><a class="reference internal" href="#dependencies" id="id58">dependencies</a></li>
-<li><a class="reference internal" href="#conf" id="id59">conf</a></li>
-<li><a class="reference internal" href="#output" id="id60">Output</a></li>
-<li><a class="reference internal" href="#output-contents" id="id61">Output contents</a></li>
-<li><a class="reference internal" href="#revision-mode" id="id62">revision_mode</a></li>
-<li><a class="reference internal" href="#upload-policy" id="id63">upload_policy</a></li>
-<li><a class="reference internal" href="#required-conan-version" id="id64">required_conan_version</a></li>
-<li><a class="reference internal" href="#implements" id="id65">implements</a></li>
+<li><a class="reference internal" href="#other" id="id59">Other</a><ul>
+<li><a class="reference internal" href="#dependencies" id="id60">dependencies</a></li>
+<li><a class="reference internal" href="#conf" id="id61">conf</a></li>
+<li><a class="reference internal" href="#output" id="id62">Output</a></li>
+<li><a class="reference internal" href="#output-contents" id="id63">Output contents</a></li>
+<li><a class="reference internal" href="#revision-mode" id="id64">revision_mode</a></li>
+<li><a class="reference internal" href="#upload-policy" id="id65">upload_policy</a></li>
+<li><a class="reference internal" href="#required-conan-version" id="id66">required_conan_version</a></li>
+<li><a class="reference internal" href="#implements" id="id67">implements</a></li>
 </ul>
 </li>
 </ul>
@@ -1066,8 +1068,18 @@ as the folder from where we copy the files:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="recipe-metadata-folder">
+<h3><a class="toc-backref" href="#id45">recipe_metadata_folder</a><a class="headerlink" href="#recipe-metadata-folder" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">self.recipe_metadata_folder</span></code> (<strong>experimental</strong>) can be used in the <code class="docutils literal notranslate"><span class="pre">export()</span></code> and <code class="docutils literal notranslate"><span class="pre">export_sources()</span></code> and <code class="docutils literal notranslate"><span class="pre">source()</span></code> methods
+to save or copy <strong>recipe</strong> metadata files. See <a class="reference internal" href="../../devops/metadata.html#devops-metadata"><span class="std std-ref">metadata section</span></a> for more information.</p>
+</div>
+<div class="section" id="package-metadata-folder">
+<h3><a class="toc-backref" href="#id46">package_metadata_folder</a><a class="headerlink" href="#package-metadata-folder" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">self.package_metadata_folder</span></code> (<strong>experimental</strong>)  can be used in the <code class="docutils literal notranslate"><span class="pre">generate()</span></code>, <code class="docutils literal notranslate"><span class="pre">build()</span></code> and <code class="docutils literal notranslate"><span class="pre">package()</span></code> methods
+to save or copy <strong>package</strong> metadata files. See <a class="reference internal" href="../../devops/metadata.html#devops-metadata"><span class="std std-ref">metadata section</span></a> for more information.</p>
+</div>
 <div class="section" id="no-copy-source">
-<span id="conan-conanfile-properties-no-copy-source"></span><h3><a class="toc-backref" href="#id45">no_copy_source</a><a class="headerlink" href="#no-copy-source" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-properties-no-copy-source"></span><h3><a class="toc-backref" href="#id47">no_copy_source</a><a class="headerlink" href="#no-copy-source" title="Permalink to this headline">¶</a></h3>
 <p>The attribute <code class="docutils literal notranslate"><span class="pre">no_copy_source</span></code> tells the recipe that the source code will not be copied from
 the <code class="docutils literal notranslate"><span class="pre">source_folder</span></code> to the <code class="docutils literal notranslate"><span class="pre">build_folder</span></code>. This is mostly an optimization for packages
 with large source codebases or header-only, to avoid extra copies.</p>
@@ -1083,15 +1095,15 @@ example using <code class="docutils literal notranslate"><span class="pre">no_co
 </div>
 </div>
 <div class="section" id="layout">
-<h2><a class="toc-backref" href="#id46">Layout</a><a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id48">Layout</a><a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="folders">
-<span id="conan-conanfile-attributes-folders"></span><h3><a class="toc-backref" href="#id47">folders</a><a class="headerlink" href="#folders" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-folders"></span><h3><a class="toc-backref" href="#id49">folders</a><a class="headerlink" href="#folders" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">folders</span></code> attribute has to be set only in the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> method. Please check the
 <a class="reference internal" href="methods/layout.html#layout-folders-reference"><span class="std std-ref">layout() method documentation</span></a> to learn more about this
 attribute.</p>
 </div>
 <div class="section" id="cpp">
-<span id="conan-conanfile-attributes-cpp"></span><h3><a class="toc-backref" href="#id48">cpp</a><a class="headerlink" href="#cpp" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-cpp"></span><h3><a class="toc-backref" href="#id50">cpp</a><a class="headerlink" href="#cpp" title="Permalink to this headline">¶</a></h3>
 <p>Object storing all the information needed by the consumers
 of a package: include directories, library names, library paths… Both for editable
 and regular packages in the cache. It is only available at the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> method.</p>
@@ -1108,7 +1120,7 @@ declaring <code class="docutils literal notranslate"><span class="pre">self.cpp_
 attribute.</p>
 </div>
 <div class="section" id="layouts">
-<h3><a class="toc-backref" href="#id49">layouts</a><a class="headerlink" href="#layouts" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id51">layouts</a><a class="headerlink" href="#layouts" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">layouts</span></code> attribute has to be set only in the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> method. Please check the
 <a class="reference internal" href="methods/layout.html#layout-cpp-reference"><span class="std std-ref">layout() method documentation</span></a> to learn more about this
 attribute.</p>
@@ -1149,9 +1161,9 @@ it is necessary where the androidndk will be locally, before being in the create
 </div>
 </div>
 <div class="section" id="package-information-for-consumers">
-<h2><a class="toc-backref" href="#id50">Package information for consumers</a><a class="headerlink" href="#package-information-for-consumers" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id52">Package information for consumers</a><a class="headerlink" href="#package-information-for-consumers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cpp-info">
-<h3><a class="toc-backref" href="#id51">cpp_info</a><a class="headerlink" href="#cpp-info" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id53">cpp_info</a><a class="headerlink" href="#cpp-info" title="Permalink to this headline">¶</a></h3>
 <p>Same as using <code class="docutils literal notranslate"><span class="pre">self.cpp.package</span></code> in the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> method. Use it if you need to read
 the <code class="docutils literal notranslate"><span class="pre">package_folder</span></code> to locate the already located artifacts.</p>
 <div class="admonition seealso">
@@ -1164,7 +1176,7 @@ the <code class="docutils literal notranslate"><span class="pre">package_folder<
 </div>
 </div>
 <div class="section" id="buildenv-info">
-<span id="conan-conanfile-attributes-buildenv-info"></span><h3><a class="toc-backref" href="#id52">buildenv_info</a><a class="headerlink" href="#buildenv-info" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-buildenv-info"></span><h3><a class="toc-backref" href="#id54">buildenv_info</a><a class="headerlink" href="#buildenv-info" title="Permalink to this headline">¶</a></h3>
 <p>For the dependant recipes, the declared environment variables will be present during the
 build process. Should be only filled in the <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method.</p>
 <div class="admonition important">
@@ -1182,7 +1194,7 @@ the <code class="docutils literal notranslate"><span class="pre">self.buildenv_i
 </div>
 </div>
 <div class="section" id="runenv-info">
-<span id="conan-conanfile-attributes-runenv-info"></span><h3><a class="toc-backref" href="#id53">runenv_info</a><a class="headerlink" href="#runenv-info" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-runenv-info"></span><h3><a class="toc-backref" href="#id55">runenv_info</a><a class="headerlink" href="#runenv-info" title="Permalink to this headline">¶</a></h3>
 <p>For the dependant recipes, the declared environment variables will be present at runtime.
 Should be only filled in the <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method.</p>
 <div class="admonition important">
@@ -1200,7 +1212,7 @@ the <code class="docutils literal notranslate"><span class="pre">self.runenv_inf
 </div>
 </div>
 <div class="section" id="conf-info">
-<span id="conan-conanfile-attributes-conf-info"></span><h3><a class="toc-backref" href="#id54">conf_info</a><a class="headerlink" href="#conf-info" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-conf-info"></span><h3><a class="toc-backref" href="#id56">conf_info</a><a class="headerlink" href="#conf-info" title="Permalink to this headline">¶</a></h3>
 <p>Configuration variables to be passed to the dependant recipes.
 Should be only filled in the <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pkg</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -1222,7 +1234,7 @@ Should be only filled in the <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="deprecated">
-<h3><a class="toc-backref" href="#id55">deprecated</a><a class="headerlink" href="#deprecated" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id57">deprecated</a><a class="headerlink" href="#deprecated" title="Permalink to this headline">¶</a></h3>
 <p>This attribute declares that the recipe is deprecated, causing a user-friendly warning
 message to be emitted whenever it is used</p>
 <p>For example, the following code:</p>
@@ -1254,7 +1266,7 @@ message to be emitted whenever it is used</p>
 <p>If the value of the attribute evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>, no warning is printed.</p>
 </div>
 <div class="section" id="provides">
-<h3><a class="toc-backref" href="#id56">provides</a><a class="headerlink" href="#provides" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">provides</a><a class="headerlink" href="#provides" title="Permalink to this headline">¶</a></h3>
 <p>This attribute declares that the recipe provides the same functionality as other recipe(s).
 The attribute is usually needed if two or more libraries implement the same API to prevent
 link-time and run-time conflicts (ODR violations). One typical situation is forked libraries.
@@ -1293,9 +1305,9 @@ Some examples are:</p>
 </div>
 </div>
 <div class="section" id="other">
-<h2><a class="toc-backref" href="#id57">Other</a><a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id59">Other</a><a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dependencies">
-<h3><a class="toc-backref" href="#id58">dependencies</a><a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id60">dependencies</a><a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Conan recipes provide access to their dependencies via the <code class="docutils literal notranslate"><span class="pre">self.dependencies</span></code> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pkg</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">requires</span> <span class="o">=</span> <span class="s2">&quot;openssl/0.1&quot;</span>
@@ -1315,7 +1327,7 @@ Some examples are:</p>
 </div>
 </div>
 <div class="section" id="conf">
-<h3><a class="toc-backref" href="#id59">conf</a><a class="headerlink" href="#conf" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id61">conf</a><a class="headerlink" href="#conf" title="Permalink to this headline">¶</a></h3>
 <p>In the <code class="docutils literal notranslate"><span class="pre">self.conf</span></code> attribute we can find all the conf entries declared in the <a class="reference internal" href="../config_files/profiles.html#reference-config-files-profiles-conf"><span class="std std-ref">[conf]</span></a>  section of the profiles.
 in addition of the declared <a class="reference internal" href="methods/package_info.html#conan-conanfile-model-conf-info"><span class="std std-ref">self.conf_info</span></a> entries from the first level tool requirements.
 The profile entries have priority.</p>
@@ -1334,10 +1346,10 @@ The profile entries have priority.</p>
 </div>
 </div>
 <div class="section" id="output">
-<h3><a class="toc-backref" href="#id60">Output</a><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id62">Output</a><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="output-contents">
-<span id="conanfile-output-attribute"></span><h3><a class="toc-backref" href="#id61">Output contents</a><a class="headerlink" href="#output-contents" title="Permalink to this headline">¶</a></h3>
+<span id="conanfile-output-attribute"></span><h3><a class="toc-backref" href="#id63">Output contents</a><a class="headerlink" href="#output-contents" title="Permalink to this headline">¶</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">self.output</span></code> to print contents to the output.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="s2">&quot;This is good, should be green&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is neutral, should be white&quot;</span><span class="p">)</span>
@@ -1349,7 +1361,7 @@ The profile entries have priority.</p>
 See <a class="reference internal" href="running_and_output.html#reference-conanfile-output"><span class="std std-ref">the output documentation</span></a> for the list of available output methods.</p>
 </div>
 <div class="section" id="revision-mode">
-<span id="revision-mode-attribute"></span><h3><a class="toc-backref" href="#id62">revision_mode</a><a class="headerlink" href="#revision-mode" title="Permalink to this headline">¶</a></h3>
+<span id="revision-mode-attribute"></span><h3><a class="toc-backref" href="#id64">revision_mode</a><a class="headerlink" href="#revision-mode" title="Permalink to this headline">¶</a></h3>
 <p>This attribute allow each recipe to declare how the revision for the recipe itself should
 be computed. It can take three different values:</p>
 <ul class="simple">
@@ -1365,7 +1377,7 @@ with each file exported under its distinct revision.</li>
 </ul>
 </div>
 <div class="section" id="upload-policy">
-<h3><a class="toc-backref" href="#id63">upload_policy</a><a class="headerlink" href="#upload-policy" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id65">upload_policy</a><a class="headerlink" href="#upload-policy" title="Permalink to this headline">¶</a></h3>
 <p>Controls when the current package built binaries are uploaded or not</p>
 <ul>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">&quot;skip&quot;</span></code>: The precompiled binaries are not uploaded. This is useful for “installer”
@@ -1381,7 +1393,7 @@ together with the <code class="docutils literal notranslate"><span class="pre">b
 </ul>
 </div>
 <div class="section" id="required-conan-version">
-<h3><a class="toc-backref" href="#id64">required_conan_version</a><a class="headerlink" href="#required-conan-version" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id66">required_conan_version</a><a class="headerlink" href="#required-conan-version" title="Permalink to this headline">¶</a></h3>
 <p>Recipes can define a module level <code class="docutils literal notranslate"><span class="pre">required_conan_version</span></code> that defines a valid version range of
 Conan versions that can load and understand the current <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code>. The syntax is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
@@ -1398,7 +1410,7 @@ define a global minimum, maximum or exact Conan version to run, which can be ver
 to maintain teams of developers and CI machines to use the desired range of versions.</p>
 </div>
 <div class="section" id="implements">
-<span id="conan-conanfile-attributes-implements"></span><h3><a class="toc-backref" href="#id65">implements</a><a class="headerlink" href="#implements" title="Permalink to this headline">¶</a></h3>
+<span id="conan-conanfile-attributes-implements"></span><h3><a class="toc-backref" href="#id67">implements</a><a class="headerlink" href="#implements" title="Permalink to this headline">¶</a></h3>
 <p>A list is used to define a series of option configurations that Conan will handle
 automatically. This is especially handy for avoiding boilerplate code that tends to repeat
 in most of the recipes. The syntax is as follows:</p>
@@ -1451,7 +1463,7 @@ when the method is not explicitly defined in the recipe.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 17, 2023.
+      Last updated on Oct 18, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
