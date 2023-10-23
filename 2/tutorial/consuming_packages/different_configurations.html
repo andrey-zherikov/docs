@@ -251,11 +251,14 @@ compiler.cppstd<span class="o">=</span>gnu11
 <span class="o">[</span>options<span class="o">]</span>
 <span class="o">[</span>tool_requires<span class="o">]</span>
 <span class="o">[</span>env<span class="o">]</span>
+
+<span class="c1"># The default profile can also be checked with the command &quot;conan profile show&quot;</span>
 </pre></div>
 </div>
 <p>As you can see, the profile has different sections. The <code class="docutils literal notranslate"><span class="pre">[settings]</span></code> section is the one
 that has information about things like the operating system, architecture, compiler, and
-build configuration. When you call a Conan command setting the <code class="docutils literal notranslate"><span class="pre">--profile</span></code> argument,
+build configuration.</p>
+<p>When you call a Conan command setting the <code class="docutils literal notranslate"><span class="pre">--profile</span></code> argument,
 Conan will take all the information from the profile and apply it to the packages you want
 to build or install. If you don’t specify that argument it’s equivalent to call it with
 <code class="docutils literal notranslate"><span class="pre">--profile=default</span></code>. These two commands will behave the same:</p>
@@ -265,7 +268,7 @@ $<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </
 </div>
 <p>You can store different profiles and use them to build for different settings. For example,
 to use a <code class="docutils literal notranslate"><span class="pre">build_type=Debug</span></code>, or adding a <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code> to all the packages you build
-with that profile. One example of a <em>debug</em> profile could be:</p>
+with that profile. We will create a <em>debug</em> profile to try building with different configurations:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">&lt;conan home&gt;/profiles/debug</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>settings<span class="o">]</span>
@@ -386,6 +389,8 @@ executable can’t find the shared libraries for <em>Zlib</em> that we just inst
 <div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>Release<span class="se">\c</span>ompressor.exe
 <span class="o">(</span>on<span class="w"> </span>a<span class="w"> </span>pop-up<span class="w"> </span>window<span class="o">)</span><span class="w"> </span>The<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>cannot<span class="w"> </span>proceed<span class="w"> </span>because<span class="w"> </span>zlib1.dll<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>found.<span class="w"> </span>Reinstalling<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>may<span class="w"> </span>fix<span class="w"> </span>this<span class="w"> </span>problem.
+<span class="c1"># This error depends on the console being used and may not always pop up.</span>
+<span class="c1"># It could run correctly if the console gets the zlib dll from a different path.</span>
 </pre></div>
 </div>
 </div>
@@ -526,7 +531,7 @@ matched our specified configuration.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 18, 2023.
+      Last updated on Oct 23, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
