@@ -370,11 +370,9 @@ of specifying each individual configuration item, you can use a regex pattern to
 multiple configurations. This is particularly useful when dealing with a large number of
 configurations or when configurations follow a predictable naming pattern. For instance:</p>
 <ul class="simple">
-<li>tools.info.package_id:confs=[<cite>user.myconf:myitem*</cite>] matches all configurations that start in <cite>user.myconf:myitem</cite>.</li>
-<li>tools.info.package_id:confs=[<cite>.*</cite>] matches all configurations.</li>
-<li>tools.info.package_id:confs=[<cite>tools..*</cite>] matches configurations starting with “tools.”.</li>
-<li>tools.info.package_id:confs=[<cite>.*cmake</cite>] matches configurations ending with “cmake”.</li>
-<li>tools.info.package_id:confs=[<cite>(tools.deploy|core)</cite>] matches configurations starting with “tools.deploy” or “core”.</li>
+<li><code class="docutils literal notranslate"><span class="pre">tools.info.package_id:confs=[&quot;.*&quot;]</span></code> matches all configurations.</li>
+<li><code class="docutils literal notranslate"><span class="pre">tools.info.package_id:confs=[&quot;tools\..*&quot;]</span></code> matches configurations starting with “tools.”.</li>
+<li><code class="docutils literal notranslate"><span class="pre">tools.info.package_id:confs=[&quot;(tools\.deploy|core)&quot;]</span></code> matches configurations starting with “tools.deploy” or “core”.</li>
 </ul>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -410,7 +408,7 @@ configurations or when configurations follow a predictable naming pattern. For i
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 23, 2023.
+      Last updated on Oct 24, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

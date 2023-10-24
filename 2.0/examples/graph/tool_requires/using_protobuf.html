@@ -234,8 +234,13 @@ should look like:</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;protobuf/3.18.1&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">build_requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">tool_requires</span><span class="p">(</span><span class="s2">&quot;protobuf/3.18.1&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tool_requires</span><span class="p">(</span><span class="s2">&quot;protobuf/&lt;host_version&gt;&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">protobuf/&lt;host_version&gt;</span></code> expression ensures that the same version of the library is used in both contexts.
+You can read more about it <a class="reference internal" href="../../../reference/conanfile/methods/build_requirements.html#reference-conanfile-build-requirements-host-version"><span class="std std-ref">here</span></a>.</p>
 </div>
 <p>This is the way to proceed with any other library used in both contexts. Nonetheless, let’s see a detailed example to see
 how the example looks like.</p>
@@ -293,7 +298,7 @@ how the example looks like.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;protobuf/3.18.1&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">build_requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tool_requires</span><span class="p">(</span><span class="s2">&quot;protobuf/3.18.1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tool_requires</span><span class="p">(</span><span class="s2">&quot;protobuf/&lt;host_version&gt;&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">layout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">cmake_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -460,7 +465,7 @@ test_package/build/apple-clang-13.0-armv8-gnu17-release/example:<span class="w">
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 23, 2023.
+      Last updated on Oct 24, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
