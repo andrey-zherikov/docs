@@ -266,7 +266,15 @@ if the recipe is still there
 :param package_list:
 :param enabled_remotes:
 :param metadata: A list of patterns of metadata that should be uploaded. Default None
-means all metadata will be uploaded together with the pkg artifacts</p>
+means all metadata will be uploaded together with the pkg artifacts. If metadata is empty
+string (“”), it means that no metadata files should be uploaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="conan.api.subapi.upload.UploadAPI.get_backup_sources">
+<code class="descname">get_backup_sources</code><span class="sig-paren">(</span><em>package_list=None</em><span class="sig-paren">)</span><a class="headerlink" href="#conan.api.subapi.upload.UploadAPI.get_backup_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of backup source files currently present in the cache,
+either all of them if no argument, else filter by those belonging to the references in the package_list</p>
 </dd></dl>
 
 </dd></dl>
@@ -296,7 +304,7 @@ means all metadata will be uploaded together with the pkg artifacts</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 24, 2023.
+      Last updated on Oct 30, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

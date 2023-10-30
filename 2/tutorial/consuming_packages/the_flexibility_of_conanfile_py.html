@@ -402,8 +402,10 @@ platform without adding more changes.</p>
         <span class="n">multi</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get_safe</span><span class="p">(</span><span class="s2">&quot;compiler&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;msvc&quot;</span> <span class="k">else</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="n">multi</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">folders</span><span class="o">.</span><span class="n">generators</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;generators&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">folders</span><span class="o">.</span><span class="n">build</span> <span class="o">=</span> <span class="s2">&quot;build&quot;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">folders</span><span class="o">.</span><span class="n">generators</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">build_type</span><span class="p">),</span> <span class="s2">&quot;generators&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">folders</span><span class="o">.</span><span class="n">build</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">build_type</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -443,11 +445,11 @@ $<span class="w"> </span>generators<span class="se">\d</span>eactivate_conanbuil
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--build<span class="o">=</span>missing
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./Release/generators/conanbuild.sh
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build/Release
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./generators/conanbuild.sh
 Capturing<span class="w"> </span>current<span class="w"> </span>environment<span class="w"> </span><span class="k">in</span><span class="w"> </span>deactivate_conanbuildenv-release-x86_64.sh
 Configuring<span class="w"> </span>environment<span class="w"> </span>variables
-$<span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>Release/generators/conan_toolchain.cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
+$<span class="w"> </span>cmake<span class="w"> </span>../..<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>generators/conan_toolchain.cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
 $<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>.
 ...
 Building<span class="w"> </span>with<span class="w"> </span>CMake<span class="w"> </span>version:<span class="w"> </span><span class="m">3</span>.22.6
@@ -458,7 +460,7 @@ $<span class="w"> </span>./compressor
 Uncompressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">233</span>
 Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">147</span>
 ZLIB<span class="w"> </span>VERSION:<span class="w"> </span><span class="m">1</span>.2.11
-$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./Release/generators/deactivate_conanbuild.sh
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./generators/deactivate_conanbuild.sh
 </pre></div>
 </div>
 </div>
@@ -577,7 +579,7 @@ Windows or that you want to use the system’s CMake installation instead of usi
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 24, 2023.
+      Last updated on Oct 30, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
