@@ -251,7 +251,7 @@ Let’s check the relevant parts:</p>
 
     <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">check_min_cppstd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
-        <span class="n">check_max_cppstd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;14&quot;</span><span class="p">)</span>
+        <span class="n">check_max_cppstd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;20&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;fmt/8.1.1&quot;</span><span class="p">)</span>
@@ -282,7 +282,7 @@ section</span></a> to raise an error for
 non-supported configurations. Here, we call the
 <a class="reference internal" href="../../reference/tools/build.html#conan-tools-build-check-min-cppstd"><span class="std std-ref">check_min_cppstd()</span></a> and
 <a class="reference internal" href="../../reference/tools/build.html#conan-tools-build-check-max-cppstd"><span class="std std-ref">check_max_cppstd()</span></a> to check that we are using at
-least C++11 and at most C++14 standards in our settings.</li>
+least C++11 and at most C++20 standards in our settings.</li>
 </ul>
 <p>You can check the new sources, using the fmt library in the
 <a class="reference external" href="https://github.com/conan-io/libhello/tree/require_fmt">require_fmt</a>. You will see that
@@ -352,7 +352,7 @@ hello/1.0:<span class="w"> </span>Hello<span class="w"> </span>World<span class=
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Oct 30, 2023.
+      Last updated on Nov 02, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
