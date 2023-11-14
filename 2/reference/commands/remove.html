@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan remove &mdash; conan 2.0.13 documentation</title>
+  <title>conan remove &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
         <link rel="next" title="conan remote" href="remote.html"/>
         <link rel="prev" title="conan profile" href="profile.html"/>
@@ -237,10 +237,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            <div itemprop="articleBody">
             
   <div class="section" id="conan-remove">
-<h1>conan remove<a class="headerlink" href="#conan-remove" title="Permalink to this headline">¶</a></h1>
+<span id="reference-commands-remove"></span><h1>conan remove<a class="headerlink" href="#conan-remove" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remove -h
 usage: conan remove [-h] [-v [V]] [-f FORMAT] [-c] [-p PACKAGE_QUERY]
-                    [-r REMOTE] [-l LIST] [--dry-run]
+                    [-r REMOTE] [-l LIST] [--lru LRU] [--dry-run]
                     [pattern]
 
 Remove recipes or packages from local cache or a remote.
@@ -272,6 +272,9 @@ optional arguments:
   -r REMOTE, --remote REMOTE
                         Will remove from the specified remote
   -l LIST, --list LIST  Package list file
+  --lru LRU             Remove recipes and binaries that have not been
+                        recently used. Use a time limit like --lru=5d (days)
+                        or --lru=4w (weeks), h (hours), m(minutes)
   --dry-run             Do not remove any items, only print those which would
                         be removed
 </pre></div>
@@ -378,7 +381,7 @@ To remove artifacts from a server, use the <code class="docutils literal notrans
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -526,6 +529,8 @@ To remove artifacts from a server, use the <code class="docutils literal notrans
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -536,6 +541,10 @@ To remove artifacts from a server, use the <code class="docutils literal notrans
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -791,7 +800,7 @@ To remove artifacts from a server, use the <code class="docutils literal notrans
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

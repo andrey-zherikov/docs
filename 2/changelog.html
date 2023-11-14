@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; conan 2.0.13 documentation</title>
+  <title>Changelog &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="index.html"/>
         <link rel="prev" title="Videos" href="knowledge/videos.html"/>
 
  <!-- Google Tag Manager -->
@@ -197,14 +197,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <p>For a more detailed description of the major changes that Conan 2.0 brings, compared with Conan 1.X, please read <a class="reference internal" href="whatsnew.html#whatsnew"><span class="std std-ref">What’s new in Conan 2.0</span></a></p>
+<div class="section" id="nov-2023">
+<h2>2.0.14 (14-Nov-2023)<a class="headerlink" href="#nov-2023" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Feature: Added <code class="docutils literal notranslate"><span class="pre">riscv64,</span> <span class="pre">riscv32</span></code> architectures to default <code class="docutils literal notranslate"><span class="pre">settings.yml</span></code> and management of them in Meson and Autotools. <a class="reference external" href="https://github.com/conan-io/conan/pull/15053">#15053</a></li>
+<li>Feature: Allow only one simultaneous database connection. <a class="reference external" href="https://github.com/conan-io/conan/pull/15029">#15029</a></li>
+<li>Feature: Add <cite>conan cache backup-upload</cite> to upload all the backup sources in the cache, regardless of which references they are from <a class="reference external" href="https://github.com/conan-io/conan/pull/15013">#15013</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3438">here</a></li>
+<li>Feature: New <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">--format=compact</span></code> for better UX. <a class="reference external" href="https://github.com/conan-io/conan/pull/15011">#15011</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3446">here</a></li>
+<li>Feature: Ignore metadata upload by passing –metadata=”” <a class="reference external" href="https://github.com/conan-io/conan/pull/15007">#15007</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3436">here</a></li>
+<li>Feature: Better output messages in <strong class="command">conan upload</strong> <a class="reference external" href="https://github.com/conan-io/conan/pull/14984">#14984</a></li>
+<li>Feature: Add extra flags to CMakeToolchain. <a class="reference external" href="https://github.com/conan-io/conan/pull/14966">#14966</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3452">here</a></li>
+<li>Feature: Implement package load/restore from the cache, for CI workflows and moving packages over air-gaps. <a class="reference external" href="https://github.com/conan-io/conan/pull/14923">#14923</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3453">here</a></li>
+<li>Feature: Compute version-ranges intersection to avoid graph version conflicts for compatible ranges <a class="reference external" href="https://github.com/conan-io/conan/pull/14912">#14912</a></li>
+<li>Feature: CMake helper can use multiple targets in target argument. <a class="reference external" href="https://github.com/conan-io/conan/pull/14883">#14883</a></li>
+<li>Feature: Add Macos 13.6 to settings.yml. <a class="reference external" href="https://github.com/conan-io/conan/pull/14858">#14858</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3416">here</a></li>
+<li>Feature: Add CMakeDeps and PkgConfigDeps generators listening to system_package_version property. <a class="reference external" href="https://github.com/conan-io/conan/pull/14808">#14808</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3399">here</a></li>
+<li>Feature: Add shorthand syntax in cli to specify host and build in 1 argument <a class="reference external" href="https://github.com/conan-io/conan/pull/14727">#14727</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3439">here</a></li>
+<li>Feature: Implement cache LRU control for cleaning of unused artifacts. <a class="reference external" href="https://github.com/conan-io/conan/pull/14054">#14054</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3455">here</a></li>
+<li>Fix: Avoid <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code> overwriting user <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code> when no layout nor output-folder is defined <a class="reference external" href="https://github.com/conan-io/conan/pull/15058">#15058</a></li>
+<li>Fix: Add <code class="docutils literal notranslate"><span class="pre">astra</span></code>, <code class="docutils literal notranslate"><span class="pre">elbrus</span></code> and <code class="docutils literal notranslate"><span class="pre">altlinux</span></code> as distribution using <code class="docutils literal notranslate"><span class="pre">apt</span></code> in SystemPackageManager <a class="reference external" href="https://github.com/conan-io/conan/pull/15051">#15051</a></li>
+<li>Fix: Default to apt-get package manager in Linux Mint <a class="reference external" href="https://github.com/conan-io/conan/pull/15026">#15026</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3441">here</a></li>
+<li>Fix: Make <code class="docutils literal notranslate"><span class="pre">Git()</span></code> check commits in remote server even for shallow clones. <a class="reference external" href="https://github.com/conan-io/conan/pull/15023">#15023</a></li>
+<li>Fix: Add new Apple OS versions to settings.yml <a class="reference external" href="https://github.com/conan-io/conan/pull/15015">#15015</a></li>
+<li>Fix: Fix AutotoolsToolchain extraflags priority. <a class="reference external" href="https://github.com/conan-io/conan/pull/15005">#15005</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3451">here</a></li>
+<li>Fix: Remove colors from <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">--version</span></code> output <a class="reference external" href="https://github.com/conan-io/conan/pull/15002">#15002</a></li>
+<li>Fix: Add an error message if the sqlite3 version is unsupported (less than 3.7.11 from 2012) <a class="reference external" href="https://github.com/conan-io/conan/pull/14950">#14950</a></li>
+<li>Fix: Make cache DB always use forward slash for paths, to be uniform across Windows and Linux <a class="reference external" href="https://github.com/conan-io/conan/pull/14940">#14940</a></li>
+<li>Fix: Solve re-build of an existing package revision (like forcing rebuild of a an existing header-only package), while previous folder was still used by other projects. <a class="reference external" href="https://github.com/conan-io/conan/pull/14938">#14938</a></li>
+<li>Fix: Avoid a recipe mutating a <code class="docutils literal notranslate"><span class="pre">conf</span></code> to affect other recipes. <a class="reference external" href="https://github.com/conan-io/conan/pull/14932">#14932</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3449">here</a></li>
+<li>Fix: The output of system packages via <code class="docutils literal notranslate"><span class="pre">Apt.install()</span></code> or <code class="docutils literal notranslate"><span class="pre">PkgConfig.fill_cpp_info</span></code>, like <code class="docutils literal notranslate"><span class="pre">xorg/system</span></code> was very noisy to the Conan output, making it more quiet <a class="reference external" href="https://github.com/conan-io/conan/pull/14924">#14924</a></li>
+<li>Fix: Serialize the <code class="docutils literal notranslate"><span class="pre">path</span></code> information of <code class="docutils literal notranslate"><span class="pre">python_requires</span></code>, necessary for computing buildinfo <a class="reference external" href="https://github.com/conan-io/conan/pull/14886">#14886</a></li>
+<li>Fix: Define remotes in <strong class="command">conan source</strong> command in case recipe has <code class="docutils literal notranslate"><span class="pre">python_requires</span></code> that need to be downloaded from remotes. <a class="reference external" href="https://github.com/conan-io/conan/pull/14852">#14852</a></li>
+<li>Fix: Fix min target flag for xros and xros-simulator. <a class="reference external" href="https://github.com/conan-io/conan/pull/14776">#14776</a></li>
+<li>Bugfix: <code class="docutils literal notranslate"><span class="pre">--build=missing</span></code> was doing unnecessary builds of packages that were not needed and could be skipped, in the case of <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code> having transitive dependencies. <a class="reference external" href="https://github.com/conan-io/conan/pull/15082">#15082</a></li>
+<li>BugFix: Add package revision to format=json in ‘conan export-pkg’ command <a class="reference external" href="https://github.com/conan-io/conan/pull/15042">#15042</a></li>
+<li>Bugfix: <code class="docutils literal notranslate"><span class="pre">tools.build:download_source=True</span></code> will not fail when there are editable packages. <a class="reference external" href="https://github.com/conan-io/conan/pull/15004">#15004</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3448">here</a></li>
+<li>Bugfix: Transitive dependencies were incorrectly added to conandeps.xcconfig. <a class="reference external" href="https://github.com/conan-io/conan/pull/14898">#14898</a></li>
+<li>Bugfix: Fix integrity-check (<code class="docutils literal notranslate"><span class="pre">upload</span> <span class="pre">--check</span></code> or <code class="docutils literal notranslate"><span class="pre">cache</span> <span class="pre">check-integrity</span></code>) when the <code class="docutils literal notranslate"><span class="pre">export_source</span></code> has not been downloaded <a class="reference external" href="https://github.com/conan-io/conan/pull/14850">#14850</a></li>
+<li>Bugfix: Properly lock release candidates of python requires <a class="reference external" href="https://github.com/conan-io/conan/pull/14846">#14846</a></li>
+<li>BugFix: Version ranges ending with <code class="docutils literal notranslate"><span class="pre">-</span></code> do not automatically activate pre-releases resolution in the full range. <a class="reference external" href="https://github.com/conan-io/conan/pull/14814">#14814</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3454">here</a></li>
+<li>BugFix: Fix version ranges so pre-releases are correctly included in the lower bound and excluded in the upper bound. <a class="reference external" href="https://github.com/conan-io/conan/pull/14814">#14814</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3454">here</a></li>
+</ul>
+</div>
 <div class="section" id="sept-2023">
 <h2>2.0.13 (28-Sept-2023)<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Bugfix: Fix wrong cppstd detection for newer apple-clang versions introduced in 2.0.11. <a class="reference external" href="https://github.com/conan-io/conan/pull/14837">#14837</a></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>2.0.12 (26-Sept-2023)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id39">
+<h2>2.0.12 (26-Sept-2023)<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: Add support for Clang 17. <a class="reference external" href="https://github.com/conan-io/conan/pull/14781">#14781</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3398">here</a></li>
 <li>Feature: Add <cite>–dry-run</cite> for <strong class="command">conan remove</strong>. <a class="reference external" href="https://github.com/conan-io/conan/pull/14760">#14760</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3404">here</a></li>
@@ -219,8 +261,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Bugfix: Fix relative paths of <code class="docutils literal notranslate"><span class="pre">editable</span></code> packages when they have components partially defining directories. <a class="reference external" href="https://github.com/conan-io/conan/pull/14782">#14782</a></li>
 </ul>
 </div>
-<div class="section" id="id14">
-<h2>2.0.11 (18-Sept-2023)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id51">
+<h2>2.0.11 (18-Sept-2023)<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: Add <code class="docutils literal notranslate"><span class="pre">--format=json</span></code> formatter to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">profile</span> <span class="pre">show</span></code> command <a class="reference external" href="https://github.com/conan-io/conan/pull/14743">#14743</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3388">here</a></li>
 <li>Feature: add new –deployer –generators args to ‘conan build’ cmd <a class="reference external" href="https://github.com/conan-io/conan/pull/14737">#14737</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3383">here</a></li>
@@ -319,8 +361,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Bugfix: Fix <cite>CMake Error: Invalid level specified for –loglevel</cite> when <cite>tools.build:verbosity</cite> is set to <cite>quiet</cite>. <a class="reference external" href="https://github.com/conan-io/conan/pull/14289">#14289</a></li>
 </ul>
 </div>
-<div class="section" id="id100">
-<h2>2.0.8 (13-Jul-2023)<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id137">
+<h2>2.0.8 (13-Jul-2023)<a class="headerlink" href="#id137" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: Add GCC 10.5 to default settings.yml. <a class="reference external" href="https://github.com/conan-io/conan/pull/14252">#14252</a></li>
 <li>Feature: Let <cite>pkg_config_custom_content</cite> overwrite default <cite>*.pc</cite> variables created by <cite>PkgConfigDeps</cite>. <a class="reference external" href="https://github.com/conan-io/conan/pull/14233">#14233</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3293">here</a></li>
@@ -402,8 +444,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Bugfix: Fix regression from 2.0.5 <a class="reference external" href="https://github.com/conan-io/conan/pull/13898">https://github.com/conan-io/conan/pull/13898</a>, in which overrides of packages and components specification was failing <a class="reference external" href="https://github.com/conan-io/conan/pull/13923">#13923</a></li>
 </ul>
 </div>
-<div class="section" id="id169">
-<h2>2.0.5 (18-May-2023)<a class="headerlink" href="#id169" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id206">
+<h2>2.0.5 (18-May-2023)<a class="headerlink" href="#id206" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: <cite>-v</cite> argument defaults to the <cite>VERBOSE</cite> level. <a class="reference external" href="https://github.com/conan-io/conan/pull/13839">#13839</a></li>
 <li>Feature: Avoid showing unnecessary skipped dependencies. Now, it only shows a list of reference names if exists skipped binaries. They can be completely listed by adding <cite>-v</cite> (verbose mode) to the current command. <a class="reference external" href="https://github.com/conan-io/conan/pull/13836">#13836</a></li>
@@ -471,8 +513,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Bugfix: Fix double delete error in <cite>conan cache clean</cite>. <a class="reference external" href="https://github.com/conan-io/conan/pull/13601">#13601</a></li>
 </ul>
 </div>
-<div class="section" id="id229">
-<h2>2.0.3 (03-Apr-2023)<a class="headerlink" href="#id229" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id266">
+<h2>2.0.3 (03-Apr-2023)<a class="headerlink" href="#id266" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">clean</span></code> learned the <code class="docutils literal notranslate"><span class="pre">--all</span></code> and <code class="docutils literal notranslate"><span class="pre">--temp</span></code> to clean everything (sources, builds) and also the temporary folders. <a class="reference external" href="https://github.com/conan-io/conan/pull/13581">#13581</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3145">here</a></li>
 <li>Feature: Introduce the <code class="docutils literal notranslate"><span class="pre">conf</span></code> dictionary update semantics with <code class="docutils literal notranslate"><span class="pre">*=</span></code> operator. <a class="reference external" href="https://github.com/conan-io/conan/pull/13571">#13571</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3141">here</a></li>
@@ -529,8 +571,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Bugfix: adds qcc cppstd compatibility info to allow dep graph to be calculated. <a class="reference external" href="https://github.com/conan-io/conan/pull/13326">#13326</a></li>
 </ul>
 </div>
-<div class="section" id="id278">
-<h2>2.0.1 (03-Mar-2023)<a class="headerlink" href="#id278" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id315">
+<h2>2.0.1 (03-Mar-2023)<a class="headerlink" href="#id315" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Feature: Add <cite>–insecure</cite> alias to <cite>–verify-ssl</cite> in config install. <a class="reference external" href="https://github.com/conan-io/conan/pull/13270">#13270</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3035">here</a></li>
 <li>Feature: Add <cite>.conanignore</cite> support to <cite>conan config install</cite>. <a class="reference external" href="https://github.com/conan-io/conan/pull/13269">#13269</a> . Docs <a class="reference external" href="https://github.com/conan-io/docs/pull/3036">here</a></li>
@@ -746,7 +788,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -894,6 +936,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -904,6 +948,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -1159,7 +1207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

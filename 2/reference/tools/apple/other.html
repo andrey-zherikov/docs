@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan.tools.apple.fix_apple_shared_install_name() &mdash; conan 2.0.13 documentation</title>
+  <title>conan.tools.apple.fix_apple_shared_install_name() &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,9 +45,9 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
         <link rel="up" title="conan.tools.apple" href="../apple.html"/>
-        <link rel="next" title="conan.tools.env" href="../env.html"/>
+        <link rel="next" title="conan.tools.build" href="../build.html"/>
         <link rel="prev" title="XcodeBuild" href="xcodebuild.html"/>
 
  <!-- Google Tag Manager -->
@@ -120,8 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="../../conanfile.html">conanfile.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../conanfile_txt.html">conanfile.txt</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../tools.html">Recipe tools</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../cmake.html">conan.tools.cmake</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gnu.html">conan.tools.gnu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../android.html">conan.tools.android</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../apple.html">conan.tools.apple</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="xcodedeps.html">XcodeDeps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xcodetoolchain.html">XcodeToolchain</a></li>
@@ -132,18 +131,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#conan-tools-apple-xcrun">conan.tools.apple.XCRun()</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../env.html">conan.tools.env</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../build.html">conan.tools.build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cmake.html">conan.tools.cmake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_info.html">conan.tools.CppInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../env.html">conan.tools.env</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../files.html">conan.tools.files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gnu.html">conan.tools.gnu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../google.html">conan.tools.google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intel.html">conan.tools.intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layout.html">conan.tools.layout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../meson.html">conan.tools.meson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../system.html">conan.tools.system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../microsoft.html">conan.tools.microsoft</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scm.html">conan.tools.scm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../layout.html">conan.tools.layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../intel.html">conan.tools.intel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scons.html">conan.tools.scons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../android.html">conan.tools.android</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cpp_info.html">conan.tools.CppInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system.html">conan.tools.system</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../config_files.html">Configuration files</a></li>
@@ -430,7 +431,7 @@ sdk it automatically if <code class="docutils literal notranslate"><span class="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../env.html" class="btn btn-neutral float-right" title="conan.tools.env" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build.html" class="btn btn-neutral float-right" title="conan.tools.build" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="xcodebuild.html" class="btn btn-neutral" title="XcodeBuild" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -443,7 +444,7 @@ sdk it automatically if <code class="docutils literal notranslate"><span class="
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -591,6 +592,8 @@ sdk it automatically if <code class="docutils literal notranslate"><span class="
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -601,6 +604,10 @@ sdk it automatically if <code class="docutils literal notranslate"><span class="
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -856,7 +863,7 @@ sdk it automatically if <code class="docutils literal notranslate"><span class="
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan list &mdash; conan 2.0.13 documentation</title>
+  <title>conan list &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
         <link rel="next" title="conan lock" href="lock.html"/>
         <link rel="prev" title="conan install" href="install.html"/>
@@ -241,6 +241,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan list -h
 usage: conan list [-h] [-v [V]] [-f FORMAT] [-p PACKAGE_QUERY] [-r REMOTE]
               [-c] [-g GRAPH] [-gb GRAPH_BINARIES] [-gr GRAPH_RECIPES]
+              [--lru LRU]
               [pattern]
 
 List existing recipes, revisions, or packages in the cache (by default) or the remotes.
@@ -258,7 +259,7 @@ optional arguments:
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
   -f FORMAT, --format FORMAT
-                        Select the output format: json, html
+                        Select the output format: json, html, compact
   -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
                         List only the packages matching a specific query, e.g,
                         os=Windows AND (arch=x86 OR compiler=gcc)
@@ -272,6 +273,9 @@ optional arguments:
                         Which binaries are listed
   -gr GRAPH_RECIPES, --graph-recipes GRAPH_RECIPES
                         Which recipes are listed
+  --lru LRU             List recipes and binaries that have not been recently
+                        used. Use a time limit like --lru=5d (days) or
+                        --lru=4w (weeks), h (hours), m(minutes)
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> command can list recipes and packages from the local cache, from the
@@ -625,6 +629,30 @@ with the following structure:</p>
 <p>Here is the rendered generated HTML.</p>
 <img alt="../../_images/conan-list-html.png" src="../../_images/conan-list-html.png" />
 </div>
+<div class="section" id="list-compact-output-format">
+<h2>List compact output format<a class="headerlink" href="#list-compact-output-format" title="Permalink to this headline">¶</a></h2>
+<p>For developers, it can be convenient to use the <code class="docutils literal notranslate"><span class="pre">--format=compact</span></code> output, because it allows to copy and paste
+full references into other commands (like for example <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">path</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan list &quot;zlib/1.2.13:*&quot; -r=conancenter --format=compact
+conancenter
+  zlib/1.2.13
+    zlib/1.2.13#97d5730b529b4224045fe7090592d4c1 (2023-08-22 02:51:57 UTC)
+      zlib/1.2.13#97d5730b529b4224045fe7090592d4c1:d62dff20d86436b9c58ddc0162499d197be9de1e
+        settings: Macos, x86_64, Release, apple-clang, 13
+        options(diff): fPIC=True, shared=False
+      zlib/1.2.13#97d5730b529b4224045fe7090592d4c1:abe5e2b04ea92ce2ee91bc9834317dbe66628206
+        settings: Linux, x86_64, Release, gcc, 11
+        options(diff): shared=True
+      zlib/1.2.13#97d5730b529b4224045fe7090592d4c1:ae9eaf478e918e6470fe64a4d8d4d9552b0b3606
+        settings: Windows, x86_64, Release, msvc, dynamic, Release, 192
+        options(diff): shared=True
+    ...
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--format=compact</span></code> will show the list of values for <code class="docutils literal notranslate"><span class="pre">settings</span></code>, and it will only show the differences (“diff”)
+for options, that is, it will compute the common denominator of options for all displayed packages, and will print
+only those values that deviate from that common denominator.</p>
+</div>
 </div>
 
 
@@ -650,7 +678,7 @@ with the following structure:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -798,6 +826,8 @@ with the following structure:</p>
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -808,6 +838,10 @@ with the following structure:</p>
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -1063,7 +1097,7 @@ with the following structure:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

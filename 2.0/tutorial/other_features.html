@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Other important Conan features &mdash; conan 2.0.13 documentation</title>
+  <title>Other important Conan features &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../index.html"/>
         <link rel="up" title="Tutorial" href="../tutorial.html"/>
         <link rel="next" title="Devops guide" href="../devops.html"/>
         <link rel="prev" title="Dependencies conflicts" href="versioning/conflicts.html"/>
@@ -225,6 +225,38 @@ $ conan upload --list=pkglist.json -r=myremote -c
 </div>
 <p>See the <a class="reference internal" href="../examples/commands/pkglists.html#examples-commands-pkglists"><span class="std std-ref">examples in this section</span></a>.</p>
 </div>
+<div class="section" id="removing-unused-packages-from-the-cache">
+<h2>Removing unused packages from the cache<a class="headerlink" href="#removing-unused-packages-from-the-cache" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The least recently used feature is in <strong>preview</strong>.
+See <a class="reference internal" href="../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
+</div>
+<p>The Conan cache does not implement any automatic expiration policy, so its size will be always increasing unless
+packages are removed or the cache is removed from time to time. It is possible to remove recipes and packages
+that haven’t been used recently, while keeping those that have been used in a given time period (Least Recently Used LRU policy).
+This can be done with the <code class="docutils literal notranslate"><span class="pre">--lru</span></code> argument to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">remove</span></code> and <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span># remove all binaries (but not recipes) not used in the last 4 weeks
+$ conan remove &quot;*:*&quot; --lru=4w -c
+# remove all recipes that have not been used in the last 4 weeks (with their binaries)
+$ conan remove &quot;*&quot; --lru=4w -c
+</pre></div>
+</div>
+<p>Note that the LRU time follows the rules of the <code class="docutils literal notranslate"><span class="pre">remove</span></code> command. If we are removing recipes with a <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> pattern, only
+the LRU times for recipes will be checked. If a recipe has been recently used, it will keep all the binaries, and if the recipe
+has not been recently used, it will remove itself and all its binaries. If we use a <code class="docutils literal notranslate"><span class="pre">&quot;*:*&quot;</span></code> pattern, it will check for binaries only,
+and remove those unused, but always leaving the recipe.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> first (take into account that <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> do not default to list all revisions, as opposed to <code class="docutils literal notranslate"><span class="pre">remove</span></code>,
+so it is necessary to explicit the <code class="docutils literal notranslate"><span class="pre">#*</span></code> to select all revisions if that is the intention) it is possible to create a list of
+least recently used packages:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span># List all unused (last 4 weeks) recipe revisions
+$ conan list &quot;*#*&quot; --lru=4w --format=json &gt; old.json
+# Remove those recipe revisions (and their binaries)
+$ conan remove --list=old.json -c
+</pre></div>
+</div>
+<p>See commands help <a class="reference internal" href="../reference/commands/remove.html#reference-commands-remove"><span class="std std-ref">conan remove</span></a> and <a class="reference internal" href="../reference/commands/list.html#reference-commands-list"><span class="std std-ref">conan list</span></a>.</p>
+</div>
 </div>
 
 
@@ -250,7 +282,7 @@ $ conan upload --list=pkglist.json -r=myremote -c
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -398,6 +430,8 @@ $ conan upload --list=pkglist.json -r=myremote -c
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -408,6 +442,10 @@ $ conan upload --list=pkglist.json -r=myremote -c
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -663,7 +701,7 @@ $ conan upload --list=pkglist.json -r=myremote -c
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

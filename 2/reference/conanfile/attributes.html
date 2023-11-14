@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Attributes &mdash; conan 2.0.13 documentation</title>
+  <title>Attributes &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
         <link rel="up" title="conanfile.py" href="../conanfile.html"/>
         <link rel="next" title="Methods" href="methods.html"/>
         <link rel="prev" title="conanfile.py" href="../conanfile.html"/>
@@ -473,11 +473,38 @@ For more advanced way to define requirements, use the <code class="docutils lite
 </tr>
 </tbody>
 </table>
+<p>If pre-releases are activated, like defining configuration <code class="docutils literal notranslate"><span class="pre">core.version_ranges:resolve_prereleases=True</span></code>:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Expression</th>
+<th class="head">Versions in range</th>
+<th class="head">Versions outside of range</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[&gt;=1.0 &lt;2]</td>
+<td>1.0.0-pre.1, 1.0.0, 1.0.1, 1.1, 1.2.3</td>
+<td>0.2, 2.0-pre.1, 2.0, 2.1, 3.0</td>
+</tr>
+<tr class="row-odd"><td>[&lt;3.2.1]</td>
+<td>0.1, 1.2, 1.8-beta.1, 2.0-alpha.2, 2.4, 3.1.1</td>
+<td>3.2.1-pre.1, 3.2.1, 3.2.2, 3.3</td>
+</tr>
+<tr class="row-even"><td>[&gt;2.0]</td>
+<td>2.1-pre.1, 2.1, 2.2, 3.1, 14.2</td>
+<td>1.1, 1.2, 2.0-pre.1, 2.0</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
-<li>Check &lt;MISSING PAGE&gt; version_ranges if you want to learn more about version ranges.</li>
-<li>Check &lt;MISSING PAGE&gt; requires() conanfile.py method.</li>
+<li>Check <a class="reference internal" href="../../tutorial/versioning/version_ranges.html#tutorial-version-ranges-expressions"><span class="std std-ref">Range expressions</span></a> version_ranges tutorial section</li>
 </ul>
 </div>
 </div>
@@ -1344,6 +1371,11 @@ The profile entries have priority.</p>
       <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Custom var1: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;user.custom.var1&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">conf</span></code> attribute is a <strong>read-only</strong> attribute. It can only be defined in profiles and command lines, but it should never be set by recipes.
+Recipes can only read its value via <code class="docutils literal notranslate"><span class="pre">self.conf.get()</span></code> method.</p>
+</div>
 </div>
 <div class="section" id="output">
 <h3><a class="toc-backref" href="#id62">Output</a><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
@@ -1463,7 +1495,7 @@ when the method is not explicitly defined in the recipe.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -1611,6 +1643,8 @@ when the method is not explicitly defined in the recipe.</li>
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -1621,6 +1655,10 @@ when the method is not explicitly defined in the recipe.</li>
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -1876,7 +1914,7 @@ when the method is not explicitly defined in the recipe.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

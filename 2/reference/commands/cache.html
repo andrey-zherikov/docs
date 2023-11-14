@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan cache &mdash; conan 2.0.13 documentation</title>
+  <title>conan cache &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
         <link rel="next" title="conan config" href="config.html"/>
         <link rel="prev" title="Commands" href="../commands.html"/>
@@ -357,6 +357,8 @@ build/  CMakeLists.txt  CMakeUserPresets.json  conaninfo.txt  include/  src/
 package storage must be considered <strong>read-only</strong>. Do not modify, change, remove or add files from the cache.</li>
 <li>If you are using this command to obtain the path to artifacts and then copying them, consider the usage of a <code class="docutils literal notranslate"><span class="pre">deployer</span></code>
 instead. In the general case, extracting artifacts from the cache manually is discouraged.</li>
+<li>Developers can use the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">...</span> <span class="pre">--format=compact</span></code> to get the full references in a compact way that can
+be copied and pasted into the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">path</span></code> command</li>
 </ul>
 </div>
 </div>
@@ -445,6 +447,74 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
 </pre></div>
 </div>
 </div>
+<div class="section" id="conan-cache-backup-upload">
+<h2>conan cache backup-upload<a class="headerlink" href="#conan-cache-backup-upload" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache backup-upload -h
+usage: conan cache backup-upload [-h] [-v [V]]
+
+Upload all the source backups present in the cache
+
+options:
+  -h, --help  show this help message and exit
+  -v [V]      Level of detail of the output. Valid options from less verbose
+              to more verbose: -vquiet, -verror, -vwarning, -vnotice,
+              -vstatus, -v or -vverbose, -vv or -vdebug, -vvv or -vtrace
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">backup-upload</span></code> will upload all source backups present in the local cache to the backup server,
+(excluding those which have been fetched from the excluded urls listed in the <code class="docutils literal notranslate"><span class="pre">core.sources:exclude_urls</span></code> conf),
+regardless of which package they belong to, if any.</p>
+</div>
+<div class="section" id="conan-cache-save">
+<h2>conan cache save<a class="headerlink" href="#conan-cache-save" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache save -h
+usage: conan cache save [-h] [-f FORMAT] [-v [V]] [-l LIST] [--file FILE]
+                        [pattern]
+
+Get the artifacts from a package list and archive them
+
+positional arguments:
+pattern               A pattern in the form
+                        &#39;pkg/version#revision:package_id#revision&#39;, e.g:
+                        zlib/1.2.13:* means all binaries for zlib/1.2.13. If
+                        revision is not specified, it is assumed latest one.
+
+optional arguments:
+-h, --help            show this help message and exit
+-f FORMAT, --format FORMAT
+                        Select the output format: json
+-v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+-l LIST, --list LIST  Package list of packages to save
+--file FILE           Save to this tgz file
+</pre></div>
+</div>
+<p>Read more in <a class="reference internal" href="../../devops/save_restore.html#devops-save-restore"><span class="std std-ref">Save and restore packages from/to the cache</span></a>.</p>
+</div>
+<div class="section" id="conan-cache-restore">
+<h2>conan cache restore<a class="headerlink" href="#conan-cache-restore" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache restore -h
+usage: conan cache restore [-h] [-f FORMAT] [-v [V]] file
+
+Put the artifacts from an archive into the cache
+
+positional arguments:
+file                  Path to archive to restore
+
+optional arguments:
+-h, --help            show this help message and exit
+-f FORMAT, --format FORMAT
+                        Select the output format: json
+-v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+</pre></div>
+</div>
+<p>Read more in <a class="reference internal" href="../../devops/save_restore.html#devops-save-restore"><span class="std std-ref">Save and restore packages from/to the cache</span></a>.</p>
+</div>
 </div>
 
 
@@ -470,7 +540,7 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -618,6 +688,8 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -628,6 +700,10 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -883,7 +959,7 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

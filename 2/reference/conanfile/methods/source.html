@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>source() &mdash; conan 2.0.13 documentation</title>
+  <title>source() &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
         <link rel="up" title="Methods" href="../methods.html"/>
         <link rel="next" title="system_requirements()" href="system_requirements.html"/>
         <link rel="prev" title="set_version()" href="set_version.html"/>
@@ -321,6 +321,7 @@ apply to all possible configurations. As explained below, it is not possible to 
 </div>
 <p>Will compute the dependency graph, then call the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method for all “host” packages in the graph (as the configuration by default is a “host” configuration, if you want also the sources for the “build” context <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code>, you could use <code class="docutils literal notranslate"><span class="pre">-c:b</span> <span class="pre">tools.build:download_source=True</span></code>). It is possible to collect all the source folders from the json formatted output, or to automate recollection of all sources, a <code class="docutils literal notranslate"><span class="pre">deployer</span></code> could be used.</p>
 <p>Likewise, it is possible to retrieve the sources for packages in other <code class="docutils literal notranslate"><span class="pre">create</span></code> and <code class="docutils literal notranslate"><span class="pre">install</span></code> commands, just by passing the configuration. Finally, as also configuration can be defined per-package, using <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">mypkg*:tools.build:download_source=True</span></code> would only retrieve the sources of packages matching the <code class="docutils literal notranslate"><span class="pre">mypkg*</span></code> pattern.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">tools.build:download_source=True</span></code> will not have any effect on packages in <strong>editable</strong> mode. Downloading sources in that case could easily overwrite and destroy local developer changes over that code. The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">source</span></code> command must be used on packages in editable mode to download the sources.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>Best practices</strong></p>
@@ -361,7 +362,7 @@ apply to all possible configurations. As explained below, it is not possible to 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -509,6 +510,8 @@ apply to all possible configurations. As explained below, it is not possible to 
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -519,6 +522,10 @@ apply to all possible configurations. As explained below, it is not possible to 
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -774,7 +781,7 @@ apply to all possible configurations. As explained below, it is not possible to 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

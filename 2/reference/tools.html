@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Recipe tools &mdash; conan 2.0.13 documentation</title>
+  <title>Recipe tools &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,9 +45,9 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../index.html"/>
         <link rel="up" title="Reference" href="../reference.html"/>
-        <link rel="next" title="conan.tools.cmake" href="tools/cmake.html"/>
+        <link rel="next" title="conan.tools.android" href="tools/android.html"/>
         <link rel="prev" title="conanfile.txt" href="conanfile_txt.html"/>
 
  <!-- Google Tag Manager -->
@@ -120,21 +120,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="conanfile.html">conanfile.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conanfile_txt.html">conanfile.txt</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Recipe tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tools/cmake.html">conan.tools.cmake</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/gnu.html">conan.tools.gnu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/android.html">conan.tools.android</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/apple.html">conan.tools.apple</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/env.html">conan.tools.env</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/build.html">conan.tools.build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/cmake.html">conan.tools.cmake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/cpp_info.html">conan.tools.CppInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/env.html">conan.tools.env</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/files.html">conan.tools.files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/gnu.html">conan.tools.gnu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/google.html">conan.tools.google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/intel.html">conan.tools.intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/layout.html">conan.tools.layout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/meson.html">conan.tools.meson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/system.html">conan.tools.system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/microsoft.html">conan.tools.microsoft</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/scm.html">conan.tools.scm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/layout.html">conan.tools.layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/intel.html">conan.tools.intel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/scons.html">conan.tools.scons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/android.html">conan.tools.android</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/cpp_info.html">conan.tools.CppInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/system.html">conan.tools.system</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="config_files.html">Configuration files</a></li>
@@ -243,20 +244,8 @@ and shouldn’t be used in recipes.</li>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tools/cmake.html">conan.tools.cmake</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmakedeps.html">CMakeDeps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmaketoolchain.html">CMakeToolchain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmake.html">CMake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmake_layout.html">cmake_layout</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools/gnu.html">conan.tools.gnu</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotoolsdeps.html">AutotoolsDeps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotoolstoolchain.html">AutotoolsToolchain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotools.html">Autotools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/makedeps.html">MakeDeps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/pkgconfigdeps.html">PkgConfigDeps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/gnu/pkgconfig.html">PkgConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/android.html">conan.tools.android</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/android.html#android-abi">android_abi()</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools/apple.html">conan.tools.apple</a><ul>
@@ -269,16 +258,27 @@ and shouldn’t be used in recipes.</li>
 <li class="toctree-l2"><a class="reference internal" href="tools/apple/other.html#conan-tools-apple-xcrun">conan.tools.apple.XCRun()</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tools/build.html">conan.tools.build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/build.html#building">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/build.html#cppstd">Cppstd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/cmake.html">conan.tools.cmake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmakedeps.html">CMakeDeps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmaketoolchain.html">CMakeToolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmake.html">CMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/cmake/cmake_layout.html">cmake_layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/cpp_info.html">conan.tools.CppInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/cpp_info.html#aggregating-information-in-custom-generators">Aggregating information in custom generators</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tools/env.html">conan.tools.env</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/env/environment.html">Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/env/envvars.html">EnvVars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/env/virtualbuildenv.html">VirtualBuildEnv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/env/virtualrunenv.html">VirtualRunEnv</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools/build.html">conan.tools.build</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/build.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/build.html#cppstd">Cppstd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools/files.html">conan.tools.files</a><ul>
@@ -290,13 +290,34 @@ and shouldn’t be used in recipes.</li>
 <li class="toctree-l2"><a class="reference internal" href="tools/files/packaging.html">conan.tools.files AutoPackager</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tools/gnu.html">conan.tools.gnu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotoolsdeps.html">AutotoolsDeps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotoolstoolchain.html">AutotoolsToolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/autotools.html">Autotools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/makedeps.html">MakeDeps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/pkgconfigdeps.html">PkgConfigDeps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/gnu/pkgconfig.html">PkgConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/google.html">conan.tools.google</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/google/bazel.html">Bazel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/google/bazeldeps.html">BazelDeps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/google/bazeltoolchain.html">BazelToolchain</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/intel.html">conan.tools.intel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/intel.html#intelcc">IntelCC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/intel.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/layout.html">conan.tools.layout</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/layout.html#predefined-layouts">Predefined layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/layout.html#basic-layout">basic_layout</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tools/meson.html">conan.tools.meson</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/meson/mesontoolchain.html">MesonToolchain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/meson/meson.html">Meson</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools/system.html">conan.tools.system</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/system/package_manager.html">conan.tools.system.package_manager</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools/microsoft.html">conan.tools.microsoft</a><ul>
@@ -316,26 +337,12 @@ and shouldn’t be used in recipes.</li>
 <li class="toctree-l2"><a class="reference internal" href="tools/scm/version.html">Version</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tools/layout.html">conan.tools.layout</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/layout.html#predefined-layouts">Predefined layouts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/layout.html#basic-layout">basic_layout</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools/intel.html">conan.tools.intel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/intel.html#intelcc">IntelCC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/intel.html#reference">Reference</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="tools/scons.html">conan.tools.scons</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools/scons.html#sconsdeps">SConsDeps</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tools/android.html">conan.tools.android</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/android.html#android-abi">android_abi()</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools/cpp_info.html">conan.tools.CppInfo</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools/cpp_info.html#aggregating-information-in-custom-generators">Aggregating information in custom generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/system.html">conan.tools.system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/system/package_manager.html">conan.tools.system.package_manager</a></li>
 </ul>
 </li>
 </ul>
@@ -352,7 +359,7 @@ and shouldn’t be used in recipes.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tools/cmake.html" class="btn btn-neutral float-right" title="conan.tools.cmake" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tools/android.html" class="btn btn-neutral float-right" title="conan.tools.android" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="conanfile_txt.html" class="btn btn-neutral" title="conanfile.txt" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -365,7 +372,7 @@ and shouldn’t be used in recipes.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -513,6 +520,8 @@ and shouldn’t be used in recipes.</li>
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -523,6 +532,10 @@ and shouldn’t be used in recipes.</li>
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -778,7 +791,7 @@ and shouldn’t be used in recipes.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

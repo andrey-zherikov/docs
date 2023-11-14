@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CMakeToolchain &mdash; conan 2.0.13 documentation</title>
+  <title>CMakeToolchain &mdash; conan 2.0.14 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.13 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
         <link rel="up" title="conan.tools.cmake" href="../cmake.html"/>
         <link rel="next" title="CMake" href="cmake.html"/>
         <link rel="prev" title="CMakeDeps" href="cmakedeps.html"/>
@@ -120,6 +120,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="../../conanfile.html">conanfile.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../conanfile_txt.html">conanfile.txt</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../tools.html">Recipe tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../android.html">conan.tools.android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apple.html">conan.tools.apple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build.html">conan.tools.build</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../cmake.html">conan.tools.cmake</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="cmakedeps.html">CMakeDeps</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">CMakeToolchain</a></li>
@@ -127,20 +130,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="cmake_layout.html">cmake_layout</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../gnu.html">conan.tools.gnu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apple.html">conan.tools.apple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_info.html">conan.tools.CppInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../env.html">conan.tools.env</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../build.html">conan.tools.build</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../files.html">conan.tools.files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gnu.html">conan.tools.gnu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../google.html">conan.tools.google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intel.html">conan.tools.intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layout.html">conan.tools.layout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../meson.html">conan.tools.meson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../system.html">conan.tools.system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../microsoft.html">conan.tools.microsoft</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scm.html">conan.tools.scm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../layout.html">conan.tools.layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../intel.html">conan.tools.intel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scons.html">conan.tools.scons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../android.html">conan.tools.android</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cpp_info.html">conan.tools.CppInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system.html">conan.tools.system</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../config_files.html">Configuration files</a></li>
@@ -418,6 +419,22 @@ following way:</p>
     <span class="n">tc</span><span class="o">.</span><span class="n">user_presets_path</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">tc</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="extra-compilation-flags">
+<h3>Extra compilation flags<a class="headerlink" href="#extra-compilation-flags" title="Permalink to this headline">¶</a></h3>
+<p>You can use the following attributes to append extra compilation flags to the toolchain:</p>
+<ul class="simple">
+<li><strong>extra_cxxflags</strong> (defaulted to <code class="docutils literal notranslate"><span class="pre">[]</span></code>) for additional cxxflags</li>
+<li><strong>extra_cflags</strong> (defaulted to <code class="docutils literal notranslate"><span class="pre">[]</span></code>) for additional cflags</li>
+<li><strong>extra_sharedlinkflags</strong> (defaulted to <code class="docutils literal notranslate"><span class="pre">[]</span></code>) for additional shared link flags</li>
+<li><strong>extra_exelinkflags</strong> (defaulted to <code class="docutils literal notranslate"><span class="pre">[]</span></code>) for additional exe link flags</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>flags order of preference</strong>: Flags specified in the <cite>tools.build</cite> configuration,
+such as <cite>cxxflags</cite>, <cite>cflags</cite>, <cite>sharedlinkflags</cite> and <cite>exelinkflags</cite>, will
+always take precedence over those set by the CMakeToolchain attributes.</p>
 </div>
 </div>
 <div class="section" id="presets-prefix">
@@ -759,7 +776,7 @@ follows:<ul>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 03, 2023.
+      Last updated on Nov 14, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -907,6 +924,8 @@ follows:<ul>
         
                    
         
+                   
+        
             
                 <dd><a href="/2/index.html">2</a></dd>
                    
@@ -917,6 +936,10 @@ follows:<ul>
         
             
                 <dd><a href="/1/index.html">1</a></dd>
+                   
+        
+            
+                <dd><a href="/en/1.62/index.html">1.62</a></dd>
                    
         
             
@@ -1172,7 +1195,7 @@ follows:<ul>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.13',
+            VERSION:'2.0.14',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
