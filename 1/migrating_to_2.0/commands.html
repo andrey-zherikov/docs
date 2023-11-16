@@ -130,6 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#removed-conan-copy">Removed “conan copy”</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#removed-conan-user">Removed “conan user”</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#removed-conan-config-set">Removed “conan config set”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removed-conan-alias">Removed “conan alias”</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#custom-commands">Custom commands</a></li>
@@ -421,8 +422,35 @@ server-side, copying packages from one server repository to another repository.<
 </div>
 <div class="section" id="removed-conan-config-set">
 <h3>Removed “conan config set”<a class="headerlink" href="#removed-conan-config-set" title="Permalink to this headline">¶</a></h3>
-<p>we are no longer implementing file-editing commands in 2.0. A bit overkill <cite>conan config set</cite> to edit one file. Which should very rarely happen,
+<p>We are no longer implementing file-editing commands in 2.0. A bit overkill <cite>conan config set</cite> to edit one file. Which should very rarely happen,
 the file is updated with <cite>conan config install</cite>. Alternatively, you can use the command line and profiles to pass these values.</p>
+</div>
+<div class="section" id="removed-conan-alias">
+<h3>Removed “conan alias”<a class="headerlink" href="#removed-conan-alias" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">alias</span></code> command has been removed in Conan 2.0. The use of aliases is no longer
+recommended due to significant improvements in version handling and version ranges that
+surpass the capabilities of Conan 1.X.</p>
+<p>Although the command has been removed and the feature will be completely removed in future
+versions, it is still possible to create aliases in Conan 2.0 for compatibility purposes.
+This is achieved using the alias template in Conan 2.0 and exporting the recipe:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>new<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">name</span><span class="o">=</span>mypkg<span class="w"> </span>-d<span class="w"> </span><span class="nv">version</span><span class="o">=</span>latest<span class="w"> </span>-d<span class="w"> </span><span class="nv">target</span><span class="o">=</span><span class="m">1</span>.0
+$<span class="w"> </span>conan<span class="w"> </span><span class="nb">export</span><span class="w"> </span>.
+</pre></div>
+</div>
+<p>Note that when requiring the alias, you must place the version in parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> to
+explicitly declare the use of an alias as a requirement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
+
+    <span class="o">...</span>
+    <span class="n">requires</span> <span class="o">=</span> <span class="s2">&quot;mypkg/(latest)&quot;</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>For users still relying on <cite>alias</cite>, it is recommended to consider migrating to the newer
+versioning mechanisms introduced in Conan 2.0, such as the dynamic selection of
+pre-releases for easier testing. This change aligns with general trends in package
+management and version control, where explicit aliases are not commonly used in other
+package managers. Please, check the <a class="reference external" href="https://docs.conan.io/2/devops/versioning.html">versioning section in the Conan 2.0 docs</a>.</p>
 </div>
 </div>
 <div class="section" id="custom-commands">
@@ -455,7 +483,7 @@ Refer to the <a class="reference external" href="https://docs.conan.io/2/referen
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2022, JFrog.
-      Last updated on Nov 14, 2023.
+      Last updated on Nov 16, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
