@@ -269,6 +269,9 @@ See <a class="reference internal" href="../../introduction.html#stability"><span
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">CppInfo(conanfile)</span></code>: Constructor. Receives a <code class="docutils literal notranslate"><span class="pre">conanfile</span></code> as argument, typically <code class="docutils literal notranslate"><span class="pre">self</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">aggregated_components()</span></code>: return a new <code class="docutils literal notranslate"><span class="pre">CppInfo</span></code> object resulting from the aggregation of all the components</li>
+<li><code class="docutils literal notranslate"><span class="pre">get_sorted_components()</span></code>: Get the ordered components of a package, prioritizing those
+with fewer dependencies within the same package. Returns an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> of sorted
+components in the format <code class="docutils literal notranslate"><span class="pre">{component_name:</span> <span class="pre">component}</span></code>.</li>
 <li><code class="docutils literal notranslate"><span class="pre">merge(other_cppinfo:</span> <span class="pre">CppInfo)</span></code>: modifies the current <code class="docutils literal notranslate"><span class="pre">CppInfo</span></code> object, updating it with the information of the parameter <code class="docutils literal notranslate"><span class="pre">other_cppinfo</span></code>, allowing to aggregate information from multiple dependencies.</li>
 </ul>
 </div>
@@ -297,7 +300,7 @@ See <a class="reference internal" href="../../introduction.html#stability"><span
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 16, 2023.
+      Last updated on Nov 24, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
