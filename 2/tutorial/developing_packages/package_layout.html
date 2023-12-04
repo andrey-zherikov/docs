@@ -448,6 +448,16 @@ location will be the local folder where we have our project.</li>
 <code class="docutils literal notranslate"><span class="pre">self.folders.build</span></code> that we defined to <strong>./build/&lt;build_type&gt;</strong>. In the case of
 editable packages, this location will point to <strong>&lt;local_folder&gt;/build/&lt;build_type&gt;</strong>.</li>
 </ul>
+<p>Note that other <code class="docutils literal notranslate"><span class="pre">cpp.source</span></code> and <code class="docutils literal notranslate"><span class="pre">cpp.build</span></code> definitions are also possible, with different
+meanings and purposes, for example:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.cpp.source.libdirs</span></code> and <code class="docutils literal notranslate"><span class="pre">self.cpp.source.libs</span></code> could be used if we had pre-compiled
+libraries in the source repo, committed to git, for example. They are not a product of the build,
+but rather part of the sources.</li>
+<li><code class="docutils literal notranslate"><span class="pre">self.cpp.build.includedirs</span></code> could be use for folders containing headers generated at build
+time, as it usually happens by some code generators that are fired by the build before starting
+to compile the project.</li>
+</ul>
 <p>To check how this information affects consumers, we are going to first put the <code class="docutils literal notranslate"><span class="pre">say</span></code>
 package in editable mode and build it locally.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../say
@@ -548,7 +558,7 @@ that change for the editable package. For the same reason, you could also omit s
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Nov 24, 2023.
+      Last updated on Dec 04, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
