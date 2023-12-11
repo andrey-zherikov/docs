@@ -121,6 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="../../cmake/cmake.html">tools.cmake</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../files/files.html">tools.files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../meson/meson.html">tools.meson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../google/bazel.html">tools.google</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../autotools.html">tools.autotools</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Build a simple Autotools project using Conan</a></li>
 </ul>
@@ -228,7 +229,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 that uses one of the most popular C++ libraries: <a class="reference external" href="https://fmt.dev/latest/index.html/">fmt</a>.</p>
 <p>We’ll use <a class="reference external" href="https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html">Autotools</a> as build system and <a class="reference external" href="https://www.freedesktop.org/wiki/Software/pkg-config/">pkg-config</a> as a helper tool in this case, so you should get them installed
 on Linux and Mac before going forward with this example.</p>
-<p>Please, first, clone the sources to recreate this project, you can find them in the
+<p>Please, first clone the sources to recreate this project. You can find them in the
 <a class="reference external" href="https://github.com/conan-io/examples2">examples2.0 repository</a> on GitHub:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/conan-io/examples2.git
 <span class="nb">cd</span><span class="w"> </span>examples2/examples/tools/autotools/autotoolstoolchain/string_formatter
