@@ -246,6 +246,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
   <div class="section" id="requirements">
 <span id="reference-conanfile-methods-requirements"></span><h1>requirements()<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">requirements()</span></code> method is used to specify the dependencies of a package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;zlib/1.2.11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For simple cases the attribute syntax can be used, like <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span> <span class="pre">&quot;zlib/1.2.11&quot;</span></code>.</p>
 <div class="section" id="requirement-traits">
 <h2>Requirement traits<a class="headerlink" href="#requirement-traits" title="Permalink to this headline">¶</a></h2>
 <p>Traits are properties of a requires clause. They determine how various parts of a
@@ -405,7 +411,7 @@ recipe, or if it is a transitive one.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 04, 2023.
+      Last updated on Dec 11, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

@@ -518,7 +518,7 @@ won’t be retrieved. They cannot conflict.</p>
     <span class="n">tool_requires</span> <span class="o">=</span> <span class="s2">&quot;tool_a/0.2&quot;</span><span class="p">,</span> <span class="s2">&quot;tool_b/0.2@user/testing&quot;</span>
 </pre></div>
 </div>
-<p>This is the declarative way to add <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code>. Check the &lt;MISSING PAGE&gt; tool_requires()
+<p>This is the declarative way to add <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code>. Check the <a class="reference internal" href="methods/build_requirements.html#reference-conanfile-methods-build-requirements-tool-requires"><span class="std std-ref">tool_requires()</span></a>
 conanfile.py method to learn a more flexible way to add them.</p>
 </div>
 <div class="section" id="build-requires">
@@ -538,8 +538,9 @@ won’t be retrieved. They cannot conflict.</p>
     <span class="n">test_requires</span> <span class="o">=</span> <span class="s2">&quot;gtest/1.11.0&quot;</span><span class="p">,</span> <span class="s2">&quot;other_test_tool/0.2@user/testing&quot;</span>
 </pre></div>
 </div>
-<p>This is the declarative way to add <code class="docutils literal notranslate"><span class="pre">test_requires</span></code>. Check the &lt;MISSING PAGE&gt; test_requires()
-conanfile.py method to learn a more flexible way to add them.</p>
+<p>This is the declarative way to add <code class="docutils literal notranslate"><span class="pre">test_requires</span></code>.
+Check the <a class="reference internal" href="methods/build_requirements.html#reference-conanfile-methods-build-requirements-test-requires"><span class="std std-ref">test_requires() method</span></a>
+to learn a more flexible way to add them.</p>
 </div>
 <div class="section" id="python-requires">
 <h3><a class="toc-backref" href="#id19">python_requires</a><a class="headerlink" href="#python-requires" title="Permalink to this headline">¶</a></h3>
@@ -595,7 +596,7 @@ we would do something like:</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
-<li>Check &lt;MISSING PAGE&gt; exports() conanfile.py method.</li>
+<li><a class="reference internal" href="methods/export.html#reference-conanfile-methods-export"><span class="std std-ref">Check the export() conanfile.py method</span></a>.</li>
 </ul>
 </div>
 </div>
@@ -643,7 +644,8 @@ or even better, from <code class="docutils literal notranslate"><span class="pre
 </div>
 <div class="section" id="conan-data">
 <span id="conan-conanfile-properties-conandata"></span><h3><a class="toc-backref" href="#id24">conan_data</a><a class="headerlink" href="#conan-data" title="Permalink to this headline">¶</a></h3>
-<p>Read only attribute with a dictionary with the keys and values provided in a &lt;MISSING PAGE&gt; conandata_yml file format placed
+<p>Read only attribute with a dictionary with the keys and values provided in a
+<a class="reference internal" href="../../tutorial/creating_packages/handle_sources_in_packages.html#creating-packages-handle-sources-in-packages-conandata"><span class="std std-ref">conandata.yml</span></a> file format placed
 next to the <em>conanfile.py</em>. This YAML file is automatically exported with the recipe and automatically loaded with it too.</p>
 <p>You can declare information in the <em>conandata.yml</em> file and then access it inside any of the methods of the recipe.
 For example, a <em>conandata.yml</em> with information about sources that looks like this:</p>
@@ -753,7 +755,7 @@ For example, in the <code class="docutils literal notranslate"><span class="pre"
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
 <li><a class="reference internal" href="../config_files/settings.html#reference-config-files-settings-yml"><span class="std std-ref">settings.yml</span></a>.</li>
-<li>Removing settings in the <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> method. &lt;MISSING PAGE&gt;</li>
+<li><a class="reference internal" href="methods/package_id.html#reference-conanfile-methods-package-id-clear"><span class="std std-ref">Removing settings in the package_id() method</span></a>.</li>
 </ul>
 </div>
 </div>
@@ -854,7 +856,7 @@ a valid <code class="docutils literal notranslate"><span class="pre">reference_p
 <p>Take into account that if a value is assigned in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method it cannot be overridden.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">Read more about the &lt;MISSING PAGE&gt;method_configure_config_options method.</p>
+<p class="last">Read more about the <a class="reference internal" href="methods/config_options.html#reference-conanfile-methods-config-options"><span class="std std-ref">config_options() method</span></a>.</p>
 </div>
 </div>
 <div class="section" id="default-build-options">
@@ -953,7 +955,7 @@ self-explanatory or has complex or special behavior.</p>
     <span class="n">generators</span> <span class="o">=</span> <span class="s2">&quot;CMakeDeps&quot;</span><span class="p">,</span> <span class="s2">&quot;CMakeToolchain&quot;</span>
 </pre></div>
 </div>
-<p>The generators can also be instantiated explicitly in the &lt;MISSING PAGE&gt; generate() method.</p>
+<p>The generators can also be instantiated explicitly in the <a class="reference internal" href="methods/generate.html#reference-conanfile-methods-generate"><span class="std std-ref">generate() method</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conan.tools.cmake</span> <span class="kn">import</span> <span class="n">CMakeToolchain</span>
 
 <span class="k">class</span> <span class="nc">MyLibConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -1049,8 +1051,8 @@ have to be copied.</li>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
-<li>Read  &lt;MISSING PAGE&gt; <code class="docutils literal notranslate"><span class="pre">export_sources</span></code> method.</li>
-<li>Read  &lt;MISSING PAGE&gt; <code class="docutils literal notranslate"><span class="pre">source</span></code> method.</li>
+<li><a class="reference internal" href="methods/export_sources.html#reference-conanfile-methods-export-sources"><span class="std std-ref">Read about the export_sources() method</span></a>.</li>
+<li><a class="reference internal" href="methods/source.html#reference-conanfile-methods-source"><span class="std std-ref">Read about the source() method</span></a>.</li>
 </ul>
 </div>
 </div>
@@ -1064,7 +1066,8 @@ the value of <code class="docutils literal notranslate"><span class="pre">folder
 <span id="conan-conanfile-properties-package-folder"></span><h3><a class="toc-backref" href="#id43">package_folder</a><a class="headerlink" href="#package-folder" title="Permalink to this headline">¶</a></h3>
 <p>The folder to copy the final artifacts for the binary package. In the local cache a package
 folder is created for every different package ID.</p>
-<p>The most common usage of <code class="docutils literal notranslate"><span class="pre">self.package_folder</span></code> is to <code class="docutils literal notranslate"><span class="pre">copy</span></code> the files at the &lt;MISSING PAGE&gt; package() method:</p>
+<p>The most common usage of <code class="docutils literal notranslate"><span class="pre">self.package_folder</span></code> is to <code class="docutils literal notranslate"><span class="pre">copy</span></code> the files
+at the <a class="reference internal" href="methods/package.html#reference-conanfile-methods-package"><span class="std std-ref">package() method</span></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
 <span class="kn">from</span> <span class="nn">conan.tools.files</span> <span class="kn">import</span> <span class="n">copy</span>
@@ -1522,7 +1525,7 @@ explicitly declare the use of an alias as a requirement:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 04, 2023.
+      Last updated on Dec 11, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

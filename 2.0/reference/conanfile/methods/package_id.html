@@ -293,7 +293,7 @@ must be explicitly declared:</p>
 </div>
 </div>
 <div class="section" id="information-erasure">
-<h3>Information erasure<a class="headerlink" href="#information-erasure" title="Permalink to this headline">¶</a></h3>
+<span id="reference-conanfile-methods-package-id-clear"></span><h3>Information erasure<a class="headerlink" href="#information-erasure" title="Permalink to this headline">¶</a></h3>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">package_id</span></code> relaxing strategy. Let’s check the first case: a header-only library, that has input <code class="docutils literal notranslate"><span class="pre">settings</span></code>, because it still wants to use them for some unit-tests in its <code class="docutils literal notranslate"><span class="pre">build()</span></code> method. In order to have exactly one final binary for all configurations, because the final artifact should be identical in all cases (just the header files), it would be necessary to do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="s2">&quot;os&quot;</span><span class="p">,</span> <span class="s2">&quot;compiler&quot;</span><span class="p">,</span> <span class="s2">&quot;arch&quot;</span><span class="p">,</span> <span class="s2">&quot;build_type&quot;</span>
 
@@ -408,7 +408,7 @@ configurations or when configurations follow a predictable naming pattern. For i
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 04, 2023.
+      Last updated on Dec 11, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
