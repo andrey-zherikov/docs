@@ -239,7 +239,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
   <div class="section" id="virtualbuildenv">
 <span id="conan-tools-env-virtualbuildenv"></span><h1>VirtualBuildEnv<a class="headerlink" href="#virtualbuildenv" title="Permalink to this headline">¶</a></h1>
-<p>VirtualBuildEnv is a generator that produces a <em>conanbuildenv</em> .bat or .sh script containing the environment variables
+<p>VirtualBuildEnv is a generator that produces a <em>conanbuildenv</em> .bat, .ps1 or .sh script containing the environment variables
 of the build time context:</p>
 <blockquote>
 <div><ul class="simple">
@@ -283,20 +283,24 @@ VirtualBuildEnv
 <p>This generator (for example the invocation of <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span> <span class="pre">--tool-require=cmake/3.20.0&#64;</span> <span class="pre">-g</span> <span class="pre">VirtualBuildEnv</span></code>)
 will create the following files:</p>
 <ul class="simple">
-<li>conanbuildenv-release-x86_64.(bat|sh): This file contains the actual definition of environment variables
+<li>conanbuildenv-release-x86_64.(bat|ps1|sh): This file contains the actual definition of environment variables
 like PATH, LD_LIBRARY_PATH, etc, and any other variable defined in the dependencies <code class="docutils literal notranslate"><span class="pre">buildenv_info</span></code>
 corresponding to the <code class="docutils literal notranslate"><span class="pre">build</span></code> context, and to the current installed
 configuration. If a repeated call is done with other settings, a different file will be created.
 After the execution or sourcing of this file, a new deactivation script will be generated, capturing the current
 environment, so the environment can be restored when desired. The file will be named also following the
 current active configuration, like <code class="docutils literal notranslate"><span class="pre">deactivate_conanbuildenv-release-x86_64.bat</span></code>.</li>
-<li>conanbuild.(bat|sh): Accumulates the calls to one or more other scripts, in case there are multiple tools
+<li>conanbuild.(bat|ps1|sh): Accumulates the calls to one or more other scripts, in case there are multiple tools
 in the generate process that create files, to give one single convenient file for all. This only calls
 the latest specific configuration one, that is, if <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> is called first for Release build type,
-and then for Debug, <code class="docutils literal notranslate"><span class="pre">conanbuild.(bat|sh)</span></code> script will call the Debug one.</li>
-<li>deactivate_conanbuild.(bat|sh): Accumulates the deactivation calls defined in the above <code class="docutils literal notranslate"><span class="pre">conanbuild.(bat|sh)</span></code>.
+and then for Debug, <code class="docutils literal notranslate"><span class="pre">conanbuild.(bat|ps1|sh)</span></code> script will call the Debug one.</li>
+<li>deactivate_conanbuild.(bat|ps1|sh): Accumulates the deactivation calls defined in the above <code class="docutils literal notranslate"><span class="pre">conanbuild.(bat|ps1|sh)</span></code>.
 This file should only be called after the accumulated activate has been called first.</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To create <code class="docutils literal notranslate"><span class="pre">.ps1</span></code> files required for Powershell it is necessary to set to True the following conf: <code class="docutils literal notranslate"><span class="pre">tools.env.virtualenv:powershell</span></code>.</p>
+</div>
 </div>
 <div class="section" id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
@@ -376,7 +380,7 @@ This file should only be called after the accumulated activate has been called f
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 11, 2023.
+      Last updated on Dec 12, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 

@@ -290,6 +290,12 @@ files the folder <em>build</em>. To do that, just run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--output-folder<span class="o">=</span>build<span class="w"> </span>--build<span class="o">=</span>missing
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Powershell</strong> users need to add <code class="docutils literal notranslate"><span class="pre">--conf=tools.env.virtualenv:powershell=True</span></code> to the previous command
+to generate <code class="docutils literal notranslate"><span class="pre">.ps1</span></code> files instead of <code class="docutils literal notranslate"><span class="pre">.bat</span></code> files.
+To avoid the need to add this line every time, we recommend configuring it in the <code class="docutils literal notranslate"><span class="pre">[conf]</span></code> section of your profile. For detailed information, please refer to the <a class="reference internal" href="../../reference/config_files/profiles.html#reference-config-files-profiles"><span class="std std-ref">profiles section</span></a>.</p>
+</div>
 <p>You can check the output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--------<span class="w"> </span>Computing<span class="w"> </span>dependency<span class="w"> </span>graph<span class="w"> </span>----------
 cmake/3.22.6:<span class="w"> </span>Not<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">local</span><span class="w"> </span>cache,<span class="w"> </span>looking<span class="w"> </span><span class="k">in</span><span class="w"> </span>remotes...
@@ -340,6 +346,7 @@ have installed the new CMake version in the path.</p>
 <div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 $<span class="w"> </span>conanbuild.bat
+<span class="c1"># conanbuild.ps1 if using Powershell</span>
 </pre></div>
 </div>
 </div>
@@ -457,7 +464,7 @@ use <code class="docutils literal notranslate"><span class="pre">tool_requires</
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 11, 2023.
+      Last updated on Dec 12, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
