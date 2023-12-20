@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Other important Conan features &mdash; conan 2.0.14 documentation</title>
+  <title>Other important Conan features &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../index.html"/>
         <link rel="up" title="Tutorial" href="../tutorial.html"/>
         <link rel="next" title="Devops guide" href="../devops.html"/>
         <link rel="prev" title="Dependencies conflicts" href="versioning/conflicts.html"/>
@@ -214,7 +214,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>If you maintain many recipes for different packages that share some common logic and you don’t want to repeat the code in every recipe, you can put that common code in a Conan <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code>, upload it to your server, and have other recipe conanfiles do a <code class="docutils literal notranslate"><span class="pre">python_requires</span> <span class="pre">=</span> <span class="pre">&quot;mypythoncode/version&quot;</span></code> to depend on it and reuse it.</p>
 </div>
 <div class="section" id="packages-lists">
-<h2>Packages lists<a class="headerlink" href="#packages-lists" title="Permalink to this headline">¶</a></h2>
+<span id="other-important-features-pkglist"></span><h2>Packages lists<a class="headerlink" href="#packages-lists" title="Permalink to this headline">¶</a></h2>
 <p>It is possible to manage a list of packages, recipes and binaries together with the “packages-list” feature.
 Several commands like <code class="docutils literal notranslate"><span class="pre">upload</span></code>, <code class="docutils literal notranslate"><span class="pre">download</span></code>, and <code class="docutils literal notranslate"><span class="pre">remove</span></code> allow receiving a list of packages file as an input, and they can do their operations over that list.
 A typical use case is to “upload to the server the packages that have been built in the last <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code>”, which can be done with:</p>
@@ -282,7 +282,7 @@ $ conan remove --list=old.json -c
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -701,7 +701,7 @@ $ conan remove --list=old.json -c
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

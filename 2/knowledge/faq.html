@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FAQ &mdash; conan 2.0.14 documentation</title>
+  <title>FAQ &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../index.html"/>
         <link rel="up" title="Knowledge" href="../knowledge.html"/>
         <link rel="next" title="Videos" href="videos.html"/>
         <link rel="prev" title="Core guidelines" href="guidelines.html"/>
@@ -232,9 +232,10 @@ os=Macos
 fPIC=True
 shared=False
 
-ERROR: Missing prebuilt package for &#39;zlib/1.2.11&#39;
-Check the available packages using &#39;conan list zlib/1.2.11:* -r=remote&#39;
-or try to build locally from sources using the &#39;--build=zlib/1.2.11&#39; argument
+ERROR: Missing prebuilt package for &#39;zlib/1.2.11&#39;. You can try:
+    - List all available packages using &#39;conan list {ref}:* -r=remote&#39;
+    - Explain missing binaries: replace &#39;conan install ...&#39; with &#39;conan graph explain ...&#39;
+    - Try to build locally from sources using the &#39;--build=zlib/1.2.11&#39; argument
 
 More Info at &#39;https://docs.conan.io/en/2/knowledge/faq.html#error-missing-prebuilt-package&#39;
 </pre></div>
@@ -327,7 +328,7 @@ one that would handle your own private settings.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -746,7 +747,7 @@ one that would handle your own private settings.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

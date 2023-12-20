@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan install &mdash; conan 2.0.14 documentation</title>
+  <title>conan install &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
         <link rel="next" title="conan list" href="list.html"/>
         <link rel="prev" title="conan inspect" href="inspect.html"/>
@@ -253,7 +253,8 @@ usage: conan install [-h] [-v [V]] [-f FORMAT] [--name NAME]
                      [--lockfile-packages] [--lockfile-clean]
                      [--lockfile-overrides LOCKFILE_OVERRIDES] [-g GENERATOR]
                      [-of OUTPUT_FOLDER] [-d DEPLOYER]
-                     [--deployer-folder DEPLOYER_FOLDER] [--build-require]
+                     [--deployer-folder DEPLOYER_FOLDER]
+                     [--deployer-package DEPLOYER_PACKAGE] [--build-require]
                      [path]
 
 Install the requirements specified in a recipe (conanfile.py or conanfile.txt).
@@ -376,6 +377,9 @@ options:
   --deployer-folder DEPLOYER_FOLDER
                         Deployer output folder, base build folder by default
                         if not set
+  --deployer-package DEPLOYER_PACKAGE
+                        Execute the deploy() method of the packages matching
+                        the provided patterns
   --build-require       Whether the provided path is a build-require
 </pre></div>
 </div>
@@ -447,7 +451,7 @@ $ conan install . -pr=myprofile -s build_type=Debug
 </div>
 </div>
 <div class="section" id="generators-and-deployers">
-<h2>Generators and deployers<a class="headerlink" href="#generators-and-deployers" title="Permalink to this headline">¶</a></h2>
+<span id="reference-commands-install-generators-deployers"></span><h2>Generators and deployers<a class="headerlink" href="#generators-and-deployers" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">-g</span></code> argument allows to define in the command line the different built-in generators to be used:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan install --requires=zlib/1.2.13 -g CMakeDeps -g CMakeToolchain
 </pre></div>
@@ -473,6 +477,15 @@ generator like <code class="docutils literal notranslate"><span class="pre">CMak
 copy, and not to the original packages in the Conan cache. See the full example in <a class="reference internal" href="../../examples/extensions/deployers/dev/development_deploy.html#examples-extensions-builtin-deployers-development"><span class="std std-ref">Creating a Conan-agnostic deploy of dependencies for developer use</span></a>.</p>
 <p>It is also possible, and it is a powerful extension point, to write custom user deployers.
 Read more about custom deployers in <a class="reference internal" href="../extensions/deployers.html#reference-extensions-deployers"><span class="std std-ref">Deployers</span></a>.</p>
+<p>It is possible to also invoke the package recipes <code class="docutils literal notranslate"><span class="pre">deploy()</span></code> method with the <code class="docutils literal notranslate"><span class="pre">--deployer-package</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute deploy() method of every recipe that defines it</span>
+$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>--requires<span class="o">=</span>pkg/0.1<span class="w"> </span>--deployer-package<span class="o">=</span>*
+<span class="c1"># Execute deploy() method only for &quot;pkg&quot; (any version) recipes</span>
+$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>--requires<span class="o">=</span>pkg/0.1<span class="w"> </span>--deployer-package<span class="o">=</span>pkg/*
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--deployer-package</span></code> argument is a pattern and accept multiple values, all package references matching any of the defined patterns will execute its <code class="docutils literal notranslate"><span class="pre">deploy()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">--deployer-folder</span></code> argument will also affect the output location of this deployment. See the <a class="reference internal" href="../conanfile/methods/deploy.html#reference-conanfile-methods-deploy"><span class="std std-ref">deploy() method</span></a>.</p>
+<p>If multiple deployed packages deploy to the same location, it is their responsibility to not mutually overwrite their binaries if they have the same filenames. For example if multiple packages <code class="docutils literal notranslate"><span class="pre">deploy()</span></code> a file called “License.txt”, each recipe is responsible for creating an intermediate folder with the package name and/or version that makes it unique, so other recipes <code class="docutils literal notranslate"><span class="pre">deploy()</span></code> method do not overwrite previously deployed “License.txt” files.</p>
 </div>
 <div class="section" id="name-version-user-channel">
 <h2>Name, version, user, channel<a class="headerlink" href="#name-version-user-channel" title="Permalink to this headline">¶</a></h2>
@@ -551,7 +564,7 @@ it should not be necessary in the vast majority of cases, so it is discouraged i
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -970,7 +983,7 @@ it should not be necessary in the vast majority of cases, so it is discouraged i
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

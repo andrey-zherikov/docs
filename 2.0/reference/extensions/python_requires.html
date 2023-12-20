@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python requires &mdash; conan 2.0.14 documentation</title>
+  <title>Python requires &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="Extensions" href="../extensions.html"/>
         <link rel="next" title="Custom commands" href="custom_commands.html"/>
         <link rel="prev" title="Extensions" href="../extensions.html"/>
@@ -420,7 +420,7 @@ $<span class="w"> </span>conan<span class="w"> </span>create<span class="w"> </s
 
 <span class="k">class</span> <span class="nc">Tool</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">pyreq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">python_requires</span><span class="p">[</span><span class="s2">&quot;common&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">module</span>
+        <span class="n">pyreq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">python_requires</span><span class="p">[</span><span class="s2">&quot;pyreq&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">module</span>
         <span class="n">mynumber</span> <span class="o">=</span> <span class="n">pyreq</span><span class="o">.</span><span class="n">mynumber</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">!!!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mynumber</span><span class="p">))</span>
 </pre></div>
@@ -517,7 +517,7 @@ exported together with the recipe.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -936,7 +936,7 @@ exported together with the recipe.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

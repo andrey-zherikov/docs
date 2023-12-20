@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>set_name() &mdash; conan 2.0.14 documentation</title>
+  <title>set_name() &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="Methods" href="../methods.html"/>
         <link rel="next" title="set_version()" href="set_version.html"/>
         <link rel="prev" title="requirements()" href="requirements.html"/>
@@ -126,6 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="compatibility.html">compatibility()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configure.html">configure()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="config_options.html">config_options()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="deploy.html">deploy()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="export.html">export()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="export_sources.html">export_sources()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generate.html">generate()</a></li>
@@ -275,6 +276,23 @@ command line argument we should do:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;name.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">set_name()</span></code> method can decide to define the <code class="docutils literal notranslate"><span class="pre">name</span></code> value, irrespective of the potential
+<code class="docutils literal notranslate"><span class="pre">--name=xxx</span></code> command line argument, that can be even completely ignored by <code class="docutils literal notranslate"><span class="pre">set_name()</span></code>. It
+is the responsibility of the developer to provide a correct <code class="docutils literal notranslate"><span class="pre">set_name()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># This will always assign &quot;pkg&quot; as name, ignoring ``--name`` command line argument</span>
+    <span class="c1"># and without erroring or warning</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pkg&quot;</span>
+</pre></div>
+</div>
+<p>If a command line argument <code class="docutils literal notranslate"><span class="pre">--name=xxx</span></code> is provided, it will be initialized in the <code class="docutils literal notranslate"><span class="pre">self.name</span></code>
+attribute, so <code class="docutils literal notranslate"><span class="pre">set_name()</span></code> method can read and use it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Takes the provided command line ``--name`` argument and creates a name appending to</span>
+    <span class="c1"># it the &quot;.extra&quot; string</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.extra&quot;</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The <code class="docutils literal notranslate"><span class="pre">set_name()</span></code> method is an alternative to the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute. It is
@@ -305,7 +323,7 @@ not advised or supported to define both a <code class="docutils literal notransl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -724,7 +742,7 @@ not advised or supported to define both a <code class="docutils literal notransl
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

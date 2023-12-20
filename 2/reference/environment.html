@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Environment variables &mdash; conan 2.0.14 documentation</title>
+  <title>Environment variables &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../index.html"/>
         <link rel="up" title="Reference" href="../reference.html"/>
         <link rel="next" title="The binary model" href="binary_model.html"/>
         <link rel="prev" title="Package signing" href="extensions/package_signing.html"/>
@@ -267,6 +267,13 @@ of the following change that behavior:</p>
 <li><code class="docutils literal notranslate"><span class="pre">CONAN_COLOR_DARK</span></code> will revert the color scheme for white/light background terminals (default assumes dark background).</li>
 </ul>
 </div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>The environment variable <code class="docutils literal notranslate"><span class="pre">CONAN_LOG_LEVEL</span></code> can define the Conan command line verbosity in the same way that the <code class="docutils literal notranslate"><span class="pre">-v</span></code>
+command line argument, with the same values (<code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">verbose</span></code>, etc.). It also has priority over the value of the command line arg if both are present.
+This can be useful to temporarily change the log level in CI pipelines, in automation, etc., without needing to modify the
+command line arguments.</p>
+</div>
 </div>
 
 
@@ -292,7 +299,7 @@ of the following change that behavior:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -711,7 +718,7 @@ of the following change that behavior:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

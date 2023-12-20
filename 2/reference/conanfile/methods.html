@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Methods &mdash; conan 2.0.14 documentation</title>
+  <title>Methods &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="conanfile.py" href="../conanfile.html"/>
         <link rel="next" title="build()" href="methods/build.html"/>
         <link rel="prev" title="Attributes" href="attributes.html"/>
@@ -126,6 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="methods/compatibility.html">compatibility()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="methods/configure.html">configure()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="methods/config_options.html">config_options()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="methods/deploy.html">deploy()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="methods/export.html">export()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="methods/export_sources.html">export_sources()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="methods/generate.html">generate()</a></li>
@@ -254,6 +255,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a class="reference internal" href="methods/compatibility.html"><span class="doc">compatibility()</span></a>: Defines binary compatibility at the recipe level</li>
 <li><a class="reference internal" href="methods/configure.html"><span class="doc">configure()</span></a>: Allows configuring settings and options while computing dependencies</li>
 <li><a class="reference internal" href="methods/config_options.html"><span class="doc">config_options()</span></a>: Configure options while computing dependency graph</li>
+<li><a class="reference internal" href="methods/deploy.html"><span class="doc">deploy()</span></a>: Deploys (copy from package to user folder) the desired artifacts</li>
 <li><a class="reference internal" href="methods/export.html"><span class="doc">export()</span></a>: Copies files that are part of the recipe</li>
 <li><a class="reference internal" href="methods/export_sources.html"><span class="doc">export_sources()</span></a>: Copies files that are part of the recipe sources</li>
 <li><a class="reference internal" href="methods/generate.html"><span class="doc">generate()</span></a>: Generates the files that are necessary for building the package</li>
@@ -296,7 +298,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -715,7 +717,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

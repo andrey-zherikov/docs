@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running and output &mdash; conan 2.0.14 documentation</title>
+  <title>Running and output &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="conanfile.py" href="../conanfile.html"/>
         <link rel="next" title="conanfile.txt" href="../conanfile_txt.html"/>
         <link rel="prev" title="validate_build()" href="methods/validate_build.html"/>
@@ -229,18 +229,33 @@ The <code class="docutils literal notranslate"><span class="pre">self.output</sp
 <span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 <span class="n">highlight</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 <span class="n">success</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">warn_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>These output functions will only output if the verbosity level with which Conan was launched is the same or higher than the message,
-so running with <code class="docutils literal notranslate"><span class="pre">-vwarning`</span> <span class="pre">will</span> <span class="pre">output</span> <span class="pre">calls</span> <span class="pre">to</span> <span class="pre">``warning()</span></code> and <code class="docutils literal notranslate"><span class="pre">error()</span></code>, but not <code class="docutils literal notranslate"><span class="pre">info()</span></code>
+so running with <code class="docutils literal notranslate"><span class="pre">-vwarning</span></code> will output calls to <code class="docutils literal notranslate"><span class="pre">warning()</span></code> and <code class="docutils literal notranslate"><span class="pre">error()</span></code>, but not <code class="docutils literal notranslate"><span class="pre">info()</span></code>
 (Additionally, the <code class="docutils literal notranslate"><span class="pre">highlight()</span></code> and <code class="docutils literal notranslate"><span class="pre">success()</span></code> methods have a <code class="docutils literal notranslate"><span class="pre">-vnotice</span></code> verbosity level)</p>
 <p>Note that these methods return the output object again, so that you can chain output calls if needed.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">core:warnings_as_errors</span></code> conf, you can make Conan raise an exception when either errors or a tagged warning matching any of the given patterns is printed.
+This is useful to make sure that recipes are not printing unexpected warnings or errors.
+Additionally, you can skip which warnings trigger an exception <a class="reference internal" href="../config_files/global_conf.html#reference-config-files-global-conf-skip-warnings"><span class="std std-ref">with the *core:skip_warnings* conf</span></a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Raise an exception if any warning or error is printed
+core:warnings_as_errors=[&#39;*&#39;]
+# But skip the deprecation warnings
+core:skip_warnings=[&#39;deprecated&#39;]
+</pre></div>
+</div>
+<p>Both confs accept a list of patterns to match against the warning tags.
+A special <code class="docutils literal notranslate"><span class="pre">unknown</span></code> value can be used to match any warning without a tag.</p>
+<p>To tag a warning, use the <code class="docutils literal notranslate"><span class="pre">warn_tag</span></code> argument of the <code class="docutils literal notranslate"><span class="pre">warning()</span></code> method in your recipes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Extra warning&quot;</span><span class="p">,</span> <span class="n">warn_tag</span><span class="o">=</span><span class="s2">&quot;custom_tag&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="running-commands">
 <span id="reference-conanfile-run"></span><h2>Running commands<a class="headerlink" href="#running-commands" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;build&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">self.run()</span></code> is a helper to run system commands while injecting the calls to activate the appropriate environment,
@@ -250,6 +265,14 @@ It also wraps the commands with the results of the <a class="reference internal"
 <li><code class="docutils literal notranslate"><span class="pre">command</span></code> should be specified as a string which is passed to the system shell.</li>
 <li>When the argument <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to true, the invocation of <code class="docutils literal notranslate"><span class="pre">self.run()</span></code> will not print the command to be executed.</li>
 </ul>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> arguments to redirect the output of the command to a file-like object instead of the console.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Redirect stdout to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ninja_stdout.log&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stdout</span><span class="p">:</span>
+    <span class="c1"># Redirect stderr to a StringIO object to be able to read it later</span>
+    <span class="n">stderr</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;ninja ...&quot;</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">stderr</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -276,7 +299,7 @@ It also wraps the commands with the results of the <a class="reference internal"
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -695,7 +718,7 @@ It also wraps the commands with the results of the <a class="reference internal"
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>package_id() &mdash; conan 2.0.14 documentation</title>
+  <title>package_id() &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="Methods" href="../methods.html"/>
         <link rel="next" title="package_info()" href="package_info.html"/>
         <link rel="prev" title="package()" href="package.html"/>
@@ -126,6 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="compatibility.html">compatibility()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configure.html">configure()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="config_options.html">config_options()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="deploy.html">deploy()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="export.html">export()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="export_sources.html">export_sources()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generate.html">generate()</a></li>
@@ -277,18 +278,17 @@ recipe declares an option <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <p>Then, if no <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> method is specified in the recipe, Conan will
-automatically manage the fPIC setting in the <code class="docutils literal notranslate"><span class="pre">package_id</span></code> step like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">conanfile</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get_safe</span><span class="p">(</span><span class="s2">&quot;header_only&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">conanfile</span><span class="o">.</span><span class="n">package_type</span> <span class="ow">is</span> <span class="n">PackageType</span><span class="o">.</span><span class="n">HEADER</span><span class="p">:</span>
-    <span class="n">conanfile</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</pre></div>
-</div>
+automatically manage it and call <code class="docutils literal notranslate"><span class="pre">self.info.clear()</span></code> in the <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> automatically,
+to make the <code class="docutils literal notranslate"><span class="pre">package_id</span></code> independent of settings, options, configuration and requirements.</p>
 <p>If you need to implement custom behaviors in your recipes but also need this logic, it
-must be explicitly declared:</p>
+must be explicitly declared, for example, something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">package_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">conanfile</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get_safe</span><span class="p">(</span><span class="s2">&quot;header_only&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">conanfile</span><span class="o">.</span><span class="n">package_type</span> <span class="ow">is</span> <span class="n">PackageType</span><span class="o">.</span><span class="n">HEADER</span><span class="p">:</span>
-        <span class="n">conanfile</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">rm_safe</span><span class="p">(</span><span class="s2">&quot;compiler.libcxx&quot;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">rm_safe</span><span class="p">(</span><span class="s2">&quot;compiler.cppstd&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">package_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">package_type</span> <span class="o">==</span> <span class="s2">&quot;header-library&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">rm_safe</span><span class="p">(</span><span class="s2">&quot;compiler.libcxx&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">rm_safe</span><span class="p">(</span><span class="s2">&quot;compiler.cppstd&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -408,7 +408,7 @@ configurations or when configurations follow a predictable naming pattern. For i
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -827,7 +827,7 @@ configurations or when configurations follow a predictable naming pattern. For i
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

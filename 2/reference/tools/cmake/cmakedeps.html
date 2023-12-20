@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CMakeDeps &mdash; conan 2.0.14 documentation</title>
+  <title>CMakeDeps &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="conan.tools.cmake" href="../cmake.html"/>
         <link rel="next" title="CMakeToolchain" href="cmaketoolchain.html"/>
         <link rel="prev" title="conan.tools.cmake" href="../cmake.html"/>
@@ -290,6 +290,7 @@ and their components (if declared).</li>
 <li><strong>FindXXX.cmake</strong>: Only when the property <code class="docutils literal notranslate"><span class="pre">cmake_find_mode</span></code> is set by the dependency with “module” or “both”. See <a class="reference internal" href="#cmakedeps-properties"><span class="std std-ref">The properties affecting CMakeDeps</span></a> is set in the dependency.</li>
 <li><strong>Other necessary *.cmake</strong>:  files like version, flags and directory data or configuration.</li>
 </ul>
+<p>Note that it will also generate a <strong>conandeps_legacy.cmake</strong> file. This is a file that provides a behavior similar to the Conan 1 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> generator, allowing to include this file with <code class="docutils literal notranslate"><span class="pre">include(${CMAKE_BINARY_DIR}/generators/conandeps_legacy.cmake)</span></code>, and providing a single CMake <code class="docutils literal notranslate"><span class="pre">CONANDEPS_LEGACY</span></code> variable that allows to link with all the direct and transitive dependencies without explicitly enumerating them like: <code class="docutils literal notranslate"><span class="pre">target_link_libraries(app</span> <span class="pre">${CONANDEPS_LEGACY})</span></code>. This is a convenience provided for Conan 1.X users to upgrade to Conan 2.0 without changing their overall developer flow, but it is not recommended otherwise, and using the CMake canonical flow of explicitly using <code class="docutils literal notranslate"><span class="pre">find_package()</span></code> and <code class="docutils literal notranslate"><span class="pre">target_link_libraries(...</span> <span class="pre">pkg1::pkg1</span> <span class="pre">pkg2::pkg2)</span></code> with targets is the correct approach.</p>
 </div>
 <div class="section" id="customization">
 <h2>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h2>
@@ -648,7 +649,7 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_BUILD_TYPE<span c
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -1067,7 +1068,7 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_BUILD_TYPE<span c
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

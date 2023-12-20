@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan.tools.files downloads &mdash; conan 2.0.14 documentation</title>
+  <title>conan.tools.files downloads &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="conan.tools.files" href="../files.html"/>
         <link rel="next" title="conan.tools.files patches" href="patches.html"/>
         <link rel="prev" title="conan.tools.files basic operations" href="basic.html"/>
@@ -284,18 +284,18 @@ otherwise it is deduced from the URL</li>
 <dl class="function">
 <dt id="conan.tools.files.files.ftp_download">
 <code class="descname">ftp_download</code><span class="sig-paren">(</span><em>conanfile</em>, <em>host</em>, <em>filename</em>, <em>login=''</em>, <em>password=''</em>, <em>secure=False</em><span class="sig-paren">)</span><a class="headerlink" href="#conan.tools.files.files.ftp_download" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ftp download of a file. Retrieves a file from an FTP server. This doesn’t support SSL, but you
-might implement it yourself using the standard Python FTP library.</p>
+<dd><p>Ftp download of a file. Retrieves a file from an FTP server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>conanfile</strong> – The current recipe object. Always use <code class="docutils literal notranslate"><span class="pre">self</span></code>.</li>
-<li><strong>host</strong> – IP or host of the FTP server</li>
-<li><strong>filename</strong> – Path to the file to be downloaded</li>
-<li><strong>login</strong> – Authentication login</li>
-<li><strong>password</strong> – Authentication password</li>
+<li><strong>host</strong> – IP or host of the FTP server.</li>
+<li><strong>filename</strong> – Path to the file to be downloaded.</li>
+<li><strong>login</strong> – Authentication login.</li>
+<li><strong>password</strong> – Authentication password.</li>
+<li><strong>secure</strong> – Set to True to use FTP over TLS/SSL (FTPS). Defaults to False for regular FTP.</li>
 </ul>
 </td>
 </tr>
@@ -409,7 +409,7 @@ followed by an absolute path to a file (where the third <code class="docutils li
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -828,7 +828,7 @@ followed by an absolute path to a file (where the third <code class="docutils li
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

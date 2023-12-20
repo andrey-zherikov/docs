@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>global.conf &mdash; conan 2.0.14 documentation</title>
+  <title>global.conf &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="Configuration files" href="../config_files.html"/>
         <link rel="next" title="profiles" href="profiles.html"/>
         <link rel="prev" title="Configuration files" href="../config_files.html"/>
@@ -277,7 +277,8 @@ core:default_build_profile: Defines the default build profile (&#39;default&#39;
 core:default_profile: Defines the default host profile (&#39;default&#39; by default)
 core:non_interactive: Disable interactive user input, raises error if input necessary
 core:required_conan_version: Raise if current version does not match the defined range.
-core:skip_warnings: Do not show warnings in this list
+core:skip_warnings: Do not show warnings matching any of the patterns in this list. Current warning tags are &#39;network&#39;, &#39;deprecated&#39;
+core:warnings_as_errors: Treat warnings matching any of the patterns in this list as errors and then raise an exception. Current warning tags are &#39;network&#39;, &#39;deprecated&#39;
 tools.android:cmake_legacy_toolchain: Define to explicitly pass ANDROID_USE_LEGACY_TOOLCHAIN_FILE in CMake toolchain
 tools.android:ndk_path: Argument for the CMAKE_ANDROID_NDK
 tools.apple:enable_arc: (boolean) Enable/Disable ARC Apple Clang flags
@@ -300,6 +301,7 @@ tools.build:verbosity: Verbosity of build systems if set. Possible values are &#
 tools.cmake.cmake_layout:build_folder_vars: Settings and Options that will produce a different build folder and different CMake presets names
 tools.cmake.cmaketoolchain:find_package_prefer_config: Argument for the CMAKE_FIND_PACKAGE_PREFER_CONFIG
 tools.cmake.cmaketoolchain:generator: User defined CMake generator to use instead of default
+tools.cmake.cmaketoolchain:presets_environment: String to define wether to add or not the environment section to the CMake presets. Empty by default, will generate the environment section in CMakePresets. Can take values: &#39;disabled&#39;.
 tools.cmake.cmaketoolchain:system_name: Define CMAKE_SYSTEM_NAME in CMakeToolchain
 tools.cmake.cmaketoolchain:system_processor: Define CMAKE_SYSTEM_PROCESSOR in CMakeToolchain
 tools.cmake.cmaketoolchain:system_version: Define CMAKE_SYSTEM_VERSION in CMakeToolchain
@@ -318,8 +320,8 @@ tools.gnu:define_libcxx11_abi: Force definition of GLIBCXX_USE_CXX11_ABI=1 for l
 tools.gnu:host_triplet: Custom host triplet to pass to Autotools scripts
 tools.gnu:make_program: Indicate path to make program
 tools.gnu:pkg_config: Path to pkg-config executable used by PkgConfig build helper
-tools.google.bazel:bazelrc_path: Defines Bazel rc-path
-tools.google.bazel:configs: Define Bazel config file
+tools.google.bazel:bazelrc_path: List of paths to bazelrc files to be used as &#39;bazel --bazelrc=rcpath1 ... build&#39;
+tools.google.bazel:configs: List of Bazel configurations to be used as &#39;bazel build --config=config1 ...&#39;
 tools.graph:skip_binaries: Allow the graph to skip binaries not needed in the current configuration (True by default)
 tools.info.package_id:confs: List of existing configuration to be part of the package ID
 tools.intel:installation_path: Defines the Intel oneAPI installation root path
@@ -331,9 +333,10 @@ tools.microsoft.bash:path: The path to the shell to run when conanfile.win_bash=
 tools.microsoft.bash:subsystem: The subsystem to be used when conanfile.win_bash==True. Possible values: msys2, msys, cygwin, wsl, sfu
 tools.microsoft.msbuild:installation_path: VS install path, to avoid auto-detect via vswhere, like C:/Program Files (x86)/Microsoft Visual Studio/2019/Community. Use empty string to disable
 tools.microsoft.msbuild:max_cpu_count: Argument for the /m when running msvc to build parallel projects
-tools.microsoft.msbuild:vs_version: Defines the IDE version when using the new msvc compiler
+tools.microsoft.msbuild:vs_version: Defines the IDE version (15, 16, 17) when using the msvc compiler. Necessary if compiler.version specifies a toolset that is not the IDE default
 tools.microsoft.msbuilddeps:exclude_code_analysis: Suppress MSBuild code analysis for patterns
 tools.microsoft.msbuildtoolchain:compile_options: Dictionary with MSBuild compiler options
+tools.microsoft:winsdk_version: Use this winsdk_version in vcvars
 tools.system.package_manager:mode: Mode for package_manager tools: &#39;check&#39;, &#39;report&#39;, &#39;report-installed&#39; or &#39;install&#39;
 tools.system.package_manager:sudo: Use &#39;sudo&#39; when invoking the package manager tools in Linux (False by default)
 tools.system.package_manager:sudo_askpass: Use the &#39;-A&#39; argument if using sudo in Linux to invoke the system package manager (False by default)
@@ -501,13 +504,14 @@ or if you are using it for development purposes</li>
 <div class="section" id="ux-confs">
 <h2>UX confs<a class="headerlink" href="#ux-confs" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="skip-warnings">
-<h3>Skip warnings<a class="headerlink" href="#skip-warnings" title="Permalink to this headline">¶</a></h3>
+<span id="reference-config-files-global-conf-skip-warnings"></span><h3>Skip warnings<a class="headerlink" href="#skip-warnings" title="Permalink to this headline">¶</a></h3>
 <p>There are several warnings that Conan outputs in certain cases which can be omitted via the <code class="docutils literal notranslate"><span class="pre">core:skip_warnings</span></code> conf,
 by adding the warning tag to its value.</p>
 <p>Those warnings are:</p>
 <blockquote>
 <div><ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">deprecated</span></code>: Messages for deprecated features such as legacy generators</li>
+<li><code class="docutils literal notranslate"><span class="pre">network</span></code>: Messages related to network issues, such as retries</li>
 </ul>
 </div></blockquote>
 </div>
@@ -537,7 +541,7 @@ by adding the warning tag to its value.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -956,7 +960,7 @@ by adding the warning tag to its value.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

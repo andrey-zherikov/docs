@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Header-only packages &mdash; conan 2.0.14 documentation</title>
+  <title>Header-only packages &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="Other types of packages" href="../other_types_of_packages.html"/>
         <link rel="next" title="Package prebuilt binaries" href="package_prebuilt_binaries.html"/>
         <link rel="prev" title="Other types of packages" href="../other_types_of_packages.html"/>
@@ -390,8 +390,9 @@ and we declared the <code class="docutils literal notranslate"><span class="pre"
 <li>We have a <code class="docutils literal notranslate"><span class="pre">build()</span></code> method, building the tests, but only when the standard conf <code class="docutils literal notranslate"><span class="pre">tools.build:skip_test</span></code> is not
 True. Use that conf as a standard way to enable/disable the testing. It is used by the helpers like <code class="docutils literal notranslate"><span class="pre">CMake</span></code> to
 skip the <code class="docutils literal notranslate"><span class="pre">cmake.test()</span></code> in case we implement the tests in CMake.</li>
-<li>We have a <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> method calling <code class="docutils literal notranslate"><span class="pre">self.info.clear()</span></code>. This is internally removing the settings
-from the package ID calculation so we generate only one configuration for our header-only library.</li>
+<li>We have a <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> method calling <code class="docutils literal notranslate"><span class="pre">self.info.clear()</span></code>. This is internally removing all the information
+(settings, options, requirements) from the package_id calculation so we generate only one configuration for our
+header-only library.</li>
 </ul>
 </div></blockquote>
 <p>We can call <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> to build and test our package.</p>
@@ -468,7 +469,7 @@ settings.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -887,7 +888,7 @@ settings.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

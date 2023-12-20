@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CMakeToolchain &mdash; conan 2.0.14 documentation</title>
+  <title>CMakeToolchain &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../../index.html"/>
         <link rel="up" title="conan.tools.cmake" href="../cmake.html"/>
         <link rel="next" title="CMake" href="cmake.html"/>
         <link rel="prev" title="CMakeDeps" href="cmakedeps.html"/>
@@ -292,23 +292,55 @@ Some things that will be defined in this file:</p>
 like when using the Ninja or NMake generators. If necessary, the <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code> will generate this script,
 so defining the correct Visual Studio prompt is easier.</p>
 </li>
-<li><p class="first"><strong>CMakePresets.json</strong>: The toolchain also generates a <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code> standard file, check the documentation
-<a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html">here</a>. It is currently using the version “3” of
-the JSON schema.
-Conan creates a <code class="docutils literal notranslate"><span class="pre">conan-default</span></code> configure preset with the information:</p>
+<li><p class="first"><strong>CMakePresets.json</strong>: This toolchain generates a standard <cite>CMakePresets.json</cite> file. For
+more information, refer to the documentation <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html">here</a>. It currently uses
+version “3” of the JSON schema. Conan adds <em>configure</em>, <em>build</em>, and <em>test</em> preset
+entries to the JSON file:</p>
 <blockquote>
 <div><ul class="simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">generator</span></code> to be used.</li>
-<li>The path to the <code class="docutils literal notranslate"><span class="pre">conan_toolchain.cmake</span></code>.</li>
-<li>Some cache variables corresponding to the specified settings cannot work if specified in the toolchain.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> variable when using a single-configuration generators.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">BUILD_TESTING</span></code> variable set to <code class="docutils literal notranslate"><span class="pre">OFF</span></code>, when configuration <code class="docutils literal notranslate"><span class="pre">tools.build:skip_test</span></code> is true.</li>
-<li>If you run several <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> with different <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">build_type</span></code> values, it will generate the corresponding
-<code class="docutils literal notranslate"><span class="pre">buildPresets</span></code> and <code class="docutils literal notranslate"><span class="pre">configurePresets</span></code>.</li>
-<li>By default, the presets names will be <code class="docutils literal notranslate"><span class="pre">conan-xxxx</span></code>, but the “conan-” prefix can be customized with
-<code class="docutils literal notranslate"><span class="pre">CMakeToolchain.presets_prefix</span> <span class="pre">=</span> <span class="pre">&quot;conan&quot;</span></code> attribute.</li>
-<li>The preset names will be controlled by the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> <code class="docutils literal notranslate"><span class="pre">self.folders.build_folder_vars</span></code> definition, that
-can contain a list of settings and options like <code class="docutils literal notranslate"><span class="pre">[&quot;settings.compiler&quot;,</span> <span class="pre">&quot;settings.arch&quot;,</span> <span class="pre">&quot;options.shared&quot;]</span></code>.</li>
+<li><dl class="first docutils">
+<dt><cite>configurePresets</cite> storing the following information:</dt>
+<dd><ul class="first last">
+<li>The <cite>generator</cite> to be used.</li>
+<li>The path to the <cite>conan_toolchain.cmake</cite>.</li>
+<li>Cache variables corresponding to the specified settings that cannot work if
+specified in the toolchain.</li>
+<li>The <cite>CMAKE_BUILD_TYPE</cite> variable for single-configuration generators.</li>
+<li>The <cite>BUILD_TESTING</cite> variable set to <cite>OFF</cite> when the configuration
+<cite>tools.build:skip_test</cite> is true.</li>
+<li>An environment section setting all the environment information related to the
+<a class="reference internal" href="../env/virtualbuildenv.html#conan-tools-env-virtualbuildenv"><span class="std std-ref">VirtualBuildEnv</span></a> (if any). You can skip
+the generation of this section by using the
+<code class="docutils literal notranslate"><span class="pre">tools.cmake.cmaketoolchain:presets_environment</span></code> configuration.</li>
+<li>By default, preset names will be <cite>conan-xxxx</cite>, but the “conan-” prefix can be
+customized with the <cite>CMakeToolchain.presets_prefix = “conan”</cite> attribute.</li>
+<li>Preset names are controlled by the <cite>layout()</cite> <cite>self.folders.build_folder_vars</cite>
+definition, which can contain a list of settings and options like
+<cite>[“settings.compiler”, “settings.arch”, “options.shared”]</cite>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>buildPresets</cite> storing the following information:</dt>
+<dd><ul class="first last">
+<li>The <cite>configurePreset</cite> associated with this build preset.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>testPresets</cite> storing the following information:</dt>
+<dd><ul class="first last">
+<li>The <cite>configurePreset</cite> associated with this build preset.</li>
+<li>An environment section setting all the environment information related to the
+<a class="reference internal" href="../env/virtualrunenv.html#conan-tools-env-virtualrunenv"><span class="std std-ref">VirtualRunEnv</span></a> (if any). You can skip the
+generation of this section by using the
+<code class="docutils literal notranslate"><span class="pre">tools.cmake.cmaketoolchain:presets_environment</span></code> configuration.</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
 </li>
@@ -325,8 +357,9 @@ The file name of this file can be configured with the <code class="docutils lite
 attribute, so if you want to generate a “ConanPresets.json” instead to be included from your own file,
 you can define <code class="docutils literal notranslate"><span class="pre">tc.user_presets_path</span> <span class="pre">=</span> <span class="pre">&quot;ConanPresets.jon&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">generate()</span></code> method.
 See <a class="reference internal" href="../../../examples/tools/cmake/cmake_toolchain/extend_own_cmake_presets.html#examples-tools-cmake-toolchain-build-project-extend-presets"><span class="std std-ref">extending your own CMake presets</span></a> for a full example.</p>
-<p>Note: Conan will skip the generation of the <code class="docutils literal notranslate"><span class="pre">CMakeUserPresets.json</span></code> if it already exists and was not
+<p><strong>Note:</strong> Conan will skip the generation of the <code class="docutils literal notranslate"><span class="pre">CMakeUserPresets.json</span></code> if it already exists and was not
 generated by Conan.</p>
+<p><strong>Note:</strong> To list all available presets, use the <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--list-presets</span></code> command:</p>
 </li>
 </ul>
 <div class="admonition note">
@@ -724,6 +757,7 @@ from overriding the values. If setting this to <code class="docutils literal not
 <li><strong>tools.cmake.cmaketoolchain:system_processor</strong> is not necessary in most cases and is only used to force-define <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_PROCESSOR</span></code>.</li>
 <li><strong>tools.cmake.cmaketoolchain:toolset_arch</strong>: Will add the <code class="docutils literal notranslate"><span class="pre">,host=xxx</span></code> specifier in the <code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_TOOLSET</span></code> variable of <code class="docutils literal notranslate"><span class="pre">conan_toolchain.cmake</span></code> file.</li>
 <li><strong>tools.cmake.cmake_layout:build_folder_vars</strong>: Settings and Options that will produce a different build folder and different CMake presets names.</li>
+<li><strong>tools.cmake.cmaketoolchain:presets_environment</strong>: Set to <code class="docutils literal notranslate"><span class="pre">'disabled'</span></code> to prevent the addition of the environment section to the generated CMake presets.</li>
 <li><strong>tools.build:cxxflags</strong> list of extra C++ flags that will be appended to <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS_INIT</span></code>.</li>
 <li><strong>tools.build:cflags</strong> list of extra of pure C flags that will be appended to <code class="docutils literal notranslate"><span class="pre">CMAKE_C_FLAGS_INIT</span></code>.</li>
 <li><strong>tools.build:sharedlinkflags</strong> list of extra linker flags that will be appended to <code class="docutils literal notranslate"><span class="pre">CMAKE_SHARED_LINKER_FLAGS_INIT</span></code>.</li>
@@ -733,6 +767,7 @@ from overriding the values. If setting this to <code class="docutils literal not
 <li><strong>tools.build:tools.apple:enable_arc</strong> boolean value to enable/disable ARC Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC</span></code>.</li>
 <li><strong>tools.build:tools.apple:enable_visibility</strong> boolean value to enable/disable Visibility Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN</span></code>.</li>
 <li><strong>tools.build:sysroot</strong> defines the value of <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSROOT</span></code>.</li>
+<li><strong>tools.microsoft:winsdk_version</strong> Defines the <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_VERSION</span></code> or the <code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_TOOLSET</span></code> according to CMake policy <code class="docutils literal notranslate"><span class="pre">CMP0149</span></code>.</li>
 <li><strong>tools.build:compiler_executables</strong> dict-like Python object which specifies the
 compiler as key and the compiler executable path as value. Those keys will be mapped as
 follows:<ul>
@@ -776,7 +811,7 @@ follows:<ul>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -1195,7 +1230,7 @@ follows:<ul>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

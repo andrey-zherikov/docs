@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conan lock &mdash; conan 2.0.14 documentation</title>
+  <title>conan lock &mdash; conan 2.0.15 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.14 documentation" href="../../index.html"/>
+    <link rel="top" title="conan 2.0.15 documentation" href="../../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
         <link rel="next" title="conan lock add" href="lock/add.html"/>
         <link rel="prev" title="conan list" href="list.html"/>
@@ -127,6 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="lock/add.html">conan lock add</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lock/create.html">conan lock create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lock/merge.html">conan lock merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lock/remove.html">conan lock remove</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="profile.html">conan profile</a></li>
@@ -250,6 +251,7 @@ In addition to these commands, most of the Conan commands that compute a graph, 
 </div>
 <ul class="simple">
 <li><a class="reference internal" href="lock/add.html"><span class="doc">conan lock add</span></a>: Manually add items to a lockfile</li>
+<li><a class="reference internal" href="lock/remove.html"><span class="doc">conan lock remove</span></a>: Manually remove items from a lockfile</li>
 <li><a class="reference internal" href="lock/create.html"><span class="doc">conan lock create</span></a>: Evaluates a dependency graph and save a lockfile</li>
 <li><a class="reference internal" href="lock/merge.html"><span class="doc">conan lock merge</span></a>: Merge several existing lockfiles into one.</li>
 </ul>
@@ -265,6 +267,9 @@ positional<span class="w"> </span>arguments:
 <span class="w">                     </span>package<span class="w"> </span>references,<span class="w"> </span>including<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>the<span class="w"> </span>version,<span class="w"> </span>and<span class="w"> </span>they<span class="w"> </span>cannot<span class="w"> </span>contain<span class="w"> </span>a<span class="w"> </span>version<span class="w"> </span>range.
 <span class="w">   </span>create<span class="w">            </span>Create<span class="w"> </span>a<span class="w"> </span>lockfile<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>conanfile<span class="w"> </span>or<span class="w"> </span>a<span class="w"> </span>reference.
 <span class="w">   </span>merge<span class="w">             </span>Merge<span class="w"> </span><span class="m">2</span><span class="w"> </span>or<span class="w"> </span>more<span class="w"> </span>lockfiles.
+<span class="w">   </span>remove<span class="w">            </span>Remove<span class="w"> </span>requires,<span class="w"> </span>build-requires<span class="w"> </span>or<span class="w"> </span>python-requires
+<span class="w">                     </span>from<span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>or<span class="w"> </span>new<span class="w"> </span>lockfile.<span class="w"> </span>References<span class="w"> </span>can<span class="w"> </span>be
+<span class="w">                     </span>supplied<span class="w"> </span>with<span class="w"> </span>and<span class="w"> </span>without<span class="w"> </span>revisions<span class="w"> </span>like<span class="w"> </span><span class="s2">&quot;--requires=pkg/version&quot;</span>
 
 optional<span class="w"> </span>arguments:
 -h,<span class="w"> </span>--help<span class="w">          </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
@@ -297,7 +302,7 @@ optional<span class="w"> </span>arguments:
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 15, 2023.
+      Last updated on Dec 20, 2023.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
@@ -716,7 +721,7 @@ optional<span class="w"> </span>arguments:
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.0.14',
+            VERSION:'2.0.15',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
