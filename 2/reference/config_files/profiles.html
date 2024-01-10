@@ -826,13 +826,14 @@ detect the operating system and architecture, you can use:</p>
 </div>
 <p>Similarly, for more advanced detections like determining the compiler, its version, and
 the associated runtime, you can use:</p>
-<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">set</span> <span class="nv">compiler</span><span class="o">,</span> <span class="nv">version</span> <span class="o">=</span> <span class="nv">detect_api.detect_compiler</span><span class="o">()</span> <span class="cp">%}</span>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">set</span> <span class="nv">compiler</span><span class="o">,</span> <span class="nv">version</span><span class="o">,</span> <span class="nv">compiler_exe</span> <span class="o">=</span> <span class="nv">detect_api.detect_default_compiler</span><span class="o">()</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">runtime</span><span class="o">,</span> <span class="kp">_</span> <span class="o">=</span> <span class="nv">detect_api.default_msvc_runtime</span><span class="o">(</span><span class="nv">compiler</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">[settings]</span>
 <span class="x">compiler=</span><span class="cp">{{</span><span class="nv">compiler</span><span class="cp">}}</span>
 <span class="x">compiler.version=</span><span class="cp">{{</span><span class="nv">detect_api.default_compiler_version</span><span class="o">(</span><span class="nv">compiler</span><span class="o">,</span> <span class="nv">version</span><span class="o">)</span><span class="cp">}}</span>
 <span class="x">compiler.runtime=</span><span class="cp">{{</span><span class="nv">runtime</span><span class="cp">}}</span>
 <span class="x">compiler.cppstd=</span><span class="cp">{{</span><span class="nv">detect_api.default_cppstd</span><span class="o">(</span><span class="nv">compiler</span><span class="o">,</span> <span class="nv">version</span><span class="o">)</span><span class="cp">}}</span>
+<span class="x">compiler.libcxx=</span><span class="cp">{{</span><span class="nv">detect_api.detect_libcxx</span><span class="o">(</span><span class="nv">compiler</span><span class="o">,</span> <span class="nv">version</span><span class="o">,</span> <span class="nv">compiler_exe</span><span class="o">)</span><span class="cp">}}</span>
 </pre></div>
 </div>
 <p><strong>detect_api reference</strong>:</p>
@@ -840,10 +841,10 @@ the associated runtime, you can use:</p>
 <div><ul class="simple">
 <li><strong>`detect_os()`</strong>: returns operating system as a string (e.g., “Windows”, “Macos”).</li>
 <li><strong>`detect_arch()`</strong>: returns system architecture as a string (e.g., “x86_64”, “armv8”).</li>
-<li><strong>`detect_libcxx(compiler, version)`</strong>: returns C++ standard library as a string (e.g., “libstdc++”, “libc++”).</li>
+<li><strong>`detect_libcxx(compiler, version, compiler_exe=None)`</strong>: returns C++ standard library as a string (e.g., “libstdc++”, “libc++”).</li>
 <li><strong>`default_msvc_runtime(compiler)`</strong>: returns tuple with runtime (e.g., “dynamic”) and its version (e.g., “v143”).</li>
 <li><strong>`default_cppstd(compiler, compiler_version)`</strong>: returns default C++ standard as a string (e.g., “gnu14”).</li>
-<li><strong>`detect_compiler()`</strong>: returns tuple with compiler name (e.g., “gcc”) and its version.</li>
+<li><strong>`detect_default_compiler()`</strong>: returns tuple with compiler name (e.g., “gcc”), its version and the executable path.</li>
 <li><strong>`default_msvc_ide_version(version)`</strong>: returns MSVC IDE version as a string (e.g., “17”).</li>
 <li><dl class="first docutils">
 <dt><strong>`default_compiler_version(compiler, version)`</strong>: returns the default version that</dt>
@@ -987,7 +988,7 @@ zlib*:compiler.version=3.5
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016-2023, JFrog.
-      Last updated on Dec 21, 2023.
+      Last updated on Jan 10, 2024.
       <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
     </p>
   </div> 
