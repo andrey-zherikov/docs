@@ -1,52 +1,28 @@
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attributes &mdash; conan 1.6.1 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
   
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-
-  
-    <link rel="stylesheet" href="../../_static/css/signup.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../_static/css/search.css" type="text/css" />
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 1.6.1 documentation" href="../../index.html"/>
-        <link rel="up" title="conanfile.py" href="../conanfile.html"/>
-        <link rel="next" title="Methods" href="methods.html"/>
-        <link rel="prev" title="conanfile.py" href="../conanfile.html"/>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d6a008b6"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Methods" href="methods.html" />
+    <link rel="prev" title="conanfile.py" href="../conanfile.html" />
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -70,51 +46,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-
-  
-
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="../../index.html">
           
-
-          
+          <a href="../../index.html">
             
-            <img src="../../_static/conan_logo.png" class="logo" />
-          
+              <img src="../../_static/conan_logo.png" class="logo" alt="Logo"/>
           </a>
-
-            
-
-          
+              <div class="version">
+                1.6
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
@@ -181,100 +138,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 
-            
-          
-          <div class="dark_newsletter-div">
-             <p><a href="https://conan.io/#signUp" target="_blank">Sign up for release updates</a></p>
-          </div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">conan</a>
-        
       </nav>
 
-
-      
-      <script>
-        var reldir = "../../index.html".replace("index.html","").replace("#", "");
-      </script>
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
-            <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
-          </div>
-                 
+            <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
+              <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
+            </div>
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation" id="breadcrumbs">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../../reference.html">Reference</a> &raquo;</li>
-        
-          <li><a href="../conanfile.html">conanfile.py</a> &raquo;</li>
-        
-      <li>Attributes</li>
-    
-    
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+          <li class="breadcrumb-item"><a href="../conanfile.html">conanfile.py</a></li>
+      <li class="breadcrumb-item active">Attributes</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/reference/conanfile/attributes.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
+  <hr/>
 </div>
-          <!--<select id="search" name="state" multiple="true" onchange="window.location = reldir + this.value;" style="width:90%"></select>
-          <hr/>-->
-          <!--<div class="admonition important">
-            <p class="admonition-title">Announcement</p>
-            <p>Recipe Hacking no. 2! Building on what we learnt during the first installment we will be working on more Conan 2.0 Migration! We'll start by reviewing some open pull requests and hopefully tackle a CMake example. <a
-            href=https://jfrog.zoom.us/webinar/register/WN_grFhqH0yRBeIfJmBvQoPJw> Register here to attend.</a></p>
-          </div>-->
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="attributes">
-<h1>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="name">
-<h2>name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="attributes">
+<h1>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h1>
+<section id="name">
+<h2>name<a class="headerlink" href="#name" title="Link to this heading"></a></h2>
 <p>This is a string, with a minimun of 2 and a maximum of 50 characters (though shorter names are recommended), that defines the package name. It will be the <code class="docutils literal notranslate"><span class="pre">&lt;PkgName&gt;/version&#64;user/channel</span></code> of the package reference.
 It should match the following regex <code class="docutils literal notranslate"><span class="pre">^[a-zA-Z0-9_][a-zA-Z0-9_\+\.-]$</span></code>, so start with alphanumeric or underscore, then alphanumeric, underscore, +, ., - characters.</p>
 <p>The name is only necessary for <code class="docutils literal notranslate"><span class="pre">export</span></code>-ing the recipe into the local cache (<code class="docutils literal notranslate"><span class="pre">export</span></code> and <code class="docutils literal notranslate"><span class="pre">create</span></code> commands), if they are not defined in the command line.
 It might take its value from an environment variable, or even any python code that defines it (e.g. a function that reads an environment variable, or a file from disk).
 However, the most common and suggested approach would be to define it in plain text as a constant, or provide it as command line arguments.</p>
-</div>
-<div class="section" id="version">
-<h2>version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="version">
+<h2>version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
 <p>The version attribute will define the version part of the package reference: <code class="docutils literal notranslate"><span class="pre">PkgName/&lt;version&gt;&#64;user/channel</span></code>
 It is a string, and can take any value, matching the same constraints as the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.
 In case the version follows semantic versioning in the form <code class="docutils literal notranslate"><span class="pre">X.Y.Z-pre1+build2</span></code>, that value might be used for requiring this package through version ranges instead of exact versions.</p>
@@ -282,9 +188,9 @@ In case the version follows semantic versioning in the form <code class="docutil
 It might take its value from an environment variable, or even any python code that defines it (e.g. a function that reads an environment variable, or a file from disk).
 Please note that this value might be used in the recipe in other places (as in <code class="docutils literal notranslate"><span class="pre">source()</span></code> method to retrieve code from elsewhere), making this value not constant means that it may evaluate differently in different contexts (e.g., on different machines or for different users) leading to unrepeatable or unpredictable results.
 The most common and suggested approach would be to define it in plain text as a constant, or provide it as command line arguments.</p>
-</div>
-<div class="section" id="description">
-<h2>description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
 <p>This is an optional, but strongly recommended text field, containing the description of the package,
 and any information that might be useful for the consumers. The first line might be used as a
 short description of the package.</p>
@@ -296,9 +202,9 @@ short description of the package.</p>
 <span class="s2">                    with incredible iostreams performance&quot;&quot;&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="homepage">
-<h2>homepage<a class="headerlink" href="#homepage" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="homepage">
+<h2>homepage<a class="headerlink" href="#homepage" title="Link to this heading"></a></h2>
 <p>Use this attribute to indicate the home web page of the library being packaged. This is useful to link
 the recipe to further explanations of the library itself like an overview of its features, documentation, FAQ
 as well as other related information.</p>
@@ -308,9 +214,9 @@ as well as other related information.</p>
     <span class="n">homepage</span> <span class="o">=</span> <span class="s2">&quot;http://eigen.tuxfamily.org&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="url">
-<span id="package-url"></span><h2>url<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="url">
+<span id="package-url"></span><h2>url<a class="headerlink" href="#url" title="Link to this heading"></a></h2>
 <p>It is possible, even typical, if you are packaging a thid party lib, that you just develop
 the packaging code. Such code is also subject to change, often via collaboration, so it should be stored
 in a VCS like git, and probably put on GitHub or a similar service. If you do indeed maintain such a
@@ -326,9 +232,9 @@ It is optional, but highly recommended, that it points to GitHub, Bitbucket or y
 code collaboration platform. Of course, if you have the conanfile inside your library source,
 you can point to it, and afterwards use the <code class="docutils literal notranslate"><span class="pre">url</span></code> in your <code class="docutils literal notranslate"><span class="pre">source()</span></code> method.</p>
 <p>This is a recommended, but not mandatory attribute.</p>
-</div>
-<div class="section" id="license">
-<h2>license<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="license">
+<h2>license<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
 <p>This field is intended for the license of the <strong>target</strong> source code and binaries, i.e. the code
 that is being packaged, not the <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code> itself. This info is used to be displayed by
 the <strong class="command">conan info</strong> command and possibly other search and report tools.</p>
@@ -341,9 +247,9 @@ the <strong class="command">conan info</strong> command and possibly other searc
 <p>This attribute can contain several, comma separated licenses. It is a text string, so it can
 contain any text, including hyperlinks to license files elsewhere.</p>
 <p>This is a recommended, but not mandatory attribute.</p>
-</div>
-<div class="section" id="author">
-<h2>author<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="author">
+<h2>author<a class="headerlink" href="#author" title="Link to this heading"></a></h2>
 <p>Intended to add information about the author, in case it is different from the conan user. It is
 possible that the conan user is the name of an organization, project, company or group, and many
 users have permissions over that account. In this case, the author information can explicitely
@@ -355,9 +261,9 @@ define who is the creator/maintainer of the package</p>
 </pre></div>
 </div>
 <p>This is an optional attribute</p>
-</div>
-<div class="section" id="user-channel">
-<span id="id1"></span><h2>user, channel<a class="headerlink" href="#user-channel" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-channel">
+<span id="id1"></span><h2>user, channel<a class="headerlink" href="#user-channel" title="Link to this heading"></a></h2>
 <p>The fields <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">channel</span></code> can be accessed from within a <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code>.
 Though their usage is usually not encouraged, it could be useful in different cases,
 e.g. to define requirements with the same user and
@@ -376,9 +282,9 @@ channel than the current package, which could be achieved with something like:</
 For package recipes working in user space, there is no current user/channel. The properties <code class="docutils literal notranslate"><span class="pre">self.user</span></code>
 and <code class="docutils literal notranslate"><span class="pre">self.channel</span></code> will then look for environment variables <code class="docutils literal notranslate"><span class="pre">CONAN_USERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">CONAN_CHANNEL</span></code>
 respectively. If they are not defined, an error will be raised.</p>
-</div>
-<div class="section" id="settings">
-<span id="settings-property"></span><h2>settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="settings">
+<span id="settings-property"></span><h2>settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
 <p>There are several things that can potentially affect a package being created, i.e. the final
 package will be different (a different binary, for example), if some input is different.</p>
 <p>Development project-wide variables, like the compiler, its version, or the OS
@@ -430,9 +336,9 @@ independent in VS, we can just remove that setting field:</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="p">[</span><span class="s2">&quot;Visual Studio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;runtime&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="options-default-options">
-<span id="conanfile-options"></span><h2>options, default_options<a class="headerlink" href="#options-default-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options-default-options">
+<span id="conanfile-options"></span><h2>options, default_options<a class="headerlink" href="#options-default-options" title="Link to this heading"></a></h2>
 <p>Conan packages recipes can generate different binary packages when different settings are used, but can also customize, per-package any other configuration that will produce a different binary.</p>
 <p>A typical option would be being shared or static for a certain library. Note that this is optional, different packages can have this option, or not (like header-only packages), and different packages can have different values for this option, as opposed to settings, which typically have the same values for all packages being installed (though this can be controlled too, defining different settings for specific packages)</p>
 <p>Options are defined in package recipes as dictionaries of name and allowed values:</p>
@@ -526,9 +432,9 @@ MyLib:shared=True
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>get<span class="w"> </span>Pkg/0.1@user/channel
 </pre></div>
 </div>
-</div>
-<div class="section" id="requires">
-<h2>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="requires">
+<h2>requires<a class="headerlink" href="#requires" title="Link to this heading"></a></h2>
 <p>Specify package dependencies as a list of other packages:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyLibConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">requires</span> <span class="o">=</span> <span class="s2">&quot;Hello/1.0@user/stable&quot;</span><span class="p">,</span> <span class="s2">&quot;OtherLib/2.1@otheruser/testing&quot;</span>
@@ -557,8 +463,8 @@ the compression is enabled or not. Now, if you want to force the usage of Zlib(v
 </div>
 <p>This <strong>will not introduce a new dependency</strong>, it will just change Zlib v2 to v3 if A actually
 requires it. Otherwise Zlib will not be a dependency of your package.</p>
-<div class="section" id="version-ranges">
-<span id="version-ranges-reference"></span><h3>version ranges<a class="headerlink" href="#version-ranges" title="Permalink to this headline">¶</a></h3>
+<section id="version-ranges">
+<span id="version-ranges-reference"></span><h3>version ranges<a class="headerlink" href="#version-ranges" title="Link to this heading"></a></h3>
 <p>The syntax is using brackets:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">requires</span> <span class="o">=</span> <span class="s2">&quot;Pkg/[&gt;1.0,&lt;1.8]@user/stable&quot;</span>
@@ -573,11 +479,12 @@ but using a comma instead of spaces. Accepted expressions would be:</p>
 </pre></div>
 </div>
 <div class="out-reference-box docutils container">
-Go to <a class="reference internal" href="../../mastering/version_ranges.html#version-ranges"><span class="std std-ref">Mastering/Version Ranges</span></a> if you want to learn more about version ranges.</div>
+<p>Go to <a class="reference internal" href="../../mastering/version_ranges.html#version-ranges"><span class="std std-ref">Mastering/Version Ranges</span></a> if you want to learn more about version ranges.</p>
 </div>
-</div>
-<div class="section" id="build-requires">
-<h2>build_requires<a class="headerlink" href="#build-requires" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="build-requires">
+<h2>build_requires<a class="headerlink" href="#build-requires" title="Link to this heading"></a></h2>
 <p>Build requirements are requirements that are only installed and used when the package is built from sources. If there is an existing pre-compiled binary, then the build requirements for this package will not be retrieved.</p>
 <p>They can be specified as a comma separated tuple in the package recipe:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyPkg</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -585,9 +492,9 @@ Go to <a class="reference internal" href="../../mastering/version_ranges.html#ve
 </pre></div>
 </div>
 <p>Read more: <a class="reference internal" href="../../devtools/build_requires.html#build-requires"><span class="std std-ref">Build requiremens</span></a></p>
-</div>
-<div class="section" id="exports">
-<h2>exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exports">
+<h2>exports<a class="headerlink" href="#exports" title="Link to this heading"></a></h2>
 <p>If a package recipe <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code> requires other external files, like other python files that
 it is importing (python importing), or maybe some text file with data it is reading, those files
 must be exported with the <code class="docutils literal notranslate"><span class="pre">exports</span></code> field, so they are stored together, side by side with the
@@ -605,9 +512,9 @@ we would do something like:</p>
 </div>
 <p>This is an optional attribute, only to be used if the package recipe requires these other files
 for evaluation of the recipe.</p>
-</div>
-<div class="section" id="exports-sources">
-<span id="exports-sources-attribute"></span><h2>exports_sources<a class="headerlink" href="#exports-sources" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exports-sources">
+<span id="exports-sources-attribute"></span><h2>exports_sources<a class="headerlink" href="#exports-sources" title="Link to this heading"></a></h2>
 <p>There are 2 ways of getting source code to build a package. Using the <code class="docutils literal notranslate"><span class="pre">source()</span></code> recipe method
 and using the <code class="docutils literal notranslate"><span class="pre">exports_sources</span></code> field. With <code class="docutils literal notranslate"><span class="pre">exports_sources</span></code> you specify which sources are required,
 and they will be exported together with the <strong>conanfile.py</strong>, copying them from your folder to the
@@ -628,9 +535,9 @@ that are not necessary for the package recipe, we could do:</p>
 <p>This is an optional attribute, used typically when <code class="docutils literal notranslate"><span class="pre">source()</span></code> is not specified. The main difference with
 <code class="docutils literal notranslate"><span class="pre">exports</span></code> is that <code class="docutils literal notranslate"><span class="pre">exports</span></code> files are always retrieved (even if pre-compiled packages exist),
 while <code class="docutils literal notranslate"><span class="pre">exports_sources</span></code> files are only retrieved when it is necessary to build a package from sources.</p>
-</div>
-<div class="section" id="generators">
-<h2>generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="generators">
+<h2>generators<a class="headerlink" href="#generators" title="Link to this heading"></a></h2>
 <p>Generators specify which is the output of the <code class="docutils literal notranslate"><span class="pre">install</span></code> command in your project folder. By default, a <em>conanbuildinfo.txt</em> file is
 generated, but you can specify different generators and even use more than one.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyLibConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -638,9 +545,9 @@ generated, but you can specify different generators and even use more than one.<
 </pre></div>
 </div>
 <p>Check the full <a class="reference internal" href="../../using_packages/conanfile_txt.html#generators"><span class="std std-ref">generators list</span></a>.</p>
-</div>
-<div class="section" id="should-configure-should-build-should-install-should-test">
-<span id="attribute-build-stages"></span><h2>should_configure, should_build, should_install, should_test<a class="headerlink" href="#should-configure-should-build-should-install-should-test" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="should-configure-should-build-should-install-should-test">
+<span id="attribute-build-stages"></span><h2>should_configure, should_build, should_install, should_test<a class="headerlink" href="#should-configure-should-build-should-install-should-test" title="Link to this heading"></a></h2>
 <p>Read only variables defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>These variables allow you to control the build stages of a recipe during a <strong class="command">conan build</strong> command with the optional arguments
 <strong class="command">--configure</strong>/<strong class="command">--build</strong>/<strong class="command">--install</strong>/<strong class="command">--test</strong>. For example, consider this <code class="docutils literal notranslate"><span class="pre">build()</span></code> method:</p>
@@ -676,22 +583,22 @@ $<span class="w"> </span>conan<span class="w"> </span>build<span class="w"> </sp
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">should_configure</span></code>, <code class="docutils literal notranslate"><span class="pre">should_build</span></code>, <code class="docutils literal notranslate"><span class="pre">should_install</span></code>, <code class="docutils literal notranslate"><span class="pre">should_test</span></code> variables will always be <code class="docutils literal notranslate"><span class="pre">True</span></code> while building in
 the cache and can be only modified for the local flow with <strong class="command">conan build</strong>.</p>
-</div>
-<div class="section" id="build-policy">
-<h2>build_policy<a class="headerlink" href="#build-policy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="build-policy">
+<h2>build_policy<a class="headerlink" href="#build-policy" title="Link to this heading"></a></h2>
 <p>With the <code class="docutils literal notranslate"><span class="pre">build_policy</span></code> attribute the package creator can change the default conan’s build behavior.
 The allowed <code class="docutils literal notranslate"><span class="pre">build_policy</span></code> values are:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">missing</span></code>: If no binary package is found, Conan will build it without the need to invoke <strong class="command">conan install --build missing</strong> option.</li>
-<li><code class="docutils literal notranslate"><span class="pre">always</span></code>: The package will be built always, <strong>retrieving each time the source code</strong> executing the “source” method.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">missing</span></code>: If no binary package is found, Conan will build it without the need to invoke <strong class="command">conan install --build missing</strong> option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">always</span></code>: The package will be built always, <strong>retrieving each time the source code</strong> executing the “source” method.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">class</span> <span class="nc">PocoTimerConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
 <span class="hll">     <span class="n">build_policy</span> <span class="o">=</span> <span class="s2">&quot;always&quot;</span> <span class="c1"># &quot;missing&quot;</span>
 </span></pre></div>
 </div>
-</div>
-<div class="section" id="short-paths">
-<span id="short-paths-reference"></span><h2>short_paths<a class="headerlink" href="#short-paths" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="short-paths">
+<span id="short-paths-reference"></span><h2>short_paths<a class="headerlink" href="#short-paths" title="Link to this heading"></a></h2>
 <p>If one of the packages you are creating hits the limit of 260 chars path length in Windows, add
 <code class="docutils literal notranslate"><span class="pre">short_paths=True</span></code> in your conanfile.py:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conans</span> <span class="kn">import</span> <span class="n">ConanFile</span>
@@ -707,116 +614,108 @@ something like <cite>C:/.conan/tmpdir</cite>. All the folder layout in the conan
 <p>From Windows 10 (ver. 10.0.14393), it is possible to opt-in disabling the path limits. Check <a class="reference external" href="https://docs.microsoft.com/es-es/windows/desktop/FileIO/naming-a-file#maximum-path-length-limitation">this link</a> for more info.
 Latest python installers might offer to enable this while installing python. With this limit removed, the <code class="docutils literal notranslate"><span class="pre">short_paths</span></code> functionality is
 totally unnecessary. Please note that this only works with Python 3.6 and newer.</p>
-</div>
-<div class="section" id="no-copy-source">
-<span id="id2"></span><h2>no_copy_source<a class="headerlink" href="#no-copy-source" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="no-copy-source">
+<span id="id2"></span><h2>no_copy_source<a class="headerlink" href="#no-copy-source" title="Link to this heading"></a></h2>
 <p>The attribute <code class="docutils literal notranslate"><span class="pre">no_copy_source</span></code> tells the recipe that the source code will not be copied from the <code class="docutils literal notranslate"><span class="pre">source</span></code> folder to the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder.
 This is mostly an optimization for packages with large source codebases, to avoid extra copies. It is <strong>mandatory</strong> that the source code must not be modified at all by the configure or build scripts, as the source code will be shared among all builds.</p>
 <p>To be able to use it, the package recipe can access the <code class="docutils literal notranslate"><span class="pre">self.source_folder</span></code> attribute, which will point to the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder when <code class="docutils literal notranslate"><span class="pre">no_copy_source=False</span></code> or not defined, and will point to the <code class="docutils literal notranslate"><span class="pre">source</span></code> folder when <code class="docutils literal notranslate"><span class="pre">no_copy_source=True</span></code></p>
 <p>When this attribute is set to True, the <code class="docutils literal notranslate"><span class="pre">package()</span></code> method will be called twice, one copying from the <code class="docutils literal notranslate"><span class="pre">source</span></code> folder and the other copying from the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder.</p>
-</div>
-<div class="section" id="folders">
-<h2>folders<a class="headerlink" href="#folders" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="folders">
+<h2>folders<a class="headerlink" href="#folders" title="Link to this heading"></a></h2>
 <p>In the package recipe methods, some attributes pointing to the relevant folders can be defined. Not all of them will be defined always, only in those relevant methods that might use them.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">self.source_folder</span></code>: the folder in which the source code to be compiled lives. When a package is built in the conan local cache, by default it is the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder,
+<li><p><code class="docutils literal notranslate"><span class="pre">self.source_folder</span></code>: the folder in which the source code to be compiled lives. When a package is built in the conan local cache, by default it is the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder,
 as the source code is copied from the <code class="docutils literal notranslate"><span class="pre">source</span></code> folder to the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder,
 to ensure isolation and avoiding modifications of shared common source code among builds for different configurations.
-Only when <code class="docutils literal notranslate"><span class="pre">no_copy_source=True</span></code> this folder will actually point to the package <code class="docutils literal notranslate"><span class="pre">source</span></code> folder in the local cache.</li>
-<li><code class="docutils literal notranslate"><span class="pre">self.build_folder</span></code>: the folder in which the build is being done</li>
-<li><code class="docutils literal notranslate"><span class="pre">self.install_folder</span></code>: the folder in which the install has outputed the generator files, by default, and always in the local cache, is the same <code class="docutils literal notranslate"><span class="pre">self.build_folder</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">self.package_folder</span></code>: the folder to copy the final artifacts for the binary package</li>
+Only when <code class="docutils literal notranslate"><span class="pre">no_copy_source=True</span></code> this folder will actually point to the package <code class="docutils literal notranslate"><span class="pre">source</span></code> folder in the local cache.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.build_folder</span></code>: the folder in which the build is being done</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.install_folder</span></code>: the folder in which the install has outputed the generator files, by default, and always in the local cache, is the same <code class="docutils literal notranslate"><span class="pre">self.build_folder</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.package_folder</span></code>: the folder to copy the final artifacts for the binary package</p></li>
 </ul>
 <p>When executing local conan commands (for a package not in the local cache, but in user folder), those fields would be pointing to the corresponding local user folder.</p>
-</div>
-<div class="section" id="cpp-info">
-<span id="cpp-info-attributes-reference"></span><h2>cpp_info<a class="headerlink" href="#cpp-info" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cpp-info">
+<span id="cpp-info-attributes-reference"></span><h2>cpp_info<a class="headerlink" href="#cpp-info" title="Link to this heading"></a></h2>
 <p>This attribute is only defined inside <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method, being None elsewhere, so please use it only inside this method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">self.cpp_info</span></code> object can be filled with the needed information for the consumers of the current
 package:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="26%" />
-<col width="74%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">NAME</th>
-<th class="head">DESCRIPTION</th>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>NAME</p></th>
+<th class="head"><p>DESCRIPTION</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>self.cpp_info.includedirs</td>
-<td>Ordered list with include paths, by default [‘include’]</td>
+<tbody>
+<tr class="row-even"><td><p>self.cpp_info.includedirs</p></td>
+<td><p>Ordered list with include paths, by default [‘include’]</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.libdirs</td>
-<td>Ordered list with lib paths, by default [‘lib’]</td>
+<tr class="row-odd"><td><p>self.cpp_info.libdirs</p></td>
+<td><p>Ordered list with lib paths, by default [‘lib’]</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.resdirs</td>
-<td>Ordered list of resource (data) paths, by default [‘res’]</td>
+<tr class="row-even"><td><p>self.cpp_info.resdirs</p></td>
+<td><p>Ordered list of resource (data) paths, by default [‘res’]</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.bindirs</td>
-<td>Ordered list with include paths, by default [‘bin’]</td>
+<tr class="row-odd"><td><p>self.cpp_info.bindirs</p></td>
+<td><p>Ordered list with include paths, by default [‘bin’]</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.builddirs</td>
-<td>Ordered list with build scripts paths, by default [‘’]. CMake will search in these dirs for cmake files, like findXXX.cmake</td>
+<tr class="row-even"><td><p>self.cpp_info.builddirs</p></td>
+<td><p>Ordered list with build scripts paths, by default [‘’]. CMake will search in these dirs for cmake files, like findXXX.cmake</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.libs</td>
-<td>Ordered list with the library names, by default empty []</td>
+<tr class="row-odd"><td><p>self.cpp_info.libs</p></td>
+<td><p>Ordered list with the library names, by default empty []</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.defines</td>
-<td>Preprocessor definitions, by default empty []</td>
+<tr class="row-even"><td><p>self.cpp_info.defines</p></td>
+<td><p>Preprocessor definitions, by default empty []</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.cflags</td>
-<td>Ordered list with pure C flags, by default empty []</td>
+<tr class="row-odd"><td><p>self.cpp_info.cflags</p></td>
+<td><p>Ordered list with pure C flags, by default empty []</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.cppflags</td>
-<td>Ordered list with C++ flags, by default empty []</td>
+<tr class="row-even"><td><p>self.cpp_info.cppflags</p></td>
+<td><p>Ordered list with C++ flags, by default empty []</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.sharedlinkflags</td>
-<td>Ordered list with linker flags (shared libs), by default empty []</td>
+<tr class="row-odd"><td><p>self.cpp_info.sharedlinkflags</p></td>
+<td><p>Ordered list with linker flags (shared libs), by default empty []</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.exelinkflags</td>
-<td>Ordered list with linker flags (executables), by default empty []</td>
+<tr class="row-even"><td><p>self.cpp_info.exelinkflags</p></td>
+<td><p>Ordered list with linker flags (executables), by default empty []</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.rootpath</td>
-<td>Filled with the root directory of the package, see deps_cpp_info</td>
+<tr class="row-odd"><td><p>self.cpp_info.rootpath</p></td>
+<td><p>Filled with the root directory of the package, see deps_cpp_info</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">Read <a class="reference internal" href="methods.html#method-package-info"><span class="std std-ref">package_info() method docs</span></a> for more info.</p>
+<p class="admonition-title">See also</p>
+<p>Read <a class="reference internal" href="methods.html#method-package-info"><span class="std std-ref">package_info() method docs</span></a> for more info.</p>
 </div>
-</div>
-<div class="section" id="deps-cpp-info">
-<h2>deps_cpp_info<a class="headerlink" href="#deps-cpp-info" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deps-cpp-info">
+<h2>deps_cpp_info<a class="headerlink" href="#deps-cpp-info" title="Link to this heading"></a></h2>
 <p>Contains the <code class="docutils literal notranslate"><span class="pre">cpp_info</span></code> object of the requirements of the recipe. In addition of the above fields, there are also
 properties to obtain the absolute paths:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="38%" />
-<col width="62%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">NAME</th>
-<th class="head">DESCRIPTION</th>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>NAME</p></th>
+<th class="head"><p>DESCRIPTION</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>self.cpp_info.include_paths</td>
-<td>Same as <code class="docutils literal notranslate"><span class="pre">includedirs</span></code> but transformed to absolute paths</td>
+<tbody>
+<tr class="row-even"><td><p>self.cpp_info.include_paths</p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">includedirs</span></code> but transformed to absolute paths</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.lib_paths</td>
-<td>Same as <code class="docutils literal notranslate"><span class="pre">libdirs</span></code> but transformed to absolute paths</td>
+<tr class="row-odd"><td><p>self.cpp_info.lib_paths</p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">libdirs</span></code> but transformed to absolute paths</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.bin_paths</td>
-<td>Same as <code class="docutils literal notranslate"><span class="pre">bindirs</span></code> but transformed to absolute paths</td>
+<tr class="row-even"><td><p>self.cpp_info.bin_paths</p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">bindirs</span></code> but transformed to absolute paths</p></td>
 </tr>
-<tr class="row-odd"><td>self.cpp_info.build_paths</td>
-<td>Same as <code class="docutils literal notranslate"><span class="pre">builddirs</span></code> but transformed to absolute paths</td>
+<tr class="row-odd"><td><p>self.cpp_info.build_paths</p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">builddirs</span></code> but transformed to absolute paths</p></td>
 </tr>
-<tr class="row-even"><td>self.cpp_info.res_paths</td>
-<td>Same as <code class="docutils literal notranslate"><span class="pre">resdirs</span></code> but transformed to absolute paths</td>
+<tr class="row-even"><td><p>self.cpp_info.res_paths</p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">resdirs</span></code> but transformed to absolute paths</p></td>
 </tr>
 </tbody>
 </table>
@@ -846,18 +745,18 @@ root folder of the package:</p>
 <span class="hll">         <span class="bp">self</span><span class="o">.</span><span class="n">deps_cpp_info</span><span class="p">[</span><span class="s2">&quot;OpenSSL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sharedlinkflags</span>
 </span></pre></div>
 </div>
-</div>
-<div class="section" id="env-info">
-<h2>env_info<a class="headerlink" href="#env-info" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="env-info">
+<h2>env_info<a class="headerlink" href="#env-info" title="Link to this heading"></a></h2>
 <p>This attribute is only defined inside <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method, being None elsewhere, so please use it only inside this method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">self.env_info</span></code> object can be filled with the environment variables to be declared in the packages reusing the recipe.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">Read <a class="reference internal" href="methods.html#method-package-info"><span class="std std-ref">package_info() method docs</span></a> for more info.</p>
+<p class="admonition-title">See also</p>
+<p>Read <a class="reference internal" href="methods.html#method-package-info"><span class="std std-ref">package_info() method docs</span></a> for more info.</p>
 </div>
-</div>
-<div class="section" id="deps-env-info">
-<h2>deps_env_info<a class="headerlink" href="#deps-env-info" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deps-env-info">
+<h2>deps_env_info<a class="headerlink" href="#deps-env-info" title="Link to this heading"></a></h2>
 <p>You can access to the declared environment variables of the requirements of the recipe.</p>
 <p><strong>Note:</strong> The environment variables declared in the requirements of a recipe are automatically applied
 and it can be accesed with the python <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> dictionary. Nevertheless if
@@ -877,14 +776,14 @@ you want to access to the variable declared by some specific requirement you can
          <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SOMEVAR&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="info">
-<h2>info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="info">
+<h2>info<a class="headerlink" href="#info" title="Link to this heading"></a></h2>
 <p>Object used to control the unique ID for a package. Check the <a class="reference internal" href="methods.html#method-package-id"><span class="std std-ref">package_id()</span></a> to see the details of the <code class="docutils literal notranslate"><span class="pre">self.info</span></code>
 object.</p>
-</div>
-<div class="section" id="apply-env">
-<span id="id3"></span><h2>apply_env<a class="headerlink" href="#apply-env" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apply-env">
+<span id="id3"></span><h2>apply_env<a class="headerlink" href="#apply-env" title="Link to this heading"></a></h2>
 <p>When <code class="docutils literal notranslate"><span class="pre">True</span></code> (Default), the values from <code class="docutils literal notranslate"><span class="pre">self.deps_env_info</span></code> (corresponding to the declared <code class="docutils literal notranslate"><span class="pre">env_info</span></code> in the <code class="docutils literal notranslate"><span class="pre">requires</span></code> and <code class="docutils literal notranslate"><span class="pre">build_requires</span></code>)
 will be automatically applied to the <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>.</p>
 <p>Disable it setting <code class="docutils literal notranslate"><span class="pre">apply_env</span></code> to False if you want to control by yourself the environment variables
@@ -902,9 +801,9 @@ applied to your recipes.</p>
              <span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="in-local-cache">
-<span id="id4"></span><h2>in_local_cache<a class="headerlink" href="#in-local-cache" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="in-local-cache">
+<span id="id4"></span><h2>in_local_cache<a class="headerlink" href="#in-local-cache" title="Link to this heading"></a></h2>
 <p>A boolean attribute useful for conditional logic to apply in user folders local commands.
 It will return <cite>True</cite> if the conanfile resides in the local cache ( we are installing the package)
 and <cite>False</cite> if we are running the conanfile in a user folder (local Conan commands).</p>
@@ -920,9 +819,9 @@ and <cite>False</cite> if we are running the conanfile in a user folder (local C
             <span class="c1"># we are building the package in a local directory</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="develop">
-<span id="develop-attribute"></span><h2>develop<a class="headerlink" href="#develop" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="develop">
+<span id="develop-attribute"></span><h2>develop<a class="headerlink" href="#develop" title="Link to this heading"></a></h2>
 <p>A boolean attribute useful for conditional logic. It will be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the package is created with <strong class="command">conan create</strong>, or if the
 <em>conanfile.py</em> is in user space:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RecipeConan</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -941,18 +840,18 @@ $<span class="w"> </span>conan<span class="w"> </span>build<span class="w"> </sp
 </pre></div>
 </div>
 <p>But it will not output that when it is a transitive requirement or installed with <strong class="command">conan install</strong>.</p>
-</div>
-<div class="section" id="keep-imports">
-<span id="id5"></span><h2>keep_imports<a class="headerlink" href="#keep-imports" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keep-imports">
+<span id="id5"></span><h2>keep_imports<a class="headerlink" href="#keep-imports" title="Link to this heading"></a></h2>
 <p>Just before the <code class="docutils literal notranslate"><span class="pre">build()</span></code> method is executed, if the conanfile has an <code class="docutils literal notranslate"><span class="pre">imports()</span></code> method, it is
 executed into the build folder, to copy binaries from dependencies that might be necessary for
 the <code class="docutils literal notranslate"><span class="pre">build()</span></code> method to work. After the method finishes, those copied (imported) files are removed,
 so they are not later unnecessarily repackaged.</p>
 <p>This behavior can be avoided declaring the <code class="docutils literal notranslate"><span class="pre">keep_imports=True</span></code> attribute. This can be useful, for example
 to <a class="reference internal" href="../../devtools/running_packages.html#repackage"><span class="std std-ref">repackage artifacts</span></a></p>
-</div>
-<div class="section" id="scm">
-<span id="scm-attribute"></span><h2>scm<a class="headerlink" href="#scm" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scm">
+<span id="scm-attribute"></span><h2>scm<a class="headerlink" href="#scm" title="Link to this heading"></a></h2>
 <p>Used to clone/checkout a repository. It is a dictionary with the following possible values:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conans</span> <span class="kn">import</span> <span class="n">ConanFile</span><span class="p">,</span> <span class="n">CMake</span><span class="p">,</span> <span class="n">tools</span>
 
@@ -967,22 +866,21 @@ to <a class="reference internal" href="../../devtools/running_packages.html#repa
 </pre></div>
 </div>
 <ul class="simple">
-<li><strong>type</strong> (Required): Currently only <code class="docutils literal notranslate"><span class="pre">git</span></code> supported. Others like <code class="docutils literal notranslate"><span class="pre">svn</span></code> will be added eventually.</li>
-<li><strong>url</strong> (Required): URL of the remote or <code class="docutils literal notranslate"><span class="pre">auto</span></code> to capture the remote from the local directory.</li>
-<li><dl class="first docutils">
-<dt><strong>revision</strong> (Required):</dt>
-<dd>When type is <code class="docutils literal notranslate"><span class="pre">git</span></code>, it can be a string with a branch name, a commit or a tag.</dd>
+<li><p><strong>type</strong> (Required): Currently only <code class="docutils literal notranslate"><span class="pre">git</span></code> supported. Others like <code class="docutils literal notranslate"><span class="pre">svn</span></code> will be added eventually.</p></li>
+<li><p><strong>url</strong> (Required): URL of the remote or <code class="docutils literal notranslate"><span class="pre">auto</span></code> to capture the remote from the local directory.</p></li>
+<li><dl class="simple">
+<dt><strong>revision</strong> (Required):</dt><dd><p>When type is <code class="docutils literal notranslate"><span class="pre">git</span></code>, it can be a string with a branch name, a commit or a tag.</p>
+</dd>
 </dl>
 </li>
-<li><strong>subfolder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">.</span></code>): A subfolder where the repository will be cloned.</li>
-<li><strong>username</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the login to authenticate with the remote.</li>
-<li><strong>password</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the password to authenticate with the remote.</li>
-<li><strong>verify_ssl</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Verify SSL certificate of the specified <strong>url</strong>.</li>
-<li><dl class="first docutils">
-<dt><strong>submodule</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>):</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">shallow</span></code>: Will sync the git submodules using <code class="docutils literal notranslate"><span class="pre">submodule</span> <span class="pre">sync</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">recursive</span></code>: Will sync the git submodules using <code class="docutils literal notranslate"><span class="pre">submodule</span> <span class="pre">sync</span> <span class="pre">--recursive</span></code></li>
+<li><p><strong>subfolder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">.</span></code>): A subfolder where the repository will be cloned.</p></li>
+<li><p><strong>username</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the login to authenticate with the remote.</p></li>
+<li><p><strong>password</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the password to authenticate with the remote.</p></li>
+<li><p><strong>verify_ssl</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Verify SSL certificate of the specified <strong>url</strong>.</p></li>
+<li><dl class="simple">
+<dt><strong>submodule</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>):</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">shallow</span></code>: Will sync the git submodules using <code class="docutils literal notranslate"><span class="pre">submodule</span> <span class="pre">sync</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">recursive</span></code>: Will sync the git submodules using <code class="docutils literal notranslate"><span class="pre">submodule</span> <span class="pre">sync</span> <span class="pre">--recursive</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -990,492 +888,438 @@ to <a class="reference internal" href="../../devtools/running_packages.html#repa
 </ul>
 <p>To know more about the usage of <code class="docutils literal notranslate"><span class="pre">scm</span></code> check:</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../creating_packages/external_repo.html#external-repo"><span class="std std-ref">Creating packages/Recipe and sources in a different repo</span></a></li>
-<li><a class="reference internal" href="../../creating_packages/package_repo.html#package-repo"><span class="std std-ref">Creating packages/Recipe and sources in the same repo</span></a></li>
+<li><p><a class="reference internal" href="../../creating_packages/external_repo.html#external-repo"><span class="std std-ref">Creating packages/Recipe and sources in a different repo</span></a></p></li>
+<li><p><a class="reference internal" href="../../creating_packages/package_repo.html#package-repo"><span class="std std-ref">Creating packages/Recipe and sources in the same repo</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="methods.html" class="btn btn-neutral float-right" title="Methods" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../conanfile.html" class="btn btn-neutral" title="conanfile.py" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../conanfile.html" class="btn btn-neutral float-left" title="conanfile.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="methods.html" class="btn btn-neutral float-right" title="Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016-2018, JFrog.
-      <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
-    </p>
+    <p>&#169; Copyright 2016-2018, JFrog.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <!--<span class="fa fa-pencil-square-o"> Other versions:</span> -->
-      Version: 1.6
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>Versions</dt>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: 1.6
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+    <dt>Versions</dt>
+    
         
-            
-                <dd><a href="/2.0/index.html">2.0</a></dd>
-                   
+            <dd><a href="/2.0/index.html">2.0</a></dd>
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-            
-                <dd><a href="/2/index.html">2</a></dd>
-                   
+    
         
-        <br>
+            <dd><a href="/2/index.html">2</a></dd>
         
-                   
+    
+    <br>
+    
         
-            
-                <dd><a href="/1/index.html">1</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.62/index.html">1.62</a></dd>
-                   
+            <dd><a href="/1/index.html">1</a></dd>
         
-            
-                <dd><a href="/en/1.61/index.html">1.61</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.60/index.html">1.60</a></dd>
-                   
+            <dd><a href="/en/1.62/index.html">1.62</a></dd>
         
-            
-                <dd><a href="/en/1.59/index.html">1.59</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.58/index.html">1.58</a></dd>
-                   
+            <dd><a href="/en/1.61/index.html">1.61</a></dd>
         
-            
-                <dd><a href="/en/1.57/index.html">1.57</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.56/index.html">1.56</a></dd>
-                   
+            <dd><a href="/en/1.60/index.html">1.60</a></dd>
         
-            
-                <dd><a href="/en/1.55/index.html">1.55</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.54/index.html">1.54</a></dd>
-                   
+            <dd><a href="/en/1.59/index.html">1.59</a></dd>
         
-            
-                <dd><a href="/en/1.53/index.html">1.53</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.52/index.html">1.52</a></dd>
-                   
+            <dd><a href="/en/1.58/index.html">1.58</a></dd>
         
-            
-                <dd><a href="/en/1.51/index.html">1.51</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.50/index.html">1.50</a></dd>
-                   
+            <dd><a href="/en/1.57/index.html">1.57</a></dd>
         
-            
-                <dd><a href="/en/1.49/index.html">1.49</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.48/index.html">1.48</a></dd>
-                   
+            <dd><a href="/en/1.56/index.html">1.56</a></dd>
         
-            
-                <dd><a href="/en/1.47/index.html">1.47</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.46/index.html">1.46</a></dd>
-                   
+            <dd><a href="/en/1.55/index.html">1.55</a></dd>
         
-            
-                <dd><a href="/en/1.45/index.html">1.45</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.44/index.html">1.44</a></dd>
-                   
+            <dd><a href="/en/1.54/index.html">1.54</a></dd>
         
-            
-                <dd><a href="/en/1.43/index.html">1.43</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.42/index.html">1.42</a></dd>
-                   
+            <dd><a href="/en/1.53/index.html">1.53</a></dd>
         
-            
-                <dd><a href="/en/1.41/index.html">1.41</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.40/index.html">1.40</a></dd>
-                   
+            <dd><a href="/en/1.52/index.html">1.52</a></dd>
         
-            
-                <dd><a href="/en/1.39/index.html">1.39</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.38/index.html">1.38</a></dd>
-                   
+            <dd><a href="/en/1.51/index.html">1.51</a></dd>
         
-            
-                <dd><a href="/en/1.37/index.html">1.37</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.36/index.html">1.36</a></dd>
-                   
+            <dd><a href="/en/1.50/index.html">1.50</a></dd>
         
-            
-                <dd><a href="/en/1.35/index.html">1.35</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.34/index.html">1.34</a></dd>
-                   
+            <dd><a href="/en/1.49/index.html">1.49</a></dd>
         
-            
-                <dd><a href="/en/1.33/index.html">1.33</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.32/index.html">1.32</a></dd>
-                   
+            <dd><a href="/en/1.48/index.html">1.48</a></dd>
         
-            
-                <dd><a href="/en/1.31/index.html">1.31</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.30/index.html">1.30</a></dd>
-                   
+            <dd><a href="/en/1.47/index.html">1.47</a></dd>
         
-            
-                <dd><a href="/en/1.29/index.html">1.29</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.28/index.html">1.28</a></dd>
-                   
+            <dd><a href="/en/1.46/index.html">1.46</a></dd>
         
-            
-                <dd><a href="/en/1.27/index.html">1.27</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.26/index.html">1.26</a></dd>
-                   
+            <dd><a href="/en/1.45/index.html">1.45</a></dd>
         
-            
-                <dd><a href="/en/1.25/index.html">1.25</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.24/index.html">1.24</a></dd>
-                   
+            <dd><a href="/en/1.44/index.html">1.44</a></dd>
         
-            
-                <dd><a href="/en/1.23/index.html">1.23</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.22/index.html">1.22</a></dd>
-                   
+            <dd><a href="/en/1.43/index.html">1.43</a></dd>
         
-            
-                <dd><a href="/en/1.21/index.html">1.21</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.20/index.html">1.20</a></dd>
-                   
+            <dd><a href="/en/1.42/index.html">1.42</a></dd>
         
-            
-                <dd><a href="/en/1.19/index.html">1.19</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.18/index.html">1.18</a></dd>
-                   
+            <dd><a href="/en/1.41/index.html">1.41</a></dd>
         
-            
-                <dd><a href="/en/1.17/index.html">1.17</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.16/index.html">1.16</a></dd>
-                   
+            <dd><a href="/en/1.40/index.html">1.40</a></dd>
         
-            
-                <dd><a href="/en/1.15/index.html">1.15</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.14/index.html">1.14</a></dd>
-                   
+            <dd><a href="/en/1.39/index.html">1.39</a></dd>
         
-            
-                <dd><a href="/en/1.13/index.html">1.13</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.12/index.html">1.12</a></dd>
-                   
+            <dd><a href="/en/1.38/index.html">1.38</a></dd>
         
-            
-                <dd><a href="/en/1.11/index.html">1.11</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.10/index.html">1.10</a></dd>
-                   
+            <dd><a href="/en/1.37/index.html">1.37</a></dd>
         
-            
-                <dd><a href="/en/1.9/index.html">1.9</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.8/index.html">1.8</a></dd>
-                   
+            <dd><a href="/en/1.36/index.html">1.36</a></dd>
         
-            
-                <dd><a href="/en/1.7/index.html">1.7</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.6/index.html">1.6</a></dd>
-                   
+            <dd><a href="/en/1.35/index.html">1.35</a></dd>
         
-            
-                <dd><a href="/en/1.5/index.html">1.5</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.4/index.html">1.4</a></dd>
-                   
+            <dd><a href="/en/1.34/index.html">1.34</a></dd>
         
-            
-                <dd><a href="/en/1.3/index.html">1.3</a></dd>
-                   
+    
         
-                   
+            <dd><a href="/en/1.33/index.html">1.33</a></dd>
         
-      </dl>
-      <dl>
+    
+        
+            <dd><a href="/en/1.32/index.html">1.32</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.31/index.html">1.31</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.30/index.html">1.30</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.29/index.html">1.29</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.28/index.html">1.28</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.27/index.html">1.27</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.26/index.html">1.26</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.25/index.html">1.25</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.24/index.html">1.24</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.23/index.html">1.23</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.22/index.html">1.22</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.21/index.html">1.21</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.20/index.html">1.20</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.19/index.html">1.19</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.18/index.html">1.18</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.17/index.html">1.17</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.16/index.html">1.16</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.15/index.html">1.15</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.14/index.html">1.14</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.13/index.html">1.13</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.12/index.html">1.12</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.11/index.html">1.11</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.10/index.html">1.10</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.9/index.html">1.9</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.8/index.html">1.8</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.7/index.html">1.7</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.6/index.html">1.6</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.5/index.html">1.5</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.4/index.html">1.4</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.3/index.html">1.3</a></dd>
+        
+    
+        
+    
+    </dl>
+    <dl>
         <dt>Downloads</dt>
         
             <dd><a href="/en/1.6/conan.pdf">PDF</a></dd>
-               
-      </dl>
-    </div>
+        
+    </dl>
   </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'1.6.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="../../_static/js/modernizr.min.js"></script>
-  <script src="../../_static/js/search.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
--->
-  
-  
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-  
-
-
-  <script>
-    // initSearch("1.6");
   </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK44ZFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

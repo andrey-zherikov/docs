@@ -1,53 +1,30 @@
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Getting Started &mdash; conan 1.34.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; conan 1.34.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
   
     <link rel="shortcut icon" href="_static/conan-favicon.png"/>
+    <link rel="canonical" href="https://docs.conan.io/en/latest/getting_started.html" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-
-  
-    <link rel="stylesheet" href="_static/css/signup.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="_static/css/search.css" type="text/css" />
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="conan 1.34.1 documentation" href="index.html"/>
-        <link rel="next" title="Using packages" href="using_packages.html"/>
-        <link rel="prev" title="Install" href="installation.html"/>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=80f462d1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using packages" href="using_packages.html" />
+    <link rel="prev" title="Install" href="installation.html" />
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -62,51 +39,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-
-  
-
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="index.html">
           
-
-          
+          <a href="index.html">
             
-            <img src="_static/conan-logo.png" class="logo" />
-          
+              <img src="_static/conan-logo.png" class="logo" alt="Logo"/>
           </a>
-
-            
-
-          
+              <div class="version">
+                1.34
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="training_courses.html">Training Courses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Install</a></li>
@@ -138,109 +96,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="conan_v2.html">Road to Conan 2.0</a></li>
 </ul>
 
-            
-          
-          <div class="dark_newsletter-div">
-             <p><a href="https://conan.io/#signUp" target="_blank">Sign up for release updates</a></p>
-          </div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">conan</a>
-        
       </nav>
 
-
-      
-      <script>
-        var reldir = "index.html".replace("index.html","").replace("#", "");
-      </script>
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
-            <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
-          </div>
-                 
+            <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
+              <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
+            </div>
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation" id="breadcrumbs">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Getting Started</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-            
               <a href="https://github.com/conan-io/docs/blob/master/getting_started.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
+  <hr/>
 </div>
-          <!--<select id="search" name="state" multiple="true" onchange="window.location = reldir + this.value;" style="width:90%"></select>
-          <hr/>-->
-          <!--<div class="admonition important">
-            <p class="admonition-title">Announcement</p>
-            <p>Recipe Hacking no. 2! Building on what we learnt during the first installment we will be working on more Conan 2.0 Migration! We'll start by reviewing some open pull requests and hopefully tackle a CMake example. <a
-            href=https://jfrog.zoom.us/webinar/register/WN_grFhqH0yRBeIfJmBvQoPJw> Register here to attend.</a></p>
-          </div>-->
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="getting-started">
-<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="getting-started">
+<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <p>Let’s get started with an example: We are going to create an MD5 hash calculator app that uses one of the
 most popular C++ libraries: <a class="reference external" href="https://pocoproject.org/">Poco</a>.</p>
 <p>We’ll use CMake as build system in this case but keep in mind that Conan <strong>works with any build
 system</strong> and is not limited to using CMake.</p>
 <p>Make sure you are running the latest Conan version. Read the <a class="reference internal" href="installation.html#conan-update"><span class="std std-ref">Conan update</span></a>
 section to get more information.</p>
-<div class="section" id="an-md5-hash-calculator-using-the-poco-libraries">
-<h2>An MD5 hash calculator using the Poco Libraries<a class="headerlink" href="#an-md5-hash-calculator-using-the-poco-libraries" title="Permalink to this headline">¶</a></h2>
+<section id="an-md5-hash-calculator-using-the-poco-libraries">
+<h2>An MD5 hash calculator using the Poco Libraries<a class="headerlink" href="#an-md5-hash-calculator-using-the-poco-libraries" title="Link to this heading"></a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The source files to recreate this project are available in the <a class="reference external" href="https://github.com/conan-io/examples">example repository</a> in GitHub.
 You can skip the manual creation of the folder and sources with this command:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/conan-io/examples.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examples/libraries/poco/md5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/conan-io/examples.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examples/libraries/poco/md5
 </pre></div>
 </div>
 </div>
 <ol class="arabic">
-<li><p class="first">Create the following source file inside a folder. This will be the source file of our application:</p>
+<li><p>Create the following source file inside a folder. This will be the source file of our application:</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><strong>md5.cpp</strong></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>md5.cpp</strong></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Poco/MD5Engine.h&quot;</span>
 <span class="w"> </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Poco/DigestStream.h&quot;</span>
 
@@ -259,7 +166,7 @@ You can skip the manual creation of the folder and sources with this command:</p
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">We know that our application relies on the Poco libraries. Let’s look for it in the ConanCenter remote,
+<li><p>We know that our application relies on the Poco libraries. Let’s look for it in the ConanCenter remote,
 going to <a class="reference external" href="https://conan.io/center">https://conan.io/center</a>, and typing “poco” in the search box. We will see that there are
 some different versions available:</p>
 <blockquote>
@@ -271,15 +178,15 @@ poco/1.9.4
 </div>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Conan client contains a command to search in remote repositories, and we could
+<p class="admonition-title">Note</p>
+<p>The Conan client contains a command to search in remote repositories, and we could
 try <strong class="command">$ conan search poco --remote=conan-center</strong>. You can perfectly use this command to search in your
 own repositories, but note that at the moment this might timeout in ConanCenter. The infrastructure is being
 improved to support this command too, but meanwhile using the <a class="reference external" href="https://conan.io/center/">ConanCenter UI</a>
 is recommended.</p>
 </div>
 </li>
-<li><p class="first">We got some interesting references for Poco. Let’s inspect the metadata of the 1.9.4 version:</p>
+<li><p>We got some interesting references for Poco. Let’s inspect the metadata of the 1.9.4 version:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>inspect<span class="w"> </span>poco/1.9.4
 name:<span class="w"> </span>poco
@@ -314,11 +221,11 @@ default_options:
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Let’s use this <code class="docutils literal notranslate"><span class="pre">poco/1.9.4</span></code> version for our MD5 calculator app, creating a <em>conanfile.txt</em> inside our
+<li><p>Let’s use this <code class="docutils literal notranslate"><span class="pre">poco/1.9.4</span></code> version for our MD5 calculator app, creating a <em>conanfile.txt</em> inside our
 project’s folder with the following content:</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>conanfile.txt</strong></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>conanfile.txt</strong></span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> [requires]
  poco/1.9.4
 
@@ -333,17 +240,17 @@ including paths and library names that can be used in our build. Read more about
 <a class="reference internal" href="reference/generators.html#generators-reference"><span class="std std-ref">Generators</span></a>.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Next step: We are going to install the required dependencies and generate the information for the build system:</p>
+<li><p>Next step: We are going to install the required dependencies and generate the information for the build system:</p>
 <blockquote>
 <div><div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>If you are using <strong>GCC compiler &gt;= 5.1</strong>, Conan will set the <code class="docutils literal notranslate"><span class="pre">compiler.libcxx</span></code> to the old
 ABI for backwards compatibility. You can change this with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>profile<span class="w"> </span>new<span class="w"> </span>default<span class="w"> </span>--detect<span class="w">  </span><span class="c1"># Generates default profile detecting GCC and sets old ABI</span>
 $<span class="w"> </span>conan<span class="w"> </span>profile<span class="w"> </span>update<span class="w"> </span>settings.compiler.libcxx<span class="o">=</span>libstdc++11<span class="w"> </span>default<span class="w">  </span><span class="c1"># Sets libcxx to C++11 ABI</span>
 </pre></div>
 </div>
-<p class="last">You will find more information in <a class="reference internal" href="howtos/manage_gcc_abi.html#manage-gcc-abi"><span class="std std-ref">How to manage the GCC &gt;= 5 ABI</span></a>.</p>
+<p>You will find more information in <a class="reference internal" href="howtos/manage_gcc_abi.html#manage-gcc-abi"><span class="std std-ref">How to manage the GCC &gt;= 5 ABI</span></a>.</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 $<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>..
@@ -390,8 +297,8 @@ conanfile.txt:<span class="w"> </span>Generated<span class="w"> </span>graphinfo
 <p>Conan installed our Poco dependency but also the <strong>transitive dependencies</strong> for it: OpenSSL, zlib, sqlite and others.
 It has also generated a <em>conanbuildinfo.cmake</em> file for our build system.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">There are prebuilt binaries for several mainstream compilers and versions available in Conan Center repository,
+<p class="admonition-title">Warning</p>
+<p>There are prebuilt binaries for several mainstream compilers and versions available in Conan Center repository,
 such as Visual Studio 14, 15, Linux GCC 4.9 and Apple Clang 3.5. Up to &gt;130 different binaries for different
 configurations can be available in ConanCenter.
 But if your current configuration is not pre-built in ConanCenter, Conan will raise a “BinaryMissing” error. Please
@@ -400,10 +307,10 @@ it will succeed if your configuration is supported by the recipe (it is possible
 build for some platforms). You will find more info in the <a class="reference internal" href="#getting-started-other-configurations"><span class="std std-ref">Building with other configurations</span></a> section.</p>
 </div>
 </li>
-<li><p class="first">Now let’s create our build file. To inject the Conan information, include the generated <em>conanbuildinfo.cmake</em> file like this:</p>
+<li><p>Now let’s create our build file. To inject the Conan information, include the generated <em>conanbuildinfo.cmake</em> file like this:</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>CMakeLists.txt</strong></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>CMakeLists.txt</strong></span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">2.8.12</span><span class="p">)</span>
 <span class="w"> </span><span class="nb">project</span><span class="p">(</span><span class="s">MD5Encrypter</span><span class="p">)</span>
 
@@ -418,13 +325,13 @@ build for some platforms). You will find more info in the <a class="reference in
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There are other integrations with CMake, like the <code class="docutils literal notranslate"><span class="pre">cmake_find_package</span></code> generators, that will
+<p class="admonition-title">Note</p>
+<p>There are other integrations with CMake, like the <code class="docutils literal notranslate"><span class="pre">cmake_find_package</span></code> generators, that will
 use the <code class="docutils literal notranslate"><span class="pre">find_package()</span></code> CMake syntax (see <a class="reference internal" href="integrations/build_system/cmake.html#cmake"><span class="std std-ref"> CMake</span></a> section).</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Now we are ready to build and run our MD5 app:</p>
+<li><p>Now we are ready to build and run our MD5 app:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>win<span class="o">)</span>
 $<span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;Visual Studio 16&quot;</span>
@@ -442,16 +349,16 @@ c3fcd3d76192e4007dfb496cca67e13b
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="installing-dependencies">
-<h2>Installing Dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installing-dependencies">
+<h2>Installing Dependencies<a class="headerlink" href="#installing-dependencies" title="Link to this heading"></a></h2>
 <p>The <strong class="command">conan install</strong> command downloads the binary package required for your configuration (detected the first time you ran the
 command), <strong>together with other (transitively required by Poco) libraries, like OpenSSL and Zlib</strong>. It will also create the
 <em>conanbuildinfo.cmake</em> file in the current directory, in which you can see the CMake variables, and a <em>conaninfo.txt</em> in which the settings,
 requirements and optional information is saved.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Conan generates a <a class="reference internal" href="reference/config_files/default_profile.html#default-profile"><span class="std std-ref">default profile</span></a> with your detected settings (OS, compiler, architecture…) and that
+<p class="admonition-title">Note</p>
+<p>Conan generates a <a class="reference internal" href="reference/config_files/default_profile.html#default-profile"><span class="std std-ref">default profile</span></a> with your detected settings (OS, compiler, architecture…) and that
 configuration is printed at the top of every <strong class="command">conan install</strong> command. However, it is strongly recommended to review it and
 adjust the settings to accurately describe your system as shown in the <a class="reference internal" href="#getting-started-other-configurations"><span class="std std-ref">Building with other configurations</span></a> section.</p>
 </div>
@@ -460,17 +367,17 @@ command line or taken from the defaults in <em>&lt;userhome&gt;/.conan/profiles/
 <a class="reference internal image-reference" href="_images/conan-install_flow.png"><img alt="_images/conan-install_flow.png" class="align-center" src="_images/conan-install_flow.png" style="width: 500px; height: 400px;" /></a>
 <p>For example, the command <strong class="command">conan install .. --settings os=&quot;Linux&quot; --settings compiler=&quot;gcc&quot;</strong>, performs these steps:</p>
 <ul class="simple">
-<li>Checks if the package recipe (for <code class="docutils literal notranslate"><span class="pre">poco/1.9.4</span></code> package) exists in the local cache. If we are just starting, the
-cache is empty.</li>
-<li>Looks for the package recipe in the defined remotes. Conan comes with <code class="docutils literal notranslate"><span class="pre">conan-center</span></code> remote as the default, but can be changed.</li>
-<li>If the recipe exists, the Conan client fetches and stores it in your local Conan cache.</li>
-<li>With the package recipe and the input settings (Linux, GCC), Conan looks for the corresponding binary in the local cache.</li>
-<li>As the binary is not found in the cache, Conan looks for it in the remote and fetches it.</li>
-<li>Finally, it generates an appropriate file for the build system specified in the <code class="docutils literal notranslate"><span class="pre">[generators]</span></code> section.</li>
+<li><p>Checks if the package recipe (for <code class="docutils literal notranslate"><span class="pre">poco/1.9.4</span></code> package) exists in the local cache. If we are just starting, the
+cache is empty.</p></li>
+<li><p>Looks for the package recipe in the defined remotes. Conan comes with <code class="docutils literal notranslate"><span class="pre">conan-center</span></code> remote as the default, but can be changed.</p></li>
+<li><p>If the recipe exists, the Conan client fetches and stores it in your local Conan cache.</p></li>
+<li><p>With the package recipe and the input settings (Linux, GCC), Conan looks for the corresponding binary in the local cache.</p></li>
+<li><p>As the binary is not found in the cache, Conan looks for it in the remote and fetches it.</p></li>
+<li><p>Finally, it generates an appropriate file for the build system specified in the <code class="docutils literal notranslate"><span class="pre">[generators]</span></code> section.</p></li>
 </ul>
-</div>
-<div class="section" id="inspecting-dependencies">
-<h2>Inspecting Dependencies<a class="headerlink" href="#inspecting-dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inspecting-dependencies">
+<h2>Inspecting Dependencies<a class="headerlink" href="#inspecting-dependencies" title="Link to this heading"></a></h2>
 <p>The retrieved packages are installed to your local user cache (typically <em>.conan/data</em>), and can be reused from this location for other
 projects. This allows to clean your current project and continue working even without network connection. To search for packages in the
 local cache run:</p>
@@ -564,9 +471,9 @@ $<span class="w"> </span>file.html<span class="w"> </span><span class="c1"># or 
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/conan-info_deps_html_graph.png"><img alt="_images/conan-info_deps_html_graph.png" class="align-center" src="_images/conan-info_deps_html_graph.png" style="width: 400px;" /></a>
-</div>
-<div class="section" id="searching-packages">
-<h2>Searching Packages<a class="headerlink" href="#searching-packages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="searching-packages">
+<h2>Searching Packages<a class="headerlink" href="#searching-packages" title="Link to this heading"></a></h2>
 <p>The remote repository where packages are installed from is configured by default in Conan. It is called Conan Center
 (configured as <cite>conan-center</cite> remote).</p>
 <p>If we search for something like <code class="docutils literal notranslate"><span class="pre">open</span></code> in <a class="reference external" href="https://conan.io/center/">ConanCenter</a> we could find different packages like:</p>
@@ -594,9 +501,9 @@ and channel are the ones strongly recommended to use from ConanCenter.</p>
 the <a class="reference external" href="https://github.com/conan-io/conan-center-index">conan-center-index Github repository</a>.
 If you want to store your own private packages, you can download the free Artifactory Community Edition (CE)
 directly from the <a class="reference external" href="https://conan.io/downloads.html">Conan downloads page</a>.</p>
-</div>
-<div class="section" id="building-with-other-configurations">
-<span id="getting-started-other-configurations"></span><h2>Building with other configurations<a class="headerlink" href="#building-with-other-configurations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="building-with-other-configurations">
+<span id="getting-started-other-configurations"></span><h2>Building with other configurations<a class="headerlink" href="#building-with-other-configurations" title="Link to this heading"></a></h2>
 <p>In this example, we have built our project using the default configuration detected by Conan. This configuration is known as the
 <a class="reference internal" href="reference/config_files/default_profile.html#default-profile"><span class="std std-ref">default profile</span></a>.</p>
 <p>A profile needs to be available prior to running commands such as <strong class="command">conan install</strong>. When running the command, your settings are
@@ -607,8 +514,8 @@ automatically detected (compiler, architecture…) and stored as the default pro
 </pre></div>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">We strongly recommend using <a class="reference internal" href="reference/profiles.html#profiles"><span class="std std-ref">Profiles</span></a> and managing them with <a class="reference internal" href="reference/commands/consumer/config.html#conan-config-install"><span class="std std-ref">conan config install</span></a>.</p>
+<p class="admonition-title">Tip</p>
+<p>We strongly recommend using <a class="reference internal" href="reference/profiles.html#profiles"><span class="std std-ref">Profiles</span></a> and managing them with <a class="reference internal" href="reference/commands/consumer/config.html#conan-config-install"><span class="std std-ref">conan config install</span></a>.</p>
 </div>
 <p>However, the user can always override the profile settings in the <strong class="command">conan install</strong> command using the <strong class="command">--settings</strong>
 parameter. As an exercise, try building the 32-bit version of the hash calculator project like this:</p>
@@ -620,496 +527,441 @@ previously. Note you might need to install extra compilers or toolchains in some
 no longer install 32bits toolchains by default.</p>
 <p>To use the 32-bit binaries, you will also have to change your project build:</p>
 <ul class="simple">
-<li>In Windows, change the CMake invocation to <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">14</span></code>.</li>
-<li>In Linux, you have to add the <code class="docutils literal notranslate"><span class="pre">-m32</span></code> flag to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by running <code class="docutils literal notranslate"><span class="pre">SET(CMAKE_CXX_FLAGS</span> <span class="pre">&quot;${CMAKE_CXX_FLAGS}</span> <span class="pre">-m32&quot;)</span></code>, and
+<li><p>In Windows, change the CMake invocation to <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">14</span></code>.</p></li>
+<li><p>In Linux, you have to add the <code class="docutils literal notranslate"><span class="pre">-m32</span></code> flag to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by running <code class="docutils literal notranslate"><span class="pre">SET(CMAKE_CXX_FLAGS</span> <span class="pre">&quot;${CMAKE_CXX_FLAGS}</span> <span class="pre">-m32&quot;)</span></code>, and
 the same applies to <code class="docutils literal notranslate"><span class="pre">CMAKE_C_FLAGS,</span> <span class="pre">CMAKE_SHARED_LINK_FLAGS</span> <span class="pre">and</span> <span class="pre">CMAKE_EXE_LINKER_FLAGS</span></code>. This can also be done more easily, by
-automatically using Conan, as we’ll show later.</li>
-<li>In macOS, you need to add the definition <code class="docutils literal notranslate"><span class="pre">-DCMAKE_OSX_ARCHITECTURES=i386</span></code>.</li>
+automatically using Conan, as we’ll show later.</p></li>
+<li><p>In macOS, you need to add the definition <code class="docutils literal notranslate"><span class="pre">-DCMAKE_OSX_ARCHITECTURES=i386</span></code>.</p></li>
 </ul>
 <p>Got any doubts? Check our <a class="reference internal" href="faq.html#faq"><span class="std std-ref">FAQ</span></a>, <a href="mailto:info@conan.io" target="_blank">write us</a> or join the community in <a class="reference external" href="https://cpplang-inviter.cppalliance.org/">Cpplang Slack</a> <code class="docutils literal notranslate"><span class="pre">#conan</span></code> channel!</p>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="using_packages.html" class="btn btn-neutral float-right" title="Using packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="installation.html" class="btn btn-neutral" title="Install" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="using_packages.html" class="btn btn-neutral float-right" title="Using packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016-2020, JFrog.
-      Last updated on Jan 26, 2024.
-      <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
-    </p>
-  </div> 
+    <p>&#169; Copyright 2016-2020, JFrog.
+      <span class="lastupdated">Last updated on Feb 02, 2024.
+      </span></p>
+  </div>
+
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <!--<span class="fa fa-pencil-square-o"> Other versions:</span> -->
-      Version: 1.34
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>Versions</dt>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: 1.34
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+    <dt>Versions</dt>
+    
         
-            
-                <dd><a href="/2.0/index.html">2.0</a></dd>
-                   
+            <dd><a href="/2.0/index.html">2.0</a></dd>
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-            
-                <dd><a href="/2/index.html">2</a></dd>
-                   
+    
         
-        <br>
+            <dd><a href="/2/index.html">2</a></dd>
         
-                   
+    
+    <br>
+    
         
-            
-                <dd><a href="/1/index.html">1</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.62/index.html">1.62</a></dd>
-                   
+            <dd><a href="/1/index.html">1</a></dd>
         
-            
-                <dd><a href="/en/1.61/index.html">1.61</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.60/index.html">1.60</a></dd>
-                   
+            <dd><a href="/en/1.62/index.html">1.62</a></dd>
         
-            
-                <dd><a href="/en/1.59/index.html">1.59</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.58/index.html">1.58</a></dd>
-                   
+            <dd><a href="/en/1.61/index.html">1.61</a></dd>
         
-            
-                <dd><a href="/en/1.57/index.html">1.57</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.56/index.html">1.56</a></dd>
-                   
+            <dd><a href="/en/1.60/index.html">1.60</a></dd>
         
-            
-                <dd><a href="/en/1.55/index.html">1.55</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.54/index.html">1.54</a></dd>
-                   
+            <dd><a href="/en/1.59/index.html">1.59</a></dd>
         
-            
-                <dd><a href="/en/1.53/index.html">1.53</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.52/index.html">1.52</a></dd>
-                   
+            <dd><a href="/en/1.58/index.html">1.58</a></dd>
         
-            
-                <dd><a href="/en/1.51/index.html">1.51</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.50/index.html">1.50</a></dd>
-                   
+            <dd><a href="/en/1.57/index.html">1.57</a></dd>
         
-            
-                <dd><a href="/en/1.49/index.html">1.49</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.48/index.html">1.48</a></dd>
-                   
+            <dd><a href="/en/1.56/index.html">1.56</a></dd>
         
-            
-                <dd><a href="/en/1.47/index.html">1.47</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.46/index.html">1.46</a></dd>
-                   
+            <dd><a href="/en/1.55/index.html">1.55</a></dd>
         
-            
-                <dd><a href="/en/1.45/index.html">1.45</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.44/index.html">1.44</a></dd>
-                   
+            <dd><a href="/en/1.54/index.html">1.54</a></dd>
         
-            
-                <dd><a href="/en/1.43/index.html">1.43</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.42/index.html">1.42</a></dd>
-                   
+            <dd><a href="/en/1.53/index.html">1.53</a></dd>
         
-            
-                <dd><a href="/en/1.41/index.html">1.41</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.40/index.html">1.40</a></dd>
-                   
+            <dd><a href="/en/1.52/index.html">1.52</a></dd>
         
-            
-                <dd><a href="/en/1.39/index.html">1.39</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.38/index.html">1.38</a></dd>
-                   
+            <dd><a href="/en/1.51/index.html">1.51</a></dd>
         
-            
-                <dd><a href="/en/1.37/index.html">1.37</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.36/index.html">1.36</a></dd>
-                   
+            <dd><a href="/en/1.50/index.html">1.50</a></dd>
         
-            
-                <dd><a href="/en/1.35/index.html">1.35</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.34/index.html">1.34</a></dd>
-                   
+            <dd><a href="/en/1.49/index.html">1.49</a></dd>
         
-            
-                <dd><a href="/en/1.33/index.html">1.33</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.32/index.html">1.32</a></dd>
-                   
+            <dd><a href="/en/1.48/index.html">1.48</a></dd>
         
-            
-                <dd><a href="/en/1.31/index.html">1.31</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.30/index.html">1.30</a></dd>
-                   
+            <dd><a href="/en/1.47/index.html">1.47</a></dd>
         
-            
-                <dd><a href="/en/1.29/index.html">1.29</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.28/index.html">1.28</a></dd>
-                   
+            <dd><a href="/en/1.46/index.html">1.46</a></dd>
         
-            
-                <dd><a href="/en/1.27/index.html">1.27</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.26/index.html">1.26</a></dd>
-                   
+            <dd><a href="/en/1.45/index.html">1.45</a></dd>
         
-            
-                <dd><a href="/en/1.25/index.html">1.25</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.24/index.html">1.24</a></dd>
-                   
+            <dd><a href="/en/1.44/index.html">1.44</a></dd>
         
-            
-                <dd><a href="/en/1.23/index.html">1.23</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.22/index.html">1.22</a></dd>
-                   
+            <dd><a href="/en/1.43/index.html">1.43</a></dd>
         
-            
-                <dd><a href="/en/1.21/index.html">1.21</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.20/index.html">1.20</a></dd>
-                   
+            <dd><a href="/en/1.42/index.html">1.42</a></dd>
         
-            
-                <dd><a href="/en/1.19/index.html">1.19</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.18/index.html">1.18</a></dd>
-                   
+            <dd><a href="/en/1.41/index.html">1.41</a></dd>
         
-            
-                <dd><a href="/en/1.17/index.html">1.17</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.16/index.html">1.16</a></dd>
-                   
+            <dd><a href="/en/1.40/index.html">1.40</a></dd>
         
-            
-                <dd><a href="/en/1.15/index.html">1.15</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.14/index.html">1.14</a></dd>
-                   
+            <dd><a href="/en/1.39/index.html">1.39</a></dd>
         
-            
-                <dd><a href="/en/1.13/index.html">1.13</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.12/index.html">1.12</a></dd>
-                   
+            <dd><a href="/en/1.38/index.html">1.38</a></dd>
         
-            
-                <dd><a href="/en/1.11/index.html">1.11</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.10/index.html">1.10</a></dd>
-                   
+            <dd><a href="/en/1.37/index.html">1.37</a></dd>
         
-            
-                <dd><a href="/en/1.9/index.html">1.9</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.8/index.html">1.8</a></dd>
-                   
+            <dd><a href="/en/1.36/index.html">1.36</a></dd>
         
-            
-                <dd><a href="/en/1.7/index.html">1.7</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.6/index.html">1.6</a></dd>
-                   
+            <dd><a href="/en/1.35/index.html">1.35</a></dd>
         
-            
-                <dd><a href="/en/1.5/index.html">1.5</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.4/index.html">1.4</a></dd>
-                   
+            <dd><a href="/en/1.34/index.html">1.34</a></dd>
         
-            
-                <dd><a href="/en/1.3/index.html">1.3</a></dd>
-                   
+    
         
-                   
+            <dd><a href="/en/1.33/index.html">1.33</a></dd>
         
-      </dl>
-      <dl>
+    
+        
+            <dd><a href="/en/1.32/index.html">1.32</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.31/index.html">1.31</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.30/index.html">1.30</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.29/index.html">1.29</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.28/index.html">1.28</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.27/index.html">1.27</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.26/index.html">1.26</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.25/index.html">1.25</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.24/index.html">1.24</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.23/index.html">1.23</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.22/index.html">1.22</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.21/index.html">1.21</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.20/index.html">1.20</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.19/index.html">1.19</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.18/index.html">1.18</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.17/index.html">1.17</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.16/index.html">1.16</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.15/index.html">1.15</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.14/index.html">1.14</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.13/index.html">1.13</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.12/index.html">1.12</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.11/index.html">1.11</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.10/index.html">1.10</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.9/index.html">1.9</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.8/index.html">1.8</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.7/index.html">1.7</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.6/index.html">1.6</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.5/index.html">1.5</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.4/index.html">1.4</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.3/index.html">1.3</a></dd>
+        
+    
+        
+    
+    </dl>
+    <dl>
         <dt>Downloads</dt>
         
             <dd><a href="/en/1.34/conan.pdf">PDF</a></dd>
-               
-      </dl>
-    </div>
+        
+    </dl>
   </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.34.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="_static/js/modernizr.min.js"></script>
-  <script src="_static/js/search.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
--->
-  
-  
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-  
-
-
-  <script>
-    // initSearch("1.34");
   </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK44ZFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

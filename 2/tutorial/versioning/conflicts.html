@@ -1,54 +1,32 @@
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Dependencies conflicts &mdash; conan 2.0.17 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dependencies conflicts &mdash; conan 2.0.17 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
+    <link rel="canonical" href="https://docs.conan.io/tutorial/versioning/conflicts.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-
-  
-    <link rel="stylesheet" href="../../_static/css/signup.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../_static/css/search.css" type="text/css" />
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.17 documentation" href="../../index.html"/>
-        <link rel="up" title="Versioning" href="../versioning.html"/>
-        <link rel="next" title="Other important Conan features" href="../other_features.html"/>
-        <link rel="prev" title="Lockfiles" href="lockfiles.html"/>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=86415d92"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Other important Conan features" href="../other_features.html" />
+    <link rel="prev" title="Lockfiles" href="lockfiles.html" />
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,51 +41,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-
-  
-
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="../../index.html">
           
-
-          
+          <a href="../../index.html">
             
-            <img src="../../_static/conan-docs-logo-2.svg" class="logo" />
-          
+              <img src="../../_static/conan-docs-logo-2.svg" class="logo" alt="Logo"/>
           </a>
-
-            
-
-          
+              <div class="version">
+                2.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../whatsnew.html">What’s new in Conan 2.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Install</a></li>
@@ -135,88 +94,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 
-            
-          
-          <div class="dark_newsletter-div">
-             <p><a href="https://conan.io/#signUp" target="_blank">Sign up for release updates</a></p>
-          </div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">conan</a>
-        
       </nav>
 
-
-      
-      <script>
-        var reldir = "../../index.html".replace("index.html","").replace("#", "");
-      </script>
       <div class="wy-nav-content">
         <div class="rst-content">
-                 
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation" id="breadcrumbs">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../../tutorial.html">Tutorial</a> &raquo;</li>
-        
-          <li><a href="../versioning.html">Versioning</a> &raquo;</li>
-        
-      <li>Dependencies conflicts</li>
-    
-    
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../tutorial.html">Tutorial</a></li>
+          <li class="breadcrumb-item"><a href="../versioning.html">Versioning</a></li>
+      <li class="breadcrumb-item active">Dependencies conflicts</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-            
               <a href="https://github.com/conan-io/docs/blob/develop2/tutorial/versioning/conflicts.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
+  <hr/>
 </div>
-          <!--<select id="search" name="state" multiple="true" onchange="window.location = reldir + this.value;" style="width:90%"></select>
-          <hr/>-->
-          <!--<div class="admonition important">
-            <p class="admonition-title">Announcement</p>
-            <p>Recipe Hacking no. 2! Building on what we learnt during the first installment we will be working on more Conan 2.0 Migration! We'll start by reviewing some open pull requests and hopefully tackle a CMake example. <a
-            href=https://jfrog.zoom.us/webinar/register/WN_grFhqH0yRBeIfJmBvQoPJw> Register here to attend.</a></p>
-          </div>-->
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="dependencies-conflicts">
-<span id="tutorial-versioning-conflicts"></span><h1>Dependencies conflicts<a class="headerlink" href="#dependencies-conflicts" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="dependencies-conflicts">
+<span id="tutorial-versioning-conflicts"></span><h1>Dependencies conflicts<a class="headerlink" href="#dependencies-conflicts" title="Link to this heading">¶</a></h1>
 <p>In a dependency graph, when different packages depends on different versions of the
 same package, this is called a dependency version conflict. It is relatively easy
 to produce one. Let’s see it with a practical example, start cloning
@@ -230,15 +136,15 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examp
 the intro credits and functionality for the videogame that depends on <code class="docutils literal notranslate"><span class="pre">matrix/1.1</span></code> and finally the
 <code class="docutils literal notranslate"><span class="pre">game</span></code> recipe that depends simultaneously on <code class="docutils literal notranslate"><span class="pre">engine/1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">intro/1.0</span></code>. All these packages
 are actually empty, but they are enough to produce the conflicts.</p>
-<div align="center" class="align-center"><object data="../../_images/graphviz-8d175e0a2a19aface7261bfaa7626b0226c4ef3c.svg" type="image/svg+xml">
-            <p class="warning">digraph conflict {
+<div align="center" class="align-center"><div class="graphviz"><object data="../../_images/graphviz-25640955a58208c4a8abb8821375a14f47c5122f.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph conflict {
     node [fillcolor=&quot;lightskyblue&quot;, style=filled, shape=box]
     rankdir=&quot;BT&quot;
     &quot;game/1.0&quot; -&gt; &quot;engine/1.0&quot; -&gt; &quot;matrix/1.0&quot;;
     &quot;game/1.0&quot; -&gt; &quot;intro/1.0&quot; -&gt; &quot;matrix/1.1&quot;;
     &quot;matrix/1.0&quot; [fillcolor=&quot;orange&quot;];
     &quot;matrix/1.1&quot; [fillcolor=&quot;orange&quot;];
-}</p></object>
+}</p></object></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -263,8 +169,8 @@ ERROR:<span class="w"> </span>Version<span class="w"> </span>conflict:<span clas
 </div>
 <p>This is a version conflict, and Conan will not decide automatically how to
 resolve the conflict, but the user should explicitly resolve such conflict.</p>
-<div class="section" id="resolving-conflicts">
-<h2>Resolving conflicts<a class="headerlink" href="#resolving-conflicts" title="Permalink to this headline">¶</a></h2>
+<section id="resolving-conflicts">
+<h2>Resolving conflicts<a class="headerlink" href="#resolving-conflicts" title="Link to this heading">¶</a></h2>
 <p>Of course, the most direct and straightforward way to solve such a conflict is
 going to the dependencies <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code> and upgrading their <code class="docutils literal notranslate"><span class="pre">requirements()</span></code>
 so they point now to the same version. However this might not be practical in
@@ -273,7 +179,7 @@ some cases, or it might be even impossible to fix the dependencies conanfiles.</
 the conflict (in this case, <code class="docutils literal notranslate"><span class="pre">game</span></code>) by explicitly defining which version of the
 dependency should be used, with the following syntax:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;game&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -298,8 +204,8 @@ Requirements
 <span class="w">    </span>matrix/1.1#905c3f0babc520684c84127378fefdd0<span class="w"> </span>-<span class="w"> </span>Cache
 </pre></div>
 </div>
-<div align="center" class="align-center"><object data="../../_images/graphviz-bec83d0873d0a6a052d7aecae838f7ffba0b04f0.svg" type="image/svg+xml">
-            <p class="warning">digraph conflict {
+<div align="center" class="align-center"><div class="graphviz"><object data="../../_images/graphviz-81c63434939b8fa86a10d38ca3edc2fece907a0e.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph conflict {
     node [fillcolor=&quot;lightskyblue&quot;, style=filled, shape=box]
     rankdir=&quot;BT&quot;
     &quot;game/1.0&quot; -&gt; &quot;engine/1.0&quot; -&gt; &quot;matrix/1.1&quot;;
@@ -310,14 +216,14 @@ Requirements
         &quot;matrix/1.1&quot; -&gt; &quot;matrix/1.0&quot; ;
         rankdir = LR;
     }
-}</p></object>
+}</p></object></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In this case, a new binary for <code class="docutils literal notranslate"><span class="pre">engine/1.0</span></code> was not necessary, but in some situations the above could
+<p class="admonition-title">Note</p>
+<p>In this case, a new binary for <code class="docutils literal notranslate"><span class="pre">engine/1.0</span></code> was not necessary, but in some situations the above could
 fail with a <code class="docutils literal notranslate"><span class="pre">engine/1.0</span></code> “binary missing error”. Because previously <code class="docutils literal notranslate"><span class="pre">engine/1.0</span></code> binaries were
 built against <code class="docutils literal notranslate"><span class="pre">matrix/1.0</span></code>. If the <code class="docutils literal notranslate"><span class="pre">package_id</span></code> rules and configuration define that <code class="docutils literal notranslate"><span class="pre">engine</span></code> should
 be rebuilt when minor versions of the dependencies change, then it will be necessary to build a new
@@ -329,7 +235,7 @@ binary for <code class="docutils literal notranslate"><span class="pre">engine/1
 </div>
 <p>Now lets modify <code class="docutils literal notranslate"><span class="pre">game/conanfile.py</span></code> to introduce this as a direct dependency:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;game&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -341,8 +247,8 @@ binary for <code class="docutils literal notranslate"><span class="pre">engine/1
 </pre></div>
 </div>
 </div>
-<div align="center" class="align-center"><object data="../../_images/graphviz-020745db1013cf68fa10e66732953012a8d93a84.svg" type="image/svg+xml">
-            <p class="warning">digraph conflict {
+<div align="center" class="align-center"><div class="graphviz"><object data="../../_images/graphviz-1e0749d0f2f51c081234bb0ceeee207bc3358b96.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph conflict {
     node [fillcolor=&quot;lightskyblue&quot;, style=filled, shape=box]
     rankdir=&quot;BT&quot;
     &quot;game/1.0&quot; -&gt; &quot;engine/1.0&quot; -&gt; &quot;matrix/1.0&quot;;
@@ -357,7 +263,7 @@ binary for <code class="docutils literal notranslate"><span class="pre">engine/1
         &quot;matrix/1.1&quot; -&gt; &quot;matrix/1.2&quot; ;
         rankdir = LR;
     }
-}</p></object>
+}</p></object></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -372,7 +278,7 @@ ERROR:<span class="w"> </span>Version<span class="w"> </span>conflict:<span clas
 define the <code class="docutils literal notranslate"><span class="pre">force=True</span></code> requirement trait, to indicate that this dependency version will also
 be forcing the overrides upstream:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;game&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -394,8 +300,8 @@ Requirements
 <span class="w">    </span>matrix/1.2#905c3f0babc520684c84127378fefdd0<span class="w"> </span>-<span class="w"> </span>Cache
 </pre></div>
 </div>
-<div align="center" class="align-center"><object data="../../_images/graphviz-bab905e8ce28d2d592c105860f21e935428ee39b.svg" type="image/svg+xml">
-            <p class="warning">digraph conflict {
+<div align="center" class="align-center"><div class="graphviz"><object data="../../_images/graphviz-317dc6a5b8993cd90a4082a76c6abfa66e38b398.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph conflict {
     node [fillcolor=&quot;lightskyblue&quot;, style=filled, shape=box]
     rankdir=&quot;BT&quot;
     &quot;game/1.0&quot; -&gt; &quot;engine/1.0&quot; -&gt; &quot;matrix/1.2&quot;;
@@ -407,21 +313,21 @@ Requirements
         &quot;matrix/1.2&quot; -&gt; &quot;matrix/1.0&quot; -&gt; &quot;matrix/1.1&quot; ;
         rankdir = LR;
     }
-}</p></object>
+}</p></object></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><strong>Best practices</strong></p>
-<p class="last">Resolving version conflicts by overrides/forces should in general be the exception and avoided when possible,
+<p>Resolving version conflicts by overrides/forces should in general be the exception and avoided when possible,
 applied as a temporary workaround. The real solution is to move forward the dependencies <code class="docutils literal notranslate"><span class="pre">requires</span></code> so
 they naturally converge to the same versions of upstream dependencies.</p>
 </div>
-</div>
-<div class="section" id="overriding-options">
-<h2>Overriding options<a class="headerlink" href="#overriding-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="overriding-options">
+<h2>Overriding options<a class="headerlink" href="#overriding-options" title="Link to this heading">¶</a></h2>
 <p>It is possible that when there are diamond structures in a dependency graph, like the one seen above, different
 recipes might be defining different values for the upstream <code class="docutils literal notranslate"><span class="pre">options</span></code>. In this case, this is not directly
 causing a conflict, but instead the first value to be defined is the one that will be prioritized and will
@@ -429,7 +335,7 @@ prevail.</p>
 <p>In the above example, if <code class="docutils literal notranslate"><span class="pre">matrix/1.0</span></code> can be both a static and a shared library, and <code class="docutils literal notranslate"><span class="pre">engine</span></code> decides to
 define that it should be a static library (not really necessary, because that is already the default):</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">engine/conanfile.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">engine/conanfile.py</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Engine</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;engine&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -442,7 +348,7 @@ define that it should be a static library (not really necessary, because that is
 <code class="docutils literal notranslate"><span class="pre">validate()</span></code> method, because for some reason the <code class="docutils literal notranslate"><span class="pre">intro</span></code> package can only be built against shared libraries
 and otherwise crashes:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">intro/conanfile.py</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">intro/conanfile.py</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Intro</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;intro&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -475,7 +381,7 @@ intro/1.0: Invalid: Intro package doesn&#39;t work with static matrix library
 <p>Following the same principle, the downstream consumer recipe, in this case <code class="docutils literal notranslate"><span class="pre">game</span></code> conanfile.py
 can define the options values, and those will be prioritized:</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">game/conanfile.py</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;game&quot;</span>
     <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -499,495 +405,440 @@ intro/1.0:<span class="w"> </span>Already<span class="w"> </span>installed!
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><strong>Best practices</strong></p>
-<p class="last">As a general rule, avoid modifying or defining values for dependencies <code class="docutils literal notranslate"><span class="pre">options</span></code> in consumers <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code>.
+<p>As a general rule, avoid modifying or defining values for dependencies <code class="docutils literal notranslate"><span class="pre">options</span></code> in consumers <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code>.
 The declared <code class="docutils literal notranslate"><span class="pre">options</span></code> defaults should be good for the majority of cases, and variations from those defaults
 can be defined better in profiles better.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../other_features.html" class="btn btn-neutral float-right" title="Other important Conan features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="lockfiles.html" class="btn btn-neutral" title="Lockfiles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lockfiles.html" class="btn btn-neutral float-left" title="Lockfiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../other_features.html" class="btn btn-neutral float-right" title="Other important Conan features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016-2023, JFrog.
-      Last updated on Jan 26, 2024.
-      <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
-    </p>
-  </div> 
+    <p>&#169; Copyright 2016-2024, JFrog.
+      <span class="lastupdated">Last updated on Feb 02, 2024.
+      </span></p>
+  </div>
+
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <!--<span class="fa fa-pencil-square-o"> Other versions:</span> -->
-      Version: 2.0
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>Versions</dt>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: 2.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+    <dt>Versions</dt>
+    
         
-            
-                <dd><a href="/2.0/index.html">2.0</a></dd>
-                   
+            <dd><a href="/2.0/index.html">2.0</a></dd>
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-            
-                <dd><a href="/2/index.html">2</a></dd>
-                   
+    
         
-        <br>
+            <dd><a href="/2/index.html">2</a></dd>
         
-                   
+    
+    <br>
+    
         
-            
-                <dd><a href="/1/index.html">1</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.62/index.html">1.62</a></dd>
-                   
+            <dd><a href="/1/index.html">1</a></dd>
         
-            
-                <dd><a href="/en/1.61/index.html">1.61</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.60/index.html">1.60</a></dd>
-                   
+            <dd><a href="/en/1.62/index.html">1.62</a></dd>
         
-            
-                <dd><a href="/en/1.59/index.html">1.59</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.58/index.html">1.58</a></dd>
-                   
+            <dd><a href="/en/1.61/index.html">1.61</a></dd>
         
-            
-                <dd><a href="/en/1.57/index.html">1.57</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.56/index.html">1.56</a></dd>
-                   
+            <dd><a href="/en/1.60/index.html">1.60</a></dd>
         
-            
-                <dd><a href="/en/1.55/index.html">1.55</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.54/index.html">1.54</a></dd>
-                   
+            <dd><a href="/en/1.59/index.html">1.59</a></dd>
         
-            
-                <dd><a href="/en/1.53/index.html">1.53</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.52/index.html">1.52</a></dd>
-                   
+            <dd><a href="/en/1.58/index.html">1.58</a></dd>
         
-            
-                <dd><a href="/en/1.51/index.html">1.51</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.50/index.html">1.50</a></dd>
-                   
+            <dd><a href="/en/1.57/index.html">1.57</a></dd>
         
-            
-                <dd><a href="/en/1.49/index.html">1.49</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.48/index.html">1.48</a></dd>
-                   
+            <dd><a href="/en/1.56/index.html">1.56</a></dd>
         
-            
-                <dd><a href="/en/1.47/index.html">1.47</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.46/index.html">1.46</a></dd>
-                   
+            <dd><a href="/en/1.55/index.html">1.55</a></dd>
         
-            
-                <dd><a href="/en/1.45/index.html">1.45</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.44/index.html">1.44</a></dd>
-                   
+            <dd><a href="/en/1.54/index.html">1.54</a></dd>
         
-            
-                <dd><a href="/en/1.43/index.html">1.43</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.42/index.html">1.42</a></dd>
-                   
+            <dd><a href="/en/1.53/index.html">1.53</a></dd>
         
-            
-                <dd><a href="/en/1.41/index.html">1.41</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.40/index.html">1.40</a></dd>
-                   
+            <dd><a href="/en/1.52/index.html">1.52</a></dd>
         
-            
-                <dd><a href="/en/1.39/index.html">1.39</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.38/index.html">1.38</a></dd>
-                   
+            <dd><a href="/en/1.51/index.html">1.51</a></dd>
         
-            
-                <dd><a href="/en/1.37/index.html">1.37</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.36/index.html">1.36</a></dd>
-                   
+            <dd><a href="/en/1.50/index.html">1.50</a></dd>
         
-            
-                <dd><a href="/en/1.35/index.html">1.35</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.34/index.html">1.34</a></dd>
-                   
+            <dd><a href="/en/1.49/index.html">1.49</a></dd>
         
-            
-                <dd><a href="/en/1.33/index.html">1.33</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.32/index.html">1.32</a></dd>
-                   
+            <dd><a href="/en/1.48/index.html">1.48</a></dd>
         
-            
-                <dd><a href="/en/1.31/index.html">1.31</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.30/index.html">1.30</a></dd>
-                   
+            <dd><a href="/en/1.47/index.html">1.47</a></dd>
         
-            
-                <dd><a href="/en/1.29/index.html">1.29</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.28/index.html">1.28</a></dd>
-                   
+            <dd><a href="/en/1.46/index.html">1.46</a></dd>
         
-            
-                <dd><a href="/en/1.27/index.html">1.27</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.26/index.html">1.26</a></dd>
-                   
+            <dd><a href="/en/1.45/index.html">1.45</a></dd>
         
-            
-                <dd><a href="/en/1.25/index.html">1.25</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.24/index.html">1.24</a></dd>
-                   
+            <dd><a href="/en/1.44/index.html">1.44</a></dd>
         
-            
-                <dd><a href="/en/1.23/index.html">1.23</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.22/index.html">1.22</a></dd>
-                   
+            <dd><a href="/en/1.43/index.html">1.43</a></dd>
         
-            
-                <dd><a href="/en/1.21/index.html">1.21</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.20/index.html">1.20</a></dd>
-                   
+            <dd><a href="/en/1.42/index.html">1.42</a></dd>
         
-            
-                <dd><a href="/en/1.19/index.html">1.19</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.18/index.html">1.18</a></dd>
-                   
+            <dd><a href="/en/1.41/index.html">1.41</a></dd>
         
-            
-                <dd><a href="/en/1.17/index.html">1.17</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.16/index.html">1.16</a></dd>
-                   
+            <dd><a href="/en/1.40/index.html">1.40</a></dd>
         
-            
-                <dd><a href="/en/1.15/index.html">1.15</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.14/index.html">1.14</a></dd>
-                   
+            <dd><a href="/en/1.39/index.html">1.39</a></dd>
         
-            
-                <dd><a href="/en/1.13/index.html">1.13</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.12/index.html">1.12</a></dd>
-                   
+            <dd><a href="/en/1.38/index.html">1.38</a></dd>
         
-            
-                <dd><a href="/en/1.11/index.html">1.11</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.10/index.html">1.10</a></dd>
-                   
+            <dd><a href="/en/1.37/index.html">1.37</a></dd>
         
-            
-                <dd><a href="/en/1.9/index.html">1.9</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.8/index.html">1.8</a></dd>
-                   
+            <dd><a href="/en/1.36/index.html">1.36</a></dd>
         
-            
-                <dd><a href="/en/1.7/index.html">1.7</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.6/index.html">1.6</a></dd>
-                   
+            <dd><a href="/en/1.35/index.html">1.35</a></dd>
         
-            
-                <dd><a href="/en/1.5/index.html">1.5</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.4/index.html">1.4</a></dd>
-                   
+            <dd><a href="/en/1.34/index.html">1.34</a></dd>
         
-            
-                <dd><a href="/en/1.3/index.html">1.3</a></dd>
-                   
+    
         
-                   
+            <dd><a href="/en/1.33/index.html">1.33</a></dd>
         
-      </dl>
-      <dl>
+    
+        
+            <dd><a href="/en/1.32/index.html">1.32</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.31/index.html">1.31</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.30/index.html">1.30</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.29/index.html">1.29</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.28/index.html">1.28</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.27/index.html">1.27</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.26/index.html">1.26</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.25/index.html">1.25</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.24/index.html">1.24</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.23/index.html">1.23</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.22/index.html">1.22</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.21/index.html">1.21</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.20/index.html">1.20</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.19/index.html">1.19</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.18/index.html">1.18</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.17/index.html">1.17</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.16/index.html">1.16</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.15/index.html">1.15</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.14/index.html">1.14</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.13/index.html">1.13</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.12/index.html">1.12</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.11/index.html">1.11</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.10/index.html">1.10</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.9/index.html">1.9</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.8/index.html">1.8</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.7/index.html">1.7</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.6/index.html">1.6</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.5/index.html">1.5</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.4/index.html">1.4</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.3/index.html">1.3</a></dd>
+        
+    
+        
+    
+    </dl>
+    <dl>
         <dt>Downloads</dt>
         
-            <dd><a href="/2.0/conan.pdf">PDF</a></dd> 
-               
-      </dl>
-    </div>
+            <dd><a href="/2.0/conan.pdf">PDF</a></dd>
+        
+    </dl>
   </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.0.17',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="../../_static/js/modernizr.min.js"></script>
-  <script src="../../_static/js/search.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
--->
-  
-  
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-  
-
-
-  <script>
-    // initSearch("2.0");
   </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK44ZFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

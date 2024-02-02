@@ -1,54 +1,32 @@
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Configure settings and options in recipes &mdash; conan 2.0.17 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure settings and options in recipes &mdash; conan 2.0.17 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
+    <link rel="canonical" href="https://docs.conan.io/tutorial/creating_packages/configure_options_settings.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-
-  
-    <link rel="stylesheet" href="../../_static/css/signup.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../_static/css/search.css" type="text/css" />
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="conan 2.0.17 documentation" href="../../index.html"/>
-        <link rel="up" title="Creating packages" href="../creating_packages.html"/>
-        <link rel="next" title="Build packages: the build() method" href="build_packages.html"/>
-        <link rel="prev" title="Preparing the build" href="preparing_the_build.html"/>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=86415d92"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Build packages: the build() method" href="build_packages.html" />
+    <link rel="prev" title="Preparing the build" href="preparing_the_build.html" />
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,51 +41,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-
-  
-
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="../../index.html">
           
-
-          
+          <a href="../../index.html">
             
-            <img src="../../_static/conan-docs-logo-2.svg" class="logo" />
-          
+              <img src="../../_static/conan-docs-logo-2.svg" class="logo" alt="Logo"/>
           </a>
-
-            
-
-          
+              <div class="version">
+                2.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../whatsnew.html">What’s new in Conan 2.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Install</a></li>
@@ -140,88 +99,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 
-            
-          
-          <div class="dark_newsletter-div">
-             <p><a href="https://conan.io/#signUp" target="_blank">Sign up for release updates</a></p>
-          </div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">conan</a>
-        
       </nav>
 
-
-      
-      <script>
-        var reldir = "../../index.html".replace("index.html","").replace("#", "");
-      </script>
       <div class="wy-nav-content">
         <div class="rst-content">
-                 
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation" id="breadcrumbs">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../../tutorial.html">Tutorial</a> &raquo;</li>
-        
-          <li><a href="../creating_packages.html">Creating packages</a> &raquo;</li>
-        
-      <li>Configure settings and options in recipes</li>
-    
-    
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../tutorial.html">Tutorial</a></li>
+          <li class="breadcrumb-item"><a href="../creating_packages.html">Creating packages</a></li>
+      <li class="breadcrumb-item active">Configure settings and options in recipes</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-            
               <a href="https://github.com/conan-io/docs/blob/develop2/tutorial/creating_packages/configure_options_settings.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
+  <hr/>
 </div>
-          <!--<select id="search" name="state" multiple="true" onchange="window.location = reldir + this.value;" style="width:90%"></select>
-          <hr/>-->
-          <!--<div class="admonition important">
-            <p class="admonition-title">Announcement</p>
-            <p>Recipe Hacking no. 2! Building on what we learnt during the first installment we will be working on more Conan 2.0 Migration! We'll start by reviewing some open pull requests and hopefully tackle a CMake example. <a
-            href=https://jfrog.zoom.us/webinar/register/WN_grFhqH0yRBeIfJmBvQoPJw> Register here to attend.</a></p>
-          </div>-->
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="configure-settings-and-options-in-recipes">
-<span id="tutorial-creating-configure"></span><h1>Configure settings and options in recipes<a class="headerlink" href="#configure-settings-and-options-in-recipes" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="configure-settings-and-options-in-recipes">
+<span id="tutorial-creating-configure"></span><h1>Configure settings and options in recipes<a class="headerlink" href="#configure-settings-and-options-in-recipes" title="Link to this heading">¶</a></h1>
 <p>We already explained <a class="reference internal" href="../consuming_packages/different_configurations.html#settings-and-options-difference"><span class="std std-ref">Conan settings and options</span></a>
 and how to use them to build your projects for different configurations like Debug,
 Release, with static or shared libraries, etc. In this section, we explain how to
@@ -266,15 +172,15 @@ Let’s check the relevant parts:</p>
 objective of this method and how it’s different from the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> method we
 already had defined in the recipe:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">configure()</span></code>: use this method to configure which options or settings of the recipe
+<li><p><code class="docutils literal notranslate"><span class="pre">configure()</span></code>: use this method to configure which options or settings of the recipe
 are available. For example, in this case, we <strong>delete the fPIC option</strong>, because it
 should only be <strong>True</strong> if we are building the library as shared (in fact, some build
-systems will add this flag automatically when building a shared library).</li>
-<li><code class="docutils literal notranslate"><span class="pre">config_options()</span></code>: This method is used to <strong>constraint</strong> the available options in a
+systems will add this flag automatically when building a shared library).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_options()</span></code>: This method is used to <strong>constraint</strong> the available options in a
 package <strong>before they take a value</strong>. If a value is assigned to a setting or option that is
 deleted inside this method, Conan will raise an error. In this case we are <strong>deleting
 the fPIC option</strong> in Windows because that option does not exist for that operating
-system. Note that this method is executed before the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method.</li>
+system. Note that this method is executed before the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method.</p></li>
 </ul>
 <p>Be aware that deleting an option in the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> or in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> has
 not the same result. Deleting it in the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> <strong>is like if we never declared
@@ -283,7 +189,7 @@ Nevertheless, if we delete it in the <code class="docutils literal notranslate">
 will have no effect. For example, if you try to pass a value to the <code class="docutils literal notranslate"><span class="pre">fPIC</span></code> option in
 Windows, Conan will raise an error warning that the option does not exist:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan create . --build=missing -o fPIC=True
 ...
 -------- Computing dependency graph --------
@@ -297,8 +203,8 @@ option</strong> if certain conditions meet. Let’s explain why we are doing thi
 implications of removing that option. It is related to how Conan identifies packages that
 are binary compatible with the configuration set in the profile. In the next section, we
 introduce the concept of the <strong>Conan package ID</strong>.</p>
-<div class="section" id="conan-packages-binary-compatibility-the-package-id">
-<span id="creating-packages-configure-options-settings"></span><h2>Conan packages binary compatibility: the <strong>package ID</strong><a class="headerlink" href="#conan-packages-binary-compatibility-the-package-id" title="Permalink to this headline">¶</a></h2>
+<section id="conan-packages-binary-compatibility-the-package-id">
+<span id="creating-packages-configure-options-settings"></span><h2>Conan packages binary compatibility: the <strong>package ID</strong><a class="headerlink" href="#conan-packages-binary-compatibility-the-package-id" title="Link to this heading">¶</a></h2>
 <p>We used Conan in previous examples to build for different configurations like <em>Debug</em> and
 <em>Release</em>. Each time you create the package for one of those configurations, Conan will
 build a new binary. Each of them is related to a <strong>generated hash</strong> called <strong>the package
@@ -355,8 +261,8 @@ hello/1.0:<span class="w"> </span>Package<span class="w"> </span>folder<span cla
 </div>
 <p>As you can see Conan generated two package IDs:</p>
 <ul class="simple">
-<li>Package <em>738feca714b7251063cc51448da0cf4811424e7c</em> for Release</li>
-<li>Package <em>3d27635e4dd04a258d180fe03cfa07ae1186a828</em> for Debug</li>
+<li><p>Package <em>738feca714b7251063cc51448da0cf4811424e7c</em> for Release</p></li>
+<li><p>Package <em>3d27635e4dd04a258d180fe03cfa07ae1186a828</em> for Debug</p></li>
 </ul>
 <p>These two package IDs are calculated by taking the <strong>set of settings, options and some
 information about the requirements</strong> (we will explain this later in the documentation) and
@@ -366,15 +272,15 @@ information depicted in the diagram below.</p>
 <p>Those package IDs are different because the <strong>build_type</strong> is different. Now, when you want
 to install a package, Conan will:</p>
 <ul class="simple">
-<li>Collect the settings and options applied, along with some information about the
-requirements and calculate the hash for the corresponding package ID.</li>
-<li>If that package ID matches one of the packages stored in the local Conan cache Conan
+<li><p>Collect the settings and options applied, along with some information about the
+requirements and calculate the hash for the corresponding package ID.</p></li>
+<li><p>If that package ID matches one of the packages stored in the local Conan cache Conan
 will use that. If not, and we have any Conan remote configured, it will search for a
-package with that package ID in the remotes.</li>
-<li>If that calculated package ID does not exist in the local cache and remotes, Conan will
+package with that package ID in the remotes.</p></li>
+<li><p>If that calculated package ID does not exist in the local cache and remotes, Conan will
 fail with a “missing binary” error message, or will try to build that package from
 sources (this depends on the value of the <code class="docutils literal notranslate"><span class="pre">--build</span></code> argument). This build will
-generate a new package ID in the local cache.</li>
+generate a new package ID in the local cache.</p></li>
 </ul>
 <p>This steps are simplified, there is far more to package ID calculation than what we
 explain here, recipes themselves can even adjust their package ID calculations, we can
@@ -419,8 +325,8 @@ hello/1.0:<span class="w"> </span>Already<span class="w"> </span>installed!
 <p>As you can see, the first run created the <code class="docutils literal notranslate"><span class="pre">2a899fd0da3125064bf9328b8db681cd82899d56</span></code>
 package, and the second one, regardless of the different value of the fPIC option, said we
 already had the <code class="docutils literal notranslate"><span class="pre">2a899fd0da3125064bf9328b8db681cd82899d56</span></code> package installed.</p>
-<div class="section" id="c-libraries">
-<h3>C libraries<a class="headerlink" href="#c-libraries" title="Permalink to this headline">¶</a></h3>
+<section id="c-libraries">
+<h3>C libraries<a class="headerlink" href="#c-libraries" title="Link to this heading">¶</a></h3>
 <p>There are other typical cases where you want to delete certain settings. Imagine that you
 are packaging a C library. When you build this library, there are settings like the
 compiler C++ standard (<code class="docutils literal notranslate"><span class="pre">settings.compiler.cppstd</span></code>) or the standard library used
@@ -435,9 +341,9 @@ to delete them in the <code class="docutils literal notranslate"><span class="pr
 <p>Please, note that deleting these settings in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method will modify the
 package ID calculation but will also affect how the toolchain, and the build system
 integrations work because the C++ settings do not exist.</p>
-</div>
-<div class="section" id="header-only-libraries">
-<h3>Header-only libraries<a class="headerlink" href="#header-only-libraries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="header-only-libraries">
+<h3>Header-only libraries<a class="headerlink" href="#header-only-libraries" title="Link to this heading">¶</a></h3>
 <p>A similar case happens with packages that package <a class="reference internal" href="other_types_of_packages/header_only_packages.html#creating-packages-other-header-only"><span class="std std-ref">header-only
 libraries</span></a>. In that case,
 there’s no binary code we need to link with, but just some header files to add to our
@@ -454,500 +360,445 @@ method called <code class="docutils literal notranslate"><span class="pre">packa
 way the package ID for the package is calculated. You can also check the <a class="reference internal" href="../../reference/conanfile/methods.html#reference-conanfile-methods"><span class="std std-ref">Conanfile’s
 methods reference</span></a> if you want to know how this method works in
 more detail.</p>
-</div>
-</div>
-<div class="section" id="read-more">
-<h2>Read more<a class="headerlink" href="#read-more" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="read-more">
+<h2>Read more<a class="headerlink" href="#read-more" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="other_types_of_packages/header_only_packages.html#creating-packages-other-header-only"><span class="std std-ref">Header-only packages</span></a>.</li>
-<li>Check the binary compatibility <a class="reference internal" href="../../reference/extensions/binary_compatibility.html#reference-extensions-binary-compatibility"><span class="std std-ref">compatibility.py extension</span></a>.</li>
-<li>Conan <a class="reference internal" href="../../reference/conanfile/attributes.html#reference-conanfile-attributes-package-type"><span class="std std-ref">package types</span></a>.</li>
-<li><a class="reference internal" href="../../reference/conanfile/methods/requirements.html#reference-conanfile-methods-requirements-package-id-mode"><span class="std std-ref">Setting package_id_mode for requirements</span></a>.</li>
-<li>Read the <a class="reference internal" href="../../reference/binary_model.html#reference-binary-model"><span class="std std-ref">binary model reference</span></a> for a full view of the Conan binary model.</li>
+<li><p><a class="reference internal" href="other_types_of_packages/header_only_packages.html#creating-packages-other-header-only"><span class="std std-ref">Header-only packages</span></a>.</p></li>
+<li><p>Check the binary compatibility <a class="reference internal" href="../../reference/extensions/binary_compatibility.html#reference-extensions-binary-compatibility"><span class="std std-ref">compatibility.py extension</span></a>.</p></li>
+<li><p>Conan <a class="reference internal" href="../../reference/conanfile/attributes.html#reference-conanfile-attributes-package-type"><span class="std std-ref">package types</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../reference/conanfile/methods/requirements.html#reference-conanfile-methods-requirements-package-id-mode"><span class="std std-ref">Setting package_id_mode for requirements</span></a>.</p></li>
+<li><p>Read the <a class="reference internal" href="../../reference/binary_model.html#reference-binary-model"><span class="std std-ref">binary model reference</span></a> for a full view of the Conan binary model.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="build_packages.html" class="btn btn-neutral float-right" title="Build packages: the build() method" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="preparing_the_build.html" class="btn btn-neutral" title="Preparing the build" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preparing_the_build.html" class="btn btn-neutral float-left" title="Preparing the build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="build_packages.html" class="btn btn-neutral float-right" title="Build packages: the build() method" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016-2023, JFrog.
-      Last updated on Jan 26, 2024.
-      <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
-    </p>
-  </div> 
+    <p>&#169; Copyright 2016-2024, JFrog.
+      <span class="lastupdated">Last updated on Feb 02, 2024.
+      </span></p>
+  </div>
+
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <!--<span class="fa fa-pencil-square-o"> Other versions:</span> -->
-      Version: 2.0
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>Versions</dt>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: 2.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+    <dt>Versions</dt>
+    
         
-            
-                <dd><a href="/2.0/index.html">2.0</a></dd>
-                   
+            <dd><a href="/2.0/index.html">2.0</a></dd>
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-            
-                <dd><a href="/2/index.html">2</a></dd>
-                   
+    
         
-        <br>
+            <dd><a href="/2/index.html">2</a></dd>
         
-                   
+    
+    <br>
+    
         
-            
-                <dd><a href="/1/index.html">1</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.62/index.html">1.62</a></dd>
-                   
+            <dd><a href="/1/index.html">1</a></dd>
         
-            
-                <dd><a href="/en/1.61/index.html">1.61</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.60/index.html">1.60</a></dd>
-                   
+            <dd><a href="/en/1.62/index.html">1.62</a></dd>
         
-            
-                <dd><a href="/en/1.59/index.html">1.59</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.58/index.html">1.58</a></dd>
-                   
+            <dd><a href="/en/1.61/index.html">1.61</a></dd>
         
-            
-                <dd><a href="/en/1.57/index.html">1.57</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.56/index.html">1.56</a></dd>
-                   
+            <dd><a href="/en/1.60/index.html">1.60</a></dd>
         
-            
-                <dd><a href="/en/1.55/index.html">1.55</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.54/index.html">1.54</a></dd>
-                   
+            <dd><a href="/en/1.59/index.html">1.59</a></dd>
         
-            
-                <dd><a href="/en/1.53/index.html">1.53</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.52/index.html">1.52</a></dd>
-                   
+            <dd><a href="/en/1.58/index.html">1.58</a></dd>
         
-            
-                <dd><a href="/en/1.51/index.html">1.51</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.50/index.html">1.50</a></dd>
-                   
+            <dd><a href="/en/1.57/index.html">1.57</a></dd>
         
-            
-                <dd><a href="/en/1.49/index.html">1.49</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.48/index.html">1.48</a></dd>
-                   
+            <dd><a href="/en/1.56/index.html">1.56</a></dd>
         
-            
-                <dd><a href="/en/1.47/index.html">1.47</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.46/index.html">1.46</a></dd>
-                   
+            <dd><a href="/en/1.55/index.html">1.55</a></dd>
         
-            
-                <dd><a href="/en/1.45/index.html">1.45</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.44/index.html">1.44</a></dd>
-                   
+            <dd><a href="/en/1.54/index.html">1.54</a></dd>
         
-            
-                <dd><a href="/en/1.43/index.html">1.43</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.42/index.html">1.42</a></dd>
-                   
+            <dd><a href="/en/1.53/index.html">1.53</a></dd>
         
-            
-                <dd><a href="/en/1.41/index.html">1.41</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.40/index.html">1.40</a></dd>
-                   
+            <dd><a href="/en/1.52/index.html">1.52</a></dd>
         
-            
-                <dd><a href="/en/1.39/index.html">1.39</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.38/index.html">1.38</a></dd>
-                   
+            <dd><a href="/en/1.51/index.html">1.51</a></dd>
         
-            
-                <dd><a href="/en/1.37/index.html">1.37</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.36/index.html">1.36</a></dd>
-                   
+            <dd><a href="/en/1.50/index.html">1.50</a></dd>
         
-            
-                <dd><a href="/en/1.35/index.html">1.35</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.34/index.html">1.34</a></dd>
-                   
+            <dd><a href="/en/1.49/index.html">1.49</a></dd>
         
-            
-                <dd><a href="/en/1.33/index.html">1.33</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.32/index.html">1.32</a></dd>
-                   
+            <dd><a href="/en/1.48/index.html">1.48</a></dd>
         
-            
-                <dd><a href="/en/1.31/index.html">1.31</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.30/index.html">1.30</a></dd>
-                   
+            <dd><a href="/en/1.47/index.html">1.47</a></dd>
         
-            
-                <dd><a href="/en/1.29/index.html">1.29</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.28/index.html">1.28</a></dd>
-                   
+            <dd><a href="/en/1.46/index.html">1.46</a></dd>
         
-            
-                <dd><a href="/en/1.27/index.html">1.27</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.26/index.html">1.26</a></dd>
-                   
+            <dd><a href="/en/1.45/index.html">1.45</a></dd>
         
-            
-                <dd><a href="/en/1.25/index.html">1.25</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.24/index.html">1.24</a></dd>
-                   
+            <dd><a href="/en/1.44/index.html">1.44</a></dd>
         
-            
-                <dd><a href="/en/1.23/index.html">1.23</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.22/index.html">1.22</a></dd>
-                   
+            <dd><a href="/en/1.43/index.html">1.43</a></dd>
         
-            
-                <dd><a href="/en/1.21/index.html">1.21</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.20/index.html">1.20</a></dd>
-                   
+            <dd><a href="/en/1.42/index.html">1.42</a></dd>
         
-            
-                <dd><a href="/en/1.19/index.html">1.19</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.18/index.html">1.18</a></dd>
-                   
+            <dd><a href="/en/1.41/index.html">1.41</a></dd>
         
-            
-                <dd><a href="/en/1.17/index.html">1.17</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.16/index.html">1.16</a></dd>
-                   
+            <dd><a href="/en/1.40/index.html">1.40</a></dd>
         
-            
-                <dd><a href="/en/1.15/index.html">1.15</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.14/index.html">1.14</a></dd>
-                   
+            <dd><a href="/en/1.39/index.html">1.39</a></dd>
         
-            
-                <dd><a href="/en/1.13/index.html">1.13</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.12/index.html">1.12</a></dd>
-                   
+            <dd><a href="/en/1.38/index.html">1.38</a></dd>
         
-            
-                <dd><a href="/en/1.11/index.html">1.11</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.10/index.html">1.10</a></dd>
-                   
+            <dd><a href="/en/1.37/index.html">1.37</a></dd>
         
-            
-                <dd><a href="/en/1.9/index.html">1.9</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.8/index.html">1.8</a></dd>
-                   
+            <dd><a href="/en/1.36/index.html">1.36</a></dd>
         
-            
-                <dd><a href="/en/1.7/index.html">1.7</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.6/index.html">1.6</a></dd>
-                   
+            <dd><a href="/en/1.35/index.html">1.35</a></dd>
         
-            
-                <dd><a href="/en/1.5/index.html">1.5</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.4/index.html">1.4</a></dd>
-                   
+            <dd><a href="/en/1.34/index.html">1.34</a></dd>
         
-            
-                <dd><a href="/en/1.3/index.html">1.3</a></dd>
-                   
+    
         
-                   
+            <dd><a href="/en/1.33/index.html">1.33</a></dd>
         
-      </dl>
-      <dl>
+    
+        
+            <dd><a href="/en/1.32/index.html">1.32</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.31/index.html">1.31</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.30/index.html">1.30</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.29/index.html">1.29</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.28/index.html">1.28</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.27/index.html">1.27</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.26/index.html">1.26</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.25/index.html">1.25</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.24/index.html">1.24</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.23/index.html">1.23</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.22/index.html">1.22</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.21/index.html">1.21</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.20/index.html">1.20</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.19/index.html">1.19</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.18/index.html">1.18</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.17/index.html">1.17</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.16/index.html">1.16</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.15/index.html">1.15</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.14/index.html">1.14</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.13/index.html">1.13</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.12/index.html">1.12</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.11/index.html">1.11</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.10/index.html">1.10</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.9/index.html">1.9</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.8/index.html">1.8</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.7/index.html">1.7</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.6/index.html">1.6</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.5/index.html">1.5</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.4/index.html">1.4</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.3/index.html">1.3</a></dd>
+        
+    
+        
+    
+    </dl>
+    <dl>
         <dt>Downloads</dt>
         
-            <dd><a href="/2.0/conan.pdf">PDF</a></dd> 
-               
-      </dl>
-    </div>
+            <dd><a href="/2.0/conan.pdf">PDF</a></dd>
+        
+    </dl>
   </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.0.17',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="../../_static/js/modernizr.min.js"></script>
-  <script src="../../_static/js/search.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
--->
-  
-  
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-  
-
-
-  <script>
-    // initSearch("2.0");
   </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK44ZFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

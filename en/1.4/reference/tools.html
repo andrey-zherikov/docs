@@ -1,52 +1,28 @@
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tools &mdash; conan 1.4.5 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-
-  
-    <link rel="stylesheet" href="../_static/css/signup.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../_static/css/search.css" type="text/css" />
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="conan 1.4.5 documentation" href="../index.html"/>
-        <link rel="up" title="Reference" href="../reference.html"/>
-        <link rel="next" title="Configuration files" href="config_files.html"/>
-        <link rel="prev" title="RunEnvironment" href="build_helpers/run_environment.html"/>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c97b86a3"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuration files" href="config_files.html" />
+    <link rel="prev" title="RunEnvironment" href="build_helpers/run_environment.html" />
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -70,51 +46,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-
-  
-
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="../index.html">
           
-
-          
+          <a href="../index.html">
             
-            <img src="../_static/conan_logo.png" class="logo" />
-          
+              <img src="../_static/conan_logo.png" class="logo" alt="Logo"/>
           </a>
-
-            
-
-          
+              <div class="version">
+                1.4
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../conan1.0.html">Upgrading to conan 1.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Install</a></li>
@@ -196,88 +153,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 </ul>
 
-            
-          
-          <div class="dark_newsletter-div">
-             <p><a href="https://conan.io/#signUp" target="_blank">Sign up for release updates</a></p>
-          </div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">conan</a>
-        
       </nav>
 
-
-      
-      <script>
-        var reldir = "../index.html".replace("index.html","").replace("#", "");
-      </script>
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
-            <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
-          </div>
-                 
+            <div class="admonition warning wy-text-center" style="position:sticky;top:0;border: 1px solid orange">
+              <p>This document is for a <b>"1.X" legacy</b> Conan version. <a href="https://docs.conan.io/2/">Click here to read the <b>Conan 2.0</b> documentation</a></p>
+            </div>
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation" id="breadcrumbs">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../reference.html">Reference</a> &raquo;</li>
-        
-      <li>Tools</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Tools</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/reference/tools.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
+  <hr/>
 </div>
-          <!--<select id="search" name="state" multiple="true" onchange="window.location = reldir + this.value;" style="width:90%"></select>
-          <hr/>-->
-          <!--<div class="admonition important">
-            <p class="admonition-title">Announcement</p>
-            <p>Recipe Hacking no. 2! Building on what we learnt during the first installment we will be working on more Conan 2.0 Migration! We'll start by reviewing some open pull requests and hopefully tackle a CMake example. <a
-            href=https://jfrog.zoom.us/webinar/register/WN_grFhqH0yRBeIfJmBvQoPJw> Register here to attend.</a></p>
-          </div>-->
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="tools">
-<span id="id1"></span><h1>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="tools">
+<span id="id1"></span><h1>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h1>
 <p>Under the tools module there are several functions and utilities that can be used in conan package
 recipes:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">conans</span> <span class="kn">import</span> <span class="n">ConanFile</span>
@@ -287,16 +194,16 @@ recipes:</p>
      <span class="o">...</span>
 </pre></div>
 </div>
-<div class="section" id="tools-cpu-count">
-<span id="cpu-count"></span><h2>tools.cpu_count()<a class="headerlink" href="#tools-cpu-count" title="Permalink to this headline">¶</a></h2>
+<section id="tools-cpu-count">
+<span id="cpu-count"></span><h2>tools.cpu_count()<a class="headerlink" href="#tools-cpu-count" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tools</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Returns the number of CPUs available, for parallel builds. If processor detection is not enabled, it will safely return 1.
 Can be overwritten with the environment variable <code class="docutils literal notranslate"><span class="pre">CONAN_CPU_COUNT</span></code> and configured in the <a class="reference internal" href="config_files/conan.conf.html#conan-conf"><span class="std std-ref">conan.conf file</span></a>.</p>
-</div>
-<div class="section" id="tools-vcvars-command">
-<h2>tools.vcvars_command()<a class="headerlink" href="#tools-vcvars-command" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vcvars-command">
+<h2>tools.vcvars_command()<a class="headerlink" href="#tools-vcvars-command" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vcvars_command</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compiler_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vcvars_ver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                    <span class="n">winsdk_version</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -323,21 +230,20 @@ corresponding Visual Studio version for the current settings.</p>
 Visual Studio version.</p>
 <p>If <strong>arch</strong> or <strong>compiler_version</strong> is specified, it will ignore the settings and return the command
 to set the Visual Studio environment for these parameters.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>settings</strong> (Required): Conanfile settings. Use <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.</li>
-<li><strong>arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Will use <code class="docutils literal notranslate"><span class="pre">settings.arch</span></code>.</li>
-<li><strong>compiler_version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Will use <code class="docutils literal notranslate"><span class="pre">settings.compiler.version</span></code>.</li>
-<li><strong>force</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Will ignore if the environment is already set for a different Visual Studio version.</li>
-<li><strong>winsdk_version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specifies the version of the Windows SDK to use.</li>
-<li><strong>vcvars_ver</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specifies the Visual Studio compiler toolset to use.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>settings</strong> (Required): Conanfile settings. Use <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.</p></li>
+<li><p><strong>arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Will use <code class="docutils literal notranslate"><span class="pre">settings.arch</span></code>.</p></li>
+<li><p><strong>compiler_version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Will use <code class="docutils literal notranslate"><span class="pre">settings.compiler.version</span></code>.</p></li>
+<li><p><strong>force</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Will ignore if the environment is already set for a different Visual Studio version.</p></li>
+<li><p><strong>winsdk_version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specifies the version of the Windows SDK to use.</p></li>
+<li><p><strong>vcvars_ver</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specifies the Visual Studio compiler toolset to use.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-vcvars-dict">
-<h2>tools.vcvars_dict()<a class="headerlink" href="#tools-vcvars-dict" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vcvars-dict">
+<h2>tools.vcvars_dict()<a class="headerlink" href="#tools-vcvars-dict" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vcvars_dict</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compiler_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filter_known_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">vcvars_ver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">winsdk_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only_diff</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -351,27 +257,26 @@ to set the Visual Studio environment for these parameters.</p>
         <span class="c1"># Do something</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li>Same as <code class="docutils literal notranslate"><span class="pre">vcvars_command</span></code>.</li>
-<li><strong>filter_known_paths</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): When True, the function will only keep the PATH
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>Same as <code class="docutils literal notranslate"><span class="pre">vcvars_command</span></code>.</p></li>
+<li><p><strong>filter_known_paths</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): When True, the function will only keep the PATH
 entries that follows some known patterns, filtering all the non-Visual Studio ones. When False,
-it will keep the PATH will all the system entries.</li>
-<li><strong>only_diff</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Returns only the variables set by
-<code class="docutils literal notranslate"><span class="pre">vcvarsall</span></code> and not the whole environment.</li>
+it will keep the PATH will all the system entries.</p></li>
+<li><p><strong>only_diff</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Returns only the variables set by
+<code class="docutils literal notranslate"><span class="pre">vcvarsall</span></code> and not the whole environment.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-vcvars">
-<h2>tools.vcvars()<a class="headerlink" href="#tools-vcvars" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vcvars">
+<h2>tools.vcvars()<a class="headerlink" href="#tools-vcvars" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vcvars</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compiler_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filter_known_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This context manager tool has no effect if used in a platform different from Windows.</p>
+<p class="admonition-title">Note</p>
+<p>This context manager tool has no effect if used in a platform different from Windows.</p>
 </div>
 <p>This is a context manager that allows to append to the environment all the variables set by the <strong>tools.vcvars_dict()</strong>.
 You can replace <strong>tools.vcvars_command()</strong> and use this context manager to get a cleaner way to activate the Visual Studio
@@ -383,12 +288,12 @@ environment:</p>
         <span class="n">do_something</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tools-build-sln-command-deprecated">
-<span id="build-sln-commmand"></span><h2>tools.build_sln_command() (DEPRECATED)<a class="headerlink" href="#tools-build-sln-command-deprecated" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-build-sln-command-deprecated">
+<span id="build-sln-commmand"></span><h2>tools.build_sln_command() (DEPRECATED)<a class="headerlink" href="#tools-build-sln-command-deprecated" title="Link to this heading"></a></h2>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This tool is deprecated and will be removed in Conan 2.0.
+<p class="admonition-title">Warning</p>
+<p>This tool is deprecated and will be removed in Conan 2.0.
 Use <a class="reference internal" href="build_helpers/visual_studio.html#msbuild"><span class="std std-ref">MSBuild()</span></a> build helper instead.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_sln_command</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">sln_path</span><span class="p">,</span> <span class="n">targets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">upgrade_project</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">build_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -405,29 +310,20 @@ It’s recommended to use it along with <code class="docutils literal notranslat
     <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last">
-<li><p class="first"><strong>settings</strong> (Required): Conanfile settings. Use “self.settings”.</p>
-</li>
-<li><p class="first"><strong>sln_path</strong> (Required):  Visual Studio project file path.</p>
-</li>
-<li><p class="first"><strong>targets</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>):  List of targets to build.</p>
-</li>
-<li><p class="first"><strong>upgrade_project</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the project file will be upgraded if the project’s VS version is
+<dl>
+<dt>Parameters:</dt><dd><ul>
+<li><p><strong>settings</strong> (Required): Conanfile settings. Use “self.settings”.</p></li>
+<li><p><strong>sln_path</strong> (Required):  Visual Studio project file path.</p></li>
+<li><p><strong>targets</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>):  List of targets to build.</p></li>
+<li><p><strong>upgrade_project</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the project file will be upgraded if the project’s VS version is
 older than current. When <a class="reference internal" href="env_vars.html#env-var-conan-skip-vs-project-upgrade"><span class="std std-ref">CONAN_SKIP_VS_PROJECTS_UPGRADE</span></a> environment variable is set to
-<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">1</span></code>, this parameter will be ignored and the project won’t be upgraded.</p>
-</li>
-<li><p class="first"><strong>build_type</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Override the build type defined in the settings (<code class="docutils literal notranslate"><span class="pre">settings.build_type</span></code>).</p>
-</li>
-<li><p class="first"><strong>arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Override the architecture defined in the settings (<code class="docutils literal notranslate"><span class="pre">settings.arch</span></code>).</p>
-</li>
-<li><p class="first"><strong>parallel</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Enables VS parallel build with <code class="docutils literal notranslate"><span class="pre">/m:X</span></code> argument, where X is defined by CONAN_CPU_COUNT environment variable
-or by the number of cores in the processor by default.</p>
-</li>
-<li><p class="first"><strong>toolset</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specify a toolset. Will append a <code class="docutils literal notranslate"><span class="pre">/p:PlatformToolset</span></code> option.</p>
-</li>
-<li><p class="first"><strong>platforms</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Dictionary with the mapping of archs/platforms from Conan naming to another one. It
+<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">1</span></code>, this parameter will be ignored and the project won’t be upgraded.</p></li>
+<li><p><strong>build_type</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Override the build type defined in the settings (<code class="docutils literal notranslate"><span class="pre">settings.build_type</span></code>).</p></li>
+<li><p><strong>arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Override the architecture defined in the settings (<code class="docutils literal notranslate"><span class="pre">settings.arch</span></code>).</p></li>
+<li><p><strong>parallel</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Enables VS parallel build with <code class="docutils literal notranslate"><span class="pre">/m:X</span></code> argument, where X is defined by CONAN_CPU_COUNT environment variable
+or by the number of cores in the processor by default.</p></li>
+<li><p><strong>toolset</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specify a toolset. Will append a <code class="docutils literal notranslate"><span class="pre">/p:PlatformToolset</span></code> option.</p></li>
+<li><p><strong>platforms</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Dictionary with the mapping of archs/platforms from Conan naming to another one. It
 is useful for Visual Studio solutions that have a different naming in architectures. Example: <code class="docutils literal notranslate"><span class="pre">platforms={&quot;x86&quot;:&quot;Win32&quot;}</span></code> (Visual
 solution uses “Win32” instead of “x86”). This dictionary will update the default one:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">msvc_arch</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x86&#39;</span><span class="p">:</span> <span class="s1">&#39;x86&#39;</span><span class="p">,</span>
@@ -440,12 +336,12 @@ solution uses “Win32” instead of “x86”). This dictionary will update the
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-msvc-build-command-deprecated">
-<span id="msvc-build-command"></span><h2>tools.msvc_build_command() (DEPRECATED)<a class="headerlink" href="#tools-msvc-build-command-deprecated" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-msvc-build-command-deprecated">
+<span id="msvc-build-command"></span><h2>tools.msvc_build_command() (DEPRECATED)<a class="headerlink" href="#tools-msvc-build-command-deprecated" title="Link to this heading"></a></h2>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This tool is deprecated and will be removed in Conan 2.0.
+<p class="admonition-title">Warning</p>
+<p>This tool is deprecated and will be removed in Conan 2.0.
 Use <a class="reference internal" href="build_helpers/visual_studio.html#msbuild"><span class="std std-ref">MSBuild()</span></a>.get_command() instead.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">msvc_build_command</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">sln_path</span><span class="p">,</span> <span class="n">targets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">upgrade_project</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">build_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -454,17 +350,16 @@ Use <a class="reference internal" href="build_helpers/visual_studio.html#msbuild
 </div>
 <p>Returns a string with a joint command consisting in setting the environment variables via <code class="docutils literal notranslate"><span class="pre">vcvars.bat</span></code> with the above
 <code class="docutils literal notranslate"><span class="pre">tools.vcvars_command()</span></code> function, and building a Visual Studio project with the <code class="docutils literal notranslate"><span class="pre">tools.build_sln_command()</span></code> function.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li>Same parameters as the above <a class="reference internal" href="#build-sln-commmand"><span class="std std-ref">tools.build_sln_command()</span></a>.</li>
-<li><strong>force_vcvars</strong>: Optional. Defaulted to False. Will set <code class="docutils literal notranslate"><span class="pre">vcvars_command(force=force_vcvars)</span></code>.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>Same parameters as the above <a class="reference internal" href="#build-sln-commmand"><span class="std std-ref">tools.build_sln_command()</span></a>.</p></li>
+<li><p><strong>force_vcvars</strong>: Optional. Defaulted to False. Will set <code class="docutils literal notranslate"><span class="pre">vcvars_command(force=force_vcvars)</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-unzip">
-<h2>tools.unzip()<a class="headerlink" href="#tools-unzip" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-unzip">
+<h2>tools.unzip()<a class="headerlink" href="#tools-unzip" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unzip</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">keep_permissions</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -485,20 +380,19 @@ and decompress them into the given destination folder (the current one by defaul
 <span class="n">tools</span><span class="o">.</span><span class="n">unzip</span><span class="p">(</span><span class="s2">&quot;myfile.zip&quot;</span><span class="p">,</span> <span class="s2">&quot;myfolder&quot;</span><span class="p">,</span> <span class="n">keep_permissions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>filename</strong> (Required): File to be unzipped.</li>
-<li><strong>destination</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>): Destination folder for unzipped files.</li>
-<li><strong>keep_permissions</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Keep permissions of files. <strong>WARNING:</strong> Can be dangerous if the zip
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>filename</strong> (Required): File to be unzipped.</p></li>
+<li><p><strong>destination</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>): Destination folder for unzipped files.</p></li>
+<li><p><strong>keep_permissions</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Keep permissions of files. <strong>WARNING:</strong> Can be dangerous if the zip
 was not created in a NIX system, the bits could produce undefined permission schema. Use only this option if you are sure that
-the zip was created correctly.</li>
+the zip was created correctly.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-untargz">
-<h2>tools.untargz()<a class="headerlink" href="#tools-untargz" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-untargz">
+<h2>tools.untargz()<a class="headerlink" href="#tools-untargz" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">untargz</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -512,17 +406,16 @@ unless the file had a different extension.</p>
 <span class="n">tools</span><span class="o">.</span><span class="n">untargz</span><span class="p">(</span><span class="s2">&quot;myfile.tar.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;myfolder&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>filename</strong> (Required): File to be unzipped.</li>
-<li><strong>destination</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>): Destination folder for <em>untargzed</em> files.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>filename</strong> (Required): File to be unzipped.</p></li>
+<li><p><strong>destination</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>): Destination folder for <em>untargzed</em> files.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-get">
-<h2>tools.get()<a class="headerlink" href="#tools-get" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-get">
+<h2>tools.get()<a class="headerlink" href="#tools-get" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">md5</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">sha1</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">sha256</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -536,19 +429,18 @@ will be checked, if any of them doesn’t match, it will raise a <code class="do
 <span class="n">tools</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://url/file&quot;</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s2">&quot;subfolder&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>url</strong> (Required): URL to download</li>
-<li><strong>md5</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): MD5 hash code to check the downloaded file.</li>
-<li><strong>sha1</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): SHA1 hash code to check the downloaded file.</li>
-<li><strong>sha256</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): SHA256 hash code to check the downloaded file.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>url</strong> (Required): URL to download</p></li>
+<li><p><strong>md5</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): MD5 hash code to check the downloaded file.</p></li>
+<li><p><strong>sha1</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): SHA1 hash code to check the downloaded file.</p></li>
+<li><p><strong>sha256</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): SHA256 hash code to check the downloaded file.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-get-env">
-<span id="id2"></span><h2>tools.get_env()<a class="headerlink" href="#tools-get-env" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-get-env">
+<span id="id2"></span><h2>tools.get_env()<a class="headerlink" href="#tools-get-env" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_env</span><span class="p">(</span><span class="n">env_key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -570,18 +462,17 @@ will be checked, if any of them doesn’t match, it will raise a <code class="do
 <span class="n">tools</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">&quot;TEST_ENV&quot;</span><span class="p">,</span> <span class="p">[])</span> <span class="c1"># returns [&quot;1&quot;]</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>env_key</strong> (Required): environment variable name.</li>
-<li><strong>default</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): default value to return if not defined or cast value against.</li>
-<li><strong>environment</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> if <code class="docutils literal notranslate"><span class="pre">None</span></code> or environment dictionary to look for.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>env_key</strong> (Required): environment variable name.</p></li>
+<li><p><strong>default</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): default value to return if not defined or cast value against.</p></li>
+<li><p><strong>environment</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> if <code class="docutils literal notranslate"><span class="pre">None</span></code> or environment dictionary to look for.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-download">
-<h2>tools.download()<a class="headerlink" href="#tools-download" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-download">
+<h2>tools.download()<a class="headerlink" href="#tools-download" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">retry_wait</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
              <span class="n">auth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -605,25 +496,24 @@ list of known verifiers for https downloads, but this can be optionally disabled
 <span class="n">tools</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;http://someurl/somefile.zip&quot;</span><span class="p">,</span> <span class="s2">&quot;myfilename.zip&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Myheader&quot;</span><span class="p">:</span> <span class="s2">&quot;My value&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>url</strong> (Required): URL to download</li>
-<li><strong>filename</strong> (Required): Name of the file to be created in the local storage</li>
-<li><strong>verify</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): When False, disables https certificate validation.</li>
-<li><strong>out</strong>: (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): An object with a write() method can be passed to get the output, stdout will use if not specified.</li>
-<li><strong>retry</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">2</span></code>): Number of retries in case of failure.</li>
-<li><strong>retry_wait</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">5</span></code>): Seconds to wait between download attempts.</li>
-<li><strong>overwrite</strong>: (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): When <cite>True</cite> Conan will overwrite the destination file if exists, if False it will raise.</li>
-<li><strong>auth</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): A tuple of user, password can be passed to use HTTPBasic authentication. This is passed directly to the
-requests python library, check here other uses of the <strong>auth</strong> parameter: <a class="reference external" href="http://docs.python-requests.org/en/master/user/authentication">http://docs.python-requests.org/en/master/user/authentication</a></li>
-<li><strong>headers</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): A dict with additional headers.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>url</strong> (Required): URL to download</p></li>
+<li><p><strong>filename</strong> (Required): Name of the file to be created in the local storage</p></li>
+<li><p><strong>verify</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): When False, disables https certificate validation.</p></li>
+<li><p><strong>out</strong>: (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): An object with a write() method can be passed to get the output, stdout will use if not specified.</p></li>
+<li><p><strong>retry</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">2</span></code>): Number of retries in case of failure.</p></li>
+<li><p><strong>retry_wait</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">5</span></code>): Seconds to wait between download attempts.</p></li>
+<li><p><strong>overwrite</strong>: (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): When <cite>True</cite> Conan will overwrite the destination file if exists, if False it will raise.</p></li>
+<li><p><strong>auth</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): A tuple of user, password can be passed to use HTTPBasic authentication. This is passed directly to the
+requests python library, check here other uses of the <strong>auth</strong> parameter: <a class="reference external" href="http://docs.python-requests.org/en/master/user/authentication">http://docs.python-requests.org/en/master/user/authentication</a></p></li>
+<li><p><strong>headers</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): A dict with additional headers.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-ftp-download">
-<h2>tools.ftp_download()<a class="headerlink" href="#tools-ftp-download" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-ftp-download">
+<h2>tools.ftp_download()<a class="headerlink" href="#tools-ftp-download" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ftp_download</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">login</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -636,19 +526,18 @@ you need some special functionality.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;README&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>ip</strong> (Required): The IP or address of the ftp server.</li>
-<li><strong>filename</strong> (Required): The filename, including the path/folder where it is located.</li>
-<li><strong>login</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): Login credentials for the ftp server.</li>
-<li><strong>password</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): Password credentials for the ftp server.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>ip</strong> (Required): The IP or address of the ftp server.</p></li>
+<li><p><strong>filename</strong> (Required): The filename, including the path/folder where it is located.</p></li>
+<li><p><strong>login</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): Login credentials for the ftp server.</p></li>
+<li><p><strong>password</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): Password credentials for the ftp server.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-replace-in-file">
-<h2>tools.replace_in_file()<a class="headerlink" href="#tools-replace-in-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-replace-in-file">
+<h2>tools.replace_in_file()<a class="headerlink" href="#tools-replace-in-file" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_in_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">search</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -665,32 +554,30 @@ conan dependencies without forking or modifying the original project:</p>
 <span class="sd">           conan_basic_setup()&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>file_path</strong> (Required): File path of the file to perform the replace in.</li>
-<li><strong>search</strong> (Required): String you want to be replaced.</li>
-<li><strong>replace</strong> (Required): String to replace the searched string.</li>
-<li><strong>strict</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it raises an error if the searched string
-is not found, so nothing is actually replaced.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>file_path</strong> (Required): File path of the file to perform the replace in.</p></li>
+<li><p><strong>search</strong> (Required): String you want to be replaced.</p></li>
+<li><p><strong>replace</strong> (Required): String to replace the searched string.</p></li>
+<li><p><strong>strict</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it raises an error if the searched string
+is not found, so nothing is actually replaced.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-check-with-algorithm-sum">
-<span id="id3"></span><h2>tools.check_with_algorithm_sum()<a class="headerlink" href="#tools-check-with-algorithm-sum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-check-with-algorithm-sum">
+<span id="id3"></span><h2>tools.check_with_algorithm_sum()<a class="headerlink" href="#tools-check-with-algorithm-sum" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_with_algorithm_sum</span><span class="p">(</span><span class="n">algorithm_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Useful to check that some downloaded file or resource has a predefined hash, so integrity and
 security are guaranteed. Something that could be typically done in <code class="docutils literal notranslate"><span class="pre">source()</span></code> method after
 retrieving some file from the internet.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>algorithm_name</strong> (Required): Name of the algorithm to be checked.</li>
-<li><strong>file_path</strong> (Required): File path of the file to be checked.</li>
-<li><strong>signature</strong> (Required): Hash code that the file should have.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>algorithm_name</strong> (Required): Name of the algorithm to be checked.</p></li>
+<li><p><strong>file_path</strong> (Required): File path of the file to be checked.</p></li>
+<li><p><strong>signature</strong> (Required): Hash code that the file should have.</p></li>
 </ul>
 </dd>
 </dl>
@@ -714,9 +601,9 @@ via <code class="docutils literal notranslate"><span class="pre">hashlib.new(alg
                                 <span class="s2">&quot;eb599ec83d383f0f25691c184f656d40384f9435&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tools-patch">
-<h2>tools.patch()<a class="headerlink" href="#tools-patch" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-patch">
+<h2>tools.patch()<a class="headerlink" href="#tools-patch" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">base_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">patch_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">patch_string</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -746,20 +633,19 @@ format. To be used mainly in the <code class="docutils literal notranslate"><spa
 <span class="n">tools</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">patch_file</span><span class="o">=</span><span class="s2">&quot;file.patch&quot;</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>base_path</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Base path where the patch should be applied.</li>
-<li><strong>patch_file</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Patch file that should be applied.</li>
-<li><strong>patch_string</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Patch string that should be applied.</li>
-<li><strong>strip</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">0</span></code>): Number of folders to be stripped from the path.</li>
-<li><strong>output</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Stream object.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>base_path</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Base path where the patch should be applied.</p></li>
+<li><p><strong>patch_file</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Patch file that should be applied.</p></li>
+<li><p><strong>patch_string</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Patch string that should be applied.</p></li>
+<li><p><strong>strip</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">0</span></code>): Number of folders to be stripped from the path.</p></li>
+<li><p><strong>output</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Stream object.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-environment-append">
-<span id="environment-append-tool"></span><h2>tools.environment_append()<a class="headerlink" href="#tools-environment-append" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-environment-append">
+<span id="environment-append-tool"></span><h2>tools.environment_append()<a class="headerlink" href="#tools-environment-append" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">environment_append</span><span class="p">(</span><span class="n">env_vars</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -774,16 +660,15 @@ in your conanfile:</p>
 </div>
 <p>The environment variables will be overridden if the value is a string, while it will be prepended if the value is a list. When the context
 manager block ends, the environment variables will be unset.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>env_vars</strong> (Required): Dictionary object with environment variable name and its value.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>env_vars</strong> (Required): Dictionary object with environment variable name and its value.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-chdir">
-<h2>tools.chdir()<a class="headerlink" href="#tools-chdir" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-chdir">
+<h2>tools.chdir()<a class="headerlink" href="#tools-chdir" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chdir</span><span class="p">(</span><span class="n">newdir</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -795,16 +680,15 @@ manager block ends, the environment variables will be unset.</p>
         <span class="n">do_something</span><span class="p">()</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>newdir</strong> (Required): Directory path name to change the current directory.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>newdir</strong> (Required): Directory path name to change the current directory.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-pythonpath">
-<h2>tools.pythonpath()<a class="headerlink" href="#tools-pythonpath" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-pythonpath">
+<h2>tools.pythonpath()<a class="headerlink" href="#tools-pythonpath" title="Link to this heading"></a></h2>
 <p>This tool is automatically applied in the conanfile methods unless <a class="reference internal" href="conanfile/attributes.html#apply-env"><span class="std std-ref">apply_env</span></a> is deactivated, so
 any PYTHONPATH inherited from the requirements will be automatically available.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pythonpath</span><span class="p">(</span><span class="n">conanfile</span><span class="p">)</span>
@@ -838,16 +722,15 @@ file or folder with a <code class="docutils literal notranslate"><span class="pr
     <span class="bp">self</span><span class="o">.</span><span class="n">env_info</span><span class="o">.</span><span class="n">PYTHONPATH</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">package_folder</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>conanfile</strong> (Required): Current <code class="docutils literal notranslate"><span class="pre">ConanFile</span></code> object.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>conanfile</strong> (Required): Current <code class="docutils literal notranslate"><span class="pre">ConanFile</span></code> object.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-no-op">
-<h2>tools.no_op()<a class="headerlink" href="#tools-no-op" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-no-op">
+<h2>tools.no_op()<a class="headerlink" href="#tools-no-op" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">no_op</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -860,9 +743,9 @@ file or folder with a <code class="docutils literal notranslate"><span class="pr
         <span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tools-human-size">
-<h2>tools.human_size()<a class="headerlink" href="#tools-human-size" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-human-size">
+<h2>tools.human_size()<a class="headerlink" href="#tools-human-size" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">human_size</span><span class="p">(</span><span class="n">size_bytes</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -874,20 +757,19 @@ It is mostly used by the conan downloads and unzip progress, but you can use it 
 <span class="o">&gt;&gt;</span> <span class="mf">1.0</span><span class="n">KB</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>size_bytes</strong> (Required): Number of bytes.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>size_bytes</strong> (Required): Number of bytes.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-osinfo-and-tools-systempackagetool">
-<span id="osinfo-reference"></span><h2>tools.OSInfo and tools.SystemPackageTool<a class="headerlink" href="#tools-osinfo-and-tools-systempackagetool" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-osinfo-and-tools-systempackagetool">
+<span id="osinfo-reference"></span><h2>tools.OSInfo and tools.SystemPackageTool<a class="headerlink" href="#tools-osinfo-and-tools-systempackagetool" title="Link to this heading"></a></h2>
 <p>These are helpers to install system packages. Check <a class="reference internal" href="conanfile/methods.html#method-system-requirements"><span class="std std-ref">system_requirements()</span></a>.</p>
-</div>
-<div class="section" id="tools-cross-building">
-<span id="cross-building-reference"></span><h2>tools.cross_building()<a class="headerlink" href="#tools-cross-building" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-cross-building">
+<span id="cross-building-reference"></span><h2>tools.cross_building()<a class="headerlink" href="#tools-cross-building" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cross_building</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">self_os</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">self_arch</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -898,34 +780,32 @@ It is mostly used by the conan downloads and unzip progress, but you can use it 
     <span class="c1"># Some special action</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>settings</strong> (Required): Conanfile settings. Use <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.</li>
-<li><strong>self_os</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Current operating system where the build is being done.</li>
-<li><strong>self_arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Current architecture where the build is being done.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>settings</strong> (Required): Conanfile settings. Use <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.</p></li>
+<li><p><strong>self_os</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Current operating system where the build is being done.</p></li>
+<li><p><strong>self_arch</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Current architecture where the build is being done.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-get-gnu-triplet">
-<h2>tools.get_gnu_triplet()<a class="headerlink" href="#tools-get-gnu-triplet" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-get-gnu-triplet">
+<h2>tools.get_gnu_triplet()<a class="headerlink" href="#tools-get-gnu-triplet" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_gnu_triplet</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">compiler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Returns string with GNU like <code class="docutils literal notranslate"><span class="pre">&lt;machine&gt;-&lt;vendor&gt;-&lt;op_system&gt;</span></code> triplet.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>os</strong> (Required): Operating system to be used to create the triplet.</li>
-<li><strong>arch</strong> (Required): Architecture to be used to create the triplet.</li>
-<li><strong>compiler</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Compiler used to create the triplet (only needed for Windows).</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>os</strong> (Required): Operating system to be used to create the triplet.</p></li>
+<li><p><strong>arch</strong> (Required): Architecture to be used to create the triplet.</p></li>
+<li><p><strong>compiler</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Compiler used to create the triplet (only needed for Windows).</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-run-in-windows-bash">
-<span id="run-in-windows-bash-tool"></span><h2>tools.run_in_windows_bash()<a class="headerlink" href="#tools-run-in-windows-bash" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-run-in-windows-bash">
+<span id="run-in-windows-bash-tool"></span><h2>tools.run_in_windows_bash()<a class="headerlink" href="#tools-run-in-windows-bash" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_in_windows_bash</span><span class="p">(</span><span class="n">conanfile</span><span class="p">,</span> <span class="n">bashcmd</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subsystem</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">msys_mingw</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -939,29 +819,28 @@ variable to change the default bash location.</p>
 <span class="n">tools</span><span class="o">.</span><span class="n">run_in_windows_bash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">)</span> <span class="c1"># self is a conanfile instance</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>conanfile</strong> (Required): Current <code class="docutils literal notranslate"><span class="pre">ConanFile</span></code> object.</li>
-<li><strong>bashcmd</strong> (Required): String with the command to be run.</li>
-<li><strong>cwd</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Path to directory where to apply the command from.</li>
-<li><strong>subsystem</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code> will autodetect the subsystem). Used to escape the command according to the specified subsystem.</li>
-<li><strong>msys_mingw</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>) If the specified subsystem is MSYS2, will start it in MinGW mode (native windows development).</li>
-<li><strong>env</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>) You can pass a dict with environment variable to be applied <strong>at first place</strong> so they will have more priority than others.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>conanfile</strong> (Required): Current <code class="docutils literal notranslate"><span class="pre">ConanFile</span></code> object.</p></li>
+<li><p><strong>bashcmd</strong> (Required): String with the command to be run.</p></li>
+<li><p><strong>cwd</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Path to directory where to apply the command from.</p></li>
+<li><p><strong>subsystem</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code> will autodetect the subsystem). Used to escape the command according to the specified subsystem.</p></li>
+<li><p><strong>msys_mingw</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>) If the specified subsystem is MSYS2, will start it in MinGW mode (native windows development).</p></li>
+<li><p><strong>env</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>) You can pass a dict with environment variable to be applied <strong>at first place</strong> so they will have more priority than others.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-get-cased-path">
-<h2>tools.get_cased_path()<a class="headerlink" href="#tools-get-cased-path" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-get-cased-path">
+<h2>tools.get_cased_path()<a class="headerlink" href="#tools-get-cased-path" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_cased_path</span><span class="p">(</span><span class="n">abs_path</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For Windows, for any <code class="docutils literal notranslate"><span class="pre">abs_path</span></code> parameter containing a case-insensitive absolute path, returns it case-sensitive, that is, with the real cased characters.
 Useful when using Windows subsystems where the file system is case-sensitive.</p>
-</div>
-<div class="section" id="tools-remove-from-path">
-<h2>tools.remove_from_path()<a class="headerlink" href="#tools-remove-from-path" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-remove-from-path">
+<h2>tools.remove_from_path()<a class="headerlink" href="#tools-remove-from-path" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">remove_from_path</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -974,42 +853,40 @@ It’s not necessary to specify the extension.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;some command&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tools-unix-path">
-<h2>tools.unix_path()<a class="headerlink" href="#tools-unix-path" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-unix-path">
+<h2>tools.unix_path()<a class="headerlink" href="#tools-unix-path" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unix_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">path_flavor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Used to translate Windows paths to MSYS/CYGWIN unix paths like <code class="docutils literal notranslate"><span class="pre">c/users/path/to/file</span></code>.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>path</strong> (Required): Path to be converted.</li>
-<li><strong>path_flavor</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>, will try to autodetect the subsystem): Type of unix path to be returned. Options are <code class="docutils literal notranslate"><span class="pre">MSYS</span></code>, <code class="docutils literal notranslate"><span class="pre">MSYS2</span></code>, <code class="docutils literal notranslate"><span class="pre">CYGWIN</span></code>, <code class="docutils literal notranslate"><span class="pre">WSL</span></code> and <code class="docutils literal notranslate"><span class="pre">SFU</span></code>.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>path</strong> (Required): Path to be converted.</p></li>
+<li><p><strong>path_flavor</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>, will try to autodetect the subsystem): Type of unix path to be returned. Options are <code class="docutils literal notranslate"><span class="pre">MSYS</span></code>, <code class="docutils literal notranslate"><span class="pre">MSYS2</span></code>, <code class="docutils literal notranslate"><span class="pre">CYGWIN</span></code>, <code class="docutils literal notranslate"><span class="pre">WSL</span></code> and <code class="docutils literal notranslate"><span class="pre">SFU</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-escape-windows-cmd">
-<h2>tools.escape_windows_cmd()<a class="headerlink" href="#tools-escape-windows-cmd" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-escape-windows-cmd">
+<h2>tools.escape_windows_cmd()<a class="headerlink" href="#tools-escape-windows-cmd" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">escape_windows_cmd</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Useful to escape commands to be executed in a windows bash (msys2, cygwin etc).</p>
 <ul class="simple">
-<li>Adds escapes so the argument can be unpacked by <code class="docutils literal notranslate"><span class="pre">CommandLineToArgvW()</span></code>.</li>
-<li>Adds escapes for cmmd.exe so the argument survives cmmd.exe’s substitutions.</li>
+<li><p>Adds escapes so the argument can be unpacked by <code class="docutils literal notranslate"><span class="pre">CommandLineToArgvW()</span></code>.</p></li>
+<li><p>Adds escapes for cmmd.exe so the argument survives cmmd.exe’s substitutions.</p></li>
 </ul>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>command</strong> (Required): Command to execute.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>command</strong> (Required): Command to execute.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-sha1sum-sha256sum-md5sum">
-<h2>tools.sha1sum(), sha256sum(), md5sum()<a class="headerlink" href="#tools-sha1sum-sha256sum-md5sum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-sha1sum-sha256sum-md5sum">
+<h2>tools.sha1sum(), sha256sum(), md5sum()<a class="headerlink" href="#tools-sha1sum-sha256sum-md5sum" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">def</span> <span class="n">md5sum</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">sha1sum</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">sha256sum</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
@@ -1022,16 +899,15 @@ It’s not necessary to specify the extension.</p>
 <span class="n">sha1</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">sha1sum</span><span class="p">(</span><span class="s2">&quot;myfilepath.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>file_path</strong> (Required): Path to the file.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>file_path</strong> (Required): Path to the file.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-md5">
-<h2>tools.md5()<a class="headerlink" href="#tools-md5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-md5">
+<h2>tools.md5()<a class="headerlink" href="#tools-md5" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">md5</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1041,16 +917,15 @@ It’s not necessary to specify the extension.</p>
 <span class="n">md5</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;some string, not a file path&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>content</strong> (Required): String or bytes to calculate its md5.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>content</strong> (Required): String or bytes to calculate its md5.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-save">
-<h2>tools.save()<a class="headerlink" href="#tools-save" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-save">
+<h2>tools.save()<a class="headerlink" href="#tools-save" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1061,18 +936,17 @@ It will manage the open and close of the file and creating directories if necess
 <span class="n">tools</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;otherfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;contents of the file&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>path</strong> (Required): Path to the file.</li>
-<li><strong>content</strong> (Required): Content that should be saved into the file.</li>
-<li><strong>append</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will append the content.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>path</strong> (Required): Path to the file.</p></li>
+<li><p><strong>content</strong> (Required): Content that should be saved into the file.</p></li>
+<li><p><strong>append</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will append the content.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-load">
-<h2>tools.load()<a class="headerlink" href="#tools-load" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-load">
+<h2>tools.load()<a class="headerlink" href="#tools-load" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1084,17 +958,16 @@ Returns the content of the file.</p>
 <span class="n">content</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;myfile.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>path</strong> (Required): Path to the file.</li>
-<li><strong>binary</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it reads the the file as binary code.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>path</strong> (Required): Path to the file.</p></li>
+<li><p><strong>binary</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it reads the the file as binary code.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-mkdir-tools-rmdir">
-<h2>tools.mkdir(), tools.rmdir()<a class="headerlink" href="#tools-mkdir-tools-rmdir" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-mkdir-tools-rmdir">
+<h2>tools.mkdir(), tools.rmdir()<a class="headerlink" href="#tools-mkdir-tools-rmdir" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">rmdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
@@ -1113,40 +986,38 @@ when <code class="docutils literal notranslate"><span class="pre">no_copy_source
 <span class="n">tools</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;mydir&quot;</span><span class="p">)</span> <span class="c1"># Does nothing</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>path</strong> (Required): Path to the directory.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>path</strong> (Required): Path to the directory.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-which">
-<h2>tools.which()<a class="headerlink" href="#tools-which" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-which">
+<h2>tools.which()<a class="headerlink" href="#tools-which" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">which</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Returns the path to a specified executable searching in the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable. If not found, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>This tool also looks for filenames with following extensions if no extension provided:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">.com</span></code>, <code class="docutils literal notranslate"><span class="pre">.exe</span></code>, <code class="docutils literal notranslate"><span class="pre">.bat</span></code> <code class="docutils literal notranslate"><span class="pre">.cmd</span></code> for Windows.</li>
-<li><code class="docutils literal notranslate"><span class="pre">.sh</span></code> if not Windows.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.com</span></code>, <code class="docutils literal notranslate"><span class="pre">.exe</span></code>, <code class="docutils literal notranslate"><span class="pre">.bat</span></code> <code class="docutils literal notranslate"><span class="pre">.cmd</span></code> for Windows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sh</span></code> if not Windows.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conans</span> <span class="kn">import</span> <span class="n">tools</span>
 
 <span class="n">abs_path_make</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="s2">&quot;make&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>filename</strong> (Required): Name of the executable file. It doesn’t require the extension of the executable.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>filename</strong> (Required): Name of the executable file. It doesn’t require the extension of the executable.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-touch">
-<h2>tools.touch()<a class="headerlink" href="#tools-touch" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-touch">
+<h2>tools.touch()<a class="headerlink" href="#tools-touch" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">touch</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1162,17 +1033,16 @@ This is similar to Unix’ <code class="docutils literal notranslate"><span clas
 <span class="n">tools</span><span class="o">.</span><span class="n">touch</span><span class="p">(</span><span class="s2">&quot;myfile&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">(),</span> <span class="mi">1</span><span class="p">))</span>          <span class="c1"># Modified long, long ago</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>fname</strong> (Required): File name of the file to be touched.</li>
-<li><strong>times</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>: Tuple with ‘last access’ and ‘last modified’ times.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>fname</strong> (Required): File name of the file to be touched.</p></li>
+<li><p><strong>times</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>: Tuple with ‘last access’ and ‘last modified’ times.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-relative-dirs">
-<h2>tools.relative_dirs()<a class="headerlink" href="#tools-relative-dirs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-relative-dirs">
+<h2>tools.relative_dirs()<a class="headerlink" href="#tools-relative-dirs" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">relative_dirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1183,16 +1053,15 @@ relative to the given directory.</p>
 <span class="n">tools</span><span class="o">.</span><span class="n">relative_dirs</span><span class="p">(</span><span class="s2">&quot;mydir&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>path</strong> (Required): Path of the directory.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>path</strong> (Required): Path of the directory.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-vswhere">
-<h2>tools.vswhere()<a class="headerlink" href="#tools-vswhere" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vswhere">
+<h2>tools.vswhere()<a class="headerlink" href="#tools-vswhere" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vswhere</span><span class="p">(</span><span class="n">all_</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">prerelease</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">products</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">requires</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
             <span class="n">latest</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">nologo</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -1204,28 +1073,27 @@ a list with a dictionary for each installation found.</p>
 <span class="n">vs_legacy_installations</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">vswhere</span><span class="p">(</span><span class="n">legacy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>all_</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Finds all instances even if they are incomplete and may not launch.</li>
-<li><strong>prerelease</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Also searches prereleases. By default, only releases are searched.</li>
-<li><strong>products</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): List of one or more product IDs to find. Defaults to Community, Professional, and
-Enterprise. Specify <code class="docutils literal notranslate"><span class="pre">[&quot;*&quot;]</span></code> by itself to search all product instances installed.</li>
-<li><strong>requires</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): List of one or more workload or component IDs required when finding instances. See
-<a class="reference external" href="https://docs.microsoft.com/en-us/visualstudio/install/workload-and-component-ids">https://docs.microsoft.com/en-us/visualstudio/install/workload-and-component-ids</a> for a list of workload and component IDs.</li>
-<li><strong>version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): A version range for instances to find. Example: <code class="docutils literal notranslate"><span class="pre">&quot;[15.0,16.0)&quot;</span></code> will find versions 15.*.</li>
-<li><strong>latest</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Return only the newest version and last installed.</li>
-<li><strong>legacy</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Also searches Visual Studio 2015 and older products. Information is limited. This
-option cannot be used with either <code class="docutils literal notranslate"><span class="pre">products</span></code> or <code class="docutils literal notranslate"><span class="pre">requires</span></code> parameters.</li>
-<li><strong>property_</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): The name of a property to return. Use delimiters <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, or <code class="docutils literal notranslate"><span class="pre">_</span></code> to separate
-object and property names. Example: <code class="docutils literal notranslate"><span class="pre">&quot;properties.nickname&quot;</span></code> will return the “nickname” property under “properties”.</li>
-<li><strong>nologo</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Do not show logo information.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>all_</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Finds all instances even if they are incomplete and may not launch.</p></li>
+<li><p><strong>prerelease</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Also searches prereleases. By default, only releases are searched.</p></li>
+<li><p><strong>products</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): List of one or more product IDs to find. Defaults to Community, Professional, and
+Enterprise. Specify <code class="docutils literal notranslate"><span class="pre">[&quot;*&quot;]</span></code> by itself to search all product instances installed.</p></li>
+<li><p><strong>requires</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): List of one or more workload or component IDs required when finding instances. See
+<a class="reference external" href="https://docs.microsoft.com/en-us/visualstudio/install/workload-and-component-ids">https://docs.microsoft.com/en-us/visualstudio/install/workload-and-component-ids</a> for a list of workload and component IDs.</p></li>
+<li><p><strong>version</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): A version range for instances to find. Example: <code class="docutils literal notranslate"><span class="pre">&quot;[15.0,16.0)&quot;</span></code> will find versions 15.*.</p></li>
+<li><p><strong>latest</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Return only the newest version and last installed.</p></li>
+<li><p><strong>legacy</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Also searches Visual Studio 2015 and older products. Information is limited. This
+option cannot be used with either <code class="docutils literal notranslate"><span class="pre">products</span></code> or <code class="docutils literal notranslate"><span class="pre">requires</span></code> parameters.</p></li>
+<li><p><strong>property_</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>): The name of a property to return. Use delimiters <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, or <code class="docutils literal notranslate"><span class="pre">_</span></code> to separate
+object and property names. Example: <code class="docutils literal notranslate"><span class="pre">&quot;properties.nickname&quot;</span></code> will return the “nickname” property under “properties”.</p></li>
+<li><p><strong>nologo</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Do not show logo information.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-vs-comntools">
-<h2>tools.vs_comntools()<a class="headerlink" href="#tools-vs-comntools" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vs-comntools">
+<h2>tools.vs_comntools()<a class="headerlink" href="#tools-vs-comntools" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vs_comntools</span><span class="p">(</span><span class="n">compiler_version</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1235,16 +1103,15 @@ object and property names. Example: <code class="docutils literal notranslate"><
 <span class="n">vs_path</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">vs_comntools</span><span class="p">(</span><span class="s2">&quot;14&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>compiler_version</strong> (Required): String with the version number: <code class="docutils literal notranslate"><span class="pre">&quot;14&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>…</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>compiler_version</strong> (Required): String with the version number: <code class="docutils literal notranslate"><span class="pre">&quot;14&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>…</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-vs-installation-path">
-<h2>tools.vs_installation_path()<a class="headerlink" href="#tools-vs-installation-path" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-vs-installation-path">
+<h2>tools.vs_installation_path()<a class="headerlink" href="#tools-vs-installation-path" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vs_installation_path</span><span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">preference</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1257,22 +1124,21 @@ tool is not able to return the path it returns <code class="docutils literal not
 <span class="n">vs_path_2017</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">vs_installation_path</span><span class="p">(</span><span class="s2">&quot;15&quot;</span><span class="p">,</span> <span class="n">preference</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Community&quot;</span><span class="p">,</span> <span class="s2">&quot;BuildTools&quot;</span><span class="p">,</span> <span class="s2">&quot;Professional&quot;</span><span class="p">,</span> <span class="s2">&quot;Enterprise&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>version</strong> (Required): Visual Studio version to locate. Valid version numbers
-are strings: <code class="docutils literal notranslate"><span class="pre">&quot;10&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;11&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;13&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;14&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;15&quot;</span></code>…</li>
-<li><strong>preference</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Set to value of
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>version</strong> (Required): Visual Studio version to locate. Valid version numbers
+are strings: <code class="docutils literal notranslate"><span class="pre">&quot;10&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;11&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;13&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;14&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;15&quot;</span></code>…</p></li>
+<li><p><strong>preference</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Set to value of
 <code class="docutils literal notranslate"><span class="pre">CONAN_VS_INSTALLATION_PREFERENCE</span></code> or defaulted to
 <code class="docutils literal notranslate"><span class="pre">[&quot;Enterprise&quot;,</span> <span class="pre">&quot;Professional&quot;,</span> <span class="pre">&quot;Community&quot;,</span> <span class="pre">&quot;BuildTools&quot;]</span></code>. If only set to one type of
 preference, it will return the installation path only for that Visual type and version,
-otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
+otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-replace-prefix-in-pc-file">
-<h2>tools.replace_prefix_in_pc_file()<a class="headerlink" href="#tools-replace-prefix-in-pc-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-replace-prefix-in-pc-file">
+<h2>tools.replace_prefix_in_pc_file()<a class="headerlink" href="#tools-replace-prefix-in-pc-file" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_prefix_in_pc_file</span><span class="p">(</span><span class="n">pc_file</span><span class="p">,</span> <span class="n">new_prefix</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1283,21 +1149,20 @@ otherwise <code class="docutils literal notranslate"><span class="pre">None</spa
 <span class="n">tools</span><span class="o">.</span><span class="n">replace_prefix_in_pc_file</span><span class="p">(</span><span class="s2">&quot;libB.pc&quot;</span><span class="p">,</span> <span class="n">lib_b_path</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong>Parameters:</strong></dt>
-<dd><ul class="first last simple">
-<li><strong>pc_file</strong> (Required): Path to the pc file</li>
-<li><strong>new_prefix</strong> (Required): New prefix variable value (Usually a path pointing to a package).</li>
+<dl class="simple">
+<dt><strong>Parameters:</strong></dt><dd><ul class="simple">
+<li><p><strong>pc_file</strong> (Required): Path to the pc file</p></li>
+<li><p><strong>new_prefix</strong> (Required): New prefix variable value (Usually a path pointing to a package).</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">Check section integrations/<a class="reference internal" href="../integrations/pkg_config_pc_files.html#pc-files"><span class="std std-ref">pkg-config and pc files</span></a> to know more.</p>
+<p class="admonition-title">See also</p>
+<p>Check section integrations/<a class="reference internal" href="../integrations/pkg_config_pc_files.html#pc-files"><span class="std std-ref">pkg-config and pc files</span></a> to know more.</p>
 </div>
-</div>
-<div class="section" id="tools-collect-libs">
-<h2>tools.collect_libs()<a class="headerlink" href="#tools-collect-libs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-collect-libs">
+<h2>tools.collect_libs()<a class="headerlink" href="#tools-collect-libs" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_libs</span><span class="p">(</span><span class="n">conanfile</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;lib&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1309,23 +1174,22 @@ libraries or with complex names like <code class="docutils literal notranslate">
     <span class="bp">self</span><span class="o">.</span><span class="n">cpp_info</span><span class="o">.</span><span class="n">libs</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">collect_libs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong>Parameters:</strong></dt>
-<dd><ul class="first last simple">
-<li><strong>conanfile</strong> (Required): A <cite>ConanFile</cite> object from which to get the <cite>package_folder</cite>.</li>
-<li><strong>folder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;lib&quot;</span></code>): The subfolder where the library files are.</li>
+<dl class="simple">
+<dt><strong>Parameters:</strong></dt><dd><ul class="simple">
+<li><p><strong>conanfile</strong> (Required): A <cite>ConanFile</cite> object from which to get the <cite>package_folder</cite>.</p></li>
+<li><p><strong>folder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;lib&quot;</span></code>): The subfolder where the library files are.</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This tool collects the libraries searching directly inside the package folder and returns them
+<p class="admonition-title">Warning</p>
+<p>This tool collects the libraries searching directly inside the package folder and returns them
 in no specific order. If libraries are inter-dependent, then package_info() method should order
 them to achieve correct linking order.</p>
 </div>
-</div>
-<div class="section" id="tools-pkgconfig">
-<span id="pkgconfigtool"></span><h2>tools.PkgConfig()<a class="headerlink" href="#tools-pkgconfig" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-pkgconfig">
+<span id="pkgconfigtool"></span><h2>tools.PkgConfig()<a class="headerlink" href="#tools-pkgconfig" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PkgConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">pkg_config_executable</span><span class="o">=</span><span class="s2">&quot;pkg-config&quot;</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">msvc_syntax</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -1341,67 +1205,62 @@ them to achieve correct linking order.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">pkg_config</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Parameters of the constructor:</dt>
-<dd><ul class="first last simple">
-<li><strong>library</strong> (Required): Library (package) name, such as <code class="docutils literal notranslate"><span class="pre">libastral</span></code>.</li>
-<li><strong>pkg_config_executable</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;pkg-config&quot;</span></code>): Specify custom pkg-config executable (e.g. for cross-compilation).</li>
-<li><strong>static</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Output libraries suitable for static linking (adds <code class="docutils literal notranslate"><span class="pre">--static</span></code> to <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command line).</li>
-<li><strong>msvc_syntax</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): MSVC compatibility (adds <code class="docutils literal notranslate"><span class="pre">--msvc-syntax</span></code> to <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command line).</li>
-<li><strong>variables</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Dictionary of pkg-config variables (passed as <code class="docutils literal notranslate"><span class="pre">--define-variable=VARIABLENAME=VARIABLEVALUE</span></code>).</li>
+<dl class="simple">
+<dt>Parameters of the constructor:</dt><dd><ul class="simple">
+<li><p><strong>library</strong> (Required): Library (package) name, such as <code class="docutils literal notranslate"><span class="pre">libastral</span></code>.</p></li>
+<li><p><strong>pkg_config_executable</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">&quot;pkg-config&quot;</span></code>): Specify custom pkg-config executable (e.g. for cross-compilation).</p></li>
+<li><p><strong>static</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): Output libraries suitable for static linking (adds <code class="docutils literal notranslate"><span class="pre">--static</span></code> to <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command line).</p></li>
+<li><p><strong>msvc_syntax</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">False</span></code>): MSVC compatibility (adds <code class="docutils literal notranslate"><span class="pre">--msvc-syntax</span></code> to <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command line).</p></li>
+<li><p><strong>variables</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Dictionary of pkg-config variables (passed as <code class="docutils literal notranslate"><span class="pre">--define-variable=VARIABLENAME=VARIABLEVALUE</span></code>).</p></li>
 </ul>
 </dd>
 </dl>
 <p><strong>Properties:</strong></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="30%" />
-<col width="70%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">PROPERTY</th>
-<th class="head">DESCRIPTION</th>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PROPERTY</p></th>
+<th class="head"><p>DESCRIPTION</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>.cflags</td>
-<td>get all pre-processor and compiler flags</td>
+<tbody>
+<tr class="row-even"><td><p>.cflags</p></td>
+<td><p>get all pre-processor and compiler flags</p></td>
 </tr>
-<tr class="row-odd"><td>.cflags_only_I</td>
-<td>get -I flags</td>
+<tr class="row-odd"><td><p>.cflags_only_I</p></td>
+<td><p>get -I flags</p></td>
 </tr>
-<tr class="row-even"><td>.cflags_only_other</td>
-<td>get cflags not covered by the cflags-only-I option</td>
+<tr class="row-even"><td><p>.cflags_only_other</p></td>
+<td><p>get cflags not covered by the cflags-only-I option</p></td>
 </tr>
-<tr class="row-odd"><td>.libs</td>
-<td>get all linker flags</td>
+<tr class="row-odd"><td><p>.libs</p></td>
+<td><p>get all linker flags</p></td>
 </tr>
-<tr class="row-even"><td>.libs_only_L</td>
-<td>get -L flags</td>
+<tr class="row-even"><td><p>.libs_only_L</p></td>
+<td><p>get -L flags</p></td>
 </tr>
-<tr class="row-odd"><td>.libs_only_l</td>
-<td>get -l flags</td>
+<tr class="row-odd"><td><p>.libs_only_l</p></td>
+<td><p>get -l flags</p></td>
 </tr>
-<tr class="row-even"><td>.libs_only_other</td>
-<td>get other libs (e.g. -pthread)</td>
+<tr class="row-even"><td><p>.libs_only_other</p></td>
+<td><p>get other libs (e.g. -pthread)</p></td>
 </tr>
-<tr class="row-odd"><td>.provides</td>
-<td>get which packages the package provides</td>
+<tr class="row-odd"><td><p>.provides</p></td>
+<td><p>get which packages the package provides</p></td>
 </tr>
-<tr class="row-even"><td>.requires</td>
-<td>get which packages the package requires</td>
+<tr class="row-even"><td><p>.requires</p></td>
+<td><p>get which packages the package requires</p></td>
 </tr>
-<tr class="row-odd"><td>.requires_private</td>
-<td>get packages the package requires for static linking</td>
+<tr class="row-odd"><td><p>.requires_private</p></td>
+<td><p>get packages the package requires for static linking</p></td>
 </tr>
-<tr class="row-even"><td>.variables</td>
-<td>get list of variables defined by the module</td>
+<tr class="row-even"><td><p>.variables</p></td>
+<td><p>get list of variables defined by the module</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="tools-git">
-<span id="id4"></span><h2>tools.Git()<a class="headerlink" href="#tools-git" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-git">
+<span id="id4"></span><h2>tools.Git()<a class="headerlink" href="#tools-git" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Git</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verify_ssl</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_english</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">runner</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1411,627 +1270,567 @@ them to achieve correct linking order.</p>
 <p>Parameters of the constructor:</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>folder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specify a subfolder where the code will be cloned. If not specified it will clone in the current directory.</li>
-<li><strong>verify_ssl</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Verify SSL certificate of the specified <strong>url</strong>.</li>
-<li><strong>username</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the login to authenticate with the remote.</li>
-<li><strong>password</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the password to authenticate with the remote.</li>
-<li><strong>force_english</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): The encoding of the tool will be forced to use <code class="docutils literal notranslate"><span class="pre">en_US.UTF-8</span></code> to ease the output parsing.</li>
-<li><strong>runner</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): By default <code class="docutils literal notranslate"><span class="pre">subprocess.check_output</span></code> will be used to invoke the <code class="docutils literal notranslate"><span class="pre">git</span></code> tool.</li>
+<li><p><strong>folder</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): Specify a subfolder where the code will be cloned. If not specified it will clone in the current directory.</p></li>
+<li><p><strong>verify_ssl</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): Verify SSL certificate of the specified <strong>url</strong>.</p></li>
+<li><p><strong>username</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the login to authenticate with the remote.</p></li>
+<li><p><strong>password</strong> (Optional, Defauted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): When present, it will be used as the password to authenticate with the remote.</p></li>
+<li><p><strong>force_english</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">True</span></code>): The encoding of the tool will be forced to use <code class="docutils literal notranslate"><span class="pre">en_US.UTF-8</span></code> to ease the output parsing.</p></li>
+<li><p><strong>runner</strong> (Optional, Defaulted to <code class="docutils literal notranslate"><span class="pre">None</span></code>): By default <code class="docutils literal notranslate"><span class="pre">subprocess.check_output</span></code> will be used to invoke the <code class="docutils literal notranslate"><span class="pre">git</span></code> tool.</p></li>
 </ul>
 </div></blockquote>
 <p>Methods:</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt><strong>run(command)</strong>:</dt>
-<dd>Run any “git” command. <code class="docutils literal notranslate"><span class="pre">e.j</span> <span class="pre">run(&quot;status&quot;)</span></code></dd>
+<li><dl class="simple">
+<dt><strong>run(command)</strong>:</dt><dd><p>Run any “git” command. <code class="docutils literal notranslate"><span class="pre">e.j</span> <span class="pre">run(&quot;status&quot;)</span></code></p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>get_url_with_credentials(url)</strong>:</dt>
-<dd>Returns the passed url but containing the <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> in the URL to authenticate (only if <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> is specified)</dd>
+<li><dl class="simple">
+<dt><strong>get_url_with_credentials(url)</strong>:</dt><dd><p>Returns the passed url but containing the <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> in the URL to authenticate (only if <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> is specified)</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>clone(url, branch=None)</strong>:</dt>
-<dd>Clone a repository. Optionally you can specify a branch. Note: If you want to clone a repository and the specified <strong>folder</strong> already exist you have to specify a <code class="docutils literal notranslate"><span class="pre">branch</span></code>.</dd>
+<li><dl class="simple">
+<dt><strong>clone(url, branch=None)</strong>:</dt><dd><p>Clone a repository. Optionally you can specify a branch. Note: If you want to clone a repository and the specified <strong>folder</strong> already exist you have to specify a <code class="docutils literal notranslate"><span class="pre">branch</span></code>.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>checkout(element)</strong>:</dt>
-<dd>Checkout a branch, commit or tag.</dd>
+<li><dl class="simple">
+<dt><strong>checkout(element)</strong>:</dt><dd><p>Checkout a branch, commit or tag.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>get_remote_url(remote_name=None)</strong>:</dt>
-<dd>Returns the remote url of the specified remote. If not <code class="docutils literal notranslate"><span class="pre">remote_name</span></code> is specified <code class="docutils literal notranslate"><span class="pre">origin</span></code> will be used.</dd>
+<li><dl class="simple">
+<dt><strong>get_remote_url(remote_name=None)</strong>:</dt><dd><p>Returns the remote url of the specified remote. If not <code class="docutils literal notranslate"><span class="pre">remote_name</span></code> is specified <code class="docutils literal notranslate"><span class="pre">origin</span></code> will be used.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>get_revision()</strong>:</dt>
-<dd>Gets the current commit hash.</dd>
+<li><dl class="simple">
+<dt><strong>get_revision()</strong>:</dt><dd><p>Gets the current commit hash.</p>
+</dd>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="tools-is-apple-os">
-<span id="tools-apple"></span><h2>tools.is_apple_os()<a class="headerlink" href="#tools-is-apple-os" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-is-apple-os">
+<span id="tools-apple"></span><h2>tools.is_apple_os()<a class="headerlink" href="#tools-is-apple-os" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_apple_os</span><span class="p">(</span><span class="n">os_</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if OS is an Apple one: Macos, iOS, watchOS or tvOS.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>os_</strong> (Required): OS to perform the check. Usually this would be <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>os_</strong> (Required): OS to perform the check. Usually this would be <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-to-apple-arch">
-<h2>tools.to_apple_arch()<a class="headerlink" href="#tools-to-apple-arch" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-to-apple-arch">
+<h2>tools.to_apple_arch()<a class="headerlink" href="#tools-to-apple-arch" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_apple_arch</span><span class="p">(</span><span class="n">arch</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Converts conan-style architecture into Apple-style architecture.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>arch</strong> (Required): arch to perform the conversion. Usually this would be <code class="docutils literal notranslate"><span class="pre">self.settings.arch</span></code>.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>arch</strong> (Required): arch to perform the conversion. Usually this would be <code class="docutils literal notranslate"><span class="pre">self.settings.arch</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-apple-sdk-name">
-<h2>tools.apple_sdk_name()<a class="headerlink" href="#tools-apple-sdk-name" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-apple-sdk-name">
+<h2>tools.apple_sdk_name()<a class="headerlink" href="#tools-apple-sdk-name" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apple_sdk_name</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Returns proper SDK name suitable for OS and architecture you are building for (considering simulators).</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>settings</strong> (Required): Conanfile settings.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>settings</strong> (Required): Conanfile settings.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-apple-deployment-target-env">
-<h2>tools.apple_deployment_target_env()<a class="headerlink" href="#tools-apple-deployment-target-env" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-apple-deployment-target-env">
+<h2>tools.apple_deployment_target_env()<a class="headerlink" href="#tools-apple-deployment-target-env" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apple_deployment_target_env</span><span class="p">(</span><span class="n">os_</span><span class="p">,</span> <span class="n">os_version</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Environment variable name which controls deployment target: <code class="docutils literal notranslate"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">IOS_DEPLOYMENT_TARGET</span></code>,
 <code class="docutils literal notranslate"><span class="pre">WATCHOS_DEPLOYMENT_TARGET</span></code> or <code class="docutils literal notranslate"><span class="pre">TVOS_DEPLOYMENT_TARGET</span></code>.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>os_</strong> (Required): OS of the settings. Usually <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</li>
-<li><strong>os_version</strong> (Required): OS version.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>os_</strong> (Required): OS of the settings. Usually <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</p></li>
+<li><p><strong>os_version</strong> (Required): OS version.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-apple-deployment-target-flag">
-<h2>tools.apple_deployment_target_flag()<a class="headerlink" href="#tools-apple-deployment-target-flag" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-apple-deployment-target-flag">
+<h2>tools.apple_deployment_target_flag()<a class="headerlink" href="#tools-apple-deployment-target-flag" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apple_deployment_target_flag</span><span class="p">(</span><span class="n">os_</span><span class="p">,</span> <span class="n">os_version</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Compiler flag name which controls deployment target. For example: <code class="docutils literal notranslate"><span class="pre">-mappletvos-version-min=9.0</span></code></p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><ul class="first last simple">
-<li><strong>os_</strong> (Required): OS of the settings. Usually <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</li>
-<li><strong>os_version</strong> (Required): OS version.</li>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><strong>os_</strong> (Required): OS of the settings. Usually <code class="docutils literal notranslate"><span class="pre">self.settings.os</span></code>.</p></li>
+<li><p><strong>os_version</strong> (Required): OS version.</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="tools-xcrun">
-<h2>tools.XCRun()<a class="headerlink" href="#tools-xcrun" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tools-xcrun">
+<h2>tools.XCRun()<a class="headerlink" href="#tools-xcrun" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">XCRun</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="p">,</span> <span class="n">sdk</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>XCRun wrapper used to get information for building.</p>
-<dl class="docutils">
-<dt>Properties:</dt>
-<dd><ul class="first last simple">
-<li><strong>sdk_path</strong>: Obtain SDK path (a.k.a. Apple sysroot or -isysroot).</li>
-<li><strong>sdk_version</strong>: Obtain SDK version.</li>
-<li><strong>sdk_platform_path</strong>: Obtain SDK platform path.</li>
-<li><strong>sdk_platform_version</strong>: Obtain SDK platform version.</li>
-<li><strong>cc</strong>: Path to C compiler (CC).</li>
-<li><strong>cxx</strong>: Path to C++ compiler (CXX).</li>
-<li><strong>ar</strong>: Path to archiver (AR).</li>
-<li><strong>ranlib</strong>: Path to archive indexer (RANLIB).</li>
-<li><strong>strip</strong>: Path to symbol removal utility (STRIP).</li>
+<dl class="simple">
+<dt>Properties:</dt><dd><ul class="simple">
+<li><p><strong>sdk_path</strong>: Obtain SDK path (a.k.a. Apple sysroot or -isysroot).</p></li>
+<li><p><strong>sdk_version</strong>: Obtain SDK version.</p></li>
+<li><p><strong>sdk_platform_path</strong>: Obtain SDK platform path.</p></li>
+<li><p><strong>sdk_platform_version</strong>: Obtain SDK platform version.</p></li>
+<li><p><strong>cc</strong>: Path to C compiler (CC).</p></li>
+<li><p><strong>cxx</strong>: Path to C++ compiler (CXX).</p></li>
+<li><p><strong>ar</strong>: Path to archiver (AR).</p></li>
+<li><p><strong>ranlib</strong>: Path to archive indexer (RANLIB).</p></li>
+<li><p><strong>strip</strong>: Path to symbol removal utility (STRIP).</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="config_files.html" class="btn btn-neutral float-right" title="Configuration files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="build_helpers/run_environment.html" class="btn btn-neutral" title="RunEnvironment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build_helpers/run_environment.html" class="btn btn-neutral float-left" title="RunEnvironment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config_files.html" class="btn btn-neutral float-right" title="Configuration files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016-2018, JFrog.
-      <span><a href="#" class="ot-sdk-show-settings">Cookies Settings</a></span>
-    </p>
+    <p>&#169; Copyright 2016-2018, JFrog.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <!--<span class="fa fa-pencil-square-o"> Other versions:</span> -->
-      Version: 1.4
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>Versions</dt>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: 1.4
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+    <dt>Versions</dt>
+    
         
-            
-                <dd><a href="/2.0/index.html">2.0</a></dd>
-                   
+            <dd><a href="/2.0/index.html">2.0</a></dd>
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-                   
+    
         
-            
-                <dd><a href="/2/index.html">2</a></dd>
-                   
+    
         
-        <br>
+            <dd><a href="/2/index.html">2</a></dd>
         
-                   
+    
+    <br>
+    
         
-            
-                <dd><a href="/1/index.html">1</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.62/index.html">1.62</a></dd>
-                   
+            <dd><a href="/1/index.html">1</a></dd>
         
-            
-                <dd><a href="/en/1.61/index.html">1.61</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.60/index.html">1.60</a></dd>
-                   
+            <dd><a href="/en/1.62/index.html">1.62</a></dd>
         
-            
-                <dd><a href="/en/1.59/index.html">1.59</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.58/index.html">1.58</a></dd>
-                   
+            <dd><a href="/en/1.61/index.html">1.61</a></dd>
         
-            
-                <dd><a href="/en/1.57/index.html">1.57</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.56/index.html">1.56</a></dd>
-                   
+            <dd><a href="/en/1.60/index.html">1.60</a></dd>
         
-            
-                <dd><a href="/en/1.55/index.html">1.55</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.54/index.html">1.54</a></dd>
-                   
+            <dd><a href="/en/1.59/index.html">1.59</a></dd>
         
-            
-                <dd><a href="/en/1.53/index.html">1.53</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.52/index.html">1.52</a></dd>
-                   
+            <dd><a href="/en/1.58/index.html">1.58</a></dd>
         
-            
-                <dd><a href="/en/1.51/index.html">1.51</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.50/index.html">1.50</a></dd>
-                   
+            <dd><a href="/en/1.57/index.html">1.57</a></dd>
         
-            
-                <dd><a href="/en/1.49/index.html">1.49</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.48/index.html">1.48</a></dd>
-                   
+            <dd><a href="/en/1.56/index.html">1.56</a></dd>
         
-            
-                <dd><a href="/en/1.47/index.html">1.47</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.46/index.html">1.46</a></dd>
-                   
+            <dd><a href="/en/1.55/index.html">1.55</a></dd>
         
-            
-                <dd><a href="/en/1.45/index.html">1.45</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.44/index.html">1.44</a></dd>
-                   
+            <dd><a href="/en/1.54/index.html">1.54</a></dd>
         
-            
-                <dd><a href="/en/1.43/index.html">1.43</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.42/index.html">1.42</a></dd>
-                   
+            <dd><a href="/en/1.53/index.html">1.53</a></dd>
         
-            
-                <dd><a href="/en/1.41/index.html">1.41</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.40/index.html">1.40</a></dd>
-                   
+            <dd><a href="/en/1.52/index.html">1.52</a></dd>
         
-            
-                <dd><a href="/en/1.39/index.html">1.39</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.38/index.html">1.38</a></dd>
-                   
+            <dd><a href="/en/1.51/index.html">1.51</a></dd>
         
-            
-                <dd><a href="/en/1.37/index.html">1.37</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.36/index.html">1.36</a></dd>
-                   
+            <dd><a href="/en/1.50/index.html">1.50</a></dd>
         
-            
-                <dd><a href="/en/1.35/index.html">1.35</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.34/index.html">1.34</a></dd>
-                   
+            <dd><a href="/en/1.49/index.html">1.49</a></dd>
         
-            
-                <dd><a href="/en/1.33/index.html">1.33</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.32/index.html">1.32</a></dd>
-                   
+            <dd><a href="/en/1.48/index.html">1.48</a></dd>
         
-            
-                <dd><a href="/en/1.31/index.html">1.31</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.30/index.html">1.30</a></dd>
-                   
+            <dd><a href="/en/1.47/index.html">1.47</a></dd>
         
-            
-                <dd><a href="/en/1.29/index.html">1.29</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.28/index.html">1.28</a></dd>
-                   
+            <dd><a href="/en/1.46/index.html">1.46</a></dd>
         
-            
-                <dd><a href="/en/1.27/index.html">1.27</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.26/index.html">1.26</a></dd>
-                   
+            <dd><a href="/en/1.45/index.html">1.45</a></dd>
         
-            
-                <dd><a href="/en/1.25/index.html">1.25</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.24/index.html">1.24</a></dd>
-                   
+            <dd><a href="/en/1.44/index.html">1.44</a></dd>
         
-            
-                <dd><a href="/en/1.23/index.html">1.23</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.22/index.html">1.22</a></dd>
-                   
+            <dd><a href="/en/1.43/index.html">1.43</a></dd>
         
-            
-                <dd><a href="/en/1.21/index.html">1.21</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.20/index.html">1.20</a></dd>
-                   
+            <dd><a href="/en/1.42/index.html">1.42</a></dd>
         
-            
-                <dd><a href="/en/1.19/index.html">1.19</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.18/index.html">1.18</a></dd>
-                   
+            <dd><a href="/en/1.41/index.html">1.41</a></dd>
         
-            
-                <dd><a href="/en/1.17/index.html">1.17</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.16/index.html">1.16</a></dd>
-                   
+            <dd><a href="/en/1.40/index.html">1.40</a></dd>
         
-            
-                <dd><a href="/en/1.15/index.html">1.15</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.14/index.html">1.14</a></dd>
-                   
+            <dd><a href="/en/1.39/index.html">1.39</a></dd>
         
-            
-                <dd><a href="/en/1.13/index.html">1.13</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.12/index.html">1.12</a></dd>
-                   
+            <dd><a href="/en/1.38/index.html">1.38</a></dd>
         
-            
-                <dd><a href="/en/1.11/index.html">1.11</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.10/index.html">1.10</a></dd>
-                   
+            <dd><a href="/en/1.37/index.html">1.37</a></dd>
         
-            
-                <dd><a href="/en/1.9/index.html">1.9</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.8/index.html">1.8</a></dd>
-                   
+            <dd><a href="/en/1.36/index.html">1.36</a></dd>
         
-            
-                <dd><a href="/en/1.7/index.html">1.7</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.6/index.html">1.6</a></dd>
-                   
+            <dd><a href="/en/1.35/index.html">1.35</a></dd>
         
-            
-                <dd><a href="/en/1.5/index.html">1.5</a></dd>
-                   
+    
         
-            
-                <dd><a href="/en/1.4/index.html">1.4</a></dd>
-                   
+            <dd><a href="/en/1.34/index.html">1.34</a></dd>
         
-            
-                <dd><a href="/en/1.3/index.html">1.3</a></dd>
-                   
+    
         
-                   
+            <dd><a href="/en/1.33/index.html">1.33</a></dd>
         
-      </dl>
-      <dl>
+    
+        
+            <dd><a href="/en/1.32/index.html">1.32</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.31/index.html">1.31</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.30/index.html">1.30</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.29/index.html">1.29</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.28/index.html">1.28</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.27/index.html">1.27</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.26/index.html">1.26</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.25/index.html">1.25</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.24/index.html">1.24</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.23/index.html">1.23</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.22/index.html">1.22</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.21/index.html">1.21</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.20/index.html">1.20</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.19/index.html">1.19</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.18/index.html">1.18</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.17/index.html">1.17</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.16/index.html">1.16</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.15/index.html">1.15</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.14/index.html">1.14</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.13/index.html">1.13</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.12/index.html">1.12</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.11/index.html">1.11</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.10/index.html">1.10</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.9/index.html">1.9</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.8/index.html">1.8</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.7/index.html">1.7</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.6/index.html">1.6</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.5/index.html">1.5</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.4/index.html">1.4</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.3/index.html">1.3</a></dd>
+        
+    
+        
+    
+    </dl>
+    <dl>
         <dt>Downloads</dt>
         
             <dd><a href="/en/1.4/conan.pdf">PDF</a></dd>
-               
-      </dl>
-    </div>
+        
+    </dl>
   </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.4.5',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="../_static/js/modernizr.min.js"></script>
-  <script src="../_static/js/search.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
--->
-  
-  
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-  
-
-
-  <script>
-    // initSearch("1.4");
   </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK44ZFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
