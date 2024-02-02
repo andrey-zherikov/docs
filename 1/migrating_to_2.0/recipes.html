@@ -108,6 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#symlinks">Symlinks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#new-tools-for-managing-system-package-managers">New tools for managing system package managers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#new-package-type-attribute">New package type attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#new-conan-client-version-structure">New Conan client version structure</a></li>
 </ul>
 </li>
 </ul>
@@ -1062,6 +1063,22 @@ tools <code class="docutils literal notranslate"><span class="pre">tools.system.
 <li><p><strong>unknown</strong>: The type of the package is unknown.</p></li>
 </ul>
 </div></blockquote>
+</section>
+<section id="new-conan-client-version-structure">
+<h3>New Conan client version structure<a class="headerlink" href="#new-conan-client-version-structure" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">__version__</span></code> variable has been replaced by the <code class="docutils literal notranslate"><span class="pre">conan_version</span></code> structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
+<span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">conan_version</span>
+
+<span class="k">class</span> <span class="nc">pkg</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">if</span> <span class="n">conan_version</span><span class="o">.</span><span class="n">major</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running Conan 1&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running Conan 2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
