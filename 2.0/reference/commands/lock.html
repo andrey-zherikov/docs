@@ -161,8 +161,34 @@ In addition to these commands, most of the Conan commands that compute a graph, 
 <li><p><a class="reference internal" href="lock/create.html"><span class="doc">conan lock create</span></a>: Evaluates a dependency graph and save a lockfile</p></li>
 <li><p><a class="reference internal" href="lock/merge.html"><span class="doc">conan lock merge</span></a>: Merge several existing lockfiles into one.</p></li>
 </ul>
-<pre class="command-help literal-block">$ python -m conan lock -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan lock -h
+usage: conan lock [-h] [-v [V]] {add,create,merge,remove} ...
+
+Create or manage lockfiles.
+
+positional arguments:
+  {add,create,merge,remove}
+                        sub-command help
+    add                 Add requires, build-requires or python-requires to an
+                        existing or new lockfile. The resulting lockfile will
+                        be ordered, newer versions/revisions first. References
+                        can be supplied with and without revisions like &quot;--
+                        requires=pkg/version&quot;, but they must be package
+                        references, including at least the version, and they
+                        cannot contain a version range.
+    create              Create a lockfile from a conanfile or a reference.
+    merge               Merge 2 or more lockfiles.
+    remove              Remove requires, build-requires or python-requires
+                        from an existing or new lockfile. References can be
+                        supplied with and without revisions like &quot;--
+                        requires=pkg/version&quot;,
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
 </pre>
 </section>
 

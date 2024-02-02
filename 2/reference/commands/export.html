@@ -144,8 +144,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-export">
 <h1>conan export<a class="headerlink" href="#conan-export" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ python -m conan export -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan export -h
+usage: conan export [-h] [-v [V]] [-f FORMAT] [--name NAME]
+                    [--version VERSION] [--user USER] [--channel CHANNEL]
+                    [-r REMOTE | -nr] [-l LOCKFILE]
+                    [--lockfile-out LOCKFILE_OUT] [--lockfile-partial]
+                    [--build-require]
+                    path
+
+Export a recipe to the Conan package cache.
+
+positional arguments:
+  path                  Path to a folder containing a recipe (conanfile.py)
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -f FORMAT, --format FORMAT
+                        Select the output format: json, pkglist
+  --name NAME           Provide a package name if not specified in conanfile
+  --version VERSION     Provide a package version if not specified in
+                        conanfile
+  --user USER           Provide a user if not specified in conanfile
+  --channel CHANNEL     Provide a channel if not specified in conanfile
+  -r REMOTE, --remote REMOTE
+                        Look in the specified remote or remotes server
+  -nr, --no-remote      Do not use remote, resolve exclusively in the cache
+  -l LOCKFILE, --lockfile LOCKFILE
+                        Path to a lockfile.
+  --lockfile-out LOCKFILE_OUT
+                        Filename of the updated lockfile
+  --lockfile-partial    Do not raise an error if some dependency is not found
+                        in lockfile
+  --build-require       Whether the provided reference is a build-require
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">export</span></code> command exports the recipe specified in <code class="docutils literal notranslate"><span class="pre">path</span></code> to the Conan package cache.</p>
 <section id="output-formats">

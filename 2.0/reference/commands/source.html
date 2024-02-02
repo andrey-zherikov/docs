@@ -144,8 +144,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-source">
 <span id="reference-commands-source"></span><h1>conan source<a class="headerlink" href="#conan-source" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ python -m conan source -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan source -h
+usage: conan source [-h] [-v [V]] [--name NAME] [--version VERSION]
+                    [--user USER] [--channel CHANNEL]
+                    path
+
+Call the source() method.
+
+positional arguments:
+  path               Path to a folder containing a conanfile.py
+
+options:
+  -h, --help         show this help message and exit
+  -v [V]             Level of detail of the output. Valid options from less
+                     verbose to more verbose: -vquiet, -verror, -vwarning,
+                     -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug, -vvv
+                     or -vtrace
+  --name NAME        Provide a package name if not specified in conanfile
+  --version VERSION  Provide a package version if not specified in conanfile
+  --user USER        Provide a user if not specified in conanfile
+  --channel CHANNEL  Provide a channel if not specified in conanfile
 </pre>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>

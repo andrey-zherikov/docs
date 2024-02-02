@@ -151,8 +151,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-add">
 <h1>conan lock add<a class="headerlink" href="#conan-lock-add" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ python -m conan lock add -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan lock add -h
+usage: conan lock add [-h] [-v [V]] [--requires REQUIRES]
+                      [--build-requires BUILD_REQUIRES]
+                      [--python-requires PYTHON_REQUIRES]
+                      [--lockfile-out LOCKFILE_OUT] [--lockfile LOCKFILE]
+
+Add requires, build-requires or python-requires to an existing or new
+lockfile. The resulting lockfile will be ordered, newer versions/revisions
+first. References can be supplied with and without revisions like &quot;--
+requires=pkg/version&quot;, but they must be package references, including at least
+the version, and they cannot contain a version range.
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  --requires REQUIRES   Add references to lockfile.
+  --build-requires BUILD_REQUIRES
+                        Add build-requires to lockfile
+  --python-requires PYTHON_REQUIRES
+                        Add python-requires to lockfile
+  --lockfile-out LOCKFILE_OUT
+                        Filename of the created lockfile
+  --lockfile LOCKFILE   Filename of the input lockfile
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">add</span></code> command is able to add a package version to an existing or new lockfile <code class="docutils literal notranslate"><span class="pre">requires</span></code>, <code class="docutils literal notranslate"><span class="pre">build_requires</span></code> or <code class="docutils literal notranslate"><span class="pre">python_requires</span></code>.</p>
 <p>For example, the following is able to create a lockfile (by default, named <code class="docutils literal notranslate"><span class="pre">conan.lock</span></code>):</p>

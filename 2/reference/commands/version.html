@@ -149,8 +149,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This feature is experimental and subject to breaking changes.
 See <a class="reference internal" href="../../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
 </div>
-<pre class="command-help literal-block">$ python -m conan version -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan version -h
+usage: conan version [-h] [-v [V]] [-f FORMAT]
+
+Give information about the Conan client version.
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
 </pre>
 <p>The <strong class="command">conan version</strong> command shows the conan version as well the python version from the system:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan version

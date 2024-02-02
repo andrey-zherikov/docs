@@ -147,20 +147,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Allow working with a package that resides in user folder.</p>
 <section id="conan-editable-add">
 <h2>conan editable add<a class="headerlink" href="#conan-editable-add" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan editable add -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan editable add -h
+usage: conan editable add [-h] [-v [V]] [--name NAME] [--version VERSION]
+                          [--user USER] [--channel CHANNEL]
+                          [-of OUTPUT_FOLDER] [-r REMOTE | -nr]
+                          path
+
+Define the given &lt;path&gt; location as the package &lt;reference&gt;, so when this
+package is required, it is used from this &lt;path&gt; location instead of the
+cache.
+
+positional arguments:
+  path                  Path to the package folder in the user workspace
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  --name NAME           Provide a package name if not specified in conanfile
+  --version VERSION     Provide a package version if not specified in
+                        conanfile
+  --user USER           Provide a user if not specified in conanfile
+  --channel CHANNEL     Provide a channel if not specified in conanfile
+  -of OUTPUT_FOLDER, --output-folder OUTPUT_FOLDER
+                        The root output folder for generated and build files
+  -r REMOTE, --remote REMOTE
+                        Look in the specified remote or remotes server
+  -nr, --no-remote      Do not use remote, resolve exclusively in the cache
 </pre>
 </section>
 <section id="conan-editable-remove">
 <h2>conan editable remove<a class="headerlink" href="#conan-editable-remove" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan editable remove -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan editable remove -h
+usage: conan editable remove [-h] [-v [V]] [-r REFS] [path]
+
+Remove the &quot;editable&quot; mode for this reference.
+
+positional arguments:
+  path                  Path to a folder containing a recipe (conanfile.py or
+                        conanfile.txt) or to a recipe file. e.g.,
+                        ./my_project/conanfile.txt.
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -r REFS, --refs REFS  Directly provide reference patterns
 </pre>
 </section>
 <section id="conan-editable-list">
 <h2>conan editable list<a class="headerlink" href="#conan-editable-list" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan editable list -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan editable list -h
+usage: conan editable list [-h] [-f FORMAT] [-v [V]]
+
+List all the packages in editable mode.
+
+options:
+  -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
 </pre>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>

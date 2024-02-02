@@ -147,8 +147,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Manage profiles</p>
 <section id="conan-profile-detect">
 <h2>conan profile detect<a class="headerlink" href="#conan-profile-detect" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan profile detect -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan profile detect -h
+usage: conan profile detect [-h] [-v [V]] [--name NAME] [-f]
+
+Generate a profile using auto-detected values.
+
+options:
+  -h, --help   show this help message and exit
+  -v [V]       Level of detail of the output. Valid options from less verbose
+               to more verbose: -vquiet, -verror, -vwarning, -vnotice,
+               -vstatus, -v or -vverbose, -vv or -vdebug, -vvv or -vtrace
+  --name NAME  Profile name, 'default' if not specified
+  -f, --force  Overwrite if exists
 </pre>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -203,8 +213,19 @@ configuration like custom settings, custom remotes definition, etc.</p>
 </section>
 <section id="conan-profile-list">
 <h2>conan profile list<a class="headerlink" href="#conan-profile-list" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan profile list -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan profile list -h
+usage: conan profile list [-h] [-f FORMAT] [-v [V]]
+
+List all profiles in the cache.
+
+options:
+  -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
 </pre>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><em>force overwriting already existing default profile</em></span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
@@ -220,8 +241,36 @@ clang_15
 </section>
 <section id="conan-profile-path">
 <h2>conan profile path<a class="headerlink" href="#conan-profile-path" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan -h
+
+Consumer commands
+cache      Perform file operations in the local cache (of recipes and/or packages).
+config     Manage the Conan configuration in the Conan home.
+graph      Compute a dependency graph, without installing or building the binaries.
+inspect    Inspect a conanfile.py to return its public fields.
+install    Install the requirements specified in a recipe (conanfile.py or conanfile.txt).
+list       List existing recipes, revisions, or packages in the cache (by default) or the
+             remotes.
+lock       Create or manage lockfiles.
+profile    Manage profiles.
+remote     Manage the remote list and the users authenticated on them.
+remove     Remove recipes or packages from local cache or a remote.
+search     Search for package recipes in all the remotes (by default), or a remote.
+version    Give information about the Conan client version.
+
+Creator commands
+build      Install dependencies and call the build() method.
+create     Create a package.
+download   Download (without installing) a single conan package from a remote server.
+editable   Allow working with a package that resides in user folder.
+export     Export a recipe to the Conan package cache.
+export-pkg Create a package directly from pre-compiled binaries.
+new        Create a new example recipe and source files from a template.
+source     Call the source() method.
+test       Test a package from a test_package folder.
+upload     Upload packages to a remote.
+
+Type &quot;conan &lt;command&gt; -h&quot; for help
 </pre>
 <p>Use to get the profile location in your <code class="docutils literal notranslate"><span class="pre">[CONAN_HOME]</span></code> folder:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile path default
@@ -231,8 +280,61 @@ clang_15
 </section>
 <section id="conan-profile-show">
 <h2>conan profile show<a class="headerlink" href="#conan-profile-show" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ python -m conan profile show -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan profile show -h
+usage: conan profile show [-h] [-f FORMAT] [-v [V]] [-pr PROFILE]
+                          [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
+                          [-pr:a PROFILE_ALL] [-o OPTIONS]
+                          [-o:b OPTIONS_BUILD] [-o:h OPTIONS_HOST]
+                          [-o:a OPTIONS_ALL] [-s SETTINGS]
+                          [-s:b SETTINGS_BUILD] [-s:h SETTINGS_HOST]
+                          [-s:a SETTINGS_ALL] [-c CONF] [-c:b CONF_BUILD]
+                          [-c:h CONF_HOST] [-c:a CONF_ALL]
+
+Show aggregated profiles from the passed arguments.
+
+options:
+  -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -pr PROFILE, --profile PROFILE
+                        Apply the specified profile. By default, or if
+                        specifying -pr:h (--profile:host), it applies to the
+                        host context. Use -pr:b (--profile:build) to specify
+                        the build context, or -pr:a (--profile:all) to specify
+                        both contexts at once
+  -pr:b PROFILE_BUILD, --profile:build PROFILE_BUILD
+  -pr:h PROFILE_HOST, --profile:host PROFILE_HOST
+  -pr:a PROFILE_ALL, --profile:all PROFILE_ALL
+  -o OPTIONS, --options OPTIONS
+                        Apply the specified options. By default, or if
+                        specifying -o:h (--options:host), it applies to the
+                        host context. Use -o:b (--options:build) to specify
+                        the build context, or -o:a (--options:all) to specify
+                        both contexts at once. Example: -o pkg:with_qt=true
+  -o:b OPTIONS_BUILD, --options:build OPTIONS_BUILD
+  -o:h OPTIONS_HOST, --options:host OPTIONS_HOST
+  -o:a OPTIONS_ALL, --options:all OPTIONS_ALL
+  -s SETTINGS, --settings SETTINGS
+                        Apply the specified settings. By default, or if
+                        specifying -s:h (--settings:host), it applies to the
+                        host context. Use -s:b (--settings:build) to specify
+                        the build context, or -s:a (--settings:all) to specify
+                        both contexts at once. Example: -s compiler=gcc
+  -s:b SETTINGS_BUILD, --settings:build SETTINGS_BUILD
+  -s:h SETTINGS_HOST, --settings:host SETTINGS_HOST
+  -s:a SETTINGS_ALL, --settings:all SETTINGS_ALL
+  -c CONF, --conf CONF  Apply the specified conf. By default, or if specifying
+                        -c:h (--conf:host), it applies to the host context.
+                        Use -c:b (--conf:build) to specify the build context,
+                        or -c:a (--conf:all) to specify both contexts at once.
+                        Example: -c tools.cmake.cmaketoolchain:generator=Xcode
+  -c:b CONF_BUILD, --conf:build CONF_BUILD
+  -c:h CONF_HOST, --conf:host CONF_HOST
+  -c:a CONF_ALL, --conf:all CONF_ALL
 </pre>
 <p>Use <strong class="command">conan profile show</strong> to compute the resulting build and host profiles from
 the command line arguments. For example, combining different options and settings with the

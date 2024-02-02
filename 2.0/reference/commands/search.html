@@ -146,8 +146,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <span id="reference-commands-search"></span><h1>conan search<a class="headerlink" href="#conan-search" title="Link to this heading">¶</a></h1>
 <p>Search existing recipes in remotes.
 This command is equivalent to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">&lt;query&gt;</span> <span class="pre">-r=*</span></code>, and is provided for simpler UX.</p>
-<pre class="command-help literal-block">$ python -m conan search -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan search -h
+usage: conan search [-h] [-v [V]] [-f FORMAT] [-r REMOTE] reference
+
+Search for package recipes in all the remotes (by default), or a remote.
+
+positional arguments:
+  reference             Recipe reference to search for. It can contain * as
+                        wildcard at any reference field.
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
+  -r REMOTE, --remote REMOTE
+                        Remote names. Accepts wildcards. If not specified it
+                        searches in all the remotes
 </pre>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan search zlib
 conancenter

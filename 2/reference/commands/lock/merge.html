@@ -151,8 +151,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-merge">
 <h1>conan lock merge<a class="headerlink" href="#conan-lock-merge" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ python -m conan lock merge -h
-/usr/local/bin/python: No module named conan
+<pre class="command-help literal-block">$ conan lock merge -h
+usage: conan lock merge [-h] [-v [V]] [--lockfile LOCKFILE]
+                        [--lockfile-out LOCKFILE_OUT]
+
+Merge 2 or more lockfiles.
+
+options:
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  --lockfile LOCKFILE   Path to lockfile to be merged
+  --lockfile-out LOCKFILE_OUT
+                        Filename of the created lockfile
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">merge</span></code> command takes 2 or more lockfiles and aggregate them, producing one final lockfile.
 For example, if we have 2 lockfiles <code class="docutils literal notranslate"><span class="pre">lock1.lock</span></code> and <code class="docutils literal notranslate"><span class="pre">lock2.lock</span></code>, we can merge both in a final <code class="docutils literal notranslate"><span class="pre">conan.lock</span></code> one:</p>
