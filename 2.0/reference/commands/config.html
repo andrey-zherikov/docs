@@ -147,8 +147,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Manage the Conan configuration in the Conan home.</p>
 <section id="conan-config-home">
 <h2>conan config home<a class="headerlink" href="#conan-config-home" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ conan config home -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan config home -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">config</span> <span class="pre">home</span></code> command returns the path of the Conan home folder.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config home
@@ -157,8 +157,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 <section id="conan-config-install">
 <span id="reference-commands-conan-config-install"></span><h2>conan config install<a class="headerlink" href="#conan-config-install" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ conan config install -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan config install -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">config</span> <span class="pre">install</span></code> command is intended to install in the current home a common shared Conan
 configuration, like the definitions of <code class="docutils literal notranslate"><span class="pre">remotes</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code>, <code class="docutils literal notranslate"><span class="pre">settings</span></code>, <code class="docutils literal notranslate"><span class="pre">hooks</span></code>, <code class="docutils literal notranslate"><span class="pre">extensions</span></code>, etc.</p>
@@ -234,8 +234,8 @@ $ conan config install http://other/url/to/other.zip -sf=hooks -tf=hooks
 </section>
 <section id="conan-config-list">
 <h2>conan config list<a class="headerlink" href="#conan-config-list" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ conan config list -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan config list -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>Displays all the Conan built-in configurations. There are 2 groups:</p>
 <ul class="simple">
@@ -350,8 +350,8 @@ tools.system.package_manager:tool: Default package manager tool: &#39;apk&#39;, 
 </section>
 <section id="conan-config-show">
 <h2>conan config show<a class="headerlink" href="#conan-config-show" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ conan config show -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan config show -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>Shows the values of the conf items that match the given pattern.</p>
 <p>For a <em>global.conf</em> consisting of</p>

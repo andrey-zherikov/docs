@@ -151,8 +151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-create">
 <h1>conan lock create<a class="headerlink" href="#conan-lock-create" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan lock create -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan lock create -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">create</span></code> command creates a lockfile for the recipe or reference specified in <code class="docutils literal notranslate"><span class="pre">path</span></code> or <code class="docutils literal notranslate"><span class="pre">--requires</span></code>.
 This command will compute the dependency graph, evaluate which binaries do exist or need to be built, but it will

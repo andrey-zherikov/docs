@@ -151,8 +151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-remove">
 <h1>conan lock remove<a class="headerlink" href="#conan-lock-remove" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan lock remove -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan lock remove -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">remove</span></code> command is able to remove <code class="docutils literal notranslate"><span class="pre">requires</span></code>, <code class="docutils literal notranslate"><span class="pre">build_requires</span></code> or <code class="docutils literal notranslate"><span class="pre">python_requires</span></code> items from an existing lockfile.</p>
 <p>For example, if we have the following <code class="docutils literal notranslate"><span class="pre">conan.lock</span></code>:</p>

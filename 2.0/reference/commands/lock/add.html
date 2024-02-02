@@ -151,8 +151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-add">
 <h1>conan lock add<a class="headerlink" href="#conan-lock-add" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan lock add -h
-/bin/sh: 1: conan: not found
+<pre class="command-help literal-block">$ python -m conan lock add -h
+/usr/local/bin/python: No module named conan
 </pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">add</span></code> command is able to add a package version to an existing or new lockfile <code class="docutils literal notranslate"><span class="pre">requires</span></code>, <code class="docutils literal notranslate"><span class="pre">build_requires</span></code> or <code class="docutils literal notranslate"><span class="pre">python_requires</span></code>.</p>
 <p>For example, the following is able to create a lockfile (by default, named <code class="docutils literal notranslate"><span class="pre">conan.lock</span></code>):</p>
