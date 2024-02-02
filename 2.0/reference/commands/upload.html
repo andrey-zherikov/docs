@@ -147,51 +147,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Use this command to upload recipes and binaries to Conan repositories. For more
 information on how to work with Conan repositories, please check the <a class="reference internal" href="../../tutorial/conan_repositories.html#conan-repositories"><span class="std std-ref">dedicated
 section</span></a>.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan upload -h
-usage: conan upload [-h] [-v [V]] [-f FORMAT] [-p PACKAGE_QUERY] -r REMOTE
-                    [--only-recipe] [--force] [--check] [-c] [--dry-run]
-                    [-l LIST] [-m METADATA]
-                    [pattern]
-
-Upload packages to a remote.
-
-By default, all the matching references are uploaded (all revisions).
-By default, if a recipe reference is specified, it will upload all the revisions for all the
-binary packages, unless --only-recipe is specified. You can use the &quot;latest&quot; placeholder at the
-&quot;reference&quot; argument to specify the latest revision of the recipe or the package.
-
-positional arguments:
-  pattern               A pattern in the form
-                        &#39;pkg/version#revision:package_id#revision&#39;, e.g:
-                        zlib/1.2.13:* means all binaries for zlib/1.2.13. If
-                        revision is not specified, it is assumed latest one.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -v [V]                Level of detail of the output. Valid options from less
-                        verbose to more verbose: -vquiet, -verror, -vwarning,
-                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
-                        -vvv or -vtrace
-  -f FORMAT, --format FORMAT
-                        Select the output format: json
-  -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
-                        Only upload packages matching a specific query. e.g:
-                        os=Windows AND (arch=x86 OR compiler=gcc)
-  -r REMOTE, --remote REMOTE
-                        Upload to this specific remote
-  --only-recipe         Upload only the recipe/s, not the binary packages.
-  --force               Force the upload of the artifacts even if the revision
-                        already exists in the server
-  --check               Perform an integrity check, using the manifests,
-                        before upload
-  -c, --confirm         Upload all matching recipes without confirmation
-  --dry-run             Do not execute the real upload (experimental)
-  -l LIST, --list LIST  Package list file
-  -m METADATA, --metadata METADATA
-                        Upload the metadata, even if the package is already in
-                        the server and not uploaded
-</pre></div>
-</div>
+<pre class="command-help literal-block">$ conan upload -h
+/bin/sh: 1: conan: not found
+</pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">upload</span></code> command can upload packages to 1 server repository specified by the <code class="docutils literal notranslate"><span class="pre">-r=myremote</span></code> argument.</p>
 <p>It has 2 possible and mutually exclusive inputs:
 - The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">upload</span> <span class="pre">&lt;pattern&gt;</span></code> pattern-based matching of recipes, with a pattern similar to the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">&lt;pattern&gt;</span></code>.
