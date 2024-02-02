@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2>Decentralized package manager<a class="headerlink" href="#decentralized-package-manager" title="Link to this heading">¶</a></h2>
 <p>Conan is a decentralized package manager with a client-server architecture. This means that clients can fetch packages from, as well as upload packages to, different servers (“remotes”), similar to the “git” push-pull model to/from git remotes.</p>
 <p>At a high level, the servers are just storing packages. They do not build nor create the packages. The packages are created by the client, and if binaries are built from sources, that compilation is also done by the client application.</p>
-<a class="reference internal image-reference" href="_images/conan-systems.png"><img alt="_images/conan-systems.png" class="align-center" src="_images/conan-systems.png" style="width: 500px; height: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/conan-systems.png"><img alt="_images/conan-systems.png" class="align-center" src="_images/conan-systems.png" style="width: 70%;" /></a>
 <p>The different applications in the image above are:</p>
 <ul class="simple">
 <li><p>The Conan client: this is a console/terminal command-line application, containing the heavy logic for package creation and consumption. Conan client has a local cache for package storage, and so it allows you to fully create and test packages offline. You can also work offline as long as no new packages are needed from remote servers.</p></li>
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2>Binary management<a class="headerlink" href="#binary-management" title="Link to this heading">¶</a></h2>
 <p>One of the most powerful features of Conan is that it can create and manage pre-compiled binaries for any possible platform and configuration. By using pre-compiled binaries and avoiding repeated builds from source, it saves significant time for developers and Continuous Integration servers, while also improving the reproducibility and traceability of artifacts.</p>
 <p>A package is defined by a “conanfile.py”. This is a file that defines the package’s dependencies, sources, how to build the binaries from sources, etc. One package “conanfile.py” recipe can generate any arbitrary number of binaries, one for each different platform and configuration: operating system, architecture, compiler, build type, etc. These binaries can be created and uploaded to a server with the same commands in all platforms, having a single source of truth for all packages and not requiring a different solution for every different operating system.</p>
-<a class="reference internal image-reference" href="_images/conan-binary_mgmt.png"><img alt="_images/conan-binary_mgmt.png" class="align-center" src="_images/conan-binary_mgmt.png" style="width: 400px; height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/conan-binary_mgmt.png"><img alt="_images/conan-binary_mgmt.png" class="align-center" src="_images/conan-binary_mgmt.png" style="width: 70%;" /></a>
 <p>Installation of packages from servers is also very efficient. Only the necessary binaries for the current platform and configuration are downloaded, not all of them. If the compatible binary is not available, the package can be built from sources in the client too.</p>
 </section>
 <section id="all-platforms-all-build-systems-and-compilers">
