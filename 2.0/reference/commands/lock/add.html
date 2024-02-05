@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../../_static/conan-favicon.png"/>
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-lock-add">
 <h1>conan lock add<a class="headerlink" href="#conan-lock-add" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan lock add -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock add -h
 usage: conan lock add [-h] [-v [V]] [--requires REQUIRES]
                       [--build-requires BUILD_REQUIRES]
                       [--python-requires PYTHON_REQUIRES]
@@ -177,7 +177,8 @@ options:
   --lockfile-out LOCKFILE_OUT
                         Filename of the created lockfile
   --lockfile LOCKFILE   Filename of the input lockfile
-</pre>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">lock</span> <span class="pre">add</span></code> command is able to add a package version to an existing or new lockfile <code class="docutils literal notranslate"><span class="pre">requires</span></code>, <code class="docutils literal notranslate"><span class="pre">build_requires</span></code> or <code class="docutils literal notranslate"><span class="pre">python_requires</span></code>.</p>
 <p>For example, the following is able to create a lockfile (by default, named <code class="docutils literal notranslate"><span class="pre">conan.lock</span></code>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>lock<span class="w"> </span>add<span class="w"> </span>--requires<span class="o">=</span>pkg/1.1<span class="w"> </span>--build-requires<span class="o">=</span>tool/2.2<span class="w"> </span>--python-requires<span class="o">=</span>mypytool/3.3
@@ -267,7 +268,7 @@ those new or updated lockfiles can be used to continue with the processing.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-export-pkg">
 <span id="reference-commands-export-pkg"></span><h1>conan export-pkg<a class="headerlink" href="#conan-export-pkg" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan export-pkg -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan export-pkg -h
 usage: conan export-pkg [-h] [-v [V]] [-f FORMAT] [-of OUTPUT_FOLDER]
                         [--build-require] [-tf TEST_FOLDER] [-sb]
                         [-r REMOTE | -nr] [--name NAME] [--version VERSION]
@@ -190,7 +190,7 @@ options:
   --channel CHANNEL     Provide a channel if not specified in conanfile
   -l LOCKFILE, --lockfile LOCKFILE
                         Path to a lockfile. Use --lockfile=&quot;&quot; to avoid
-                        automatic use of existing 'conan.lock' file
+                        automatic use of existing &#39;conan.lock&#39; file
   --lockfile-partial    Do not raise an error if some dependency is not found
                         in lockfile
   --lockfile-out LOCKFILE_OUT
@@ -234,7 +234,8 @@ options:
   -c:b CONF_BUILD, --conf:build CONF_BUILD
   -c:h CONF_HOST, --conf:host CONF_HOST
   -c:a CONF_ALL, --conf:all CONF_ALL
-</pre>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">export-pkg</span></code> command creates a package binary directly from pre-compiled binaries in a user folder. This command can be useful in different cases:</p>
 <ul class="simple">
 <li><p>When creating a package for some closed source or pre-compiled binaries provided by a vendor. In this case, it is not necessary that the <code class="docutils literal notranslate"><span class="pre">conanfile.py</span></code> recipe contains a <code class="docutils literal notranslate"><span class="pre">build()</span></code> method, and providing the <code class="docutils literal notranslate"><span class="pre">package()</span></code> and <code class="docutils literal notranslate"><span class="pre">package_info()</span></code> method are enough to package those pre-compiled binaries. In this case the <code class="docutils literal notranslate"><span class="pre">build_policy</span> <span class="pre">=</span> <span class="pre">&quot;never&quot;</span></code> could make sense to indicate it is not possible to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span> <span class="pre">--build=this_pkg</span></code>, as it doesn’t know how to build from sources when it is a dependency.</p></li>
@@ -262,7 +263,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

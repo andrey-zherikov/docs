@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-list">
 <span id="reference-commands-list"></span><h1>conan list<a class="headerlink" href="#conan-list" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan list -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan list -h
 usage: conan list [-h] [-v [V]] [-f FORMAT] [-p PACKAGE_QUERY] [-r REMOTE]
                   [-c] [-g GRAPH] [-gb GRAPH_BINARIES] [-gr GRAPH_RECIPES]
                   [--lru LRU]
@@ -154,7 +154,7 @@ List existing recipes, revisions, or packages in the cache (by default) or the r
 
 positional arguments:
   pattern               A pattern in the form
-                        'pkg/version#revision:package_id#revision', e.g:
+                        &#39;pkg/version#revision:package_id#revision&#39;, e.g:
                         zlib/1.2.13:* means all binaries for zlib/1.2.13. If
                         revision is not specified, it is assumed latest one.
 
@@ -170,7 +170,7 @@ options:
                         List only the packages matching a specific query, e.g,
                         os=Windows AND (arch=x86 OR compiler=gcc)
   -r REMOTE, --remote REMOTE
-                        Remote names. Accepts wildcards ('*' means all the
+                        Remote names. Accepts wildcards (&#39;*&#39; means all the
                         remotes available)
   -c, --cache           Search in the local cache
   -g GRAPH, --graph GRAPH
@@ -182,7 +182,8 @@ options:
   --lru LRU             List recipes and binaries that have not been recently
                         used. Use a time limit like --lru=5d (days) or
                         --lru=4w (weeks), h (hours), m(minutes)
-</pre>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> command can list recipes and packages from the local cache, from the
 specified remotes or from both. This command uses a <em>reference pattern</em> as input. The
 structure of this pattern is based on a complete Conan reference that looks like:</p>
@@ -572,7 +573,7 @@ only those values that deviate from that common denominator.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

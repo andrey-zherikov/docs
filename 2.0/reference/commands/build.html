@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-build">
 <span id="reference-commands-build"></span><h1>conan build<a class="headerlink" href="#conan-build" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan build -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan build -h
 usage: conan build [-h] [-v [V]] [--name NAME] [--version VERSION]
                    [--user USER] [--channel CHANNEL] [-g GENERATOR]
                    [-of OUTPUT_FOLDER] [-d DEPLOYER]
@@ -192,21 +192,21 @@ options:
   --build-require       Whether the provided path is a build-require
   -b BUILD, --build BUILD
                         Optional, specify which packages to build from source.
-                        Combining multiple '--build' options on one command
+                        Combining multiple &#39;--build&#39; options on one command
                         line is allowed. Possible values: --build=&quot;*&quot; Force
                         build from source for all packages. --build=never
                         Disallow build for all packages, use binary packages
                         or fail if a binary package is not found, it cannot be
-                        combined with other '--build' options. --build=missing
+                        combined with other &#39;--build&#39; options. --build=missing
                         Build packages from source whose binary package is not
                         found. --build=cascade Build packages from source that
                         have at least one dependency being built from source.
                         --build=[pattern] Build packages from source whose
                         package reference matches the pattern. The pattern
-                        uses 'fnmatch' style wildcards. --build=~[pattern]
+                        uses &#39;fnmatch&#39; style wildcards. --build=~[pattern]
                         Excluded packages, which will not be built from the
                         source, whose package reference matches the pattern.
-                        The pattern uses 'fnmatch' style wildcards.
+                        The pattern uses &#39;fnmatch&#39; style wildcards.
                         --build=missing:[pattern] Build from source if a
                         compatible binary does not exist, only for packages
                         matching pattern.
@@ -257,7 +257,7 @@ options:
   -c:a CONF_ALL, --conf:all CONF_ALL
   -l LOCKFILE, --lockfile LOCKFILE
                         Path to a lockfile. Use --lockfile=&quot;&quot; to avoid
-                        automatic use of existing 'conan.lock' file
+                        automatic use of existing &#39;conan.lock&#39; file
   --lockfile-partial    Do not raise an error if some dependency is not found
                         in lockfile
   --lockfile-out LOCKFILE_OUT
@@ -266,7 +266,8 @@ options:
   --lockfile-clean      Remove unused entries from the lockfile
   --lockfile-overrides LOCKFILE_OVERRIDES
                         Overwrite lockfile overrides
-</pre>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">build</span></code> command installs the recipe specified in <code class="docutils literal notranslate"><span class="pre">path</span></code> and calls its <code class="docutils literal notranslate"><span class="pre">build()</span></code> method.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -288,7 +289,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="conan-create">
 <h1>conan create<a class="headerlink" href="#conan-create" title="Link to this heading">¶</a></h1>
-<pre class="command-help literal-block">$ conan create -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan create -h
 usage: conan create [-h] [-v [V]] [-f FORMAT] [--name NAME]
                     [--version VERSION] [--user USER] [--channel CHANNEL]
                     [-l LOCKFILE] [--lockfile-partial]
@@ -180,7 +180,7 @@ options:
   --channel CHANNEL     Provide a channel if not specified in conanfile
   -l LOCKFILE, --lockfile LOCKFILE
                         Path to a lockfile. Use --lockfile=&quot;&quot; to avoid
-                        automatic use of existing 'conan.lock' file
+                        automatic use of existing &#39;conan.lock&#39; file
   --lockfile-partial    Do not raise an error if some dependency is not found
                         in lockfile
   --lockfile-out LOCKFILE_OUT
@@ -191,21 +191,21 @@ options:
                         Overwrite lockfile overrides
   -b BUILD, --build BUILD
                         Optional, specify which packages to build from source.
-                        Combining multiple '--build' options on one command
+                        Combining multiple &#39;--build&#39; options on one command
                         line is allowed. Possible values: --build=&quot;*&quot; Force
                         build from source for all packages. --build=never
                         Disallow build for all packages, use binary packages
                         or fail if a binary package is not found, it cannot be
-                        combined with other '--build' options. --build=missing
+                        combined with other &#39;--build&#39; options. --build=missing
                         Build packages from source whose binary package is not
                         found. --build=cascade Build packages from source that
                         have at least one dependency being built from source.
                         --build=[pattern] Build packages from source whose
                         package reference matches the pattern. The pattern
-                        uses 'fnmatch' style wildcards. --build=~[pattern]
+                        uses &#39;fnmatch&#39; style wildcards. --build=~[pattern]
                         Excluded packages, which will not be built from the
                         source, whose package reference matches the pattern.
-                        The pattern uses 'fnmatch' style wildcards.
+                        The pattern uses &#39;fnmatch&#39; style wildcards.
                         --build=missing:[pattern] Build from source if a
                         compatible binary does not exist, only for packages
                         matching pattern.
@@ -260,10 +260,11 @@ options:
                         Alternative test folder name. By default it is
                         &quot;test_package&quot;. Use &quot;&quot; to skip the test stage
   -bt BUILD_TEST, --build-test BUILD_TEST
-                        Same as '--build' but only for the test_package
+                        Same as &#39;--build&#39; but only for the test_package
                         requires. By default if not specified it will take the
-                        '--build' value if specified
-</pre>
+                        &#39;--build&#39; value if specified
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> command creates a package from the recipe specified in <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
 <p>This command will first <strong class="command">export</strong> the recipe to the local cache and then build
 and create the package. If a <code class="docutils literal notranslate"><span class="pre">test_package</span></code> folder (you can change the folder name with
@@ -325,7 +326,7 @@ tutorial</span></a></p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

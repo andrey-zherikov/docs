@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -147,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Create a new recipe (with a conanfile.py and other associated files) from either a predefined or a user-defined template.</p>
 <section id="id1">
 <h2>conan new<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
-<pre class="command-help literal-block">$ conan new -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan new -h
 usage: conan new [-h] [-v [V]] [-d DEFINE] [-f] template
 
 Create a new example recipe and source files from a template.
@@ -157,8 +157,8 @@ positional arguments:
                         provided one. Available built-in templates: basic,
                         cmake_lib, cmake_exe, meson_lib, meson_exe,
                         msbuild_lib, msbuild_exe, bazel_lib, bazel_exe,
-                        autotools_lib, autotools_exe. E.g. 'conan new
-                        cmake_lib -d name=hello -d version=0.1'. You can
+                        autotools_lib, autotools_exe. E.g. &#39;conan new
+                        cmake_lib -d name=hello -d version=0.1&#39;. You can
                         define your own templates too by inputting an absolute
                         path as your template, or a path relative to your
                         conan home folder.
@@ -173,7 +173,8 @@ options:
                         Define a template argument as key=value, e.g., -d
                         name=mypkg
   -f, --force           Overwrite file if it already exists
-</pre>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">new</span></code> command creates a new recipe in the current working directory,
 plus extra example files such as <em>CMakeLists.txt</em> or the <em>test_package</em> folder (as necessary),
 to either be used as a basis for your own project or aiding in the debugging process.</p>
@@ -351,7 +352,7 @@ So we could have a folder with:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 

@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=2e89a5c2" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
 
   
     <link rel="shortcut icon" href="../../_static/conan-favicon.png"/>
@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This feature is experimental and subject to breaking changes.
 See <a class="reference internal" href="../../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
 </div>
-<pre class="command-help literal-block">$ conan inspect -h
+<div class="autocommand-output highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan inspect -h
 usage: conan inspect [-h] [-v [V]] [-f FORMAT] [-r REMOTE | -nr] [-l LOCKFILE]
                      [--lockfile-partial]
                      path
@@ -168,15 +168,16 @@ options:
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -r REMOTE, --remote REMOTE
-                        Remote names. Accepts wildcards ('*' means all the
+                        Remote names. Accepts wildcards (&#39;*&#39; means all the
                         remotes available)
   -nr, --no-remote      Do not use remote, resolve exclusively in the cache
   -l LOCKFILE, --lockfile LOCKFILE
                         Path to a lockfile. Use --lockfile=&quot;&quot; to avoid
-                        automatic use of existing 'conan.lock' file
+                        automatic use of existing &#39;conan.lock&#39; file
   --lockfile-partial    Do not raise an error if some dependency is not found
                         in lockfile
-</pre>
+</pre></div>
+</div>
 <p>The <strong class="command">conan inspect</strong> command shows the public attributes of any recipe (<cite>conanfile.py</cite>) as follows:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan inspect .
 default_options:
@@ -323,7 +324,7 @@ only those present in the <code class="docutils literal notranslate"><span class
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 02, 2024.
+      <span class="lastupdated">Last updated on Feb 05, 2024.
       </span></p>
   </div>
 
