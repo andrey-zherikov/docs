@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Build packages: the build() method &mdash; conan 2.0.17 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
@@ -204,8 +204,8 @@ see in the next section that we are using this variable in our <em>CMakeLists.tx
 decide whether to build the tests or not.</p></li>
 <li><p>We use the <code class="docutils literal notranslate"><span class="pre">tools.build:skip_test</span></code> configuration in the <code class="docutils literal notranslate"><span class="pre">build()</span></code> method,
 after building the package and tests, to decide if we want to run the tests or not.</p></li>
-<li><p>In this case we are using <strong>gtest</strong> for testing and we have to add the check if the
-build method to run the tests or not, but this configuration also affects the
+<li><p>In this case we are using <strong>gtest</strong> for testing and we have to check if the
+build method is to run the tests or not. This configuration also affects the
 execution of <code class="docutils literal notranslate"><span class="pre">CMake.test()</span></code> if you are using CTest and <code class="docutils literal notranslate"><span class="pre">Meson.test()</span></code> for Meson.</p></li>
 </ul>
 </li>
@@ -344,14 +344,14 @@ tool:</p>
                         <span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2"> Friends&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Shared&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">shared</span> <span class="k">else</span> <span class="s2">&quot;Static&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Please, note that patching in <code class="docutils literal notranslate"><span class="pre">build()</span></code> should avoided if possible and only be done for
+<p>Please, note that patching in <code class="docutils literal notranslate"><span class="pre">build()</span></code> should be avoided if possible and only be done for
 very particular cases as it will make more difficult to develop your packages locally (we
 will explain more about this in the <a class="reference internal" href="../developing_packages/local_package_development_flow.html#local-package-development-flow"><span class="std std-ref">local development flow section</span></a> later)</p>
 </section>
 <section id="conditionally-select-your-build-system">
 <h2>Conditionally select your build system<a class="headerlink" href="#conditionally-select-your-build-system" title="Link to this heading">¶</a></h2>
 <p>It’s not uncommon that some packages need one build system or another depending on the
-platform we are building. For example, the <em>hello</em> library could build in Windows using
+platform we are building on. For example, the <em>hello</em> library could build in Windows using
 CMake and in Linux and MacOS using Autotools. This can be easily handled in the
 <code class="docutils literal notranslate"><span class="pre">build()</span></code> method like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
@@ -417,7 +417,7 @@ CMake and in Linux and MacOS using Autotools. This can be easily handled in the
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 05, 2024.
+      <span class="lastupdated">Last updated on Feb 07, 2024.
       </span></p>
   </div>
 

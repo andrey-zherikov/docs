@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Building for multiple configurations: Release, Debug, Static and Shared &mdash; conan 2.0.17 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
@@ -131,7 +131,7 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examp
 </pre></div>
 </div>
 <p>So far, we built a simple CMake project that depended on the <strong>zlib</strong> library and learned
-about <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code>, a special type or requirements for build-tools like CMake. In
+about <code class="docutils literal notranslate"><span class="pre">tool_requires</span></code>, a special type of <code class="docutils literal notranslate"><span class="pre">requirements</span></code> for build-tools like CMake. In
 both cases, we did not specify anywhere that we wanted to build the application in
 <em>Release</em> or <em>Debug</em> mode, or if we wanted to link against <em>static</em> or <em>shared</em> libraries.
 That is because Conan, if not instructed otherwise, will use a default configuration
@@ -218,8 +218,8 @@ sources were built with:</p>
 <p>As we explained above, this is the equivalent of having <em>debug</em> profile and running these
 command using the <code class="docutils literal notranslate"><span class="pre">--profile=debug</span></code> argument instead of the
 <code class="docutils literal notranslate"><span class="pre">--settings=build_type=Debug</span></code> argument.</p>
-<p>This <strong class="command">conan install</strong> command will check if we already installed the required libraries
-(Zlib) in Debug configuration and install them otherwise. It will also set the build
+<p>This <strong class="command">conan install</strong> command will check if we already have the required libraries in the local cache
+(Zlib) for Debug configuration and obtain them if not. It will also set the build
 configuration in the <code class="docutils literal notranslate"><span class="pre">conan_toolchain.cmake</span></code> toolchain that the CMakeToolchain generator
 creates so that when we build the application it’s built in <em>Debug</em> configuration. Now
 build your project as you did in the previous examples and check in the output how it was
@@ -258,18 +258,15 @@ Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"
 Zlib’s Conan package there’s an attribute set to build in that mode by default. We can
 change from <strong>static</strong> to <strong>shared</strong> linking by setting the <code class="docutils literal notranslate"><span class="pre">shared</span></code> option to <code class="docutils literal notranslate"><span class="pre">True</span></code>
 using the <code class="docutils literal notranslate"><span class="pre">--options</span></code> argument. To do so, please run:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--output-folder<span class="o">=</span>build<span class="w"> </span>--build<span class="o">=</span>missing<span class="w"> </span>--options<span class="o">=</span>zlib/1.2.11:shared<span class="o">=</span>True
 </pre></div>
-</div>
 </div>
 <p>Doing this, Conan will install the <em>Zlib</em> shared libraries, generate the files to build with
 them and, also the necessary files to locate those dynamic libraries when running the
 application. Let’s build the application again after configuring it to link <em>Zlib</em> as a
 shared library:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 <span class="c1"># assuming Visual Studio 15 2017 is your VS version and that it matches your default profile</span>
 $<span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;Visual Studio 15 2017&quot;</span><span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>conan_toolchain.cmake
@@ -279,8 +276,8 @@ $<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Linux, Macos</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Linux, Macos</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 $<span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>conan_toolchain.cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
 $<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>.
@@ -291,8 +288,8 @@ $<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </
 </div>
 <p>Now, if you try to run the compiled executable you will see an error because the
 executable can’t find the shared libraries for <em>Zlib</em> that we just installed.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>Release<span class="se">\c</span>ompressor.exe
 <span class="o">(</span>on<span class="w"> </span>a<span class="w"> </span>pop-up<span class="w"> </span>window<span class="o">)</span><span class="w"> </span>The<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>cannot<span class="w"> </span>proceed<span class="w"> </span>because<span class="w"> </span>zlib1.dll<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>found.<span class="w"> </span>Reinstalling<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>may<span class="w"> </span>fix<span class="w"> </span>this<span class="w"> </span>problem.
 <span class="c1"># This error depends on the console being used and may not always pop up.</span>
@@ -300,8 +297,8 @@ executable can’t find the shared libraries for <em>Zlib</em> that we just inst
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Linux, Macos</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Linux, Macos</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./compressor
 ./compressor:<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>loading<span class="w"> </span>shared<span class="w"> </span>libraries:<span class="w"> </span>libz.so.1:<span class="w"> </span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
 </pre></div>
@@ -321,8 +318,8 @@ generated script will set the <strong>PATH</strong>, <strong>LD_LIBRARY_PATH</st
 <strong>DYLD_FRAMEWORK_PATH</strong> environment variables so that executables can find the shared
 libraries.</p>
 <p>Activate the virtual environment, and run the executables again:</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conanrun.bat
 $<span class="w"> </span>Release<span class="se">\c</span>ompressor.exe
 Uncompressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">233</span>
@@ -331,8 +328,8 @@ Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>conanrun.sh
 $<span class="w"> </span>./compressor
 Uncompressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">233</span>
@@ -344,14 +341,14 @@ Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"
 <p>Just as in the previous example with the <code class="docutils literal notranslate"><span class="pre">VirtualBuildEnv</span></code> generator, when we run the
 <code class="docutils literal notranslate"><span class="pre">conanrun.sh/bat</span></code> script a deactivation script called <code class="docutils literal notranslate"><span class="pre">deactivate_conanrun.sh/bat</span></code> is
 created to restore the environment. Source or run it to do so:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>deactivate_conanrun.bat
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id12" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate_conanrun.sh
 </pre></div>
 </div>
@@ -426,7 +423,7 @@ matched our specified configuration.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 05, 2024.
+      <span class="lastupdated">Last updated on Feb 07, 2024.
       </span></p>
   </div>
 

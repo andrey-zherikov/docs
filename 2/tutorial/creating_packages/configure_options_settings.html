@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Configure settings and options in recipes &mdash; conan 2.0.17 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/conan.css?v=7d9e9f1e" />
@@ -176,16 +176,16 @@ already had defined in the recipe:</p>
 are available. For example, in this case, we <strong>delete the fPIC option</strong>, because it
 should only be <strong>True</strong> if we are building the library as shared (in fact, some build
 systems will add this flag automatically when building a shared library).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">config_options()</span></code>: This method is used to <strong>constraint</strong> the available options in a
+<li><p><code class="docutils literal notranslate"><span class="pre">config_options()</span></code>: This method is used to <strong>constrain</strong> the available options in a
 package <strong>before they take a value</strong>. If a value is assigned to a setting or option that is
 deleted inside this method, Conan will raise an error. In this case we are <strong>deleting
 the fPIC option</strong> in Windows because that option does not exist for that operating
 system. Note that this method is executed before the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method.</p></li>
 </ul>
-<p>Be aware that deleting an option in the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> or in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> has
-not the same result. Deleting it in the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> <strong>is like if we never declared
-it in the recipe</strong> and it will raise an exception saying that the option does not exist.
-Nevertheless, if we delete it in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method we can pass the option but it
+<p>Be aware that deleting an option using the <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> method has a different result from using the <code class="docutils literal notranslate"><span class="pre">configure()</span></code>
+method. Deleting the option in <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> <strong>is like we never declared
+it in the recipe</strong> which will raise an exception saying that the option does not exist.
+However, if we delete it in the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> method we can pass the option but it
 will have no effect. For example, if you try to pass a value to the <code class="docutils literal notranslate"><span class="pre">fPIC</span></code> option in
 Windows, Conan will raise an error warning that the option does not exist:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -199,7 +199,7 @@ Possible options are [&#39;shared&#39;, &#39;with_fmt&#39;]
 </div>
 </div>
 <p>As you have noticed, the <code class="docutils literal notranslate"><span class="pre">configure()</span></code> and <code class="docutils literal notranslate"><span class="pre">config_options()</span></code> methods <strong>delete an
-option</strong> if certain conditions meet. Let’s explain why we are doing this and the
+option</strong> if certain conditions are met. Let’s explain why we are doing this and the
 implications of removing that option. It is related to how Conan identifies packages that
 are binary compatible with the configuration set in the profile. In the next section, we
 introduce the concept of the <strong>Conan package ID</strong>.</p>
@@ -282,7 +282,7 @@ fail with a “missing binary” error message, or will try to build that packag
 sources (this depends on the value of the <code class="docutils literal notranslate"><span class="pre">--build</span></code> argument). This build will
 generate a new package ID in the local cache.</p></li>
 </ul>
-<p>This steps are simplified, there is far more to package ID calculation than what we
+<p>These steps are simplified, there is far more to package ID calculation than what we
 explain here, recipes themselves can even adjust their package ID calculations, we can
 have different recipe and package revisions besides package IDs and there’s also a
 built-in mechanism in Conan that can be configured to declare that some packages with a
@@ -386,7 +386,7 @@ more detail.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 05, 2024.
+      <span class="lastupdated">Last updated on Feb 07, 2024.
       </span></p>
   </div>
 
