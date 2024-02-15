@@ -446,11 +446,16 @@ $ conan install . --lockfile=conan.lock --lockfile-partial --lockfile-out=conan.
 </section>
 <section id="update">
 <h2>Update<a class="headerlink" href="#update" title="Link to this heading">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> command has a <code class="docutils literal notranslate"><span class="pre">--update</span></code> argument that will force the re-evaluation of the selected items of the dependency graph,
+<p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> command has an <code class="docutils literal notranslate"><span class="pre">--update</span></code> argument that will force the re-evaluation of the selected items of the dependency graph,
 allowing for the update of the dependencies to the latest version if using version ranges, or to the latest revision of the same version,
 when those versions are not locked in the given lockfile. Passing <code class="docutils literal notranslate"><span class="pre">--update</span></code> will check every package in the dependency graph,
 but it is also possible to pass a package name to the <code class="docutils literal notranslate"><span class="pre">--update</span></code> argument (it can be added to the command more than once with different names),
 to only update those packages, which avoids the re-evaluation of the whole graph.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--update<span class="w">  </span><span class="c1"># Update all packages in the graph</span>
+$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--update<span class="o">=</span>openssl<span class="w">  </span><span class="c1"># Update only the openssl package</span>
+$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--update<span class="o">=</span>openssl<span class="w"> </span>--update<span class="o">=</span>boost<span class="w">  </span><span class="c1"># Update both openssl and boost packages</span>
+</pre></div>
+</div>
 </section>
 </section>
 
