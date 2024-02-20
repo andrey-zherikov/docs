@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../whatsnew.html">What’s new in Conan 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatsnew.html">What’s new in Conan 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../devops.html">Devops guide</a></li>
@@ -195,7 +195,7 @@ and their components (if declared).</p></li>
 <li><p><strong>FindXXX.cmake</strong>: Only when the property <code class="docutils literal notranslate"><span class="pre">cmake_find_mode</span></code> is set by the dependency with “module” or “both”. See <a class="reference internal" href="#cmakedeps-properties"><span class="std std-ref">The properties affecting CMakeDeps</span></a> is set in the dependency.</p></li>
 <li><p><strong>Other necessary *.cmake</strong>:  files like version, flags and directory data or configuration.</p></li>
 </ul>
-<p>Note that it will also generate a <strong>conandeps_legacy.cmake</strong> file. This is a file that provides a behavior similar to the Conan 1 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> generator, allowing to include this file with <code class="docutils literal notranslate"><span class="pre">include(${CMAKE_BINARY_DIR}/generators/conandeps_legacy.cmake)</span></code>, and providing a single CMake <code class="docutils literal notranslate"><span class="pre">CONANDEPS_LEGACY</span></code> variable that allows to link with all the direct and transitive dependencies without explicitly enumerating them like: <code class="docutils literal notranslate"><span class="pre">target_link_libraries(app</span> <span class="pre">${CONANDEPS_LEGACY})</span></code>. This is a convenience provided for Conan 1.X users to upgrade to Conan 2.0 without changing their overall developer flow, but it is not recommended otherwise, and using the CMake canonical flow of explicitly using <code class="docutils literal notranslate"><span class="pre">find_package()</span></code> and <code class="docutils literal notranslate"><span class="pre">target_link_libraries(...</span> <span class="pre">pkg1::pkg1</span> <span class="pre">pkg2::pkg2)</span></code> with targets is the correct approach.</p>
+<p>Note that it will also generate a <strong>conandeps_legacy.cmake</strong> file. This is a file that provides a behavior similar to the Conan 1 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> generator, allowing to include this file with <code class="docutils literal notranslate"><span class="pre">include(${CMAKE_BINARY_DIR}/generators/conandeps_legacy.cmake)</span></code>, and providing a single CMake <code class="docutils literal notranslate"><span class="pre">CONANDEPS_LEGACY</span></code> variable that allows to link with all the direct and transitive dependencies without explicitly enumerating them like: <code class="docutils literal notranslate"><span class="pre">target_link_libraries(app</span> <span class="pre">${CONANDEPS_LEGACY})</span></code>. This is a convenience provided for Conan 1.X users to upgrade to Conan 2 without changing their overall developer flow, but it is not recommended otherwise, and using the CMake canonical flow of explicitly using <code class="docutils literal notranslate"><span class="pre">find_package()</span></code> and <code class="docutils literal notranslate"><span class="pre">target_link_libraries(...</span> <span class="pre">pkg1::pkg1</span> <span class="pre">pkg2::pkg2)</span></code> with targets is the correct approach.</p>
 </section>
 <section id="customization">
 <h2>Customization<a class="headerlink" href="#customization" title="Link to this heading">¶</a></h2>
@@ -538,7 +538,7 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_BUILD_TYPE<span c
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 15, 2024.
+      <span class="lastupdated">Last updated on Feb 20, 2024.
       </span></p>
   </div>
 

@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../whatsnew.html">What’s new in Conan 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whatsnew.html">What’s new in Conan 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devops.html">Devops guide</a></li>
@@ -441,7 +441,7 @@ conanfile.py method to learn a more flexible way to add them.</p>
 </section>
 <section id="build-requires">
 <span id="reference-conanfile-attributes-build-requires"></span><h3><a class="toc-backref" href="#id17" role="doc-backlink">build_requires</a><a class="headerlink" href="#build-requires" title="Link to this heading">¶</a></h3>
-<p><cite>build_requires</cite> are used in Conan 2.0 to provide compatibility with the Conan 1.X syntax,
+<p><cite>build_requires</cite> are used in Conan 2 to provide compatibility with the Conan 1.X syntax,
 but their use is discouraged in Conan 2 and will be deprecated in future 2.X releases.
 Please use <cite>tool_requires</cite> instead of <cite>build_requires</cite> in your Conan 2 recipes.</p>
 </section>
@@ -1459,12 +1459,12 @@ when the method is not explicitly defined in the recipe.</p></li>
 <h3><a class="toc-backref" href="#id69" role="doc-backlink">alias</a><a class="headerlink" href="#alias" title="Link to this heading">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>While aliases can technically still be used in Conan 2.0, their usage is not recommended
+<p>While aliases can technically still be used in Conan 2, their usage is not recommended
 and they may be fully removed in future releases. Users are encouraged to adapt to the
 <a class="reference internal" href="../../devops/versioning.html#devops-versioning"><span class="std std-ref">newer versioning features</span></a> for a more standardized and efficient
 package management experience.</p>
 </div>
-<p>In Conan 2.0, the <cite>alias</cite> attribute remains a part of the recipe, allowing users to define
+<p>In Conan 2, the <cite>alias</cite> attribute remains a part of the recipe, allowing users to define
 an alias for a package version. Normally, you would create one using the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">new</span></code>
 command with the <code class="docutils literal notranslate"><span class="pre">alias</span></code> template and the exporting the recipe with conan export:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>new<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">name</span><span class="o">=</span>mypkg<span class="w"> </span>-d<span class="w"> </span><span class="nv">version</span><span class="o">=</span>latest<span class="w"> </span>-d<span class="w"> </span><span class="nv">target</span><span class="o">=</span><span class="m">1</span>.0
@@ -1517,7 +1517,7 @@ method:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 15, 2024.
+      <span class="lastupdated">Last updated on Feb 20, 2024.
       </span></p>
   </div>
 
