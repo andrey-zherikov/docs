@@ -769,9 +769,9 @@ for some specific packages:</p>
 <div class="code-block-caption"><span class="caption-text"><em>zlib_clang_profile</em></span><a class="headerlink" href="#id26" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[settings]
 # Only for zlib
-zlib*:compiler=clang
-zlib*:compiler.version=3.5
-zlib*:compiler.libcxx=libstdc++11
+zlib/*:compiler=clang
+zlib/*:compiler.version=3.5
+zlib/*:compiler.libcxx=libstdc++11
 
 # For the all the dependency tree
 compiler=gcc
@@ -780,7 +780,7 @@ compiler.libcxx=libstdc++11
 
 [options]
 # shared=True option only for zlib package
-zlib*:shared=True
+zlib/*:shared=True
 
 [buildenv]
 # For the all the dependency tree
@@ -788,7 +788,7 @@ zlib*:shared=True
 
 [conf]
 # Only for zlib
-zlib*:tools.build:compiler_executables={&#39;c&#39;: &#39;/usr/bin/clang&#39;, &#39;cpp&#39;: &#39;/usr/bin/clang++&#39;}
+zlib/*:tools.build:compiler_executables={&#39;c&#39;: &#39;/usr/bin/clang&#39;, &#39;cpp&#39;: &#39;/usr/bin/clang++&#39;}
 </pre></div>
 </div>
 </div>
@@ -796,7 +796,8 @@ zlib*:tools.build:compiler_executables={&#39;c&#39;: &#39;/usr/bin/clang&#39;, &
 for the rest of your dependency tree.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Putting only <code class="docutils literal notranslate"><span class="pre">zlib:</span></code> is not going to work, you have to always put a pattern-like expression, e.g., <code class="docutils literal notranslate"><span class="pre">zlib*:</span></code>, <code class="docutils literal notranslate"><span class="pre">zlib/1.*:</span></code>, etc.</p>
+<p>Putting only <code class="docutils literal notranslate"><span class="pre">zlib:</span></code> is deprecated behaviour and won’t work, you have to always put a pattern-like expression, e.g., <code class="docutils literal notranslate"><span class="pre">zlib*:</span></code>,
+<code class="docutils literal notranslate"><span class="pre">zlib/*:</span></code>, <code class="docutils literal notranslate"><span class="pre">zlib/1.*:</span></code>, etc.</p>
 </div>
 <p>They accept patterns too, like <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">*&#64;myuser/*</span></code>, which means that packages that have the username “myuser” will use
 clang 3.5 as compiler, and gcc otherwise:</p>
@@ -823,14 +824,25 @@ This is a special case because the consumer conanfile might not declare a <cite>
 </pre></div>
 </div>
 </div>
+<p>Partial matches are also supported, so you can define a pattern like <code class="docutils literal notranslate"><span class="pre">zlib*</span></code> to match all the zlib like libraries,
+so it will match everything starting with zlib, like <code class="docutils literal notranslate"><span class="pre">zlib</span></code>, <code class="docutils literal notranslate"><span class="pre">zlibng</span></code>, <code class="docutils literal notranslate"><span class="pre">zlib/1.2.8&#64;user/channel</span></code>, etc.</p>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><em>myprofile</em></span><a class="headerlink" href="#id29" title="Link to this code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[settings]
+zlib*:compiler=clang
+zlib*:compiler.version=3.5
+zlib*:compiler.libcxx=libstdc++11
+</pre></div>
+</div>
+</div>
 </section>
 <section id="profile-includes">
 <h2>Profile includes<a class="headerlink" href="#profile-includes" title="Link to this heading">¶</a></h2>
 <p>You can include other profile files using the <code class="docutils literal notranslate"><span class="pre">include()</span></code> statement. The path can be relative
 to the current profile, absolute, or a profile name from the default profile location in the local cache.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">include()</span></code> statement has to be at the top of the profile file:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><em>gcc_49</em></span><a class="headerlink" href="#id29" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><em>gcc_49</em></span><a class="headerlink" href="#id30" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[settings]
 compiler=gcc
 compiler.version=4.9
@@ -838,27 +850,27 @@ compiler.libcxx=libstdc++11
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><em>myprofile</em></span><a class="headerlink" href="#id30" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><em>myprofile</em></span><a class="headerlink" href="#id31" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>include(gcc_49)
 
 [settings]
-zlib*:compiler=clang
-zlib*:compiler.version=3.5
-zlib*:compiler.libcxx=libstdc++11
+zlib/*:compiler=clang
+zlib/*:compiler.version=3.5
+zlib/*:compiler.libcxx=libstdc++11
 </pre></div>
 </div>
 </div>
 <p>The final result of using <em>myprofile</em> is:</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><em>myprofile (virtual result)</em></span><a class="headerlink" href="#id31" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><em>myprofile (virtual result)</em></span><a class="headerlink" href="#id32" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[settings]
 compiler=gcc
 compiler.libcxx=libstdc++11
 compiler.version=4.9
-zlib*:compiler=clang
-zlib*:compiler.libcxx=libstdc++11
-zlib*:compiler.version=3.5
+zlib/*:compiler=clang
+zlib/*:compiler.libcxx=libstdc++11
+zlib/*:compiler.version=3.5
 </pre></div>
 </div>
 </div>
@@ -883,7 +895,7 @@ zlib*:compiler.version=3.5
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Feb 20, 2024.
+      <span class="lastupdated">Last updated on Feb 21, 2024.
       </span></p>
   </div>
 
