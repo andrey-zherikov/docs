@@ -242,12 +242,14 @@ For instance, the previous example, the file name is <code class="docutils liter
 <span class="sd">    Command help</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;help for command&#39;</span><span class="p">)</span>
-    <span class="n">add_reference_args</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+    <span class="o">...</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="c1"># Use args.path</span>
 </pre></div>
 </div>
-<p>When there are sub-commands, the base command cannot define arguments, only the sub-commands can do it. If you have a set of common arguments to all sub-commands, you can define a function that adds them.</p>
+<p>When there are sub-commands, the base command cannot define arguments, only the
+sub-commands can do it. If you have a set of common arguments to all sub-commands, you can
+define a function that adds them.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@conan_command</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s2">&quot;MyGroup&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">mycommand</span><span class="p">(</span><span class="n">conan_api</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -349,7 +351,11 @@ the command function will receive them as a Python list-like <code class="docuti
 <section id="read-more">
 <h2>Read more<a class="headerlink" href="#read-more" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../examples/extensions/commands/clean/custom_command_clean_revisions.html#examples-extensions-commands-clean-revisions"><span class="std std-ref">Custom command to remove recipe and package revisions but the latest package one from the latest recipe one</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../examples/extensions/commands/clean/custom_command_clean_revisions.html#examples-extensions-commands-clean-revisions"><span class="std std-ref">Custom command to remove recipe and package revisions but the latest package one
+from the latest recipe one</span></a>.</p></li>
+<li><p>You can check more examples of Conan custom command in the <em>conan-extensions</em> repository.
+There you can find examples of custom commands without sub-commands <a class="reference external" href="https://github.com/conan-io/conan-extensions/blob/main/extensions/commands/art/cmd_server.py">like this one</a>.
+and custom commands with sub-commands <a class="reference external" href="https://github.com/conan-io/conan-extensions/blob/main/extensions/commands/cci/cmd_export_all_versions.py">like this one</a>.</p></li>
 </ul>
 </section>
 </section>
