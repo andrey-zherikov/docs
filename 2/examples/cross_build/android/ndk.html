@@ -154,6 +154,17 @@ the one that fits better with your requirements. This is typically a balance bet
 <li><p><code class="docutils literal notranslate"><span class="pre">arch</span></code>: There are several architectures supported by Android: <code class="docutils literal notranslate"><span class="pre">x86</span></code>, <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>, <code class="docutils literal notranslate"><span class="pre">armv7</span></code>, and <code class="docutils literal notranslate"><span class="pre">armv8</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tools.android:ndk_path</span></code> conf: Write the location of the unzipped NDK.</p></li>
 </ul>
+<p>If you are in Windows, it is necessary to have a make-like build system like MinGW-Make or Ninja.
+We can provision for Ninja directly in our profile with <code class="docutils literal notranslate"><span class="pre">[tool_requires]</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>...
+[conf]
+tools.android:ndk_path=C:\ws\android\android-ndk-r23b  # Use your path here
+tools.cmake.cmaketoolchain:generator=Ninja
+
+[tool_requires]
+ninja/[*]
+</pre></div>
+</div>
 <p>Use the <strong class="command">conan new</strong> command to create a “Hello World” C++ library example project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>new<span class="w"> </span>cmake_lib<span class="w"> </span>-d<span class="w"> </span><span class="nv">name</span><span class="o">=</span>hello<span class="w"> </span>-d<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="m">1</span>.0
 </pre></div>
