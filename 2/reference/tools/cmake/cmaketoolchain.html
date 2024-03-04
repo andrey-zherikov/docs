@@ -695,9 +695,10 @@ from overriding the values. If setting this to <code class="docutils literal not
 <li><p><strong>tools.build:sharedlinkflags</strong> list of extra linker flags that will be appended to <code class="docutils literal notranslate"><span class="pre">CMAKE_SHARED_LINKER_FLAGS_INIT</span></code>.</p></li>
 <li><p><strong>tools.build:exelinkflags</strong> list of extra linker flags that will be appended to <code class="docutils literal notranslate"><span class="pre">CMAKE_EXE_LINKER_FLAGS_INIT</span></code>.</p></li>
 <li><p><strong>tools.build:defines</strong> list of preprocessor definitions that will be used by <code class="docutils literal notranslate"><span class="pre">add_definitions()</span></code>.</p></li>
-<li><p><strong>tools.build:tools.apple:enable_bitcode</strong> boolean value to enable/disable Bitcode Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_ENABLE_BITCODE</span></code>.</p></li>
-<li><p><strong>tools.build:tools.apple:enable_arc</strong> boolean value to enable/disable ARC Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC</span></code>.</p></li>
-<li><p><strong>tools.build:tools.apple:enable_visibility</strong> boolean value to enable/disable Visibility Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN</span></code>.</p></li>
+<li><p><strong>tools.apple:sdk_path</strong> value for <code class="docutils literal notranslate"><span class="pre">CMAKE_OSX_SYSROOT</span></code>. In the general case it’s not needed and will be passed to CMake by the settings values.</p></li>
+<li><p><strong>tools.apple:enable_bitcode</strong> boolean value to enable/disable Bitcode Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_ENABLE_BITCODE</span></code>.</p></li>
+<li><p><strong>tools.apple:enable_arc</strong> boolean value to enable/disable ARC Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC</span></code>.</p></li>
+<li><p><strong>tools.apple:enable_visibility</strong> boolean value to enable/disable Visibility Apple Clang flags, e.g., <code class="docutils literal notranslate"><span class="pre">CMAKE_XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN</span></code>.</p></li>
 <li><p><strong>tools.build:sysroot</strong> defines the value of <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSROOT</span></code>.</p></li>
 <li><p><strong>tools.microsoft:winsdk_version</strong> Defines the <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_VERSION</span></code> or the <code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_PLATFORM</span></code> according to CMake policy <code class="docutils literal notranslate"><span class="pre">CMP0149</span></code>.</p></li>
 <li><p><strong>tools.build:compiler_executables</strong> dict-like Python object which specifies the
@@ -733,7 +734,7 @@ follows:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 01, 2024.
+      <span class="lastupdated">Last updated on Mar 04, 2024.
       </span></p>
   </div>
 
