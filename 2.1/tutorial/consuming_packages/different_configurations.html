@@ -177,14 +177,14 @@ to use a <code class="docutils literal notranslate"><span class="pre">build_type
 with that profile. We will create a <em>debug</em> profile to try building with different configurations:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">&lt;conan home&gt;/profiles/debug</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>settings<span class="o">]</span>
-<span class="nv">os</span><span class="o">=</span>Macos
-<span class="nv">arch</span><span class="o">=</span>x86_64
-<span class="nv">compiler</span><span class="o">=</span>apple-clang
-compiler.version<span class="o">=</span><span class="m">14</span>.0
-compiler.libcxx<span class="o">=</span>libc++
-compiler.cppstd<span class="o">=</span>gnu11
-<span class="hll"><span class="nv">build_type</span><span class="o">=</span>Debug
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[settings]
+os=Macos
+arch=x86_64
+compiler=apple-clang
+compiler.version=14.0
+compiler.libcxx=libc++
+compiler.cppstd=gnu11
+<span class="hll">build_type=Debug
 </span></pre></div>
 </div>
 </div>
@@ -298,9 +298,16 @@ executable can’t find the shared libraries for <em>Zlib</em> that we just inst
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Linux, Macos</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Linux</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./compressor
 ./compressor:<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>loading<span class="w"> </span>shared<span class="w"> </span>libraries:<span class="w"> </span>libz.so.1:<span class="w"> </span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Macos</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./compressor
+./compressor:<span class="w"> </span>dyld<span class="o">[</span><span class="m">41259</span><span class="o">]</span>:<span class="w"> </span>Library<span class="w"> </span>not<span class="w"> </span>loaded:<span class="w"> </span>@rpath/libz.1.dylib
 </pre></div>
 </div>
 </div>
@@ -318,8 +325,8 @@ generated script will set the <strong>PATH</strong>, <strong>LD_LIBRARY_PATH</st
 <strong>DYLD_FRAMEWORK_PATH</strong> environment variables so that executables can find the shared
 libraries.</p>
 <p>Activate the virtual environment, and run the executables again:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conanrun.bat
 $<span class="w"> </span>Release<span class="se">\c</span>ompressor.exe
 Uncompressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">233</span>
@@ -328,8 +335,8 @@ Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>conanrun.sh
 $<span class="w"> </span>./compressor
 Uncompressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"> </span><span class="m">233</span>
@@ -341,14 +348,14 @@ Compressed<span class="w"> </span>size<span class="w"> </span>is:<span class="w"
 <p>Just as in the previous example with the <code class="docutils literal notranslate"><span class="pre">VirtualBuildEnv</span></code> generator, when we run the
 <code class="docutils literal notranslate"><span class="pre">conanrun.sh/bat</span></code> script a deactivation script called <code class="docutils literal notranslate"><span class="pre">deactivate_conanrun.sh/bat</span></code> is
 created to restore the environment. Source or run it to do so:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Windows</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>deactivate_conanrun.bat
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Linux, macOS</span><a class="headerlink" href="#id12" title="Link to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate_conanrun.sh
 </pre></div>
 </div>
@@ -403,10 +410,10 @@ matched our specified configuration.</p>
 <li><p><a class="reference internal" href="../../reference/tools/env/virtualrunenv.html#conan-tools-env-virtualrunenv"><span class="std std-ref">VirtualRunEnv reference</span></a></p></li>
 <li><p><a class="reference internal" href="cross_building_with_conan.html#consuming-packages-cross-building-with-conan"><span class="std std-ref">Cross-compiling using –profile:build and –profile:host</span></a></p></li>
 <li><p><a class="reference internal" href="../creating_packages/configure_options_settings.html#creating-packages-configure-options-settings"><span class="std std-ref">Conan packages binary compatibility: the package ID</span></a></p></li>
-<li><p>Installing configurations with conan config install</p></li>
+<li><p><a class="reference internal" href="../../reference/commands/config.html#reference-commands-conan-config-install"><span class="std std-ref">Installing configurations with conan config install</span></a></p></li>
 <li><p>VS Multi-config</p></li>
 <li><p>Example about how settings and options influence the package id</p></li>
-<li><p>Using patterns for settings and options</p></li>
+<li><p><a class="reference internal" href="../../reference/config_files/profiles.html#reference-config-files-profile-patterns"><span class="std std-ref">Using patterns for settings and options</span></a></p></li>
 </ul>
 </section>
 </section>

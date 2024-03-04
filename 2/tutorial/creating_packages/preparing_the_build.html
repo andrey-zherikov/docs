@@ -180,18 +180,18 @@ Let’s check the relevant parts:</p>
     <span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">git</span> <span class="o">=</span> <span class="n">Git</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">git</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/conan-io/libhello.git&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-<span class="hll">        <span class="c1"># Please, be aware that using the head of the branch instead of an immutable tag</span>
-</span>        <span class="c1"># or commit is not a good practice in general</span>
-        <span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="s2">&quot;optional_fmt&quot;</span><span class="p">)</span>
-<span class="hll">
-</span>    <span class="k">def</span> <span class="nf">requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">with_fmt</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;fmt/8.1.1&quot;</span><span class="p">)</span>
+        <span class="c1"># Please, be aware that using the head of the branch instead of an immutable tag</span>
+        <span class="c1"># or commit is not a good practice in general</span>
+<span class="hll">        <span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="s2">&quot;optional_fmt&quot;</span><span class="p">)</span>
+</span>
+    <span class="k">def</span> <span class="nf">requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">with_fmt</span><span class="p">:</span>
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">(</span><span class="s2">&quot;fmt/8.1.1&quot;</span><span class="p">)</span>
 
-<span class="hll">    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span>        <span class="n">tc</span> <span class="o">=</span> <span class="n">CMakeToolchain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">with_fmt</span><span class="p">:</span>
-            <span class="n">tc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;WITH_FMT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tc</span> <span class="o">=</span> <span class="n">CMakeToolchain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">with_fmt</span><span class="p">:</span>
+</span>            <span class="n">tc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;WITH_FMT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="n">tc</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 
     <span class="o">...</span>
