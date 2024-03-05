@@ -165,11 +165,13 @@ of dependencies versions, as explained in the <a class="reference internal" href
 <p>Note that information erasure in <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> means that 1 single <code class="docutils literal notranslate"><span class="pre">package_id</span></code> will represent a whole range of different settings, but the information of what exact setting was used to create the binary will be lost, and only 1 binary can be created for that range. Re-creating the package with different settings in the range, will create a new binary that overwrites the previous one (with a new package-revision).</p>
 <p>If we want to be able to create, store and manage different binaries for different input settings, information erasure can’t be used, and using the below <code class="docutils literal notranslate"><span class="pre">compatibility</span></code> approaches is recommended.</p>
 </div>
-<p>Read more about <code class="docutils literal notranslate"><span class="pre">package_id()</span></code> in:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../tutorial/creating_packages/configure_options_settings.html#creating-packages-configure-options-settings"><span class="std std-ref">Conan packages binary compatibility: the package ID</span></a></p></li>
 <li><p><a class="reference internal" href="../conanfile/methods/package_id.html#reference-conanfile-methods-package-id"><span class="std std-ref">package_id() method reference</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="the-compatibility-method">
 <h3>The compatibility() method<a class="headerlink" href="#the-compatibility-method" title="Link to this heading">¶</a></h3>

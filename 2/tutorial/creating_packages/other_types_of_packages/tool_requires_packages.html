@@ -326,9 +326,8 @@ Package<span class="w"> </span><span class="s1">&#39;82339cc4d6db7990c1830d274cd
 </pre></div>
 </div>
 <p>We got the same binary <code class="docutils literal notranslate"><span class="pre">package_id</span></code>. The second <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span> <span class="pre">.</span> <span class="pre">-s</span> <span class="pre">build_type=Debug</span></code> created and overwrote (created a newer package revision) of the previous Release binary, because they have the same <code class="docutils literal notranslate"><span class="pre">package_id</span></code> identifier. It is typical to create only the <code class="docutils literal notranslate"><span class="pre">Release</span></code> one, and if for any reason managing both Debug and Release binaries is intended, then the approach would be not removing the <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">self.info.settings.build_type</span></code></p>
-</section>
-<section id="read-more">
-<h2>Read more<a class="headerlink" href="#read-more" title="Link to this heading">¶</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><ul>
 <li><p><a class="reference internal" href="../../../examples/graph/tool_requires/using_protobuf.html#examples-graph-tool-requires-protobuf"><span class="std std-ref">Using the same requirement as a requires and as a tool_requires</span></a></p></li>
@@ -338,6 +337,7 @@ Package<span class="w"> </span><span class="s1">&#39;82339cc4d6db7990c1830d274cd
 <li><p><a class="reference internal" href="../../../reference/conanfile/methods/package_info.html#reference-conanfile-methods-package-info-runenv-info"><span class="std std-ref">Usage of runenv_info</span></a></p></li>
 <li><p><a class="reference internal" href="../../../reference/binary_model/extending.html#binary-model-extending-cross-build-target-settings"><span class="std std-ref">More info on settings_target</span></a></p></li>
 </ul>
+</div>
 </section>
 </section>
 

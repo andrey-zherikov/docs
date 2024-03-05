@@ -115,28 +115,34 @@ Also, a lot of effort has been made to backport necessary things to Conan 1.X to
 <section id="new-graph-model">
 <h2>New graph model<a class="headerlink" href="#new-graph-model" title="Link to this heading">¶</a></h2>
 <p>Conan 2 defines new requirement traits (headers, libs, build, run, test, package_id_mode, options, transitive_headers, transitive_libs) and package types (static, shared, application, header-only) to better represent the relations that happen with C and C++ binaries, like executables or shared libraries linking static libraries or shared libraries.</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=kKGglzm5ous">https://www.youtube.com/watch?v=kKGglzm5ous</a></p></li>
 <li><p><a class="reference external" href="https://github.com/conan-io/tribe/blob/main/design/026-requirements_traits.md">https://github.com/conan-io/tribe/blob/main/design/026-requirements_traits.md</a></p></li>
 <li><p><a class="reference external" href="https://github.com/conan-io/tribe/blob/main/design/027-package_types.md">https://github.com/conan-io/tribe/blob/main/design/027-package_types.md</a></p></li>
 </ul>
+</div>
 </section>
 <section id="new-public-python-api">
 <h2>New public Python API<a class="headerlink" href="#new-public-python-api" title="Link to this heading">¶</a></h2>
 <p>A new modular Python API is made available, public and documented. This is a real API, with building blocks that are already used to build the Conan built-in commands, but that will allow further extensions. There are subapis for different functional groups, like <code class="docutils literal notranslate"><span class="pre">api.list</span></code>, <code class="docutils literal notranslate"><span class="pre">api.search</span></code>, <code class="docutils literal notranslate"><span class="pre">api.remove</span></code>, <code class="docutils literal notranslate"><span class="pre">api.profile</span></code>, <code class="docutils literal notranslate"><span class="pre">api.graph</span></code>, <code class="docutils literal notranslate"><span class="pre">api.upload</span></code>, <code class="docutils literal notranslate"><span class="pre">api.remotes</span></code>, etc. that will allow to implement advanced user flows, functionality and automation.</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="reference/extensions/python_api.html#reference-python-api"><span class="std std-ref">Python API reference</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="new-build-system-integrations">
 <h2>New build system integrations<a class="headerlink" href="#new-build-system-integrations" title="Link to this heading">¶</a></h2>
 <p>Introduced in latest Conan 1.X, Conan 2 will use modern build system integrations like <code class="docutils literal notranslate"><span class="pre">CMakeDeps</span></code> and <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code> that are fully transparent CMake integration (i.e. the consuming <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> doesn’t need to be aware at all about Conan). These integrations can also achieve a better IDE integration, for example via CMakePresets.json.</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="reference/tools.html#conan-tools"><span class="std std-ref">Tools reference</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="new-custom-user-commands">
 <h2>New custom user commands<a class="headerlink" href="#new-custom-user-commands" title="Link to this heading">¶</a></h2>
@@ -145,10 +151,12 @@ Also, a lot of effort has been made to backport necessary things to Conan 1.X to
 <section id="new-cli">
 <h2>New CLI<a class="headerlink" href="#new-cli" title="Link to this heading">¶</a></h2>
 <p>Conan 2 has redesigned the CLI for better consistency, removing ambiguities, and improving the user experience. The new CLI also sends all the information, warning, and error messages to stderr, while keeping the final result in stdout, allowing multiple output formats like <code class="docutils literal notranslate"><span class="pre">--format=html</span></code> or <code class="docutils literal notranslate"><span class="pre">--format=json</span></code> and using redirects to create files <code class="docutils literal notranslate"><span class="pre">--format=json</span> <span class="pre">&gt;</span> <span class="pre">myfile.json</span></code>. The information provided by the CLI will be more structured and thorough so that it can be used more easily for automation, especially in CI/CD systems.</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="reference/commands.html#reference-commands"><span class="std std-ref">Commands reference</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="new-deployers">
 <h2>New deployers<a class="headerlink" href="#new-deployers" title="Link to this heading">¶</a></h2>
@@ -167,21 +175,25 @@ Also, a lot of effort has been made to backport necessary things to Conan 1.X to
 <section id="new-lockfiles">
 <h2>New lockfiles<a class="headerlink" href="#new-lockfiles" title="Link to this heading">¶</a></h2>
 <p>Lockfiles in Conan 2 have been greatly simplified and made way more flexible. Lockfiles are now modeled as lists of sorted references, which allow one single lockfile being used for multiple configurations, merging lockfiles, applying partially defined lockfiles, being strict or non-strict, adding user defined constraints to lockfiles, and much more.</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="tutorial/consuming_packages/intro_to_versioning.html#tutorial-consuming-packages-versioning-lockfiles"><span class="std std-ref">Tutorial introduction to lockfiles</span></a></p></li>
 <li><p><a class="reference external" href="https://github.com/conan-io/tribe/blob/main/design/034-new_lockfiles.md">https://github.com/conan-io/tribe/blob/main/design/034-new_lockfiles.md</a></p></li>
 <li><p><a class="reference internal" href="tutorial/versioning/lockfiles.html#tutorial-versioning-lockfiles"><span class="std std-ref">Tutorial about versioning and lockfiles</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="new-configuration-and-environment-management">
 <h2>New configuration and environment management<a class="headerlink" href="#new-configuration-and-environment-management" title="Link to this heading">¶</a></h2>
 <p>The new configuration system called <code class="docutils literal notranslate"><span class="pre">[conf]</span></code> in profiles and command line, and introduced experimentally in Conan 1.X, is now the major mechanism to configure and control Conan behavior. The idea is that the configuration system is used to transmit information from Conan (a Conan profile) to Conan (A Conan recipe, or a Conan build system integration like <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code>). This new configuration system can define strings, boolean, lists, being cleaner, more structured and powerful than using environment variables.
 A better, more explicit environment management, also introduced in Conan 1.X is now the way to pass information from Conan (profiles) to tools (like compilers, build systems).</p>
-<p>Read more:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="reference/tools/env.html#reference-tools-env"><span class="std std-ref">Reference of enviroment tools</span></a></p></li>
 </ul>
+</div>
 </section>
 <section id="multi-revision-cache">
 <h2>Multi-revision cache<a class="headerlink" href="#multi-revision-cache" title="Link to this heading">¶</a></h2>
@@ -216,21 +228,37 @@ Note that the cache is still not concurrent, so parallel jobs or tasks should us
 This feature allows to upload, download, remove and list several recipes and packages with one single command.</p>
 <p>Package lists can also be created from a dependency graph resulting from a <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> or <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> command,
 so it is possible to upload to a server all packages that belong to a given dependency graph just chaining 2 commands.</p>
-<p>Read more about it in <a class="reference internal" href="examples/commands/pkglists.html#examples-commands-pkglists"><span class="std std-ref">these examples</span></a> and <a class="reference external" href="https://blog.conan.io/2023/06/28/Conan-bulk-package-operations.html">this blog post</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="examples/commands/pkglists.html#examples-commands-pkglists"><span class="std std-ref">these examples</span></a></p></li>
+<li><p><a class="reference external" href="https://blog.conan.io/2023/06/28/Conan-bulk-package-operations.html">Package lists blog post</a></p></li>
+</ul>
+</div>
 </section>
 <section id="metadata-files">
 <h2>Metadata files<a class="headerlink" href="#metadata-files" title="Link to this heading">¶</a></h2>
 <p>Conan 2 allows to store, upload, download, modify metadata files associated to recipes and packages. This feature
 can be very useful to manage build logs, tests executable, test results, coverage data and many other different
 files needed for traceability, compliance and business purposes.</p>
-<p>Read more about this feature in <a class="reference external" href="https://blog.conan.io/2023/10/24/Conan-launches-metadata-files.html">this metadata files blog post</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.conan.io/2023/10/24/Conan-launches-metadata-files.html">Metadata files blog post</a></p></li>
+</ul>
+</div>
 </section>
 <section id="third-party-backup-sources">
 <h2>Third party backup sources<a class="headerlink" href="#third-party-backup-sources" title="Link to this heading">¶</a></h2>
 <p>When building packages for third parties with sources in the internet, those sources can be removed or changed.
 The “backup sources” can automatically store a copy of those sources in your own server, so your builds are
 always fully reproducible, no matter what happens to the original internet sources.</p>
-<p>Read more about it in <a class="reference external" href="https://blog.conan.io/2023/10/03/backup-sources-feature.html">the backup-sources blog post</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.conan.io/2023/10/03/backup-sources-feature.html">the backup-sources blog post</a></p></li>
+</ul>
+</div>
 </section>
 </section>
 
