@@ -165,14 +165,14 @@ Meson, Autotools, and even your own) to do that, without any dependency on CMake
 file, responsible for defining how the package is built and consumed.</p></li>
 <li><p><strong>CMakeLists.txt</strong>: A simple generic <em>CMakeLists.txt</em>, with nothing specific about Conan
 in it.</p></li>
-<li><p><strong>src</strong> folder: the <em>src</em> folder that contains the simple C++ “hello” library.</p></li>
+<li><p><strong>src</strong> and <strong>include</strong> folders: the folders that contains the simple C++ “hello” library.</p></li>
 <li><p><strong>test_package</strong> folder: contains an <em>example</em> application that will require
 and link with the created package. It is not mandatory, but it is useful to check that
 our package is correctly created.</p></li>
 </ul>
 <p>Let’s have a look at the package recipe <em>conanfile.py</em>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
-<span class="kn">from</span> <span class="nn">conan.tools.cmake</span> <span class="kn">import</span> <span class="n">CMakeToolchain</span><span class="p">,</span> <span class="n">CMake</span><span class="p">,</span> <span class="n">cmake_layout</span>
+<span class="kn">from</span> <span class="nn">conan.tools.cmake</span> <span class="kn">import</span> <span class="n">CMakeToolchain</span><span class="p">,</span> <span class="n">CMake</span><span class="p">,</span> <span class="n">cmake_layout</span><span class="p">,</span> <span class="n">CMakeDeps</span>
 
 
 <span class="k">class</span> <span class="nc">helloRecipe</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -202,6 +202,8 @@ our package is correctly created.</p></li>
         <span class="n">cmake_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">deps</span> <span class="o">=</span> <span class="n">CMakeDeps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">deps</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
         <span class="n">tc</span> <span class="o">=</span> <span class="n">CMakeToolchain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">tc</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 
@@ -258,7 +260,8 @@ expected locations for a CMake project.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">generate()</span></code> method prepares the build of the package from source. In this case, it could be simplified
 to an attribute <code class="docutils literal notranslate"><span class="pre">generators</span> <span class="pre">=</span> <span class="pre">&quot;CMakeToolchain&quot;</span></code>, but it is left to show this important method. In this case,
 the execution of <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code> <code class="docutils literal notranslate"><span class="pre">generate()</span></code> method will create a <em>conan_toolchain.cmake</em> file that translates
-the Conan <code class="docutils literal notranslate"><span class="pre">settings</span></code> and <code class="docutils literal notranslate"><span class="pre">options</span></code> to CMake syntax.</p></li>
+the Conan <code class="docutils literal notranslate"><span class="pre">settings</span></code> and <code class="docutils literal notranslate"><span class="pre">options</span></code> to CMake syntax. The <code class="docutils literal notranslate"><span class="pre">CMakeDeps</span></code> generator is added for completitude,
+but it is not strictly necessary until <code class="docutils literal notranslate"><span class="pre">requires</span></code> are added to the recipe.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">build()</span></code> method uses the <code class="docutils literal notranslate"><span class="pre">CMake</span></code> wrapper to call CMake commands, it is a thin layer that will manage
 to pass in this case the <code class="docutils literal notranslate"><span class="pre">-DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake</span></code> argument. It will configure the
 project and build it from source.</p></li>
@@ -289,14 +292,26 @@ package.</p></li>
 <p>Let’s build the package from sources with the current default configuration, and then let
 the <code class="docutils literal notranslate"><span class="pre">test_package</span></code> folder test the package:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>create<span class="w"> </span>.
---------<span class="w"> </span>Exporting<span class="w"> </span>the<span class="w"> </span>recipe<span class="w"> </span>----------
+
+<span class="o">========</span><span class="w"> </span>Exporting<span class="w"> </span>recipe<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span><span class="nv">cache</span><span class="w"> </span><span class="o">========</span>
 hello/1.0:<span class="w"> </span>Exporting<span class="w"> </span>package<span class="w"> </span>recipe
+...
+hello/1.0:<span class="w"> </span>Exported:<span class="w"> </span>hello/1.0#dcbfe21e5250264b26595d151796be70<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-03-04<span class="w"> </span><span class="m">17</span>:52:39<span class="w"> </span>UTC<span class="o">)</span>
+
+<span class="o">========</span><span class="w"> </span>Installing<span class="w"> </span><span class="nv">packages</span><span class="w"> </span><span class="o">========</span>
+--------<span class="w"> </span>Installing<span class="w"> </span>package<span class="w"> </span>hello/1.0<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>--------
+hello/1.0:<span class="w"> </span>Building<span class="w"> </span>from<span class="w"> </span><span class="nb">source</span>
+hello/1.0:<span class="w"> </span>Calling<span class="w"> </span>build<span class="o">()</span>
+...
+hello/1.0:<span class="w"> </span>Package<span class="w"> </span><span class="s1">&#39;9bdee485ef71c14ac5f8a657202632bdb8b4482b&#39;</span><span class="w"> </span><span class="nv">built</span>
+
+<span class="o">========</span><span class="w"> </span>Testing<span class="w"> </span>the<span class="w"> </span>package:<span class="w"> </span><span class="nv">Building</span><span class="w"> </span><span class="o">========</span>
 ...
 <span class="o">[</span><span class="w"> </span><span class="m">50</span>%<span class="o">]</span><span class="w"> </span>Building<span class="w"> </span>CXX<span class="w"> </span>object<span class="w"> </span>CMakeFiles/example.dir/src/example.cpp.o
 <span class="o">[</span><span class="m">100</span>%<span class="o">]</span><span class="w"> </span>Linking<span class="w"> </span>CXX<span class="w"> </span>executable<span class="w"> </span>example
-<span class="o">[</span><span class="m">100</span>%<span class="o">]</span><span class="w"> </span>Built<span class="w"> </span>target<span class="w"> </span>example
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span><span class="w"> </span>Built<span class="w"> </span>target<span class="w"> </span><span class="nv">example</span>
 
---------<span class="w"> </span>Testing<span class="w"> </span>the<span class="w"> </span>package:<span class="w"> </span>Running<span class="w"> </span>test<span class="o">()</span><span class="w"> </span>----------
+<span class="o">========</span><span class="w"> </span>Testing<span class="w"> </span>the<span class="w"> </span>package:<span class="w"> </span>Executing<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="o">========</span>
 hello/1.0<span class="w"> </span><span class="o">(</span><span class="nb">test</span><span class="w"> </span>package<span class="o">)</span>:<span class="w"> </span>Running<span class="w"> </span>test<span class="o">()</span>
 hello/1.0<span class="w"> </span><span class="o">(</span><span class="nb">test</span><span class="w"> </span>package<span class="o">)</span>:<span class="w"> </span>RUN:<span class="w"> </span>./example
 hello/1.0:<span class="w"> </span>Hello<span class="w"> </span>World<span class="w"> </span>Release!
@@ -342,47 +357,52 @@ hello/1.0:<span class="w"> </span>Hello<span class="w"> </span>World<span class=
 </div>
 <p>These new package binaries will be also stored in the Conan cache, ready to be used by any project in this computer.
 We can see them with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># list the binary built for the hello/1.0 package</span>
-<span class="c1"># latest is a placeholder to show the package that is the latest created</span>
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>hello/1.0#:*
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># list all the binaries built for the hello/1.0 package in the cache</span>
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>hello/1.0:*
 Local<span class="w"> </span>Cache:
-hello
-<span class="w">  </span>hello/1.0#fa5f6b17d0adc4de6030c9ab71cdbede<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:32:19<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">    </span>PID:<span class="w"> </span>6679492451b5d0750f14f9024fdbf84e19d2941b<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:32:20<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">      </span>settings:
-<span class="w">        </span><span class="nv">arch</span><span class="o">=</span>x86_64
-<span class="w">        </span><span class="nv">build_type</span><span class="o">=</span>Release
-<span class="w">        </span><span class="nv">compiler</span><span class="o">=</span>apple-clang
-<span class="w">        </span>compiler.cppstd<span class="o">=</span>gnu11
-<span class="w">        </span>compiler.libcxx<span class="o">=</span>libc++
-<span class="w">        </span>compiler.version<span class="o">=</span><span class="m">14</span>
-<span class="w">        </span><span class="nv">os</span><span class="o">=</span>Macos
-<span class="w">      </span>options:
-<span class="w">        </span><span class="nv">fPIC</span><span class="o">=</span>True
-<span class="w">        </span><span class="nv">shared</span><span class="o">=</span>True
-<span class="w">    </span>PID:<span class="w"> </span>b1d267f77ddd5d10d06d2ecf5a6bc433fbb7eeed<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:31:59<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">      </span>settings:
-<span class="w">        </span><span class="nv">arch</span><span class="o">=</span>x86_64
-<span class="w">        </span><span class="nv">build_type</span><span class="o">=</span>Release
-<span class="w">        </span><span class="nv">compiler</span><span class="o">=</span>apple-clang
-<span class="w">        </span>compiler.cppstd<span class="o">=</span>gnu11
-<span class="w">        </span>compiler.libcxx<span class="o">=</span>libc++
-<span class="w">        </span>compiler.version<span class="o">=</span><span class="m">14</span>
-<span class="w">        </span><span class="nv">os</span><span class="o">=</span>Macos
-<span class="w">      </span>options:
-<span class="w">        </span><span class="nv">fPIC</span><span class="o">=</span>True
-<span class="w">        </span><span class="nv">shared</span><span class="o">=</span>False
-<span class="w">    </span>PID:<span class="w"> </span>d15c4f81b5de757b13ca26b636246edff7bdbf24<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:32:14<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">      </span>settings:
-<span class="w">        </span><span class="nv">arch</span><span class="o">=</span>x86_64
-<span class="w">        </span><span class="nv">build_type</span><span class="o">=</span>Debug
-<span class="w">        </span><span class="nv">compiler</span><span class="o">=</span>apple-clang
-<span class="w">        </span>compiler.cppstd<span class="o">=</span>gnu11
-<span class="w">        </span>compiler.libcxx<span class="o">=</span>libc++
-<span class="w">        </span>compiler.version<span class="o">=</span><span class="m">14</span>
-<span class="w">        </span><span class="nv">os</span><span class="o">=</span>Macos
-<span class="w">      </span>options:
-<span class="w">        </span><span class="nv">fPIC</span><span class="o">=</span>True
+<span class="w">  </span>hello
+<span class="w">    </span>hello/1.0
+<span class="w">      </span>revisions
+<span class="w">        </span>dcbfe21e5250264b26595d151796be70<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-03-04<span class="w"> </span><span class="m">17</span>:52:39<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">          </span>packages
+<span class="w">            </span>6679492451b5d0750f14f9024fdbf84e19d2941b
+<span class="w">              </span>info
+<span class="w">                </span>settings
+<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>build_type:<span class="w"> </span>Release
+<span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>os:<span class="w"> </span>Macos
+<span class="w">                </span>options
+<span class="w">                  </span>fPIC:<span class="w"> </span>True
+<span class="w">                  </span>shared:<span class="w"> </span>True
+<span class="w">            </span>b1d267f77ddd5d10d06d2ecf5a6bc433fbb7eeed
+<span class="w">              </span>info
+<span class="w">                </span>settings
+<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>build_type:<span class="w"> </span>Release
+<span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>os:<span class="w"> </span>Macos
+<span class="w">                </span>options
+<span class="w">                  </span>fPIC:<span class="w"> </span>True
+<span class="w">                  </span>shared:<span class="w"> </span>False
+<span class="w">            </span>d15c4f81b5de757b13ca26b636246edff7bdbf24
+<span class="w">              </span>info
+<span class="w">                </span>settings:
+<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>build_type:<span class="w"> </span>Debug
+<span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>os:<span class="w"> </span>Macos
+<span class="w">                </span>options:
+<span class="w">                  </span>fPIC:<span class="w"> </span>True
 </pre></div>
 </div>
 <p>Now that we have created a simple Conan package, we will explain each of the methods of
@@ -402,10 +422,9 @@ in the local cache.</p>
 <section id="read-more">
 <h2>Read more<a class="headerlink" href="#read-more" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../reference/commands/list.html#reference-commands-list"><span class="std std-ref">Conan list command reference</span></a>.</p></li>
-<li><p><a class="reference internal" href="../../examples/tools/autotools/autotools_toolchain/build_project_autotools_toolchain.html#examples-tools-autotools-autotools-toolchain-build-project-autotools-toolchain"><span class="std std-ref">Create your first Conan package with Autotools</span></a>.</p></li>
-<li><p><a class="reference internal" href="../../examples/tools/meson/mesontoolchain/build_simple_meson_project.html#examples-tools-meson-toolchain-build-simple-meson-project"><span class="std std-ref">Create your first Conan package with Meson</span></a>.</p></li>
-<li><p><a class="reference internal" href="../../examples/tools/cmake/cmake_toolchain/build_project_cmake_presets.html#examples-tools-cmake-toolchain-build-project-presets"><span class="std std-ref">Create your first Conan package with CMake</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../examples/tools/microsoft/msbuild/create_your_first_package.html#examples-tools-microsoft-create-first-package"><span class="std std-ref">Create your first Conan package with Visual Studio/MSBuild</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../reference/tools/cmake.html#conan-tools-cmake"><span class="std std-ref">CMake built-in integrations reference</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../reference/commands/create.html#reference-commands-create"><span class="std std-ref">conan create command reference</span></a> and <a class="reference internal" href="../../reference/commands/list.html#reference-commands-list"><span class="std std-ref">Conan list command reference</span></a>.</p></li>
 </ul>
 </section>
 </section>
@@ -422,7 +441,7 @@ in the local cache.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 04, 2024.
+      <span class="lastupdated">Last updated on Mar 05, 2024.
       </span></p>
   </div>
 
