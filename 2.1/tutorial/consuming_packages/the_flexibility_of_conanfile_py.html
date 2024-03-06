@@ -450,13 +450,52 @@ Windows or that you want to use the system’s CMake installation instead of usi
 </pre></div>
 </div>
 </div>
+</section>
+<section id="use-the-generate-method-to-copy-resources-from-packages">
+<span id="copy-resources-on-generate"></span><h2>Use the generate() method to copy resources from packages<a class="headerlink" href="#use-the-generate-method-to-copy-resources-from-packages" title="Link to this heading">¶</a></h2>
+<p>In some scenarios, Conan packages include files that are useful or even necessary for the
+consumption of the libraries they package. These files can range from configuration files,
+assets, to specific files required for the project to build or run correctly. Using the
+<a class="reference internal" href="../../reference/conanfile/methods/generate.html#reference-conanfile-methods-generate"><span class="std std-ref">generate() method</span></a> you can copy these
+files from the Conan cache to your project’s folder, ensuring that all required resources
+are directly available for use.</p>
+<p>Here’s an example that shows how to copy all resources from a dependency’s
+<code class="docutils literal notranslate"><span class="pre">resdirs</span></code> directory to an <code class="docutils literal notranslate"><span class="pre">assets</span></code> directory within your project:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
+<span class="kn">from</span> <span class="nn">conan.tools.files</span> <span class="kn">import</span> <span class="n">copy</span>
+
+<span class="k">class</span> <span class="nc">MyProject</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Copy all resources from the dependency&#39;s resource directory</span>
+        <span class="c1"># to the &quot;assets&quot; folder in the source directory of your project</span>
+        <span class="n">dep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dependencies</span><span class="p">[</span><span class="s2">&quot;dep_name&quot;</span><span class="p">]</span>
+        <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">cpp_info</span><span class="o">.</span><span class="n">resdirs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_folder</span><span class="p">,</span> <span class="s2">&quot;assets&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Then, after the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code> step, all those resource files will be copied locally,
+allowing you to use them in your project’s build process. For a complete example of
+how to import files from a package in the <code class="docutils literal notranslate"><span class="pre">generate()</span></code> method, you can refer to the
+<cite>blog post about using the Dear ImGui library
+&lt;https://blog.conan.io/2019/06/26/An-introduction-to-the-Dear-ImGui-library.html&gt;</cite>, which
+demonstrates how to import bindings for the library depending on the graphics API.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s important to clarify that copying libraries, whether static or shared, is not
+necessary. Conan is designed to use the libraries from their locations in the Conan
+local cache using <a class="reference internal" href="../../reference/tools.html#conan-tools"><span class="std std-ref">generators</span></a> and <a class="reference internal" href="../../reference/tools/env/virtualrunenv.html#conan-tools-env-virtualrunenv"><span class="std std-ref">environment
+tools</span></a> without the need to copy them to the local
+folder.</p>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../examples/tools/cmake/cmake_toolchain/build_project_cmake_presets.html#examples-tools-cmake-toolchain-build-project-presets"><span class="std std-ref">Using “cmake_layout” + “CMakeToolchain” + “CMakePresets feature” to build your project</span></a>.</p></li>
 <li><p><a class="reference internal" href="../developing_packages/package_layout.html#tutorial-package-layout"><span class="std std-ref">Understanding the Conan Package layout</span></a>.</p></li>
 <li><p><a class="reference internal" href="../../reference/conanfile/methods.html#reference-conanfile-methods"><span class="std std-ref">Documentation for all conanfile.py available methods</span></a>.</p></li>
-<li><p>Importing resource files in the generate() method</p></li>
 <li><p>Conditional generators in configure()</p></li>
 </ul>
 </div>
@@ -475,7 +514,7 @@ Windows or that you want to use the system’s CMake installation instead of usi
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 05, 2024.
+      <span class="lastupdated">Last updated on Mar 06, 2024.
       </span></p>
   </div>
 
