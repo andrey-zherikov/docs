@@ -197,7 +197,7 @@ apply to all possible configurations. As explained below, it is not possible to 
 <li><p>Apply the <code class="docutils literal notranslate"><span class="pre">apply_conandata_patches()</span></code> Conan utility to automatically apply all patches defined in <code class="docutils literal notranslate"><span class="pre">conandata.yml</span></code> file following some conventions.</p></li>
 </ul>
 <section id="source-caching">
-<h2>Source caching<a class="headerlink" href="#source-caching" title="Link to this heading">¶</a></h2>
+<span id="reference-conanfile-methods-source-caching"></span><h2>Source caching<a class="headerlink" href="#source-caching" title="Link to this heading">¶</a></h2>
 <p>Once the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method has been called, its result will be cached and reused for any build from source, for any configuration. That means that the retrieval of sources from the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method should be completely independent of the configuration. It is not possible to implement conditionals on the <code class="docutils literal notranslate"><span class="pre">settings</span></code>, and in general, any attempt to apply any conditional logic to the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method is wrong.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">compiler</span> <span class="o">==</span> <span class="s2">&quot;gcc&quot;</span><span class="p">:</span>  <span class="c1"># ERROR, will raise</span>
@@ -258,7 +258,7 @@ apply to all possible configurations. As explained below, it is not possible to 
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 06, 2024.
+      <span class="lastupdated">Last updated on Mar 12, 2024.
       </span></p>
   </div>
 

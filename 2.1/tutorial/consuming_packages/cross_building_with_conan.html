@@ -217,6 +217,13 @@ section to the profile will invoke the VirtualBuildEnv generator everytime we do
 <strong class="command">conan install</strong>. This generator will add that environment information to the
 <code class="docutils literal notranslate"><span class="pre">conanbuild.sh</span></code> script that we will source before building with CMake so that it can use
 the cross-build toolchain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some cases, you don’t have the toolchain available on the build platform. For those
+cases, you can use a Conan package for the cross-compiler and add it to the
+<code class="docutils literal notranslate"><span class="pre">[tool_requires]</span></code> section of the profile. For an example of cross-building using a
+toolchain package, please check <a class="reference internal" href="../../examples/cross_build/toolchain_packages.html#example-cross-build-toolchain-package-use"><span class="std std-ref">this example</span></a>.</p>
+</div>
 <section id="build-and-host-contexts">
 <h3>Build and host contexts<a class="headerlink" href="#build-and-host-contexts" title="Link to this heading">¶</a></h3>
 <p>Now that we have our two profiles prepared, let’s have a look at our <em>conanfile.py</em>:</p>
@@ -304,6 +311,7 @@ stripped
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
+<li><p><a class="reference internal" href="../../examples/cross_build/toolchain_packages.html#example-cross-build-toolchain-package"><span class="std std-ref">Creating a Conan package for a toolchain</span></a></p></li>
 <li><p><a class="reference internal" href="../../examples/cross_build/android/ndk.html#examples-cross-build-android-ndk"><span class="std std-ref">Cross building to Android with the NDK</span></a></p></li>
 <li><p><a class="reference internal" href="../../reference/tools/env/virtualbuildenv.html#conan-tools-env-virtualbuildenv"><span class="std std-ref">VirtualBuildEnv reference</span></a></p></li>
 <li><p>Cross-build using a tool_requires</p></li>
@@ -327,7 +335,7 @@ stripped
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 06, 2024.
+      <span class="lastupdated">Last updated on Mar 12, 2024.
       </span></p>
   </div>
 
