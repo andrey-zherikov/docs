@@ -148,18 +148,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-config-home">
 <h2>conan config home<a class="headerlink" href="#conan-config-home" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config home -h
-usage: conan config home [-h] [-v [V]] [-cc CORE_CONF]
+usage: conan config home [-h] [-v [V]]
 
 Show the Conan home folder.
 
 options:
-  -h, --help            show this help message and exit
-  -v [V]                Level of detail of the output. Valid options from less
-                        verbose to more verbose: -vquiet, -verror, -vwarning,
-                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
-                        -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
+  -h, --help  show this help message and exit
+  -v [V]      Level of detail of the output. Valid options from less verbose
+              to more verbose: -vquiet, -verror, -vwarning, -vnotice,
+              -vstatus, -v or -vverbose, -vv or -vdebug, -vvv or -vtrace
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">config</span> <span class="pre">home</span></code> command returns the path of the Conan home folder.</p>
@@ -172,9 +169,8 @@ options:
 <section id="conan-config-install">
 <span id="reference-commands-conan-config-install"></span><h2>conan config install<a class="headerlink" href="#conan-config-install" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config install -h
-usage: conan config install [-h] [-v [V]] [-cc CORE_CONF]
-                            [--verify-ssl [VERIFY_SSL] | --insecure]
-                            [-t {git,dir,file,url}] [-a ARGS]
+usage: conan config install [-h] [-v [V]] [--verify-ssl [VERIFY_SSL] |
+                            --insecure] [-t {git,dir,file,url}] [-a ARGS]
                             [-sf SOURCE_FOLDER] [-tf TARGET_FOLDER]
                             item
 
@@ -191,8 +187,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --verify-ssl [VERIFY_SSL]
                         Verify SSL connection when downloading file
   --insecure            Allow insecure server connections when using SSL.
@@ -282,7 +276,7 @@ $ conan config install http://other/url/to/other.zip -sf=hooks -tf=hooks
 <section id="conan-config-list">
 <h2>conan config list<a class="headerlink" href="#conan-config-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config list -h
-usage: conan config list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
+usage: conan config list [-h] [-f FORMAT] [-v [V]]
 
 Show all the Conan available configurations: core and tools.
 
@@ -294,8 +288,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
 </pre></div>
 </div>
 <p>Displays all the Conan built-in configurations. There are 2 groups:</p>
@@ -323,12 +315,10 @@ core.package_id:default_embed_mode: By default, &#39;full_mode&#39;
 core.package_id:default_non_embed_mode: By default, &#39;minor_mode&#39;
 core.package_id:default_python_mode: By default, &#39;minor_mode&#39;
 core.package_id:default_unknown_mode: By default, &#39;semver_mode&#39;
-core.scm:excluded: List of excluded patterns for builtin git dirty checks
 core.sources:download_cache: Folder to store the sources backup
 core.sources:download_urls: List of URLs to download backup sources from
 core.sources:exclude_urls: URLs which will not be backed up
 core.sources:upload_url: Remote URL to upload backup sources to
-core.upload:parallel: Number of concurrent threads to upload packages
 core.upload:retry: Number of retries in case of failure when uploading to Conan server
 core.upload:retry_wait: Seconds to wait between upload attempts to Conan server
 core.version_ranges:resolve_prereleases: Whether version ranges can resolve to pre-releases or not
@@ -345,8 +335,7 @@ tools.apple:enable_arc: (boolean) Enable/Disable ARC Apple Clang flags
 tools.apple:enable_bitcode: (boolean) Enable/Disable Bitcode Apple Clang flags
 tools.apple:enable_visibility: (boolean) Enable/Disable Visibility Apple Clang flags
 tools.apple:sdk_path: Path to the SDK to be used
-tools.build.cross_building:can_run: (boolean) Indicates whether is possible to run a non-native app on the same architecture. It&#39;s used by &#39;can_run&#39; tool
-tools.build.cross_building:cross_build: (boolean) Decides whether cross-building or not regardless of arch/OS settings. Used by &#39;cross_building&#39; tool
+tools.build.cross_building:can_run: Bool value that indicates whether is possible to run a non-native app on the same architecture. It&#39;s used by &#39;can_run&#39; tool
 tools.build:cflags: List of extra C flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
 tools.build:compiler_executables: Defines a Python dict-like with the compilers path to be used. Allowed keys {&#39;c&#39;, &#39;cpp&#39;, &#39;cuda&#39;, &#39;objc&#39;, &#39;objcxx&#39;, &#39;rc&#39;, &#39;fortran&#39;, &#39;asm&#39;, &#39;hip&#39;, &#39;ispc&#39;}
 tools.build:cxxflags: List of extra CXX flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
@@ -368,7 +357,6 @@ tools.cmake.cmaketoolchain:system_processor: Define CMAKE_SYSTEM_PROCESSOR in CM
 tools.cmake.cmaketoolchain:system_version: Define CMAKE_SYSTEM_VERSION in CMakeToolchain
 tools.cmake.cmaketoolchain:toolchain_file: Use other existing file rather than conan_toolchain.cmake one
 tools.cmake.cmaketoolchain:toolset_arch: Toolset architecture to be used as part of CMAKE_GENERATOR_TOOLSET in CMakeToolchain
-tools.cmake.cmaketoolchain:toolset_cuda: (Experimental) Path to a CUDA toolset to use, or version if installed at the system level
 tools.cmake.cmaketoolchain:user_toolchain: Inject existing user toolchains at the beginning of conan_toolchain.cmake
 tools.cmake:cmake_program: Path to CMake executable
 tools.cmake:install_strip: Add --strip to cmake.install()
@@ -415,7 +403,7 @@ tools.system.package_manager:tool: Default package manager tool: &#39;apk&#39;, 
 <section id="conan-config-show">
 <h2>conan config show<a class="headerlink" href="#conan-config-show" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config show -h
-usage: conan config show [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] pattern
+usage: conan config show [-h] [-f FORMAT] [-v [V]] pattern
 
 Get the value of the specified conf
 
@@ -430,8 +418,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
 </pre></div>
 </div>
 <p>Shows the values of the conf items that match the given pattern.</p>
@@ -489,7 +475,7 @@ tools.files.download:retry_wait: 10
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 18, 2024.
+      <span class="lastupdated">Last updated on Mar 20, 2024.
       </span></p>
   </div>
 
@@ -509,6 +495,10 @@ tools.files.download:retry_wait: 10
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.2/index.html">2.2</a></dd>
+        
     
         
             <dd><a href="/2.1/index.html">2.1</a></dd>
@@ -647,6 +637,8 @@ tools.files.download:retry_wait: 10
         
     
     <br>
+    
+        
     
         
     
