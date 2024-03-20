@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>conan lock remove &mdash; conan 2.2.0 documentation</title>
+  <title>conan lock remove &mdash; conan 2.2.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
@@ -19,7 +19,7 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=b21de401"></script>
+        <script src="../../../_static/documentation_options.js?v=16656018"></script>
         <script src="../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -152,9 +152,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-lock-remove">
 <h1>conan lock remove<a class="headerlink" href="#conan-lock-remove" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock remove -h
-usage: conan lock remove [-h] [-v [V]] [--requires REQUIRES]
+usage: conan lock remove [-h] [-v [V]] [-cc CORE_CONF] [--requires REQUIRES]
                          [--build-requires BUILD_REQUIRES]
                          [--python-requires PYTHON_REQUIRES]
+                         [--config-requires CONFIG_REQUIRES]
                          [--lockfile-out LOCKFILE_OUT] [--lockfile LOCKFILE]
 
 Remove requires, build-requires or python-requires from an existing or new
@@ -167,11 +168,15 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   --requires REQUIRES   Remove references to lockfile.
   --build-requires BUILD_REQUIRES
                         Remove build-requires from lockfile
   --python-requires PYTHON_REQUIRES
                         Remove python-requires from lockfile
+  --config-requires CONFIG_REQUIRES
+                        Remove config-requires from lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the created lockfile
   --lockfile LOCKFILE   Filename of the input lockfile
