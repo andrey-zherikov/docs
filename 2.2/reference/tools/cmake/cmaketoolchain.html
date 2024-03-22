@@ -495,8 +495,8 @@ and added in this order:</p>
 If the configuration <code class="docutils literal notranslate"><span class="pre">tools.cmake.cmaketoolchain:user_toolchain=[&quot;xxxx&quot;,</span> <span class="pre">&quot;yyyy&quot;]</span></code> is defined, its values will be <code class="docutils literal notranslate"><span class="pre">include(xxx)\ninclude(yyyy)</span></code> as the
 first lines in <code class="docutils literal notranslate"><span class="pre">conan_toolchain.cmake</span></code>.</p></li>
 <li><p><strong>generic_system</strong>: Defines <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_VERSION</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_PROCESSOR</span></code>,
-<code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_PLATFORM</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_TOOLSET</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_C_COMPILER</span></code>,
-<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code></p></li>
+<code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_PLATFORM</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_GENERATOR_TOOLSET</span></code></p></li>
+<li><p><strong>compilers</strong>: Defines <code class="docutils literal notranslate"><span class="pre">CMAKE_&lt;LANG&gt;_COMPILER</span></code> for different languages, as defined by <code class="docutils literal notranslate"><span class="pre">tools.build:compiler_executables</span></code> configuration.</p></li>
 <li><p><strong>android_system</strong>: Defines <code class="docutils literal notranslate"><span class="pre">ANDROID_PLATFORM</span></code>, <code class="docutils literal notranslate"><span class="pre">ANDROID_STL</span></code>, <code class="docutils literal notranslate"><span class="pre">ANDROID_ABI</span></code> and includes <code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_PATH/build/cmake/android.toolchain.cmake</span></code>
 where <code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_PATH</span></code> comes defined in <code class="docutils literal notranslate"><span class="pre">tools.android:ndk_path</span></code> configuration value.</p></li>
 <li><p><strong>apple_system</strong>: Defines <code class="docutils literal notranslate"><span class="pre">CMAKE_OSX_ARCHITECTURES</span></code> (see the <a class="reference internal" href="#conan-tools-cmaketoolchain-universal-binaries"><span class="std std-ref">universal binaries section</span></a>), <code class="docutils literal notranslate"><span class="pre">CMAKE_OSX_SYSROOT</span></code> for Apple systems.</p></li>
@@ -765,7 +765,7 @@ follows:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 20, 2024.
+      <span class="lastupdated">Last updated on Mar 22, 2024.
       </span></p>
   </div>
 
