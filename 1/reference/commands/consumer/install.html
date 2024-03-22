@@ -242,16 +242,16 @@ optional arguments:
   --lockfile-out LOCKFILE_OUT
                         Filename of the updated lockfile
   -e ENV_HOST, --env ENV_HOST
-                        Environment variables that will be set during the
-                        package build (host machine). e.g.: -e
+                        (Deprecated) Environment variables that will be set
+                        during the package build (host machine). e.g.: -e
                         CXX=/usr/bin/clang++
   -e:b ENV_BUILD, --env:build ENV_BUILD
-                        Environment variables that will be set during the
-                        package build (build machine). e.g.: -e:b
+                        (Deprecated) Environment variables that will be set
+                        during the package build (build machine). e.g.: -e:b
                         CXX=/usr/bin/clang++
   -e:h ENV_HOST, --env:host ENV_HOST
-                        Environment variables that will be set during the
-                        package build (host machine). e.g.: -e:h
+                        (Deprecated) Environment variables that will be set
+                        during the package build (host machine). e.g.: -e:h
                         CXX=/usr/bin/clang++
   -o OPTIONS_HOST, --options OPTIONS_HOST
                         Define options values (host machine), e.g.: -o
@@ -415,8 +415,13 @@ Conan will exclude the build of the packages whose reference matches the given
 looked up. If it is set to <code class="docutils literal notranslate"><span class="pre">missing</span></code> or <code class="docutils literal notranslate"><span class="pre">always</span></code>, this build option will be used, otherwise the
 command will behave like <strong class="command">--build=never</strong> was set.</p>
 </section>
-<section id="env-variables">
-<h2>env variables<a class="headerlink" href="#env-variables" title="Link to this heading"></a></h2>
+<section id="env-variables-deprecated">
+<h2>env variables [DEPRECATED]<a class="headerlink" href="#env-variables-deprecated" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong class="command">-e</strong> parameters are deprecated and was removed in Conan 2.0. Use <strong class="command">-c</strong>, profile <cite>[conf]</cite> or
+<a class="reference internal" href="../../config_files/global_conf.html#global-conf"><span class="std std-ref">global.conf</span></a> instead.</p>
+</div>
 <p>With the <strong class="command">-e</strong> parameters you can define:</p>
 <ul class="simple">
 <li><p>Global environment variables (<strong class="command">-e SOME_VAR=&quot;SOME_VALUE&quot;</strong>). These variables will be defined
@@ -469,11 +474,6 @@ because the consumer conanfile might not declare a <cite>name</cite> so it would
 </section>
 <section id="folders">
 <h2>folders<a class="headerlink" href="#folders" title="Link to this heading"></a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This feature is still <strong>under development</strong>, while it is recommended and usable and we will try not to break them in future releases,
-some breaking changes might still happen if necessary to prepare for the <em>Conan 2.0 release</em>.</p>
-</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--output-folder</span></code> define together with the <code class="docutils literal notranslate"><span class="pre">layout()</span></code> recipe
 method the location of the output files. For example, the files created by build system integrations
 such as <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code> or <code class="docutils literal notranslate"><span class="pre">PkgConfigDeps</span></code> will be created in the folder defined by the
@@ -482,13 +482,9 @@ such as <code class="docutils literal notranslate"><span class="pre">CMakeToolch
 </section>
 <section id="conf">
 <h2>conf<a class="headerlink" href="#conf" title="Link to this heading"></a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This feature is still <strong>under development</strong>, while it is recommended and usable and we will try not to break them in future releases,
-some breaking changes might still happen if necessary to prepare for the <em>Conan 2.0 release</em>.</p>
-</div>
 <p>With the <strong class="command">-c</strong> parameters you can define specific tool configurations.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>-c<span class="w"> </span>tools.microsoft.msbuild:verbosity<span class="o">=</span>Diagnostic
+$<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>-c<span class="w"> </span>mypkg/*:tools.microsoft.msbuild:verbosity<span class="o">=</span>Diagnostic
 $<span class="w"> </span>conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>-c<span class="w"> </span>tools.microsoft.msbuild:verbosity<span class="o">=</span>Detailed<span class="w"> </span>-c<span class="w"> </span>tools.build:processes<span class="o">=</span><span class="m">10</span>
 </pre></div>
 </div>
@@ -590,7 +586,7 @@ an overriding mechanism, and they are private to their consumer, not propagating
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 20, 2024.
+      <span class="lastupdated">Last updated on Mar 22, 2024.
       </span></p>
   </div>
 
