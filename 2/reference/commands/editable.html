@@ -148,10 +148,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-editable-add">
 <h2>conan editable add<a class="headerlink" href="#conan-editable-add" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable add -h
-usage: conan editable add [-h] [-v [V]] [-cc CORE_CONF] [--name NAME]
-                          [--version VERSION] [--user USER]
-                          [--channel CHANNEL] [-of OUTPUT_FOLDER]
-                          [-r REMOTE | -nr]
+usage: conan editable add [-h] [-v [V]] [--name NAME] [--version VERSION]
+                          [--user USER] [--channel CHANNEL]
+                          [-of OUTPUT_FOLDER] [-r REMOTE | -nr]
                           path
 
 Define the given &lt;path&gt; location as the package &lt;reference&gt;, so when this
@@ -167,8 +166,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --name NAME           Provide a package name if not specified in conanfile
   --version VERSION     Provide a package version if not specified in
                         conanfile
@@ -185,7 +182,7 @@ options:
 <section id="conan-editable-remove">
 <h2>conan editable remove<a class="headerlink" href="#conan-editable-remove" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable remove -h
-usage: conan editable remove [-h] [-v [V]] [-cc CORE_CONF] [-r REFS] [path]
+usage: conan editable remove [-h] [-v [V]] [-r REFS] [path]
 
 Remove the &quot;editable&quot; mode for this reference.
 
@@ -200,8 +197,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -r REFS, --refs REFS  Directly provide reference patterns
 </pre></div>
 </div>
@@ -209,7 +204,7 @@ options:
 <section id="conan-editable-list">
 <h2>conan editable list<a class="headerlink" href="#conan-editable-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable list -h
-usage: conan editable list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
+usage: conan editable list [-h] [-f FORMAT] [-v [V]]
 
 List all the packages in editable mode.
 
@@ -221,8 +216,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -246,7 +239,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Mar 25, 2024.
+      <span class="lastupdated">Last updated on Apr 04, 2024.
       </span></p>
   </div>
 
@@ -404,6 +397,8 @@ options:
         
     
         
+    
+        
             <dd><a href="/2/index.html">2</a></dd>
         
     
@@ -417,6 +412,10 @@ options:
     
         
             <dd><a href="/1/index.html">1</a></dd>
+        
+    
+        
+            <dd><a href="/en/1.64/index.html">1.64</a></dd>
         
     
         
