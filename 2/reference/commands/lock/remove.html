@@ -152,9 +152,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-lock-remove">
 <h1>conan lock remove<a class="headerlink" href="#conan-lock-remove" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock remove -h
-usage: conan lock remove [-h] [-v [V]] [--requires REQUIRES]
+usage: conan lock remove [-h] [-v [V]] [-cc CORE_CONF] [--requires REQUIRES]
                          [--build-requires BUILD_REQUIRES]
                          [--python-requires PYTHON_REQUIRES]
+                         [--config-requires CONFIG_REQUIRES]
                          [--lockfile-out LOCKFILE_OUT] [--lockfile LOCKFILE]
 
 Remove requires, build-requires or python-requires from an existing or new
@@ -167,11 +168,15 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   --requires REQUIRES   Remove references to lockfile.
   --build-requires BUILD_REQUIRES
                         Remove build-requires from lockfile
   --python-requires PYTHON_REQUIRES
                         Remove python-requires from lockfile
+  --config-requires CONFIG_REQUIRES
+                        Remove config-requires from lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the created lockfile
   --lockfile LOCKFILE   Filename of the input lockfile
@@ -244,7 +249,7 @@ to resolve to the latest available versions for the unlocked dependencies, while
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 04, 2024.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
       </span></p>
   </div>
 

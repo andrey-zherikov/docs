@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-cache-path">
 <h2>conan cache path<a class="headerlink" href="#conan-cache-path" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache path -h
-usage: conan cache path [-h] [-v [V]]
+usage: conan cache path [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                         [--folder {export_source,source,build,metadata}]
                         reference
 
@@ -159,10 +159,14 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
   -v [V]                Level of detail of the output. Valid options from less
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   --folder {export_source,source,build,metadata}
                         Path to show. The &#39;build&#39; requires a package
                         reference. If the argument is not passed, it shows
@@ -273,7 +277,8 @@ be copied and pasted into the <code class="docutils literal notranslate"><span c
 <section id="conan-cache-clean">
 <h2>conan cache clean<a class="headerlink" href="#conan-cache-clean" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean -h
-usage: conan cache clean [-h] [-v [V]] [-s] [-b] [-d] [-t] [-p PACKAGE_QUERY]
+usage: conan cache clean [-h] [-v [V]] [-cc CORE_CONF] [-s] [-b] [-d] [-t]
+                         [-bs] [-p PACKAGE_QUERY]
                          [pattern]
 
 Remove non-critical folders from the cache, like source, build and/or download
@@ -288,10 +293,14 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -s, --source          Clean source folders
   -b, --build           Clean build folders
   -d, --download        Clean download and metadata folders
   -t, --temp            Clean temporary folders
+  -bs, --backup-sources
+                        Clean backup sources
   -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
                         Remove only the packages matching a specific query,
                         e.g., os=Windows AND (arch=x86 OR compiler=gcc)
@@ -327,7 +336,9 @@ unless a specific flag is supplied, in which case only the specified folders wil
 <section id="conan-cache-check-integrity">
 <h2>conan cache check-integrity<a class="headerlink" href="#conan-cache-check-integrity" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache check-integrity -h
-usage: conan cache check-integrity [-h] [-v [V]] [-p PACKAGE_QUERY] pattern
+usage: conan cache check-integrity [-h] [-v [V]] [-cc CORE_CONF]
+                                   [-p PACKAGE_QUERY]
+                                   pattern
 
 Check the integrity of the local cache for the given references
 
@@ -341,6 +352,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
                         Only the packages matching a specific query, e.g.,
                         os=Windows AND (arch=x86 OR compiler=gcc)
@@ -362,15 +375,18 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
 <section id="conan-cache-backup-upload">
 <h2>conan cache backup-upload<a class="headerlink" href="#conan-cache-backup-upload" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache backup-upload -h
-usage: conan cache backup-upload [-h] [-v [V]]
+usage: conan cache backup-upload [-h] [-v [V]] [-cc CORE_CONF]
 
 Upload all the source backups present in the cache
 
 options:
-  -h, --help  show this help message and exit
-  -v [V]      Level of detail of the output. Valid options from less verbose
-              to more verbose: -vquiet, -verror, -vwarning, -vnotice,
-              -vstatus, -v or -vverbose, -vv or -vdebug, -vvv or -vtrace
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">backup-upload</span></code> will upload all source backups present in the local cache to the backup server,
@@ -380,7 +396,8 @@ regardless of which package they belong to, if any.</p>
 <section id="conan-cache-save">
 <h2>conan cache save<a class="headerlink" href="#conan-cache-save" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache save -h
-usage: conan cache save [-h] [-f FORMAT] [-v [V]] [-l LIST] [--file FILE]
+usage: conan cache save [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] [-l LIST]
+                        [--file FILE]
                         [pattern]
 
 Get the artifacts from a package list and archive them
@@ -399,6 +416,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -l LIST, --list LIST  Package list of packages to save
   --file FILE           Save to this tgz file
 </pre></div>
@@ -408,7 +427,7 @@ options:
 <section id="conan-cache-restore">
 <h2>conan cache restore<a class="headerlink" href="#conan-cache-restore" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache restore -h
-usage: conan cache restore [-h] [-f FORMAT] [-v [V]] file
+usage: conan cache restore [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] file
 
 Put the artifacts from an archive into the cache
 
@@ -423,6 +442,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
 </pre></div>
 </div>
 <p>Read more in <a class="reference internal" href="../../devops/save_restore.html#devops-save-restore"><span class="std std-ref">Save and restore packages from/to the cache</span></a>.</p>
@@ -441,7 +462,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 04, 2024.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
       </span></p>
   </div>
 
