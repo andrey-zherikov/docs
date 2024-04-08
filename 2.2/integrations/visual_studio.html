@@ -119,6 +119,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="visual-studio-logo-visual-studio">
 <span id="integrations-visual-studio"></span><h1><img alt="visual_studio_logo" src="../_images/conan-visual_studio-logo.png" /> Visual Studio<a class="headerlink" href="#visual-studio-logo-visual-studio" title="Link to this heading">¶</a></h1>
+<section id="recipe-tools-for-visual-studio">
+<h2>Recipe tools for Visual Studio<a class="headerlink" href="#recipe-tools-for-visual-studio" title="Link to this heading">¶</a></h2>
 <p>Conan provides several tools to help manage your projects using Microsoft Visual Studio.
 These tools can be imported from <code class="docutils literal notranslate"><span class="pre">conan.tools.microsoft</span></code> and allow for native
 integration with Microsoft Visual Studio, without the need to use CMake and instead
@@ -139,14 +141,79 @@ will abstract the calls like <code class="docutils literal notranslate"><span cl
 </ul>
 <p>For the full list of tools under <code class="docutils literal notranslate"><span class="pre">conan.tools.microsoft</span></code> please check the
 <a class="reference internal" href="../reference/tools/microsoft.html#conan-tools-microsoft"><span class="std std-ref">reference</span></a> section.</p>
+</section>
+<section id="conan-extension-for-visual-studio">
+<span id="integrations-visual-studio-extension"></span><h2>Conan extension for Visual Studio<a class="headerlink" href="#conan-extension-for-visual-studio" title="Link to this heading">¶</a></h2>
+<p>There’s an extension <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=conan-io.conan-vs-extension">available in the VisualStudio Marketplace</a> that’s
+compatible begining from Visual Studio  version <em>2022</em>. With this extension, you can
+browse Conan packages available in <a class="reference external" href="https://conan.io/center">Conan Center</a>, add them to
+your project, and they will be automatically installed before building your projects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Visual Studio extension is only compatible with C/C++ projects based on MSBuild. It
+will not work with CMake-based projects or projects using other technologies. For
+CMake-based projects, please refer to the <a class="reference external" href="https://github.com/conan-io/cmake-conan">cmake-conan dependency provider</a>.</p>
+</div>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h3>
+<p>The Conan Visual Studio Extension can be installed directly from within Visual Studio:</p>
+<ul class="simple">
+<li><p>Open the Extensions menu.</p></li>
+<li><p>Select Manage Extensions.</p></li>
+<li><p>Search for “Conan” in the Online marketplace.</p></li>
+<li><p>Download and install the extension.</p></li>
+</ul>
+<p>Alternatively, you can download the latest release from our <a class="reference external" href="https://github.com/conan-io/conan-vs-extension/releases/latest">releases page</a> and install it
+manually.</p>
+</section>
+<section id="initial-configuration">
+<h3>Initial Configuration<a class="headerlink" href="#initial-configuration" title="Link to this heading">¶</a></h3>
+<p>After installing the Conan extension, you can access it from the “Conan” tool window in
+Visual Studio. To do so, go to <strong>View &gt; Other Windows &gt; Conan C/C++ Package Manager</strong>.</p>
+<img alt="Initial configuration" src="../_images/tool-window-extension.png" />
+<p>Initially, you will need to configure the Conan executable to be used by the extension. By
+clicking on the <em>configure</em> button (gear icon) from the extension’s window, you can set up
+the path to the Conan client executable. You can either specify a custom path or choose to
+use the Conan client installed at the system level.</p>
+<img alt="Select Conan executable" src="../_images/select-conan-executable.png" />
+<p>Once you have configured the Conan client, the extension is ready to use, and you can
+start adding libraries to your project.</p>
+</section>
+<section id="searching-and-adding-libraries">
+<h3>Searching and Adding Libraries<a class="headerlink" href="#searching-and-adding-libraries" title="Link to this heading">¶</a></h3>
+<p>Once configured, the library list in the Conan tool window becomes active, and you can
+search for Conan packages using the search bar. Selecting a library will allow you to view
+its details, including available versions and integration options.</p>
+<img alt="Search for Conan packages" src="../_images/search-packages.png" />
+<p>If you now click the <cite>Add requirement</cite> button, the extension will add a <cite>conanfile.py</cite> and
+a <cite>conandata.yml</cite> to your project with the necessary information to install the selected
+Conan packages. It will also add a prebuild event to the project to install those
+libraries on the next compilation of the project.</p>
+<p>At any point, you can also use the <em>refresh</em> button (circular arrow icon) to update the list of available
+packages in <a class="reference external" href="https://conan.io/center">Conan Center</a>.</p>
+<p>Now, if you initiate the build process for your project, the pre-build event will trigger
+Conan to install the packages and inject the necessary properties into the project,
+enabling Visual Studio to compile and link against those libraries.</p>
+<img alt="Build project with Conan packages" src="../_images/build-project.png" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The initial compilation might fail if Visual Studio does not have sufficient time to
+process the injected properties. If this happens, simply rebuild the project, and it
+should build successfully.</p>
+</div>
+<p>For a more in-depth introduction to the Conan Visual Studio extension with a practical
+example, please check this <a class="reference external" href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">example in Conan blog</a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p>Reference for <a class="reference internal" href="../reference/tools/microsoft/msbuilddeps.html#conan-tools-microsoft-msbuilddeps"><span class="std std-ref">MSBuildDeps</span></a>,
 <a class="reference internal" href="../reference/tools/microsoft/msbuildtoolchain.html#conan-tools-microsoft-msbuildtoolchain"><span class="std std-ref">MSBuildToolchain</span></a> and
 <a class="reference internal" href="../reference/tools/microsoft/msbuild.html#conan-tools-microsoft-msbuild"><span class="std std-ref">MSBuild</span></a>.</p></li>
+<li><p><a class="reference internal" href="clion.html#integrations-clion"><span class="std std-ref">CLion Conan plugin</span></a>.</p></li>
 </ul>
 </div>
+</section>
+</section>
 </section>
 
 
