@@ -25,7 +25,7 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="tools.microsoft" href="../../../microsoft/msbuild.html" />
+    <link rel="next" title="MSBuild" href="../../../microsoft/msbuild.html" />
     <link rel="prev" title="Create your first Conan package with Autotools" href="../../../autotools/create_your_first_package.html" />
 
  <!-- Google Tag Manager -->
@@ -77,13 +77,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="../../../../conanfile.html">ConanFile methods examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../extensions.html">Conan extensions examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../tools.html">Conan recipe tools examples</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../../cmake/cmake.html">tools.cmake</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../files/files.html">tools.files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../meson/meson.html">tools.meson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../google/bazel.html">tools.google</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../autotools/autotools.html">tools.autotools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cmake/cmake.html">CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../files/files.html">File interaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../meson/meson.html">Meson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../google/bazel.html">Bazel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autotools/autotools.html">Autotools</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Capturing Git scm information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../microsoft/msbuild.html">tools.microsoft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../microsoft/msbuild.html">MSBuild</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../cross_build.html">Cross-building examples</a></li>
@@ -148,7 +148,6 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examp
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">conan</span> <span class="kn">import</span> <span class="n">ConanFile</span>
 <span class="kn">from</span> <span class="nn">conan.tools.cmake</span> <span class="kn">import</span> <span class="n">CMake</span><span class="p">,</span> <span class="n">cmake_layout</span>
 <span class="kn">from</span> <span class="nn">conan.tools.scm</span> <span class="kn">import</span> <span class="n">Git</span>
-<span class="kn">from</span> <span class="nn">conan.tools.files</span> <span class="kn">import</span> <span class="n">load</span><span class="p">,</span> <span class="n">update_conandata</span>
 
 
 <span class="k">class</span> <span class="nc">helloRecipe</span><span class="p">(</span><span class="n">ConanFile</span><span class="p">):</span>
@@ -163,18 +162,13 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examp
 
     <span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">git</span> <span class="o">=</span> <span class="n">Git</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe_folder</span><span class="p">)</span>
-        <span class="n">scm_url</span><span class="p">,</span> <span class="n">scm_commit</span> <span class="o">=</span> <span class="n">git</span><span class="o">.</span><span class="n">get_url_and_commit</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Obtained URL: </span><span class="si">{</span><span class="n">scm_url</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">scm_commit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="c1"># we store the current url and commit in conandata.yml</span>
-        <span class="n">update_conandata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;sources&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;commit&quot;</span><span class="p">:</span> <span class="n">scm_commit</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">scm_url</span><span class="p">}})</span>
+        <span class="c1"># save the url and commit in conandata.yml</span>
+        <span class="n">git</span><span class="o">.</span><span class="n">coordinates_to_conandata</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># we recover the saved url and commit from conandata.yml and use them to get sources</span>
         <span class="n">git</span> <span class="o">=</span> <span class="n">Git</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">sources</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conan_data</span><span class="p">[</span><span class="s2">&quot;sources&quot;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cloning sources from: </span><span class="si">{</span><span class="n">sources</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">git</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">sources</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-        <span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="n">sources</span><span class="p">[</span><span class="s2">&quot;commit&quot;</span><span class="p">])</span>
+        <span class="n">git</span><span class="o">.</span><span class="n">checkout_from_conandata_coordinates</span><span class="p">()</span>
 
     <span class="o">...</span>
 </pre></div>
@@ -192,26 +186,47 @@ $ git commit . -m wip
 # Finally create the package
 $ conan create .
 ...
-hello/0.1: WARN: Current commit 8e8764c40bebabbe3ec57f9a0816a2c8e691f559 doesn&#39;t exist in remote origin
+======== Exporting recipe to the cache ========
+hello/0.1: Exporting package recipe: /myfolder/conanfile.py
+hello/0.1: Calling export()
+hello/0.1: RUN: git status . --short --no-branch --untracked-files
+hello/0.1: RUN: git rev-list HEAD -n 1 --full-history -- &quot;.&quot;
+hello/0.1: RUN: git remote -v
+hello/0.1: RUN: git branch -r --contains cb7815a58529130b49da952362ce8b28117dee53
+hello/0.1: RUN: git fetch origin --dry-run --depth=1 cb7815a58529130b49da952362ce8b28117dee53
+hello/0.1: WARN: Current commit cb7815a58529130b49da952362ce8b28117dee53 doesn&#39;t exist in remote origin
 This revision will not be buildable in other computer
-hello/0.1: Obtained URL: &lt;local-path&gt;/capture_scm and 8e8764c40bebabbe3ec57f9a0816a2c8e691f559
-hello/0.1: Copied 1 &#39;.yml&#39; file: conandata.yml
+hello/0.1: RUN: git rev-parse --show-toplevel
 hello/0.1: Copied 1 &#39;.py&#39; file: conanfile.py
+hello/0.1: Copied 1 &#39;.yml&#39; file: conandata.yml
+hello/0.1: Exported to cache folder: /.conan2/p/hello237d6f9f65bba/e
 ...
-hello/0.1: Cloning sources from: {&#39;commit&#39;: &#39;8e8764c40bebabbe3ec57f9a0816a2c8e691f559&#39;, &#39;url&#39;: &#39;&lt;local-path&gt;/capture_scm&#39;}
+======== Installing packages ========
+hello/0.1: Calling source() in /.conan2/p/hello237d6f9f65bba/s
+hello/0.1: Cloning git repo
+hello/0.1: RUN: git clone &quot;&lt;hidden&gt;&quot;  &quot;.&quot;
+hello/0.1: Checkout: cb7815a58529130b49da952362ce8b28117dee53
+hello/0.1: RUN: git checkout cb7815a58529130b49da952362ce8b28117dee53
 </pre></div>
 </div>
 <p>Let’s explain step by step what is happening:</p>
 <ul class="simple">
-<li><p>When the recipe is exported to the Conan cache, the <code class="docutils literal notranslate"><span class="pre">export()</span></code> method executes, running <code class="docutils literal notranslate"><span class="pre">scm_url,</span> <span class="pre">scm_commit</span> <span class="pre">=</span> <span class="pre">git.get_url_and_commit()</span></code>. See the <a class="reference internal" href="../../../../../reference/tools/scm/git.html#conan-tools-scm-git"><span class="std std-ref">Git reference</span></a> for more information about these methods.</p></li>
+<li><p>When the recipe is exported to the Conan cache, the <code class="docutils literal notranslate"><span class="pre">export()</span></code> method executes, <code class="docutils literal notranslate"><span class="pre">git.coordinates_to_conandata()</span></code>,
+which stores the Git URL and commit in the <code class="docutils literal notranslate"><span class="pre">conandata.yml</span></code> file by internally calling <code class="docutils literal notranslate"><span class="pre">git.get_url_and_commit()</span></code>.
+See the <a class="reference internal" href="../../../../../reference/tools/scm/git.html#conan-tools-scm-git"><span class="std std-ref">Git reference</span></a> for more information about these methods.</p></li>
 <li><p>This obtains the URL of the repo pointing to the local <code class="docutils literal notranslate"><span class="pre">&lt;local-path&gt;/capture_scm</span></code> and the commit <code class="docutils literal notranslate"><span class="pre">8e8764c40bebabbe3ec57f9a0816a2c8e691f559</span></code></p></li>
 <li><p>It warns that this information will <strong>not</strong> be enough to re-build from source this recipe once the package is uploaded to the server and is tried to be built from source in other computer, which will not contain the path pointed by <code class="docutils literal notranslate"><span class="pre">&lt;local-path&gt;/capture_scm</span></code>. This is expected, as the repository that we created doesn’t have any remote defined. If our local clone had a remote defined and that remote contained the <code class="docutils literal notranslate"><span class="pre">commit</span></code> that we are building, the <code class="docutils literal notranslate"><span class="pre">scm_url</span></code> would point to the remote repository instead, making the build from source fully reproducible.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">export()</span></code> method stores the <code class="docutils literal notranslate"><span class="pre">url</span></code> and <code class="docutils literal notranslate"><span class="pre">commit</span></code> information in the <code class="docutils literal notranslate"><span class="pre">conandata.yml</span></code> for future reproducibility.</p></li>
-<li><p>When the package needs to be built from sources and it calls the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method, it recovers the information from the <code class="docutils literal notranslate"><span class="pre">conandata.yml</span></code> file, and calls <code class="docutils literal notranslate"><span class="pre">git.clone()</span></code> with it to retrieve the sources. In this case, it will be cloning from the local checkout in <code class="docutils literal notranslate"><span class="pre">&lt;local-path&gt;/capture_scm</span></code>, but if it had a remote defined, it will clone from it.</p></li>
+<li><p>When the package needs to be built from sources and it calls the <code class="docutils literal notranslate"><span class="pre">source()</span></code> method,
+it recovers the information from the <code class="docutils literal notranslate"><span class="pre">conandata.yml</span></code> file inside the <code class="docutils literal notranslate"><span class="pre">git.checkout_from_conandata_coordinates()</span></code> method,
+which internally calls <code class="docutils literal notranslate"><span class="pre">git.clone()</span></code> with it to retrieve the sources.
+In this case, it will be cloning from the local checkout in <code class="docutils literal notranslate"><span class="pre">&lt;local-path&gt;/capture_scm</span></code>, but if it had a remote defined, it will clone from it.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>To achieve reproducibility, it is very important for this <strong>scm capture</strong> technique that the current checkout is not dirty. If it was dirty, it would be impossible to guarantee future reproducibility of the build, so <code class="docutils literal notranslate"><span class="pre">git.get_url_and_commit()</span></code> can raise errors, and require to commit changes. If more than 1 commit is necessary, it would be recommended to squash those commits before pushing changes to upstream repositories.</p>
+<p>To achieve reproducibility, it is very important for this <strong>scm capture</strong> technique that the current checkout is not dirty
+If it was dirty, it would be impossible to guarantee future reproducibility of the build, so <code class="docutils literal notranslate"><span class="pre">git.get_url_and_commit()</span></code> can raise errors,
+and require to commit changes. If more than 1 commit is necessary, it would be recommended to squash those commits before pushing changes to upstream repositories.</p>
 </div>
 <p>If we do now a second <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span> <span class="pre">.</span></code>, as the repo is dirty we would get:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan create .
@@ -282,14 +297,14 @@ test_package/CMakeUserPresets.json
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../../autotools/create_your_first_package.html" class="btn btn-neutral float-left" title="Create your first Conan package with Autotools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../../microsoft/msbuild.html" class="btn btn-neutral float-right" title="tools.microsoft" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../../microsoft/msbuild.html" class="btn btn-neutral float-right" title="MSBuild" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 04, 2024.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
       </span></p>
   </div>
 
