@@ -152,11 +152,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-info">
 <span id="reference-graph-info"></span><h1>conan graph info<a class="headerlink" href="#conan-graph-info" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph info -h
-usage: conan graph info [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
-                        [--name NAME] [--version VERSION] [--user USER]
-                        [--channel CHANNEL] [--requires REQUIRES]
-                        [--tool-requires TOOL_REQUIRES] [-b BUILD]
-                        [-r REMOTE | -nr] [-u [UPDATE]] [-pr PROFILE]
+usage: conan graph info [-h] [-f FORMAT] [-v [V]] [--name NAME]
+                        [--version VERSION] [--user USER] [--channel CHANNEL]
+                        [--requires REQUIRES] [--tool-requires TOOL_REQUIRES]
+                        [-b BUILD] [-r REMOTE | -nr] [-u] [-pr PROFILE]
                         [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
                         [-pr:a PROFILE_ALL] [-o OPTIONS] [-o:b OPTIONS_BUILD]
                         [-o:h OPTIONS_HOST] [-o:a OPTIONS_ALL] [-s SETTINGS]
@@ -164,7 +163,7 @@ usage: conan graph info [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                         [-s:a SETTINGS_ALL] [-c CONF] [-c:b CONF_BUILD]
                         [-c:h CONF_HOST] [-c:a CONF_ALL] [-l LOCKFILE]
                         [--lockfile-partial] [--lockfile-out LOCKFILE_OUT]
-                        [--lockfile-clean]
+                        [--lockfile-packages] [--lockfile-clean]
                         [--lockfile-overrides LOCKFILE_OVERRIDES]
                         [--check-updates] [--filter FILTER]
                         [--package-filter PACKAGE_FILTER] [-d DEPLOYER]
@@ -186,8 +185,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --name NAME           Provide a package name if not specified in conanfile
   --version VERSION     Provide a package version if not specified in
                         conanfile
@@ -219,13 +216,13 @@ options:
   -r REMOTE, --remote REMOTE
                         Look in the specified remote or remotes server
   -nr, --no-remote      Do not use remote, resolve exclusively in the cache
-  -u [UPDATE], --update [UPDATE]
-                        Will install newer versions and/or revisions in the
-                        local cache for the given reference, or all in case no
-                        argument is supplied. When using version ranges, it
-                        will install the latest version that satisfies the
-                        range. Also, if using revisions, it will update to the
-                        latest revision for the resolved version range.
+  -u, --update          Will check the remote and in case a newer version
+                        and/or revision of the dependencies exists there, it
+                        will install those in the local cache. When using
+                        version ranges, it will install the latest version
+                        that satisfies the range. Also, if using revisions, it
+                        will update to the latest revision for the resolved
+                        version range.
   -pr PROFILE, --profile PROFILE
                         Apply the specified profile. By default, or if
                         specifying -pr:h (--profile:host), it applies to the
@@ -268,6 +265,7 @@ options:
                         in lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the updated lockfile
+  --lockfile-packages   Lock package-id and package-revision information
   --lockfile-clean      Remove unused entries from the lockfile
   --lockfile-overrides LOCKFILE_OVERRIDES
                         Overwrite lockfile overrides
@@ -551,7 +549,7 @@ to point to a local version of these files:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 08, 2024.
+      <span class="lastupdated">Last updated on Apr 16, 2024.
       </span></p>
   </div>
 
