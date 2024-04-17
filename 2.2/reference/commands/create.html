@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>conan create &mdash; conan 2.2.2 documentation</title>
+  <title>conan create &mdash; conan 2.2.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
@@ -19,7 +19,7 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=219dea72"></script>
+        <script src="../../_static/documentation_options.js?v=85e56e6b"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -153,19 +153,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-create">
 <span id="reference-commands-create"></span><h1>conan create<a class="headerlink" href="#conan-create" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan create -h
-usage: conan create [-h] [-v [V]] [-f FORMAT] [--name NAME]
+usage: conan create [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [--name NAME]
                     [--version VERSION] [--user USER] [--channel CHANNEL]
                     [-l LOCKFILE] [--lockfile-partial]
-                    [--lockfile-out LOCKFILE_OUT] [--lockfile-packages]
-                    [--lockfile-clean]
+                    [--lockfile-out LOCKFILE_OUT] [--lockfile-clean]
                     [--lockfile-overrides LOCKFILE_OVERRIDES] [-b BUILD]
-                    [-r REMOTE | -nr] [-u] [-pr PROFILE] [-pr:b PROFILE_BUILD]
-                    [-pr:h PROFILE_HOST] [-pr:a PROFILE_ALL] [-o OPTIONS]
-                    [-o:b OPTIONS_BUILD] [-o:h OPTIONS_HOST]
-                    [-o:a OPTIONS_ALL] [-s SETTINGS] [-s:b SETTINGS_BUILD]
-                    [-s:h SETTINGS_HOST] [-s:a SETTINGS_ALL] [-c CONF]
-                    [-c:b CONF_BUILD] [-c:h CONF_HOST] [-c:a CONF_ALL]
-                    [--build-require] [-tf TEST_FOLDER] [-bt BUILD_TEST]
+                    [-r REMOTE | -nr] [-u [UPDATE]] [-pr PROFILE]
+                    [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
+                    [-pr:a PROFILE_ALL] [-o OPTIONS] [-o:b OPTIONS_BUILD]
+                    [-o:h OPTIONS_HOST] [-o:a OPTIONS_ALL] [-s SETTINGS]
+                    [-s:b SETTINGS_BUILD] [-s:h SETTINGS_HOST]
+                    [-s:a SETTINGS_ALL] [-c CONF] [-c:b CONF_BUILD]
+                    [-c:h CONF_HOST] [-c:a CONF_ALL] [--build-require]
+                    [-tf TEST_FOLDER] [-bt BUILD_TEST]
                     path
 
 Create a package.
@@ -179,6 +179,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   --name NAME           Provide a package name if not specified in conanfile
@@ -193,7 +195,6 @@ options:
                         in lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the updated lockfile
-  --lockfile-packages   Lock package-id and package-revision information
   --lockfile-clean      Remove unused entries from the lockfile
   --lockfile-overrides LOCKFILE_OVERRIDES
                         Overwrite lockfile overrides
@@ -220,13 +221,13 @@ options:
   -r REMOTE, --remote REMOTE
                         Look in the specified remote or remotes server
   -nr, --no-remote      Do not use remote, resolve exclusively in the cache
-  -u, --update          Will check the remote and in case a newer version
-                        and/or revision of the dependencies exists there, it
-                        will install those in the local cache. When using
-                        version ranges, it will install the latest version
-                        that satisfies the range. Also, if using revisions, it
-                        will update to the latest revision for the resolved
-                        version range.
+  -u [UPDATE], --update [UPDATE]
+                        Will install newer versions and/or revisions in the
+                        local cache for the given reference, or all in case no
+                        argument is supplied. When using version ranges, it
+                        will install the latest version that satisfies the
+                        range. Also, if using revisions, it will update to the
+                        latest revision for the resolved version range.
   -pr PROFILE, --profile PROFILE
                         Apply the specified profile. By default, or if
                         specifying -pr:h (--profile:host), it applies to the

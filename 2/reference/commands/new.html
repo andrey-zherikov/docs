@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>conan new &mdash; conan 2.2.2 documentation</title>
+  <title>conan new &mdash; conan 2.2.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
@@ -19,7 +19,7 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=219dea72"></script>
+        <script src="../../_static/documentation_options.js?v=85e56e6b"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -156,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="id1">
 <h2>conan new<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan new -h
-usage: conan new [-h] [-v [V]] [-d DEFINE] [-f] template
+usage: conan new [-h] [-v [V]] [-cc CORE_CONF] [-d DEFINE] [-f] template
 
 Create a new example recipe and source files from a template.
 
@@ -165,11 +165,11 @@ positional arguments:
                         provided one. Available built-in templates: basic,
                         cmake_lib, cmake_exe, meson_lib, meson_exe,
                         msbuild_lib, msbuild_exe, bazel_lib, bazel_exe,
-                        autotools_lib, autotools_exe. E.g. &#39;conan new
-                        cmake_lib -d name=hello -d version=0.1&#39;. You can
-                        define your own templates too by inputting an absolute
-                        path as your template, or a path relative to your
-                        conan home folder.
+                        autotools_lib, autotools_exe, local_recipes_indexE.g.
+                        &#39;conan new cmake_lib -d name=hello -d version=0.1&#39;.
+                        You can define your own templates too by inputting an
+                        absolute path as your template, or a path relative to
+                        your conan home folder.
 
 options:
   -h, --help            show this help message and exit
@@ -177,6 +177,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -d DEFINE, --define DEFINE
                         Define a template argument as key=value, e.g., -d
                         name=mypkg

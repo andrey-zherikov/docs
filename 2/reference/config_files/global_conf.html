@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>global.conf &mdash; conan 2.2.2 documentation</title>
+  <title>global.conf &mdash; conan 2.2.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=79c6a522" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
@@ -19,7 +19,7 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=219dea72"></script>
+        <script src="../../_static/documentation_options.js?v=85e56e6b"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -173,15 +173,18 @@ core.net.http:max_retries: Maximum number of connection retries (requests librar
 core.net.http:no_proxy_match: List of urls to skip from proxies configuration
 core.net.http:proxies: Dictionary containing the proxy configuration
 core.net.http:timeout: Number of seconds without response to timeout (requests library)
+core.package_id:config_mode: How the &#39;config_version&#39; affects binaries. By default &#39;None&#39;
 core.package_id:default_build_mode: By default, &#39;None&#39;
 core.package_id:default_embed_mode: By default, &#39;full_mode&#39;
 core.package_id:default_non_embed_mode: By default, &#39;minor_mode&#39;
 core.package_id:default_python_mode: By default, &#39;minor_mode&#39;
 core.package_id:default_unknown_mode: By default, &#39;semver_mode&#39;
+core.scm:excluded: List of excluded patterns for builtin git dirty checks
 core.sources:download_cache: Folder to store the sources backup
 core.sources:download_urls: List of URLs to download backup sources from
 core.sources:exclude_urls: URLs which will not be backed up
 core.sources:upload_url: Remote URL to upload backup sources to
+core.upload:parallel: Number of concurrent threads to upload packages
 core.upload:retry: Number of retries in case of failure when uploading to Conan server
 core.upload:retry_wait: Seconds to wait between upload attempts to Conan server
 core.version_ranges:resolve_prereleases: Whether version ranges can resolve to pre-releases or not
@@ -198,7 +201,8 @@ tools.apple:enable_arc: (boolean) Enable/Disable ARC Apple Clang flags
 tools.apple:enable_bitcode: (boolean) Enable/Disable Bitcode Apple Clang flags
 tools.apple:enable_visibility: (boolean) Enable/Disable Visibility Apple Clang flags
 tools.apple:sdk_path: Path to the SDK to be used
-tools.build.cross_building:can_run: Bool value that indicates whether is possible to run a non-native app on the same architecture. It&#39;s used by &#39;can_run&#39; tool
+tools.build.cross_building:can_run: (boolean) Indicates whether is possible to run a non-native app on the same architecture. It&#39;s used by &#39;can_run&#39; tool
+tools.build.cross_building:cross_build: (boolean) Decides whether cross-building or not regardless of arch/OS settings. Used by &#39;cross_building&#39; tool
 tools.build:cflags: List of extra C flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
 tools.build:compiler_executables: Defines a Python dict-like with the compilers path to be used. Allowed keys {&#39;c&#39;, &#39;cpp&#39;, &#39;cuda&#39;, &#39;objc&#39;, &#39;objcxx&#39;, &#39;rc&#39;, &#39;fortran&#39;, &#39;asm&#39;, &#39;hip&#39;, &#39;ispc&#39;}
 tools.build:cxxflags: List of extra CXX flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
@@ -211,7 +215,9 @@ tools.build:sharedlinkflags: List of extra flags used by CMakeToolchain for CMAK
 tools.build:skip_test: Do not execute CMake.test() and Meson.test() when enabled
 tools.build:sysroot: Pass the --sysroot=&lt;tools.build:sysroot&gt; flag if available. (None by default)
 tools.build:verbosity: Verbosity of build systems if set. Possible values are &#39;quiet&#39; and &#39;verbose&#39;
+tools.cmake.cmake_layout:build_folder: (Experimental) Allow configuring the base folder of the build for local builds
 tools.cmake.cmake_layout:build_folder_vars: Settings and Options that will produce a different build folder and different CMake presets names
+tools.cmake.cmake_layout:test_folder: (Experimental) Allow configuring the base folder of the build for test_package
 tools.cmake.cmaketoolchain:find_package_prefer_config: Argument for the CMAKE_FIND_PACKAGE_PREFER_CONFIG
 tools.cmake.cmaketoolchain:generator: User defined CMake generator to use instead of default
 tools.cmake.cmaketoolchain:presets_environment: String to define wether to add or not the environment section to the CMake presets. Empty by default, will generate the environment section in CMakePresets. Can take values: &#39;disabled&#39;.
@@ -220,6 +226,7 @@ tools.cmake.cmaketoolchain:system_processor: Define CMAKE_SYSTEM_PROCESSOR in CM
 tools.cmake.cmaketoolchain:system_version: Define CMAKE_SYSTEM_VERSION in CMakeToolchain
 tools.cmake.cmaketoolchain:toolchain_file: Use other existing file rather than conan_toolchain.cmake one
 tools.cmake.cmaketoolchain:toolset_arch: Toolset architecture to be used as part of CMAKE_GENERATOR_TOOLSET in CMakeToolchain
+tools.cmake.cmaketoolchain:toolset_cuda: (Experimental) Path to a CUDA toolset to use, or version if installed at the system level
 tools.cmake.cmaketoolchain:user_toolchain: Inject existing user toolchains at the beginning of conan_toolchain.cmake
 tools.cmake:cmake_program: Path to CMake executable
 tools.cmake:install_strip: Add --strip to cmake.install()
