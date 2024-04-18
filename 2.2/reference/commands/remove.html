@@ -127,14 +127,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <!--@ OUTDATED_VERSION_PLACEHOLDER_BEGIN @
+          
           <div>
             <div class="admonition warning wy-text-center" style="position:sticky">
               <p>This document is for an <b>outdated</b> Conan version.
-              <a href="https://docs.conan.io/2/@LATEST_DOC_PAGE_URL@">Click here to read the <b>latest</b> documentation</a></p>
+              <a href="https://docs.conan.io/2/reference/commands/remove.html">Click here to read the <b>latest</b> documentation</a></p>
              </div>
           </div>
-          @ OUTDATED_VERSION_PLACEHOLDER_END @-->
+          
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -153,9 +153,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-remove">
 <span id="reference-commands-remove"></span><h1>conan remove<a class="headerlink" href="#conan-remove" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remove -h
-usage: conan remove [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [-c]
-                    [-p PACKAGE_QUERY] [-r REMOTE] [-l LIST] [--lru LRU]
-                    [--dry-run]
+usage: conan remove [-h] [-v [V]] [-f FORMAT] [-c] [-p PACKAGE_QUERY]
+                    [-r REMOTE] [-l LIST] [--lru LRU] [--dry-run]
                     [pattern]
 
 Remove recipes or packages from local cache or a remote.
@@ -178,8 +177,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -c, --confirm         Remove without requesting a confirmation
@@ -287,7 +284,7 @@ To remove artifacts from a server, use the <code class="docutils literal notrans
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 17, 2024.
+      <span class="lastupdated">Last updated on Apr 18, 2024.
       </span></p>
   </div>
 

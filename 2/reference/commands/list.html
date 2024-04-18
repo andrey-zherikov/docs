@@ -153,10 +153,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-list">
 <span id="reference-commands-list"></span><h1>conan list<a class="headerlink" href="#conan-list" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan list -h
-usage: conan list [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [-p PACKAGE_QUERY]
-                  [-fp FILTER_PROFILE] [-fs FILTER_SETTINGS]
-                  [-fo FILTER_OPTIONS] [-r REMOTE] [-c] [-g GRAPH]
-                  [-gb GRAPH_BINARIES] [-gr GRAPH_RECIPES] [--lru LRU]
+usage: conan list [-h] [-v [V]] [-f FORMAT] [-p PACKAGE_QUERY] [-r REMOTE]
+                  [-c] [-g GRAPH] [-gb GRAPH_BINARIES] [-gr GRAPH_RECIPES]
+                  [--lru LRU]
                   [pattern]
 
 List existing recipes, revisions, or packages in the cache (by default) or the remotes.
@@ -173,19 +172,11 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json, html, compact
   -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
                         List only the packages matching a specific query, e.g,
                         os=Windows AND (arch=x86 OR compiler=gcc)
-  -fp FILTER_PROFILE, --filter-profile FILTER_PROFILE
-                        Profiles to filter the binaries
-  -fs FILTER_SETTINGS, --filter-settings FILTER_SETTINGS
-                        Settings to filter the binaries
-  -fo FILTER_OPTIONS, --filter-options FILTER_OPTIONS
-                        Options to filter the binaries
   -r REMOTE, --remote REMOTE
                         Remote names. Accepts wildcards (&#39;*&#39; means all the
                         remotes available)
@@ -633,7 +624,7 @@ only those values that deviate from that common denominator.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 17, 2024.
+      <span class="lastupdated">Last updated on Apr 18, 2024.
       </span></p>
   </div>
 
