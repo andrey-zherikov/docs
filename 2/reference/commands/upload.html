@@ -156,9 +156,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 information on how to work with Conan repositories, please check the <a class="reference internal" href="../../tutorial/conan_repositories.html#conan-repositories"><span class="std std-ref">dedicated
 section</span></a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan upload -h
-usage: conan upload [-h] [-v [V]] [-f FORMAT] [-p PACKAGE_QUERY] -r REMOTE
-                    [--only-recipe] [--force] [--check] [-c] [--dry-run]
-                    [-l LIST] [-m METADATA]
+usage: conan upload [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT]
+                    [-p PACKAGE_QUERY] -r REMOTE [--only-recipe] [--force]
+                    [--check] [-c] [--dry-run] [-l LIST] [-m METADATA]
                     [pattern]
 
 Upload packages to a remote.
@@ -180,6 +180,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -p PACKAGE_QUERY, --package-query PACKAGE_QUERY
@@ -232,7 +234,7 @@ and any other value will be the number of parallel threads to utilize.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 23, 2024.
+      <span class="lastupdated">Last updated on Apr 27, 2024.
       </span></p>
   </div>
 

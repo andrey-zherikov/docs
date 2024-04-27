@@ -156,17 +156,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-profile-detect">
 <h2>conan profile detect<a class="headerlink" href="#conan-profile-detect" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile detect -h
-usage: conan profile detect [-h] [-v [V]] [--name NAME] [-f]
+usage: conan profile detect [-h] [-v [V]] [-cc CORE_CONF] [--name NAME] [-f]
 
 Generate a profile using auto-detected values.
 
 options:
-  -h, --help   show this help message and exit
-  -v [V]       Level of detail of the output. Valid options from less verbose
-               to more verbose: -vquiet, -verror, -vwarning, -vnotice,
-               -vstatus, -v or -vverbose, -vv or -vdebug, -vvv or -vtrace
-  --name NAME  Profile name, &#39;default&#39; if not specified
-  -f, --force  Overwrite if exists
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
+  --name NAME           Profile name, &#39;default&#39; if not specified
+  -f, --force           Overwrite if exists
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -223,7 +226,7 @@ configuration like custom settings, custom remotes definition, etc.</p>
 <section id="conan-profile-list">
 <h2>conan profile list<a class="headerlink" href="#conan-profile-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile list -h
-usage: conan profile list [-h] [-f FORMAT] [-v [V]]
+usage: conan profile list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
 
 List all profiles in the cache.
 
@@ -235,6 +238,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
@@ -292,11 +297,11 @@ Type &quot;conan &lt;command&gt; -h&quot; for help
 <section id="conan-profile-show">
 <h2>conan profile show<a class="headerlink" href="#conan-profile-show" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile show -h
-usage: conan profile show [-h] [-f FORMAT] [-v [V]] [-pr PROFILE]
-                          [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
-                          [-pr:a PROFILE_ALL] [-o OPTIONS]
-                          [-o:b OPTIONS_BUILD] [-o:h OPTIONS_HOST]
-                          [-o:a OPTIONS_ALL] [-s SETTINGS]
+usage: conan profile show [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
+                          [-pr PROFILE] [-pr:b PROFILE_BUILD]
+                          [-pr:h PROFILE_HOST] [-pr:a PROFILE_ALL]
+                          [-o OPTIONS] [-o:b OPTIONS_BUILD]
+                          [-o:h OPTIONS_HOST] [-o:a OPTIONS_ALL] [-s SETTINGS]
                           [-s:b SETTINGS_BUILD] [-s:h SETTINGS_HOST]
                           [-s:a SETTINGS_ALL] [-c CONF] [-c:b CONF_BUILD]
                           [-c:h CONF_HOST] [-c:a CONF_ALL]
@@ -311,6 +316,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -pr PROFILE, --profile PROFILE
                         Apply the specified profile. By default, or if
                         specifying -pr:h (--profile:host), it applies to the
@@ -456,7 +463,7 @@ os=Macos
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 23, 2024.
+      <span class="lastupdated">Last updated on Apr 27, 2024.
       </span></p>
   </div>
 

@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-lock-merge">
 <h1>conan lock merge<a class="headerlink" href="#conan-lock-merge" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock merge -h
-usage: conan lock merge [-h] [-v [V]] [--lockfile LOCKFILE]
+usage: conan lock merge [-h] [-v [V]] [-cc CORE_CONF] [--lockfile LOCKFILE]
                         [--lockfile-out LOCKFILE_OUT]
 
 Merge 2 or more lockfiles.
@@ -171,6 +171,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   --lockfile LOCKFILE   Path to lockfile to be merged
   --lockfile-out LOCKFILE_OUT
                         Filename of the created lockfile
@@ -316,7 +318,7 @@ $<span class="w"> </span>cat<span class="w"> </span>final.lock
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 23, 2024.
+      <span class="lastupdated">Last updated on Apr 27, 2024.
       </span></p>
   </div>
 
