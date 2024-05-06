@@ -158,8 +158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 See <a class="reference internal" href="../../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan inspect -h
-usage: conan inspect [-h] [-v [V]] [-f FORMAT] [-r REMOTE | -nr] [-l LOCKFILE]
-                     [--lockfile-partial]
+usage: conan inspect [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT]
+                     [-r REMOTE | -nr] [-l LOCKFILE] [--lockfile-partial]
                      path
 
 Inspect a conanfile.py to return its public fields.
@@ -173,6 +173,8 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -r REMOTE, --remote REMOTE
@@ -332,7 +334,7 @@ only those present in the <code class="docutils literal notranslate"><span class
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 23, 2024.
+      <span class="lastupdated">Last updated on May 06, 2024.
       </span></p>
   </div>
 

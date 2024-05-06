@@ -160,7 +160,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-build-order-merge">
 <h1>conan graph build-order-merge<a class="headerlink" href="#conan-graph-build-order-merge" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph build-order-merge -h
-usage: conan graph build-order-merge [-h] [-f FORMAT] [-v [V]] [--file [FILE]]
+usage: conan graph build-order-merge [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
+                                     [--file [FILE]] [--reduce]
 
 Merge more than 1 build-order file.
 
@@ -172,7 +173,12 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
   --file [FILE]         Files to be merged
+  --reduce              Reduce the build order, output only those to build.
+                        Use this only if the result will not be merged later
+                        with other build-order
 </pre></div>
 </div>
 <p>As described in the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">graph</span> <span class="pre">build-order</span></code> command, there are 2 types of order <code class="docutils literal notranslate"><span class="pre">recipe</span></code> and <code class="docutils literal notranslate"><span class="pre">configuration</span></code>.
@@ -194,7 +200,7 @@ argument, and the behavior will be the same, leave only the elements that need t
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 23, 2024.
+      <span class="lastupdated">Last updated on May 06, 2024.
       </span></p>
   </div>
 
