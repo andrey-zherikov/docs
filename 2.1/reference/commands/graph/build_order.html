@@ -160,11 +160,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-build-order">
 <h1>conan graph build-order<a class="headerlink" href="#conan-graph-build-order" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph build-order -h
-usage: conan graph build-order [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
-                               [--name NAME] [--version VERSION] [--user USER]
+usage: conan graph build-order [-h] [-f FORMAT] [-v [V]] [--name NAME]
+                               [--version VERSION] [--user USER]
                                [--channel CHANNEL] [--requires REQUIRES]
                                [--tool-requires TOOL_REQUIRES] [-b BUILD]
-                               [-r REMOTE | -nr] [-u [UPDATE]] [-pr PROFILE]
+                               [-r REMOTE | -nr] [-u] [-pr PROFILE]
                                [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
                                [-pr:a PROFILE_ALL] [-o OPTIONS]
                                [-o:b OPTIONS_BUILD] [-o:h OPTIONS_HOST]
@@ -174,9 +174,8 @@ usage: conan graph build-order [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                                [-c:h CONF_HOST] [-c:a CONF_ALL] [-l LOCKFILE]
                                [--lockfile-partial]
                                [--lockfile-out LOCKFILE_OUT]
-                               [--lockfile-clean]
+                               [--lockfile-packages] [--lockfile-clean]
                                [--lockfile-overrides LOCKFILE_OVERRIDES]
-                               [--order-by {recipe,configuration}] [--reduce]
                                [path]
 
 Compute the build order of a dependency graph.
@@ -194,8 +193,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --name NAME           Provide a package name if not specified in conanfile
   --version VERSION     Provide a package version if not specified in
                         conanfile
@@ -227,13 +224,13 @@ options:
   -r REMOTE, --remote REMOTE
                         Look in the specified remote or remotes server
   -nr, --no-remote      Do not use remote, resolve exclusively in the cache
-  -u [UPDATE], --update [UPDATE]
-                        Will install newer versions and/or revisions in the
-                        local cache for the given reference, or all in case no
-                        argument is supplied. When using version ranges, it
-                        will install the latest version that satisfies the
-                        range. Also, if using revisions, it will update to the
-                        latest revision for the resolved version range.
+  -u, --update          Will check the remote and in case a newer version
+                        and/or revision of the dependencies exists there, it
+                        will install those in the local cache. When using
+                        version ranges, it will install the latest version
+                        that satisfies the range. Also, if using revisions, it
+                        will update to the latest revision for the resolved
+                        version range.
   -pr PROFILE, --profile PROFILE
                         Apply the specified profile. By default, or if
                         specifying -pr:h (--profile:host), it applies to the
@@ -276,15 +273,10 @@ options:
                         in lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the updated lockfile
+  --lockfile-packages   Lock package-id and package-revision information
   --lockfile-clean      Remove unused entries from the lockfile
   --lockfile-overrides LOCKFILE_OVERRIDES
                         Overwrite lockfile overrides
-  --order-by {recipe,configuration}
-                        Select how to order the output, &quot;recipe&quot; by default if
-                        not set.
-  --reduce              Reduce the build order, output only those to build.
-                        Use this only if the result will not be merged later
-                        with other build-order
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">graph</span> <span class="pre">build-order</span></code> command computes the build order of the dependency graph for the recipe specified in <code class="docutils literal notranslate"><span class="pre">path</span></code> or in <code class="docutils literal notranslate"><span class="pre">--requires/--tool-requires</span></code>.</p>
@@ -491,6 +483,10 @@ in the CI agent.</p>
     <dt>Versions</dt>
     
         
+            <dd><a href="/2.3/index.html">2.3</a></dd>
+        
+    
+        
             <dd><a href="/2.2/index.html">2.2</a></dd>
         
     
@@ -633,6 +629,8 @@ in the CI agent.</p>
         
     
     <br>
+    
+        
     
         
     

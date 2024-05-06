@@ -134,14 +134,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <!--@ OUTDATED_VERSION_PLACEHOLDER_BEGIN @
+          
           <div>
             <div class="admonition warning wy-text-center" style="position:sticky">
               <p>This document is for an <b>outdated</b> Conan version.
-              <a href="https://docs.conan.io/2/@LATEST_DOC_PAGE_URL@">Click here to read the <b>latest</b> documentation</a></p>
+              <a href="https://docs.conan.io/2/reference/commands/graph/build_order_merge.html">Click here to read the <b>latest</b> documentation</a></p>
              </div>
           </div>
-          @ OUTDATED_VERSION_PLACEHOLDER_END @-->
+          
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -161,8 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-build-order-merge">
 <h1>conan graph build-order-merge<a class="headerlink" href="#conan-graph-build-order-merge" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph build-order-merge -h
-usage: conan graph build-order-merge [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
-                                     [--file [FILE]] [--reduce]
+usage: conan graph build-order-merge [-h] [-f FORMAT] [-v [V]] [--file [FILE]]
 
 Merge more than 1 build-order file.
 
@@ -174,12 +173,7 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --file [FILE]         Files to be merged
-  --reduce              Reduce the build order, output only those to build.
-                        Use this only if the result will not be merged later
-                        with other build-order
 </pre></div>
 </div>
 <p>As described in the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">graph</span> <span class="pre">build-order</span></code> command, there are 2 types of order <code class="docutils literal notranslate"><span class="pre">recipe</span></code> and <code class="docutils literal notranslate"><span class="pre">configuration</span></code>.
@@ -221,6 +215,10 @@ argument, and the behavior will be the same, leave only the elements that need t
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.3/index.html">2.3</a></dd>
+        
     
         
             <dd><a href="/2.2/index.html">2.2</a></dd>
@@ -365,6 +363,8 @@ argument, and the behavior will be the same, leave only the elements that need t
         
     
     <br>
+    
+        
     
         
     

@@ -133,14 +133,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <!--@ OUTDATED_VERSION_PLACEHOLDER_BEGIN @
+          
           <div>
             <div class="admonition warning wy-text-center" style="position:sticky">
               <p>This document is for an <b>outdated</b> Conan version.
-              <a href="https://docs.conan.io/2/@LATEST_DOC_PAGE_URL@">Click here to read the <b>latest</b> documentation</a></p>
+              <a href="https://docs.conan.io/2/reference/commands/lock/merge.html">Click here to read the <b>latest</b> documentation</a></p>
              </div>
           </div>
-          @ OUTDATED_VERSION_PLACEHOLDER_END @-->
+          
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-lock-merge">
 <h1>conan lock merge<a class="headerlink" href="#conan-lock-merge" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock merge -h
-usage: conan lock merge [-h] [-v [V]] [-cc CORE_CONF] [--lockfile LOCKFILE]
+usage: conan lock merge [-h] [-v [V]] [--lockfile LOCKFILE]
                         [--lockfile-out LOCKFILE_OUT]
 
 Merge 2 or more lockfiles.
@@ -171,8 +171,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --lockfile LOCKFILE   Path to lockfile to be merged
   --lockfile-out LOCKFILE_OUT
                         Filename of the created lockfile
@@ -340,6 +338,10 @@ $<span class="w"> </span>cat<span class="w"> </span>final.lock
     <dt>Versions</dt>
     
         
+            <dd><a href="/2.3/index.html">2.3</a></dd>
+        
+    
+        
             <dd><a href="/2.2/index.html">2.2</a></dd>
         
     
@@ -482,6 +484,8 @@ $<span class="w"> </span>cat<span class="w"> </span>final.lock
         
     
     <br>
+    
+        
     
         
     

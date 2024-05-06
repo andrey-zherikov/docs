@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-lock-add">
 <h1>conan lock add<a class="headerlink" href="#conan-lock-add" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan lock add -h
-usage: conan lock add [-h] [-v [V]] [-cc CORE_CONF] [--requires REQUIRES]
+usage: conan lock add [-h] [-v [V]] [--requires REQUIRES]
                       [--build-requires BUILD_REQUIRES]
                       [--python-requires PYTHON_REQUIRES]
                       [--lockfile-out LOCKFILE_OUT] [--lockfile LOCKFILE]
@@ -177,8 +177,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   --requires REQUIRES   Add references to lockfile.
   --build-requires BUILD_REQUIRES
                         Add build-requires to lockfile
@@ -298,6 +296,10 @@ those new or updated lockfiles can be used to continue with the processing.</p>
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.3/index.html">2.3</a></dd>
+        
     
         
             <dd><a href="/2.2/index.html">2.2</a></dd>
@@ -442,6 +444,8 @@ those new or updated lockfiles can be used to continue with the processing.</p>
         
     
     <br>
+    
+        
     
         
     

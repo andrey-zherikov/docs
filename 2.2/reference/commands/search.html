@@ -155,8 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Search existing recipes in remotes.
 This command is equivalent to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">&lt;query&gt;</span> <span class="pre">-r=*</span></code>, and is provided for simpler UX.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan search -h
-usage: conan search [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [-r REMOTE]
-                    reference
+usage: conan search [-h] [-v [V]] [-f FORMAT] [-r REMOTE] reference
 
 Search for package recipes in all the remotes (by default), or a remote.
 
@@ -170,8 +169,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -r REMOTE, --remote REMOTE
@@ -246,6 +243,10 @@ $ conan search zlib/1.2.1* -r=conancenter --format=json
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.3/index.html">2.3</a></dd>
+        
     
         
             <dd><a href="/2.2/index.html">2.2</a></dd>
@@ -390,6 +391,8 @@ $ conan search zlib/1.2.1* -r=conancenter --format=json
         
     
     <br>
+    
+        
     
         
     

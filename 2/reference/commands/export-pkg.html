@@ -155,12 +155,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-export-pkg">
 <span id="reference-commands-export-pkg"></span><h1>conan export-pkg<a class="headerlink" href="#conan-export-pkg" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan export-pkg -h
-usage: conan export-pkg [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT]
-                        [-of OUTPUT_FOLDER] [--build-require]
-                        [-tf TEST_FOLDER] [-sb] [-r REMOTE | -nr]
-                        [--name NAME] [--version VERSION] [--user USER]
-                        [--channel CHANNEL] [-l LOCKFILE] [--lockfile-partial]
-                        [--lockfile-out LOCKFILE_OUT] [--lockfile-clean]
+usage: conan export-pkg [-h] [-v [V]] [-f FORMAT] [-of OUTPUT_FOLDER]
+                        [--build-require] [-tf TEST_FOLDER] [-sb]
+                        [-r REMOTE | -nr] [--name NAME] [--version VERSION]
+                        [--user USER] [--channel CHANNEL] [-l LOCKFILE]
+                        [--lockfile-partial] [--lockfile-out LOCKFILE_OUT]
+                        [--lockfile-packages] [--lockfile-clean]
                         [--lockfile-overrides LOCKFILE_OVERRIDES]
                         [-pr PROFILE] [-pr:b PROFILE_BUILD]
                         [-pr:h PROFILE_HOST] [-pr:a PROFILE_ALL] [-o OPTIONS]
@@ -181,8 +181,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json
   -of OUTPUT_FOLDER, --output-folder OUTPUT_FOLDER
@@ -207,6 +205,7 @@ options:
                         in lockfile
   --lockfile-out LOCKFILE_OUT
                         Filename of the updated lockfile
+  --lockfile-packages   Lock package-id and package-revision information
   --lockfile-clean      Remove unused entries from the lockfile
   --lockfile-overrides LOCKFILE_OVERRIDES
                         Overwrite lockfile overrides

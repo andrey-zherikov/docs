@@ -155,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-export">
 <h1>conan export<a class="headerlink" href="#conan-export" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan export -h
-usage: conan export [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [--name NAME]
+usage: conan export [-h] [-v [V]] [-f FORMAT] [--name NAME]
                     [--version VERSION] [--user USER] [--channel CHANNEL]
                     [-r REMOTE | -nr] [-l LOCKFILE]
                     [--lockfile-out LOCKFILE_OUT] [--lockfile-partial]
@@ -173,8 +173,6 @@ options:
                         verbose to more verbose: -vquiet, -verror, -vwarning,
                         -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
                         -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
   -f FORMAT, --format FORMAT
                         Select the output format: json, pkglist
   --name NAME           Provide a package name if not specified in conanfile

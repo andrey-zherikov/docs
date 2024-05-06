@@ -167,21 +167,10 @@ See <a class="reference internal" href="../../introduction.html#stability"><span
 <section id="conan-pkglist-merge">
 <h2>conan pkglist merge<a class="headerlink" href="#conan-pkglist-merge" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan pkglist merge -h
-usage: conan pkglist merge [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] [-l LIST]
+Error executing: conan pkglist merge -h
+&#39;pkglist&#39; is not a Conan command. See &#39;conan --help&#39;.
 
-(Experimental) Merge several package lists into a single one
-
-options:
-  -h, --help            show this help message and exit
-  -f FORMAT, --format FORMAT
-                        Select the output format: json, html
-  -v [V]                Level of detail of the output. Valid options from less
-                        verbose to more verbose: -vquiet, -verror, -vwarning,
-                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
-                        -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
-  -l LIST, --list LIST  Package list file
+ERROR: Unknown command &#39;pkglist&#39;
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">pkglist</span> <span class="pre">merge</span></code> command can merge multiple package lists into a single one:</p>
@@ -194,28 +183,10 @@ revisions can be added, and for every recipe revision multiple package_ids can b
 <section id="conan-pkglist-find-remote">
 <h2>conan pkglist find-remote<a class="headerlink" href="#conan-pkglist-find-remote" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan pkglist find-remote -h
-usage: conan pkglist find-remote [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
-                                 [-r REMOTE]
-                                 list
+Error executing: conan pkglist find-remote -h
+&#39;pkglist&#39; is not a Conan command. See &#39;conan --help&#39;.
 
-(Experimental) Find the remotes of a list of packages in the cache
-
-positional arguments:
-  list                  Input package list
-
-options:
-  -h, --help            show this help message and exit
-  -f FORMAT, --format FORMAT
-                        Select the output format: json, html
-  -v [V]                Level of detail of the output. Valid options from less
-                        verbose to more verbose: -vquiet, -verror, -vwarning,
-                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
-                        -vvv or -vtrace
-  -cc CORE_CONF, --core-conf CORE_CONF
-                        Global configuration for Conan
-  -r REMOTE, --remote REMOTE
-                        Remote names. Accepts wildcards (&#39;*&#39; means all the
-                        remotes available)
+ERROR: Unknown command &#39;pkglist&#39;
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">pkglist</span> <span class="pre">find-remote</span></code> command will take a package list of packages in the cache
