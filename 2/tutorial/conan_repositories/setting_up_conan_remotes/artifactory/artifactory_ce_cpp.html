@@ -141,21 +141,21 @@ WebUI, advanced authentication and permissions, great performance and scalabilit
 API, a generic CLI tool and generic repositories to host any kind of source or binary
 artifact.</p>
 <p>This is a very brief introduction to Artifactory CE. For the complete Artifactory CE
-documentation, visit <a class="reference external" href="https://www.jfrog.com/confluence/">Artifactory docs</a>.</p>
+documentation, visit <a class="reference external" href="https://jfrog.com/help/">Artifactory docs</a>.</p>
 <section id="running-artifactory-ce">
 <h2>Running Artifactory CE<a class="headerlink" href="#running-artifactory-ce" title="Link to this heading">¶</a></h2>
 <p>There are several ways to run Artifactory CE:</p>
 <ul class="simple">
-<li><p><strong>Running from a docker image</strong>. Just run:</p></li>
+<li><p><strong>Running from a Docker image:</strong></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>artifactory<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8081</span>:8081<span class="w"> </span>-p<span class="w"> </span><span class="m">8082</span>:8082<span class="w"> </span>docker.bintray.io/jfrog/artifactory-cpp-ce:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>artifactory<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8081</span>:8081<span class="w"> </span>-p<span class="w"> </span><span class="m">8082</span>:8082<span class="w"> </span>releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:latest
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><strong>Download and run from zip file</strong>. The <a class="reference external" href="https://conan.io/downloads.html">Download Page</a> has
 a link for you to follow. When the file is unzipped, launch Artifactory by double clicking
-the artifactory.bat(Windows) or artifactory.sh script in the <em>app/bin</em> subfolder,
-depending on the OS. Artifactory comes with JDK bundled, please <a class="reference external" href="https://www.jfrog.com/confluence/display/JFROG/System+Requirements">read Artifactory
+the artifactory.bat on Windows or artifactory.sh script in the <em>app/bin</em> subfolder,
+depending on the OS. Artifactory comes with JDK bundled, please <a class="reference external" href="https://jfrog.com/help/r/jfrog-installation-setup-documentation/system-requirements">read Artifactory
 requirements</a>.</p></li>
 </ul>
 <p>Once Artifactory has started, navigate to the default URL <cite>http://localhost:8081</cite>, where
@@ -200,7 +200,7 @@ $<span class="w"> </span>conan<span class="w"> </span>search<span class="w"> </s
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Apr 27, 2024.
+      <span class="lastupdated">Last updated on May 06, 2024.
       </span></p>
   </div>
 
