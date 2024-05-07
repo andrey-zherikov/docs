@@ -163,11 +163,126 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-outdated">
 <span id="reference-graph-outdated"></span><h1>conan graph outdated<a class="headerlink" href="#conan-graph-outdated" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph outdated -h
-Error executing: conan graph outdated -h
-usage: conan graph [-h] [-v [V]]
-                   {build-order,build-order-merge,explain,info} ...
-conan graph: error: argument subcommand: invalid choice: &#39;outdated&#39; (choose from &#39;build-order&#39;, &#39;build-order-merge&#39;, &#39;explain&#39;, &#39;info&#39;)
-ERROR: Exiting with code: 2
+usage: conan graph outdated [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
+                            [--name NAME] [--version VERSION] [--user USER]
+                            [--channel CHANNEL] [--requires REQUIRES]
+                            [--tool-requires TOOL_REQUIRES] [-b BUILD]
+                            [-r REMOTE | -nr] [-u [UPDATE]] [-pr PROFILE]
+                            [-pr:b PROFILE_BUILD] [-pr:h PROFILE_HOST]
+                            [-pr:a PROFILE_ALL] [-o OPTIONS]
+                            [-o:b OPTIONS_BUILD] [-o:h OPTIONS_HOST]
+                            [-o:a OPTIONS_ALL] [-s SETTINGS]
+                            [-s:b SETTINGS_BUILD] [-s:h SETTINGS_HOST]
+                            [-s:a SETTINGS_ALL] [-c CONF] [-c:b CONF_BUILD]
+                            [-c:h CONF_HOST] [-c:a CONF_ALL] [-l LOCKFILE]
+                            [--lockfile-partial] [--lockfile-out LOCKFILE_OUT]
+                            [--lockfile-clean]
+                            [--lockfile-overrides LOCKFILE_OVERRIDES]
+                            [--check-updates] [--build-require]
+                            [path]
+
+List the dependencies in the graph and it&#39;s newer versions in the remote
+
+positional arguments:
+  path                  Path to a folder containing a recipe (conanfile.py or
+                        conanfile.txt) or to a recipe file. e.g.,
+                        ./my_project/conanfile.txt.
+
+options:
+  -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        Select the output format: json
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
+  --name NAME           Provide a package name if not specified in conanfile
+  --version VERSION     Provide a package version if not specified in
+                        conanfile
+  --user USER           Provide a user if not specified in conanfile
+  --channel CHANNEL     Provide a channel if not specified in conanfile
+  --requires REQUIRES   Directly provide requires instead of a conanfile
+  --tool-requires TOOL_REQUIRES
+                        Directly provide tool-requires instead of a conanfile
+  -b BUILD, --build BUILD
+                        Optional, specify which packages to build from source.
+                        Combining multiple &#39;--build&#39; options on one command
+                        line is allowed. Possible values: --build=&quot;*&quot; Force
+                        build from source for all packages. --build=never
+                        Disallow build for all packages, use binary packages
+                        or fail if a binary package is not found, it cannot be
+                        combined with other &#39;--build&#39; options. --build=missing
+                        Build packages from source whose binary package is not
+                        found. --build=cascade Build packages from source that
+                        have at least one dependency being built from source.
+                        --build=[pattern] Build packages from source whose
+                        package reference matches the pattern. The pattern
+                        uses &#39;fnmatch&#39; style wildcards. --build=~[pattern]
+                        Excluded packages, which will not be built from the
+                        source, whose package reference matches the pattern.
+                        The pattern uses &#39;fnmatch&#39; style wildcards.
+                        --build=missing:[pattern] Build from source if a
+                        compatible binary does not exist, only for packages
+                        matching pattern.
+  -r REMOTE, --remote REMOTE
+                        Look in the specified remote or remotes server
+  -nr, --no-remote      Do not use remote, resolve exclusively in the cache
+  -u [UPDATE], --update [UPDATE]
+                        Will install newer versions and/or revisions in the
+                        local cache for the given reference, or all in case no
+                        argument is supplied. When using version ranges, it
+                        will install the latest version that satisfies the
+                        range. Also, if using revisions, it will update to the
+                        latest revision for the resolved version range.
+  -pr PROFILE, --profile PROFILE
+                        Apply the specified profile. By default, or if
+                        specifying -pr:h (--profile:host), it applies to the
+                        host context. Use -pr:b (--profile:build) to specify
+                        the build context, or -pr:a (--profile:all) to specify
+                        both contexts at once
+  -pr:b PROFILE_BUILD, --profile:build PROFILE_BUILD
+  -pr:h PROFILE_HOST, --profile:host PROFILE_HOST
+  -pr:a PROFILE_ALL, --profile:all PROFILE_ALL
+  -o OPTIONS, --options OPTIONS
+                        Apply the specified options. By default, or if
+                        specifying -o:h (--options:host), it applies to the
+                        host context. Use -o:b (--options:build) to specify
+                        the build context, or -o:a (--options:all) to specify
+                        both contexts at once. Example: -o pkg:with_qt=true
+  -o:b OPTIONS_BUILD, --options:build OPTIONS_BUILD
+  -o:h OPTIONS_HOST, --options:host OPTIONS_HOST
+  -o:a OPTIONS_ALL, --options:all OPTIONS_ALL
+  -s SETTINGS, --settings SETTINGS
+                        Apply the specified settings. By default, or if
+                        specifying -s:h (--settings:host), it applies to the
+                        host context. Use -s:b (--settings:build) to specify
+                        the build context, or -s:a (--settings:all) to specify
+                        both contexts at once. Example: -s compiler=gcc
+  -s:b SETTINGS_BUILD, --settings:build SETTINGS_BUILD
+  -s:h SETTINGS_HOST, --settings:host SETTINGS_HOST
+  -s:a SETTINGS_ALL, --settings:all SETTINGS_ALL
+  -c CONF, --conf CONF  Apply the specified conf. By default, or if specifying
+                        -c:h (--conf:host), it applies to the host context.
+                        Use -c:b (--conf:build) to specify the build context,
+                        or -c:a (--conf:all) to specify both contexts at once.
+                        Example: -c tools.cmake.cmaketoolchain:generator=Xcode
+  -c:b CONF_BUILD, --conf:build CONF_BUILD
+  -c:h CONF_HOST, --conf:host CONF_HOST
+  -c:a CONF_ALL, --conf:all CONF_ALL
+  -l LOCKFILE, --lockfile LOCKFILE
+                        Path to a lockfile. Use --lockfile=&quot;&quot; to avoid
+                        automatic use of existing &#39;conan.lock&#39; file
+  --lockfile-partial    Do not raise an error if some dependency is not found
+                        in lockfile
+  --lockfile-out LOCKFILE_OUT
+                        Filename of the updated lockfile
+  --lockfile-clean      Remove unused entries from the lockfile
+  --lockfile-overrides LOCKFILE_OVERRIDES
+                        Overwrite lockfile overrides
+  --check-updates       Check if there are recipe updates
+  --build-require       Whether the provided reference is a build-require
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">graph</span> <span class="pre">outdated</span></code> command provides details on libraries for which a newer version is available in a remote
@@ -224,7 +339,7 @@ nasm
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 06, 2024.
+      <span class="lastupdated">Last updated on May 07, 2024.
       </span></p>
   </div>
 

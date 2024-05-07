@@ -131,6 +131,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="using-a-docker-runner-configfile-to-parameterize-a-dockerfile">
 <span id="examples-runners-docker-configfile-build-args"></span><h1>Using a docker runner configfile to parameterize a Dockerfile<a class="headerlink" href="#using-a-docker-runner-configfile-to-parameterize-a-dockerfile" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is experimental and subject to breaking changes.
+See <a class="reference internal" href="../../../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
+</div>
 <p>In this example we are going to see how to use a docker runner configfile to define our Dockerfile base image. Let’s create two profiles and a Dockerfile inside our project folder.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;/my/runner/folder&gt;
 $<span class="w"> </span>tree
@@ -314,7 +319,7 @@ ubuntu<span class="w">            </span><span class="m">22</span>.04<span class
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 06, 2024.
+      <span class="lastupdated">Last updated on May 07, 2024.
       </span></p>
   </div>
 

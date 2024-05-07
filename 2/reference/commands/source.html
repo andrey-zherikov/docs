@@ -155,25 +155,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-source">
 <span id="reference-commands-source"></span><h1>conan source<a class="headerlink" href="#conan-source" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan source -h
-usage: conan source [-h] [-v [V]] [--name NAME] [--version VERSION]
-                    [--user USER] [--channel CHANNEL]
+usage: conan source [-h] [-v [V]] [-cc CORE_CONF] [--name NAME]
+                    [--version VERSION] [--user USER] [--channel CHANNEL]
                     path
 
 Call the source() method.
 
 positional arguments:
-  path               Path to a folder containing a conanfile.py
+  path                  Path to a folder containing a conanfile.py
 
 options:
-  -h, --help         show this help message and exit
-  -v [V]             Level of detail of the output. Valid options from less
-                     verbose to more verbose: -vquiet, -verror, -vwarning,
-                     -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug, -vvv
-                     or -vtrace
-  --name NAME        Provide a package name if not specified in conanfile
-  --version VERSION  Provide a package version if not specified in conanfile
-  --user USER        Provide a user if not specified in conanfile
-  --channel CHANNEL  Provide a channel if not specified in conanfile
+  -h, --help            show this help message and exit
+  -v [V]                Level of detail of the output. Valid options from less
+                        verbose to more verbose: -vquiet, -verror, -vwarning,
+                        -vnotice, -vstatus, -v or -vverbose, -vv or -vdebug,
+                        -vvv or -vtrace
+  -cc CORE_CONF, --core-conf CORE_CONF
+                        Global configuration for Conan
+  --name NAME           Provide a package name if not specified in conanfile
+  --version VERSION     Provide a package version if not specified in
+                        conanfile
+  --user USER           Provide a user if not specified in conanfile
+  --channel CHANNEL     Provide a channel if not specified in conanfile
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -196,7 +199,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 06, 2024.
+      <span class="lastupdated">Last updated on May 07, 2024.
       </span></p>
   </div>
 
