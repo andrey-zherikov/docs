@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Developer tools and flows &mdash; conan 2.3.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=79c6a522" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=045299b1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/conan.css?v=7d9e9f1e" />
@@ -82,6 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="graph.html">Graph examples</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Developer tools and flows</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev_flow/debug/step_into_dependencies.html">Debugging and stepping into dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev_flow/debug/debugging_visual.html">Debugging shared libraries with Visual Studio</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Conan commands examples</a></li>
@@ -136,6 +137,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/step_into_dependencies.html#step-into-a-dependency-with-visual-studio">Step into a dependency with Visual Studio</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dev_flow/debug/debugging_visual.html">Debugging shared libraries with Visual Studio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/debugging_visual.html#creating-a-project-and-debugging-as-usual">Creating a project and debugging as usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/debugging_visual.html#removing-build-files-from-the-conan-cache">Removing build files from the Conan cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/debugging_visual.html#installing-a-hook-to-copy-the-pdbs-to-the-package-folder">Installing a hook to copy the PDBs to the package folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/debugging_visual.html#debugging-without-build-files">Debugging without build files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_flow/debug/debugging_visual.html#locating-the-sources-path-for-the-debugger">Locating the sources path for the debugger</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -152,7 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 07, 2024.
+      <span class="lastupdated">Last updated on May 08, 2024.
       </span></p>
   </div>
 
