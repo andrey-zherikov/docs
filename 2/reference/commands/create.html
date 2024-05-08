@@ -322,6 +322,124 @@ to ensure the package is correctly created. Adding extra dependencies to
 functionality is being misused. If, for any reason, your <code class="docutils literal notranslate"><span class="pre">test_package</span></code> has additional
 dependencies, you can control their build using the <code class="docutils literal notranslate"><span class="pre">--build-test</span></code> argument.</p>
 </div>
+</section>
+<section id="methods-execution-order">
+<h2>Methods execution order<a class="headerlink" href="#methods-execution-order" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> executes <a class="reference internal" href="../conanfile/methods.html#reference-conanfile-methods"><span class="std std-ref">methods</span></a> of a <em>conanfile.py</em> in the following order:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Export recipe to the cache</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">init()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_name()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_version()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export_sources()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compute dependency graph</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ìnit()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_options()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configure()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_requirements()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compute necessary packages</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">validate_build()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package_id()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">layout()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_requirements()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Install packages</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">source()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_id()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package_info()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Steps <code class="docutils literal notranslate"><span class="pre">generate()</span></code>,  <code class="docutils literal notranslate"><span class="pre">build()</span></code>, <code class="docutils literal notranslate"><span class="pre">package()</span></code> from <em>Install packages</em> step will not be called if the package
+is not being built from sources.</p>
+<p>After that, if you have a folder named <em>test_package</em> in your project or you call the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> command with the
+<code class="docutils literal notranslate"><span class="pre">--test-folder</span></code> flag, the command will invoke the methods of the <em>conanfile.py</em> file inside the folder in the following order:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Launch test_package</dt><dd><ol class="arabic simple">
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">init()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">set_name()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">set_version()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compute dependency graph</dt><dd><ol class="arabic simple">
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">config_options()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">configure()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">requirements()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">build_requirements()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ìnit()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_options()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configure()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_requirements()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compute necessary packages</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">validate_build()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package_id()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">layout()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">validate_build()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">validate()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">package_id()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">layout()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_requirements()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">system_requirements()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Install packages</dt><dd><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">build_id()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package_info()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Test the package</dt><dd><ol class="arabic simple">
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">build()</span></code></p></li>
+<li><p>(test package) <code class="docutils literal notranslate"><span class="pre">test()</span></code></p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The functions with <em>(test package)</em> belong to the <em>conanfile.py</em> in the <em>test_package</em> folder. The steps
+<code class="docutils literal notranslate"><span class="pre">build_id()</span></code>, <code class="docutils literal notranslate"><span class="pre">generate()</span></code>, <code class="docutils literal notranslate"><span class="pre">build()</span></code> inside the <em>Install packages</em> step will be skipped if the project is
+already installed. Typically, it should be installed just as it was installed in the previous “install packages” step.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
