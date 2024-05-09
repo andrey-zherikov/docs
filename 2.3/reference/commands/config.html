@@ -416,7 +416,7 @@ tools.build.cross_building:cross_build: (boolean) Decides whether cross-building
 tools.build:cflags: List of extra C flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
 tools.build:compiler_executables: Defines a Python dict-like with the compilers path to be used. Allowed keys {&#39;c&#39;, &#39;cpp&#39;, &#39;cuda&#39;, &#39;objc&#39;, &#39;objcxx&#39;, &#39;rc&#39;, &#39;fortran&#39;, &#39;asm&#39;, &#39;hip&#39;, &#39;ispc&#39;, &#39;ld&#39;, &#39;ar&#39;}
 tools.build:cxxflags: List of extra CXX flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
-tools.build:defines: List of extra definition flags used by different toolchains like CMakeToolchain and AutotoolsToolchain
+tools.build:defines: List of extra definition flags used by different toolchains like CMakeToolchain, AutotoolsToolchain and MesonToolchain
 tools.build:download_source: Force download of sources for every package
 tools.build:exelinkflags: List of extra flags used by CMakeToolchain for CMAKE_EXE_LINKER_FLAGS_INIT variable
 tools.build:jobs: Default compile jobs number -jX Ninja, Make, /MP VS (default: max CPUs)
