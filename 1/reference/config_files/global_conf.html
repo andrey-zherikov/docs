@@ -378,14 +378,14 @@ user.myconf.build:ldflags<span class="o">=[</span><span class="s1">&#39;--prefix
 <h2>Configuration patterns<a class="headerlink" href="#configuration-patterns" title="Link to this heading"></a></h2>
 <p>You can use package patterns to apply the configuration in those dependencies which are matching:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*:tools.cmake.cmaketoolchain:generator=Ninja
-zlib:tools.cmake.cmaketoolchain:generator=Visual Studio 16 2019
+zlib/*:tools.cmake.cmaketoolchain:generator=Visual Studio 16 2019
 </pre></div>
 </div>
 <p>This example shows you how to specify a general <cite>generator</cite> for all your packages, but for <cite>zlib</cite> one. <cite>zlib</cite> is defining
 <cite>Visual Studio 16 2019</cite> as its own generator.</p>
 <p>Besides that, it’s quite relevant to say that <strong>the order matters</strong>. So, if we change the order of the
 configuration lines above:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zlib:tools.cmake.cmaketoolchain:generator=Visual Studio 16 2019
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zlib/*:tools.cmake.cmaketoolchain:generator=Visual Studio 16 2019
 *:tools.cmake.cmaketoolchain:generator=Ninja
 </pre></div>
 </div>
