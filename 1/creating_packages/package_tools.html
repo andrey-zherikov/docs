@@ -83,10 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="toolchains.html">Toolchains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inspecting_packages.html">Inspecting Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_approaches.html">Packaging Approaches</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Package Creator Tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#conan-package-tools">Conan Package Tools</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Package Creator Tools</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../uploading_packages.html">Uploading Packages</a></li>
@@ -173,33 +170,6 @@ following script in the package root folder. Name it <em>build.py</em>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>build.py
 </pre></div>
 </div>
-<section id="conan-package-tools">
-<h2>Conan Package Tools<a class="headerlink" href="#conan-package-tools" title="Link to this heading"></a></h2>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>According to the project’s README, there is no planned support for the upcoming <em>Conan 2.0 release</em>.</p>
-</div>
-<p>We have developed another FOSS tool for package creators, the <strong>Conan Package Tools</strong> to help you generate multiple binary packages from a package recipe.
-It offers a simple way to define the different configurations and to call <strong class="command">conan test</strong>.
-In addition to offering CI integration like <strong>Travis CI, Appveyor and Bamboo</strong>, for cloud-based automated
-binary package creation, testing, and uploading.</p>
-<p>This tool enables the creation of hundreds of binary packages in the cloud with a simple
-<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code> and supports:</p>
-<ul class="simple">
-<li><p>Easy <strong>generation of multiple Conan packages</strong> with different configurations.</p></li>
-<li><p>Automated/remote package generation in <strong>Travis/Appveyor</strong> server with distributed builds in CI
-jobs for big/slow builds.</p></li>
-<li><p><strong>Docker</strong>: Automatic generation of packages for several versions of <code class="docutils literal notranslate"><span class="pre">gcc</span></code> and <code class="docutils literal notranslate"><span class="pre">clang</span></code> in
-Linux, and in Travis CI.</p></li>
-<li><p>Automatic creation of OSX packages with apple-clang, and in Travis-CI.</p></li>
-<li><p><strong>Visual Studio</strong>: Automatic configuration of the command line environment with detected settings.</p></li>
-</ul>
-<p>It’s available in pypi:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>conan_package_tools
-</pre></div>
-</div>
-<p>For more information, read the README.md in the <a class="reference external" href="https://github.com/conan-io/conan-package-tools">Conan Package Tools repository</a>.</p>
-</section>
 </section>
 
 
@@ -214,7 +184,7 @@ Linux, and in Travis CI.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 14, 2024.
+      <span class="lastupdated">Last updated on May 17, 2024.
       </span></p>
   </div>
 
