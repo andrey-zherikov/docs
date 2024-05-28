@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>global.conf &mdash; conan 2.3.1 documentation</title>
+  <title>global.conf &mdash; conan 2.3.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=045299b1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
@@ -19,7 +19,7 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=67b02a41"></script>
+        <script src="../../_static/documentation_options.js?v=5048a02b"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -258,6 +258,7 @@ tools.microsoft.msbuild:max_cpu_count: Argument for the /m when running msvc to 
 tools.microsoft.msbuild:vs_version: Defines the IDE version (15, 16, 17) when using the msvc compiler. Necessary if compiler.version specifies a toolset that is not the IDE default
 tools.microsoft.msbuilddeps:exclude_code_analysis: Suppress MSBuild code analysis for patterns
 tools.microsoft.msbuildtoolchain:compile_options: Dictionary with MSBuild compiler options
+tools.microsoft:msvc_update: Force the specific update irrespective of compiler.update (CMakeToolchain and VCVars)
 tools.microsoft:winsdk_version: Use this winsdk_version in vcvars
 tools.system.package_manager:mode: Mode for package_manager tools: &#39;check&#39;, &#39;report&#39;, &#39;report-installed&#39; or &#39;install&#39;
 tools.system.package_manager:sudo: Use &#39;sudo&#39; when invoking the package manager tools in Linux (False by default)
@@ -485,7 +486,7 @@ by adding the warning tag to its value.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 24, 2024.
+      <span class="lastupdated">Last updated on May 28, 2024.
       </span></p>
   </div>
 
