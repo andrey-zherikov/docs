@@ -151,6 +151,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <section id="version">
 <span id="conan-tools-scm-version"></span><h1>Version<a class="headerlink" href="#version" title="Link to this heading">¶</a></h1>
+<p>This is a helper class to work with versions, it splits the version string based on dots and hyphens.
+It exposes all the version components as properties and offers total ordering through compare operators.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Comparing versions</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">compiler_lower_than_12</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">version</span><span class="p">)</span> <span class="o">&lt;</span> <span class="s2">&quot;12.0&quot;</span>
+
+ <span class="n">is_legacy</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="conan.tools.scm.Version">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.tools.scm.Version" title="Link to this definition">¶</a></dt>
@@ -158,6 +168,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 It is just a helper to parse “.” or “-” and compare taking into account integers when possible</p>
 </dd></dl>
 
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Version</span></code> class offers ways to access the different parts of the version number:</p>
+<section id="main">
+<h3>main<a class="headerlink" href="#main" title="Link to this heading">¶</a></h3>
+<p>Get all the main digits.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">main</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="major">
+<h3>major<a class="headerlink" href="#major" title="Link to this heading">¶</a></h3>
+<p>Get the major digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">major</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="minor">
+<h3>minor<a class="headerlink" href="#minor" title="Link to this heading">¶</a></h3>
+<p>Get the minor digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">minor</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="patch">
+<h3>patch<a class="headerlink" href="#patch" title="Link to this heading">¶</a></h3>
+<p>Get the patch digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">patch</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="micro">
+<h3>micro<a class="headerlink" href="#micro" title="Link to this heading">¶</a></h3>
+<p>Get the micro digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">micro</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="pre">
+<h3>pre<a class="headerlink" href="#pre" title="Link to this heading">¶</a></h3>
+<p>Get the pre-release digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">pre</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;alpha.3&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="build">
+<h3>build<a class="headerlink" href="#build" title="Link to this heading">¶</a></h3>
+<p>Get the build digit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.2.3.4-alpha.3+b1&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">build</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;b1&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
