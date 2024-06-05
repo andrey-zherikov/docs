@@ -157,6 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Search existing recipes in remotes.
 This command is equivalent to <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">&lt;query&gt;</span> <span class="pre">-r=*</span></code>, and is provided for simpler UX.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan search -h
+WARN: Downgrading cache from Conan 2.4.0 to 2.3.2
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan search [-h] [-v [V]] [-cc CORE_CONF] [-f FORMAT] [-r REMOTE]
                     reference
 
@@ -228,7 +231,7 @@ $ conan search zlib/1.2.1* -r=conancenter --format=json
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 29, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -248,6 +251,10 @@ $ conan search zlib/1.2.1* -r=conancenter --format=json
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -396,6 +403,8 @@ $ conan search zlib/1.2.1* -r=conancenter --format=json
         
     
     <br>
+    
+        
     
         
     

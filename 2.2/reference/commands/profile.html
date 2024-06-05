@@ -156,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-profile-detect">
 <h2>conan profile detect<a class="headerlink" href="#conan-profile-detect" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile detect -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.3.2 to 2.2.3
 usage: conan profile detect [-h] [-v [V]] [-cc CORE_CONF] [--name NAME] [-f]
 
 Generate a profile using auto-detected values.
@@ -227,7 +227,8 @@ configuration like custom settings, custom remotes definition, etc.</p>
 <section id="conan-profile-list">
 <h2>conan profile list<a class="headerlink" href="#conan-profile-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile list -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+Migration: Successfully updated settings.yml
+Migration: Successfully updated profile.py
 usage: conan profile list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
 
 List all profiles in the cache.
@@ -259,7 +260,9 @@ clang_15
 <section id="conan-profile-path">
 <h2>conan profile path<a class="headerlink" href="#conan-profile-path" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 
 Consumer commands
 cache      Perform file operations in the local cache (of recipes and/or packages).
@@ -300,7 +303,9 @@ Type &quot;conan &lt;command&gt; -h&quot; for help
 <section id="conan-profile-show">
 <h2>conan profile show<a class="headerlink" href="#conan-profile-show" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan profile show -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan profile show [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                           [-pr PROFILE] [-pr:b PROFILE_BUILD]
                           [-pr:h PROFILE_HOST] [-pr:a PROFILE_ALL]
@@ -467,7 +472,7 @@ os=Macos
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 14, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -487,6 +492,10 @@ os=Macos
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -635,6 +644,8 @@ os=Macos
         
     
     <br>
+    
+        
     
         
     

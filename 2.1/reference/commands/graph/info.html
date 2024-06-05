@@ -160,7 +160,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="conan-graph-info">
 <span id="reference-graph-info"></span><h1>conan graph info<a class="headerlink" href="#conan-graph-info" title="Link to this heading">¶</a></h1>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan graph info -h
-Migration: Successfully updated settings.yml
+WARN: Downgrading cache from Conan 2.4.0 to 2.1.0
+WARN: Applying downgrade migration 2.4_1-migrate.py
 Migration: Successfully updated cppstd_compat.py
 usage: conan graph info [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                         [--name NAME] [--version VERSION] [--user USER]
@@ -561,7 +562,7 @@ to point to a local version of these files:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 14, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -581,6 +582,10 @@ to point to a local version of these files:</p>
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -729,6 +734,8 @@ to point to a local version of these files:</p>
         
     
     <br>
+    
+        
     
         
     

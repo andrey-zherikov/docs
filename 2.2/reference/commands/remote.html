@@ -156,7 +156,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 registry and also manage authentication to those remotes. For more information on how to
 work with Conan repositories, please check the <a class="reference internal" href="../../tutorial/conan_repositories.html#conan-repositories"><span class="std std-ref">dedicated section</span></a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan remote [-h] [-v [V]] [-cc CORE_CONF]
                     {add,auth,disable,enable,list,list-users,login,logout,remove,rename,set-user,update}
                     ...
@@ -194,8 +196,7 @@ options:
 <section id="conan-remote-add">
 <h2>conan remote add<a class="headerlink" href="#conan-remote-add" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote add -h
-Migration: Successfully updated settings.yml
-Migration: Successfully updated cppstd_compat.py
+WARN: Downgrading cache from Conan 2.3.2 to 2.2.3
 usage: conan remote add [-h] [-v [V]] [-cc CORE_CONF] [--insecure]
                         [--index INDEX] [-f] [-ap ALLOWED_PACKAGES]
                         [-t {local-recipes-index}]
@@ -230,7 +231,8 @@ options:
 <section id="conan-remote-auth">
 <h2>conan remote auth<a class="headerlink" href="#conan-remote-auth" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote auth -h
-Migration: Successfully updated settings.yml
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
 Migration: Successfully updated cppstd_compat.py
 usage: conan remote auth [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                          [--with-user]
@@ -260,7 +262,8 @@ options:
 <section id="conan-remote-disable">
 <h2>conan remote disable<a class="headerlink" href="#conan-remote-disable" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote disable -h
-Migration: Successfully updated settings.yml
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
 Migration: Successfully updated cppstd_compat.py
 usage: conan remote disable [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] remote
 
@@ -286,8 +289,7 @@ options:
 <section id="conan-remote-enable">
 <h2>conan remote enable<a class="headerlink" href="#conan-remote-enable" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote enable -h
-Migration: Successfully updated settings.yml
-Migration: Successfully updated cppstd_compat.py
+WARN: Downgrading cache from Conan 2.3.2 to 2.2.3
 usage: conan remote enable [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] remote
 
 Enable all the remotes matching a pattern.
@@ -312,8 +314,7 @@ options:
 <section id="conan-remote-list">
 <h2>conan remote list<a class="headerlink" href="#conan-remote-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote list -h
-Migration: Successfully updated settings.yml
-Migration: Successfully updated cppstd_compat.py
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
 usage: conan remote list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
 
 List current remotes.
@@ -334,7 +335,9 @@ options:
 <section id="conan-remote-list-users">
 <h2>conan remote list-users<a class="headerlink" href="#conan-remote-list-users" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote list-users -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan remote list-users [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
 
 List the users logged into all the remotes.
@@ -355,7 +358,7 @@ options:
 <section id="conan-remote-login">
 <h2>conan remote login<a class="headerlink" href="#conan-remote-login" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote login -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+WARN: Downgrading cache from Conan 2.3.2 to 2.2.3
 usage: conan remote login [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                           [-p [PASSWORD]]
                           remote [username]
@@ -387,7 +390,8 @@ options:
 <section id="conan-remote-logout">
 <h2>conan remote logout<a class="headerlink" href="#conan-remote-logout" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote logout -h
-Migration: Successfully updated settings.yml
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
 Migration: Successfully updated cppstd_compat.py
 usage: conan remote logout [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] remote
 
@@ -413,7 +417,8 @@ options:
 <section id="conan-remote-remove">
 <h2>conan remote remove<a class="headerlink" href="#conan-remote-remove" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote remove -h
-Migration: Successfully updated settings.yml
+WARN: Downgrading cache from Conan 2.4.0 to 2.2.3
+WARN: Applying downgrade migration 2.4_1-migrate.py
 Migration: Successfully updated cppstd_compat.py
 usage: conan remote remove [-h] [-v [V]] [-cc CORE_CONF] remote
 
@@ -437,7 +442,8 @@ options:
 <section id="conan-remote-rename">
 <h2>conan remote rename<a class="headerlink" href="#conan-remote-rename" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote rename -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+Migration: Successfully updated settings.yml
+Migration: Successfully updated profile.py
 usage: conan remote rename [-h] [-v [V]] [-cc CORE_CONF] remote new_name
 
 Rename a remote.
@@ -460,7 +466,8 @@ options:
 <section id="conan-remote-set-user">
 <h2>conan remote set-user<a class="headerlink" href="#conan-remote-set-user" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote set-user -h
-WARN: Downgrading cache from Conan 2.3.1 to 2.2.3
+Migration: Successfully updated settings.yml
+Migration: Successfully updated profile.py
 usage: conan remote set-user [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                              remote username
 
@@ -489,6 +496,7 @@ options:
 <h2>conan remote update<a class="headerlink" href="#conan-remote-update" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan remote update -h
 Migration: Successfully updated settings.yml
+Migration: Successfully updated profile.py
 usage: conan remote update [-h] [-v [V]] [-cc CORE_CONF] [--url URL]
                            [--secure] [--insecure] [--index INDEX]
                            [-ap ALLOWED_PACKAGES]
@@ -540,7 +548,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 14, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -560,6 +568,10 @@ options:
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -708,6 +720,8 @@ options:
         
     
     <br>
+    
+        
     
         
     

@@ -129,14 +129,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <!--@ OUTDATED_VERSION_PLACEHOLDER_BEGIN @
+          
           <div>
             <div class="admonition warning wy-text-center" style="position:sticky">
               <p>This document is for an <b>outdated</b> Conan version.
-              <a href="https://docs.conan.io/2/@LATEST_DOC_PAGE_URL@">Click here to read the <b>latest</b> documentation</a></p>
+              <a href="https://docs.conan.io/2/reference/commands/cache.html">Click here to read the <b>latest</b> documentation</a></p>
              </div>
           </div>
-          @ OUTDATED_VERSION_PLACEHOLDER_END @-->
+          
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -158,6 +158,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-cache-path">
 <h2>conan cache path<a class="headerlink" href="#conan-cache-path" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache path -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan cache path [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
                         [--folder {export_source,source,build,metadata}]
                         reference
@@ -287,6 +290,9 @@ be copied and pasted into the <code class="docutils literal notranslate"><span c
 <section id="conan-cache-clean">
 <h2>conan cache clean<a class="headerlink" href="#conan-cache-clean" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan cache clean [-h] [-v [V]] [-cc CORE_CONF] [-s] [-b] [-d] [-t]
                          [-bs] [-p PACKAGE_QUERY]
                          [pattern]
@@ -346,6 +352,9 @@ unless a specific flag is supplied, in which case only the specified folders wil
 <section id="conan-cache-check-integrity">
 <h2>conan cache check-integrity<a class="headerlink" href="#conan-cache-check-integrity" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache check-integrity -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan cache check-integrity [-h] [-v [V]] [-cc CORE_CONF]
                                    [-p PACKAGE_QUERY]
                                    pattern
@@ -385,6 +394,8 @@ zlib/1.2.11:6fe7fa69f760aee504e0be85c12b2327c716f9e7: Integrity checked: ok
 <section id="conan-cache-backup-upload">
 <h2>conan cache backup-upload<a class="headerlink" href="#conan-cache-backup-upload" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache backup-upload -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
 usage: conan cache backup-upload [-h] [-v [V]] [-cc CORE_CONF]
 
 Upload all the source backups present in the cache
@@ -406,6 +417,8 @@ regardless of which package they belong to, if any.</p>
 <section id="conan-cache-save">
 <h2>conan cache save<a class="headerlink" href="#conan-cache-save" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache save -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
 usage: conan cache save [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] [-l LIST]
                         [--file FILE]
                         [pattern]
@@ -437,6 +450,8 @@ options:
 <section id="conan-cache-restore">
 <h2>conan cache restore<a class="headerlink" href="#conan-cache-restore" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache restore -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
 usage: conan cache restore [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] file
 
 Put the artifacts from an archive into the cache
@@ -472,7 +487,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 29, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -492,6 +507,10 @@ options:
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -640,6 +659,8 @@ options:
         
     
     <br>
+    
+        
     
         
     

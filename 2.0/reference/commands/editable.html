@@ -156,7 +156,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-editable-add">
 <h2>conan editable add<a class="headerlink" href="#conan-editable-add" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable add -h
-WARN: Downgrading cache from Conan 2.1.0 to 2.0.17
+WARN: Downgrading cache from Conan 2.4.0 to 2.0.17
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan editable add [-h] [-v [V]] [--name NAME] [--version VERSION]
                           [--user USER] [--channel CHANNEL]
                           [-of OUTPUT_FOLDER] [-r REMOTE | -nr]
@@ -191,7 +193,9 @@ options:
 <section id="conan-editable-remove">
 <h2>conan editable remove<a class="headerlink" href="#conan-editable-remove" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable remove -h
-WARN: Downgrading cache from Conan 2.1.0 to 2.0.17
+WARN: Downgrading cache from Conan 2.4.0 to 2.0.17
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan editable remove [-h] [-v [V]] [-r REFS] [path]
 
 Remove the &quot;editable&quot; mode for this reference.
@@ -214,7 +218,9 @@ options:
 <section id="conan-editable-list">
 <h2>conan editable list<a class="headerlink" href="#conan-editable-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan editable list -h
-WARN: Downgrading cache from Conan 2.1.0 to 2.0.17
+WARN: Downgrading cache from Conan 2.4.0 to 2.0.17
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan editable list [-h] [-f FORMAT] [-v [V]]
 
 List all the packages in editable mode.
@@ -250,7 +256,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 14, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -270,6 +276,10 @@ options:
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -418,6 +428,8 @@ options:
         
     
     <br>
+    
+        
     
         
     

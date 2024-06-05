@@ -129,14 +129,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="wy-nav-content">
         <div class="rst-content">
           
-          <!--@ OUTDATED_VERSION_PLACEHOLDER_BEGIN @
+          
           <div>
             <div class="admonition warning wy-text-center" style="position:sticky">
               <p>This document is for an <b>outdated</b> Conan version.
-              <a href="https://docs.conan.io/2/@LATEST_DOC_PAGE_URL@">Click here to read the <b>latest</b> documentation</a></p>
+              <a href="https://docs.conan.io/2/reference/commands/config.html">Click here to read the <b>latest</b> documentation</a></p>
              </div>
           </div>
-          @ OUTDATED_VERSION_PLACEHOLDER_END @-->
+          
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -158,6 +158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="conan-config-home">
 <h2>conan config home<a class="headerlink" href="#conan-config-home" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config home -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
 usage: conan config home [-h] [-v [V]] [-cc CORE_CONF]
 
 Show the Conan home folder.
@@ -182,6 +184,9 @@ options:
 <section id="conan-config-install">
 <span id="reference-commands-conan-config-install"></span><h2>conan config install<a class="headerlink" href="#conan-config-install" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config install -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan config install [-h] [-v [V]] [-cc CORE_CONF]
                             [--verify-ssl [VERIFY_SSL] | --insecure]
                             [-t {git,dir,file,url}] [-a ARGS]
@@ -297,6 +302,9 @@ $ conan config install http://other/url/to/other.zip -sf=hooks -tf=hooks
 See <a class="reference internal" href="../../introduction.html#stability"><span class="std std-ref">the Conan stability</span></a> section for more information.</p>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config install-pkg -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan config install-pkg [-h] [-v [V]] [-cc CORE_CONF] [-l LOCKFILE]
                                 [--lockfile-partial]
                                 [--lockfile-out LOCKFILE_OUT] [-f]
@@ -347,6 +355,9 @@ options:
 <section id="conan-config-list">
 <h2>conan config list<a class="headerlink" href="#conan-config-list" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config list -h
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 usage: conan config list [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF]
 
 Show all the Conan available configurations: core and tools.
@@ -370,6 +381,9 @@ options:
 recipes and tools used within recipes, like <code class="docutils literal notranslate"><span class="pre">CMakeToolchain</span></code></p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config list
+Migration: Successfully updated settings.yml
+Migration: Successfully updated cppstd_compat.py
+Migration: Successfully updated profile.py
 core.cache:storage_path: Absolute path where the packages and database are stored
 core.download:download_cache: Define path to a file download cache
 core.download:parallel: Number of concurrent threads to download packages
@@ -485,6 +499,9 @@ tools.system.package_manager:tool: Default package manager tool: &#39;apk&#39;, 
 <section id="conan-config-show">
 <h2>conan config show<a class="headerlink" href="#conan-config-show" title="Link to this heading">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan config show -h
+WARN: Downgrading cache from Conan 2.4.0 to 2.3.2
+WARN: Applying downgrade migration 2.4_1-migrate.py
+Migration: Successfully updated cppstd_compat.py
 usage: conan config show [-h] [-f FORMAT] [-v [V]] [-cc CORE_CONF] pattern
 
 Get the value of the specified conf
@@ -559,7 +576,7 @@ tools.files.download:retry_wait: 10
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on May 29, 2024.
+      <span class="lastupdated">Last updated on Jun 05, 2024.
       </span></p>
   </div>
 
@@ -579,6 +596,10 @@ tools.files.download:retry_wait: 10
   <div class="rst-other-versions">
     <dl>
     <dt>Versions</dt>
+    
+        
+            <dd><a href="/2.4/index.html">2.4</a></dd>
+        
     
         
             <dd><a href="/2.3/index.html">2.3</a></dd>
@@ -727,6 +748,8 @@ tools.files.download:retry_wait: 10
         
     
     <br>
+    
+        
     
         
     
