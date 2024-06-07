@@ -136,34 +136,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="how-the-package-id-is-computed">
 <span id="reference-binary-model-package-id"></span><h1>How the <code class="docutils literal notranslate"><span class="pre">package_id</span></code> is computed<a class="headerlink" href="#how-the-package-id-is-computed" title="Link to this heading">¶</a></h1>
 <p>Let’s take some package and list its binaries, for example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>zlib/1.2.13:*<span class="w"> </span>-r<span class="o">=</span>conancenter
-
-zlib
-<span class="w">  </span>zlib/1.2.13
-<span class="w">    </span>revisions
-<span class="w">      </span>97d5730b529b4224045fe7090592d4c1<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-08-22<span class="w"> </span><span class="m">02</span>:51:57<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">        </span>packages
-<span class="hll"><span class="w">          </span>d62dff20d86436b9c58ddc0162499d197be9de1e<span class="w">  </span><span class="c1"># package_id</span>
-</span><span class="w">            </span>info
-<span class="w">              </span>settings
-<span class="w">                </span>arch:<span class="w"> </span>x86_64
-<span class="w">                </span>build_type:<span class="w"> </span>Release
-<span class="w">                </span>compiler:<span class="w"> </span>apple-clang
-<span class="w">                </span>compiler.version:<span class="w"> </span><span class="m">13</span>
-<span class="w">                </span>os:<span class="w"> </span>Macos
-<span class="w">              </span>options
-<span class="w">                </span>fPIC:<span class="w"> </span>True
-<span class="w">                </span>shared:<span class="w"> </span>False
-<span class="hll"><span class="w">          </span>abe5e2b04ea92ce2ee91bc9834317dbe66628206<span class="w">  </span><span class="c1"># package_id</span>
-</span><span class="w">            </span>info
-<span class="w">              </span>settings
-<span class="w">                </span>arch:<span class="w"> </span>x86_64
-<span class="w">                </span>build_type:<span class="w"> </span>Release
-<span class="w">                </span>compiler:<span class="w"> </span>gcc
-<span class="w">                </span>compiler.version:<span class="w"> </span><span class="m">11</span>
-<span class="w">                </span>os:<span class="w"> </span>Linux
-<span class="w">              </span>options
-<span class="w">                </span>shared:<span class="w"> </span>True
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;zlib/1.2.13:*&quot;</span><span class="w"> </span>-r<span class="o">=</span>conancenter
+Local<span class="w"> </span>Cache
+<span class="w">  </span>zlib
+<span class="w">    </span>zlib/1.2.13
+<span class="w">      </span>revisions
+<span class="w">        </span>97d5730b529b4224045fe7090592d4c1<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-08-22<span class="w"> </span><span class="m">02</span>:51:57<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">          </span>packages
+<span class="hll"><span class="w">            </span>d62dff20d86436b9c58ddc0162499d197be9de1e<span class="w">  </span><span class="c1"># package_id</span>
+</span><span class="w">              </span>info
+<span class="w">                </span>settings
+<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>build_type:<span class="w"> </span>Release
+<span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">13</span>
+<span class="w">                  </span>os:<span class="w"> </span>Macos
+<span class="w">                </span>options
+<span class="w">                  </span>fPIC:<span class="w"> </span>True
+<span class="w">                  </span>shared:<span class="w"> </span>False
+<span class="hll"><span class="w">            </span>abe5e2b04ea92ce2ee91bc9834317dbe66628206<span class="w">  </span><span class="c1"># package_id</span>
+</span><span class="w">              </span>info
+<span class="w">                </span>settings
+<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>build_type:<span class="w"> </span>Release
+<span class="w">                  </span>compiler:<span class="w"> </span>gcc
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">11</span>
+<span class="w">                  </span>os:<span class="w"> </span>Linux
+<span class="w">                </span>options
+<span class="w">                  </span>shared:<span class="w"> </span>True
 </pre></div>
 </div>
 <p>We can see several binaries for the latest recipe revision of <code class="docutils literal notranslate"><span class="pre">zlib/1.2.13</span></code>. Every binary is identified by its own <code class="docutils literal notranslate"><span class="pre">package_id</span></code>, and below it we can see some information for that binary under <code class="docutils literal notranslate"><span class="pre">info</span></code>. This information is the one used to compute the <code class="docutils literal notranslate"><span class="pre">package_id</span></code>. Every time something changes in this information, like the architecture, or being a static or a shared library, a new <code class="docutils literal notranslate"><span class="pre">package_id</span></code> is computed because it represents a different binary.</p>
@@ -190,7 +190,7 @@ $<span class="w"> </span>sha1sum<span class="w"> </span>&lt;path&gt;/conaninfo.t
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">package_id</span></code> is the sha1 checksum of the <code class="docutils literal notranslate"><span class="pre">conaninfo.txt</span></code> file inside the package. You can validate it with the <code class="docutils literal notranslate"><span class="pre">sha1sum</span></code> utility.</p>
 <p>If now we have a look to the binaries of <code class="docutils literal notranslate"><span class="pre">openssl</span></code> we can see something like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>openssl/3.1.2:*<span class="w"> </span>-r<span class="o">=</span>conancenter
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;openssl/3.1.2:*&quot;</span><span class="w"> </span>-r<span class="o">=</span>conancenter
 conancenter
 <span class="w">  </span>openssl
 <span class="w">    </span>openssl/3.1.2
@@ -233,7 +233,7 @@ In the next section <a class="reference internal" href="dependencies.html#refere
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

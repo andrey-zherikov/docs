@@ -176,7 +176,7 @@ debugger works after removing the build files from the Conan cache.</p>
 <p>There are multiple reasons that can cause the build files to not be present after the dependencies are compiled. We
 will clean our build files from the cache to simulate one of those cases using <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">cache</span> <span class="pre">clean</span></code>. The <code class="docutils literal notranslate"><span class="pre">--build</span></code>
 flag makes sure that we only remove the build files, as we will need our source files for this example.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>zlib/1.2.11:*
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;zlib/1.2.11:*&quot;</span>
 $<span class="w"> </span>conan<span class="w"> </span>cache<span class="w"> </span>path<span class="w"> </span>--folder<span class="w"> </span>build<span class="w"> </span>zlib/1.2.11:17b26a16efb893750e4481f98a154db2934ead88
 $<span class="w"> </span>conan<span class="w"> </span>cache<span class="w"> </span>clean<span class="w"> </span>zlib/1.2.11<span class="w"> </span>--build
 $<span class="w"> </span>conan<span class="w"> </span>cache<span class="w"> </span>path<span class="w"> </span>--folder<span class="w"> </span>build<span class="w"> </span>zlib/1.2.11:17b26a16efb893750e4481f98a154db2934ead88
@@ -284,7 +284,7 @@ they need to be the exact same files as when the libraries were compiled.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

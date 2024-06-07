@@ -246,7 +246,7 @@ conanfile.py<span class="w"> </span><span class="o">(</span>hello/1.0<span class
 conanfile.py<span class="w"> </span><span class="o">(</span>hello/1.0<span class="o">)</span>:<span class="w"> </span>Generator<span class="w"> </span><span class="s1">&#39;CMakeDeps&#39;</span><span class="w"> </span>calling<span class="w"> </span><span class="s1">&#39;generate()&#39;</span>
 conanfile.py<span class="w"> </span><span class="o">(</span>hello/1.0<span class="o">)</span>:<span class="w"> </span>Calling<span class="w"> </span>generate<span class="o">()</span>
 ...
-conanfile.py<span class="w"> </span><span class="o">(</span>hello/1.0<span class="o">)</span>:<span class="w"> </span>Aggregating<span class="w"> </span>env<span class="w"> </span>generators
+conanfile.py<span class="w"> </span><span class="o">(</span>hello/1.0<span class="o">)</span>:<span class="w"> </span>Generating<span class="w"> </span>aggregated<span class="w"> </span>env<span class="w"> </span>files
 </pre></div>
 </div>
 <p>You can see that a new <cite>build</cite> folder appeared with all the files that Conan needs for
@@ -381,7 +381,7 @@ hello/1.0:<span class="w"> </span>__apple_build_version__14000029
 was created.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>hello/1.0
 Local<span class="w"> </span>Cache
-hello
+<span class="w">  </span>hello
 <span class="w">    </span>hello/1.0
 </pre></div>
 </div>
@@ -411,7 +411,7 @@ hello
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

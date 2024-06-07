@@ -213,23 +213,29 @@ sum/0.1<span class="w"> </span><span class="o">(</span><span class="nb">test</sp
 <p>After running the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> a new binary package is created for the header-only library, and we can see how the
 <code class="docutils literal notranslate"><span class="pre">test_package</span></code> project can use it correctly.</p>
 <p>We can list the binary packages created running this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>sum/0.1#:*
-Local<span class="w"> </span>Cache:
-sum
-<span class="w">    </span>sum/0.1#8d9f1fb3655adcb348befcd8374c5292<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:33:45<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">    </span>PID:<span class="w"> </span>da39a3ee5e6b4b0d3255bfef95601890afd80709<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:33:45<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">        </span>No<span class="w"> </span>package<span class="w"> </span>info/revision<span class="w"> </span>was<span class="w"> </span>found.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;sum/0.1#:*&quot;</span>
+Local<span class="w"> </span>Cache
+<span class="w">  </span>sum
+<span class="w">    </span>sum/0.1
+<span class="w">      </span>revisions
+<span class="w">        </span>c1a714a086933b067bcbf12002fb0780<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-05-09<span class="w"> </span><span class="m">15</span>:28:51<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">          </span>packages
+<span class="w">            </span>da39a3ee5e6b4b0d3255bfef95601890afd80709
+<span class="w">              </span>info
 </pre></div>
 </div>
 <p>We get one package with the package ID <code class="docutils literal notranslate"><span class="pre">da39a3ee5e6b4b0d3255bfef95601890afd80709</span></code>.
 Let’s see what happen if we run the <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> but specifying <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">build_type=Debug</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>create<span class="w"> </span>.<span class="w"> </span>-s<span class="w"> </span><span class="nv">build_type</span><span class="o">=</span>Debug
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>sum/0.1#:*
-Local<span class="w"> </span>Cache:
-sum
-<span class="w">    </span>sum/0.1#8d9f1fb3655adcb348befcd8374c5292<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:34:23<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">    </span>PID:<span class="w"> </span>da39a3ee5e6b4b0d3255bfef95601890afd80709<span class="w"> </span><span class="o">(</span><span class="m">2022</span>-12-22<span class="w"> </span><span class="m">17</span>:34:23<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">        </span>No<span class="w"> </span>package<span class="w"> </span>info/revision<span class="w"> </span>was<span class="w"> </span>found.
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;sum/0.1#:*&quot;</span>
+Local<span class="w"> </span>Cache
+<span class="w">  </span>sum
+<span class="w">    </span>sum/0.1
+<span class="w">      </span>revisions
+<span class="w">        </span>c1a714a086933b067bcbf12002fb0780<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-05-09<span class="w"> </span><span class="m">15</span>:28:51<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">          </span>packages
+<span class="w">            </span>da39a3ee5e6b4b0d3255bfef95601890afd80709
+<span class="w">              </span>info
 </pre></div>
 </div>
 <p>Even in the <code class="docutils literal notranslate"><span class="pre">test_package</span></code> executable is built for Debug, we get the same binary package for the header-only library.
@@ -371,7 +377,7 @@ settings.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

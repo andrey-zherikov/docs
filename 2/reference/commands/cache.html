@@ -334,12 +334,12 @@ unless a specific flag is supplied, in which case only the specified folders wil
 </div>
 </li>
 <li><p>Remove the download folders for the <code class="docutils literal notranslate"><span class="pre">zlib</span></code> recipe:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean &quot;zlib*&quot; --download
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean &quot;zlib/*&quot; --download
 </pre></div>
 </div>
 </li>
 <li><p>Remove everything but the download folder for the <code class="docutils literal notranslate"><span class="pre">zlib</span></code> recipe:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean &quot;*&quot; --source --build --temp
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ conan cache clean &quot;zlib/*&quot; --source --build --temp
 </pre></div>
 </div>
 </li>
@@ -478,7 +478,7 @@ options:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

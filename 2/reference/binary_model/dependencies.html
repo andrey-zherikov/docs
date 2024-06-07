@@ -188,16 +188,16 @@ app/0.1:<span class="w"> </span>Hello<span class="w"> </span>World<span class="w
 <p>If we now list the <code class="docutils literal notranslate"><span class="pre">app/0.1</span></code> binaries, we will see the binary just created:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>app/0.1:*
 <span class="w">  </span>Local<span class="w"> </span>Cache
-<span class="w">  </span>app/0.1
-<span class="w">    </span>revisions
-<span class="w">      </span>632e236936211ac2293ec33339ce582b<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-09-25<span class="w"> </span><span class="m">22</span>:34:17<span class="w"> </span>UTC<span class="o">)</span>
-<span class="w">        </span>packages
-<span class="w">          </span>3ca530d20914cf632eb00efbccc564da48190314
-<span class="w">            </span>info
-<span class="w">              </span>settings
-<span class="w">                </span>...
-<span class="hll"><span class="w">              </span>requires
-</span><span class="hll"><span class="w">                </span>dep/0.1#d125304fb1fb088d5b92d4f8135f4dff:9bdee485ef71c14ac5f8a657202632bdb8b4482b
+<span class="w">    </span>app/0.1
+<span class="w">      </span>revisions
+<span class="w">        </span>632e236936211ac2293ec33339ce582b<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-09-25<span class="w"> </span><span class="m">22</span>:34:17<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">          </span>packages
+<span class="w">            </span>3ca530d20914cf632eb00efbccc564da48190314
+<span class="w">              </span>info
+<span class="w">                </span>settings
+<span class="w">                  </span>...
+<span class="hll"><span class="w">                </span>requires
+</span><span class="hll"><span class="w">                  </span>dep/0.1#d125304fb1fb088d5b92d4f8135f4dff:9bdee485ef71c14ac5f8a657202632bdb8b4482b
 </span></pre></div>
 </div>
 <p>It is now visible that the <code class="docutils literal notranslate"><span class="pre">app/0.1</span></code> package-id depends on the full identifier of the <code class="docutils literal notranslate"><span class="pre">dep/0.1</span></code> dependency, that includes both its recipe revision and <code class="docutils literal notranslate"><span class="pre">package_id</span></code>.</p>
@@ -231,7 +231,7 @@ $<span class="w"> </span>conan<span class="w"> </span>create<span class="w"> </s
 </pre></div>
 </div>
 <p>Now we will have two <code class="docutils literal notranslate"><span class="pre">app/0.1</span></code> different binaries:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>app/0.1:*
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;app/0.1:*&quot;</span>
 <span class="w">  </span>Local<span class="w"> </span>Cache
 <span class="w">    </span>app
 <span class="w">      </span>app/0.1
@@ -269,7 +269,7 @@ $<span class="w"> </span>conan<span class="w"> </span>create<span class="w"> </s
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

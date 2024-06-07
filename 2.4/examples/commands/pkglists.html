@@ -274,7 +274,7 @@ $<span class="w"> </span>conan<span class="w"> </span>upload<span class="w"> </s
 <h2>Removing packages lists<a class="headerlink" href="#removing-packages-lists" title="Link to this heading">¶</a></h2>
 <p>It is also possible to first <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code> and create a list of things to remove, and then remove them:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Removes everything from the cache</span>
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>*#*<span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;*#*&quot;</span><span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
 $<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span>--list<span class="o">=</span>pkglist.json<span class="w">  </span>-c
 </pre></div>
 </div>
@@ -285,15 +285,15 @@ $<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </s
 </ul>
 <p>Then the pattern to remove everything will be different if we call directly <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">remove</span></code> or if we call first <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span></code>, for example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Removes everything from the cache</span>
-$<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span>*
+$<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span><span class="s2">&quot;*&quot;</span>
 <span class="c1"># OR via list, we need to explicitly include all revisions</span>
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>*#*<span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;*#*&quot;</span><span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
 $<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span>--list<span class="o">=</span>pkglist.json<span class="w">  </span>-c
 
 <span class="c1"># Removes only the binaries from the cache (leave recipes)</span>
-$<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span>*:*
+$<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span><span class="s2">&quot;*:*&quot;</span>
 <span class="c1"># OR via list, we need to explicitly include all revisions</span>
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>*#*:*<span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;*#*:*&quot;</span><span class="w"> </span>--format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>pkglist.json
 $<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </span>--list<span class="o">=</span>pkglist.json<span class="w">  </span>-c
 </pre></div>
 </div>
@@ -313,7 +313,7 @@ $<span class="w"> </span>conan<span class="w"> </span>remove<span class="w"> </s
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

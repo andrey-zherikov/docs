@@ -401,7 +401,8 @@ revision <code class="docutils literal notranslate"><span class="pre">#</span></
 <div class="code-block-caption"><span class="caption-text"><em>list all the package IDs for all the recipe revisions</em></span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  # Make sure to quote the argument
   $ conan list &quot;zlib/1.2.11#*:*&quot;
-  zlib
+  Local Cache
+    zlib
       zlib/1.2.11
         revisions
           d77ee68739fcbe5bf37b8a4690eea6ea (2022-08-05 17:17:30 UTC)
@@ -488,7 +489,7 @@ By default, it will list all recipes and binaries included in the dependency gra
 and <code class="docutils literal notranslate"><span class="pre">--graph-binaries=&lt;binary-mode&gt;</span></code> allow specifying what artifacts have to be listed in the final result, some examples:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">--graph=graph.json</span> <span class="pre">--graph-binaries=build</span></code> list exclusively the recipes and binaries that have been built from sources</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">--graph=graph.json</span> <span class="pre">--graph-recipes=*</span></code> list exclusively the recipes, all recipes, but no binaries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">--graph=graph.json</span> <span class="pre">--graph-recipes=&quot;*&quot;</span></code> list exclusively the recipes, all recipes, but no binaries</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">list</span> <span class="pre">--graph=graph.json</span> <span class="pre">--graph-binaries=download</span></code> list exclusively the binaries that have been downloaded in the last <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">create</span></code> or <code class="docutils literal notranslate"><span class="pre">conan</span> <span class="pre">install</span></code></p></li>
 </ul>
 </section>
@@ -636,7 +637,7 @@ only those values that deviate from that common denominator.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 

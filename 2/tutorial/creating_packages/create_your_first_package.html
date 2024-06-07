@@ -323,13 +323,12 @@ hello/1.0:<span class="w"> </span>Package<span class="w"> </span><span class="s1
 hello/1.0<span class="w"> </span><span class="o">(</span><span class="nb">test</span><span class="w"> </span>package<span class="o">)</span>:<span class="w"> </span>Running<span class="w"> </span>test<span class="o">()</span>
 hello/1.0<span class="w"> </span><span class="o">(</span><span class="nb">test</span><span class="w"> </span>package<span class="o">)</span>:<span class="w"> </span>RUN:<span class="w"> </span>./example
 hello/1.0:<span class="w"> </span>Hello<span class="w"> </span>World<span class="w"> </span>Release!
-<span class="w">  </span>hello/1.0:<span class="w"> </span>__x86_64__<span class="w"> </span>defined
-<span class="w">  </span>hello/1.0:<span class="w"> </span>__cplusplus199711
+<span class="w">  </span>hello/1.0:<span class="w"> </span>__aarch64__<span class="w"> </span>defined
+<span class="w">  </span>hello/1.0:<span class="w"> </span>__cplusplus201703
 <span class="w">  </span>hello/1.0:<span class="w"> </span>__GNUC__4
 <span class="w">  </span>hello/1.0:<span class="w"> </span>__GNUC_MINOR__2
-<span class="w">  </span>hello/1.0:<span class="w"> </span>__clang_major__13
-<span class="w">  </span>hello/1.0:<span class="w"> </span>__clang_minor__1
-<span class="w">  </span>hello/1.0:<span class="w"> </span>__apple_build_version__13160021
+<span class="w">  </span>hello/1.0:<span class="w"> </span>__clang_major__15
+<span class="w">  </span>hello/1.0:<span class="w"> </span>__apple_build_version__15000309
 ...
 </pre></div>
 </div>
@@ -346,7 +345,7 @@ created.</p></li>
 </ul>
 <p>We can now validate that the recipe and the package binary are in the cache:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>hello
-Local<span class="w"> </span>Cache:
+Local<span class="w"> </span>Cache
 <span class="w">  </span>hello
 <span class="w">    </span>hello/1.0
 </pre></div>
@@ -366,51 +365,51 @@ hello/1.0:<span class="w"> </span>Hello<span class="w"> </span>World<span class=
 <p>These new package binaries will be also stored in the Conan cache, ready to be used by any project in this computer.
 We can see them with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># list all the binaries built for the hello/1.0 package in the cache</span>
-$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span>hello/1.0:*
-Local<span class="w"> </span>Cache:
+$<span class="w"> </span>conan<span class="w"> </span>list<span class="w"> </span><span class="s2">&quot;hello/1.0:*&quot;</span>
+Local<span class="w"> </span>Cache
 <span class="w">  </span>hello
 <span class="w">    </span>hello/1.0
 <span class="w">      </span>revisions
-<span class="w">        </span>dcbfe21e5250264b26595d151796be70<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-03-04<span class="w"> </span><span class="m">17</span>:52:39<span class="w"> </span>UTC<span class="o">)</span>
+<span class="w">        </span>dcbfe21e5250264b26595d151796be70<span class="w"> </span><span class="o">(</span><span class="m">2024</span>-05-10<span class="w"> </span><span class="m">09</span>:40:15<span class="w"> </span>UTC<span class="o">)</span>
 <span class="w">          </span>packages
-<span class="w">            </span>6679492451b5d0750f14f9024fdbf84e19d2941b
+<span class="w">            </span>2505f7ebb5a4cca156b2d6b8534f415a4a48b5c9
 <span class="w">              </span>info
 <span class="w">                </span>settings
-<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>arch:<span class="w"> </span>armv8
 <span class="w">                  </span>build_type:<span class="w"> </span>Release
 <span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
-<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu17
 <span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
-<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">15</span>
 <span class="w">                  </span>os:<span class="w"> </span>Macos
 <span class="w">                </span>options
-<span class="w">                  </span>fPIC:<span class="w"> </span>True
 <span class="w">                  </span>shared:<span class="w"> </span>True
-<span class="w">            </span>b1d267f77ddd5d10d06d2ecf5a6bc433fbb7eeed
+<span class="w">            </span>39f48664f195e0847f59889d8a4cdfc6bca84bf1
 <span class="w">              </span>info
 <span class="w">                </span>settings
-<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                  </span>arch:<span class="w"> </span>armv8
 <span class="w">                  </span>build_type:<span class="w"> </span>Release
 <span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
-<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu17
 <span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
-<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">15</span>
 <span class="w">                  </span>os:<span class="w"> </span>Macos
 <span class="w">                </span>options
 <span class="w">                  </span>fPIC:<span class="w"> </span>True
 <span class="w">                  </span>shared:<span class="w"> </span>False
-<span class="w">            </span>d15c4f81b5de757b13ca26b636246edff7bdbf24
+<span class="w">            </span>814ddaac84bc84f3595aa076660133b88e49fb11
 <span class="w">              </span>info
-<span class="w">                </span>settings:
-<span class="w">                  </span>arch:<span class="w"> </span>x86_64
+<span class="w">                </span>settings
+<span class="w">                  </span>arch:<span class="w"> </span>armv8
 <span class="w">                  </span>build_type:<span class="w"> </span>Debug
 <span class="w">                  </span>compiler:<span class="w"> </span>apple-clang
-<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu11
+<span class="w">                  </span>compiler.cppstd:<span class="w"> </span>gnu17
 <span class="w">                  </span>compiler.libcxx:<span class="w"> </span>libc++
-<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">14</span>
+<span class="w">                  </span>compiler.version:<span class="w"> </span><span class="m">15</span>
 <span class="w">                  </span>os:<span class="w"> </span>Macos
-<span class="w">                </span>options:
+<span class="w">                </span>options
 <span class="w">                  </span>fPIC:<span class="w"> </span>True
+<span class="w">                  </span>shared:<span class="w"> </span>False
 </pre></div>
 </div>
 <p>Now that we have created a simple Conan package, we will explain each of the methods of
@@ -451,7 +450,7 @@ in the local cache.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2016-2024, JFrog.
-      <span class="lastupdated">Last updated on Jun 05, 2024.
+      <span class="lastupdated">Last updated on Jun 07, 2024.
       </span></p>
   </div>
 
